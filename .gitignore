@@ -1,0 +1,6 @@
+data_cache/
+.openml_cache/
+results_quick/
+__pycache__/
+*.pyc
+.pytest_cache/

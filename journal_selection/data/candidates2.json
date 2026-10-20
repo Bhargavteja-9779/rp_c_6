@@ -1,0 +1,23 @@
+{"window": ["2026-01-01", "2026-10-20"], "max_items": 400,
+ "journals": [
+  {"name": "Journal of King Saud University - Engineering Sciences", "issn": "1018-3639", "publisher": "Springer Nature"},
+  {"name": "Neural Processing Letters", "issn": "1370-4621", "publisher": "Springer Nature"},
+  {"name": "BMC Bioinformatics", "issn": "1471-2105", "publisher": "Springer Nature (BMC)"},
+  {"name": "Journal of Cloud Computing", "issn": "2192-113X", "publisher": "Springer Nature"},
+  {"name": "International Journal of Data Science and Analytics", "issn": "2364-415X", "publisher": "Springer Nature"},
+  {"name": "Arabian Journal for Science and Engineering", "issn": "2193-567X", "publisher": "Springer Nature"},
+  {"name": "Soft Computing", "issn": "1432-7643", "publisher": "Springer Nature"},
+  {"name": "Journal of Intelligent Manufacturing", "issn": "0956-5515", "publisher": "Springer Nature"},
+  {"name": "Evolving Systems", "issn": "1868-6478", "publisher": "Springer Nature"},
+  {"name": "Journal of Supercomputing", "issn": "0920-8542", "publisher": "Springer Nature"},
+  {"name": "PeerJ Computer Science", "issn": "2376-5992", "publisher": "PeerJ"},
+  {"name": "Journal of Computational Design and Engineering", "issn": "2288-5048", "publisher": "Oxford University Press"},
+  {"name": "International Journal of Digital Earth", "issn": "1753-8947", "publisher": "Taylor & Francis"},
+  {"name": "Geo-spatial Information Science", "issn": "1009-5020", "publisher": "Taylor & Francis"},
+  {"name": "Journal of Big Data (check)", "issn": "2196-1115", "publisher": "Springer Nature"},
+  {"name": "EPJ Data Science", "issn": "2193-1127", "publisher": "Springer Nature"},
+  {"name": "Journal of Cheminformatics", "issn": "1758-2946", "publisher": "Springer Nature"},
+  {"name": "Cybersecurity", "issn": "2523-3246", "publisher": "Springer Nature"},
+  {"name": "Visual Intelligence", "issn": "2731-9008", "publisher": "Springer Nature"},
+  {"name": "Machine Intelligence Research", "issn": "2731-538X", "publisher": "Springer Nature"}
+ ]}

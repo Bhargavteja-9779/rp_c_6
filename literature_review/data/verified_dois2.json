@@ -1,0 +1,34 @@
+{
+ "10.2307/4615733": {
+  "error": "HTTP Error 404: Not Found"
+ },
+ "10.1145/2641190.2641198": {
+  "title": "OpenML",
+  "authors": [
+   "Vanschoren, Joaquin",
+   "van Rijn, Jan N.",
+   "Bischl, Bernd",
+   "Torgo, Luis"
+  ],
+  "year": 2014,
+  "venue": "ACM SIGKDD Explorations Newsletter",
+  "volume": "15",
+  "issue": "2",
+  "page": "49-60",
+  "type": "journal-article",
+  "publisher": "Association for Computing Machinery (ACM)"
+ },
+ "10.1093/biomet/asac040": {
+  "title": "Localized conformal prediction: a generalized inference framework for conformal prediction",
+  "authors": [
+   "Guan, Leying"
+  ],
+  "year": 2022,
+  "venue": "Biometrika",
+  "volume": "110",
+  "issue": "1",
+  "page": "33-50",
+  "type": "journal-article",
+  "publisher": "Oxford University Press (OUP)"
+ }
+}

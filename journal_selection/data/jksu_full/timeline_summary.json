@@ -1,0 +1,27 @@
+{
+  "verified_on": "2026-10-20",
+  "window": [
+    "2025-10-01",
+    "2026-10-20"
+  ],
+  "journals": {
+    "Journal of King Saud University - Computer and Information Sciences": {
+      "n": 1054,
+      "median": 72.0,
+      "p25": 55,
+      "p75": 98,
+      "p90": 128,
+      "mean": 79.7,
+      "share_le_72": 0.506,
+      "articles_retrieved": 1055,
+      "issn": "1319-1578",
+      "publisher": "Springer Nature"
+    },
+    "Results in Engineering (control: Elsevier, no Crossref dates expected)": {
+      "n": 0,
+      "articles_retrieved": 3000,
+      "issn": "2590-1230",
+      "publisher": "Elsevier"
+    }
+  }
+}

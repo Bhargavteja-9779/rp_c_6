@@ -1,0 +1,625 @@
+{
+ "10.1007/978-3-031-06649-8": {
+  "title": "Algorithmic Learning in a Random World",
+  "authors": [
+   "Vovk, Vladimir",
+   "Gammerman, Alexander",
+   "Shafer, Glenn"
+  ],
+  "year": 2022,
+  "venue": "",
+  "volume": null,
+  "issue": null,
+  "page": null,
+  "type": "book",
+  "publisher": "Springer International Publishing"
+ },
+ "10.1007/3-540-36755-1_29": {
+  "title": "Inductive Confidence Machines for Regression",
+  "authors": [
+   "Papadopoulos, Harris",
+   "Proedrou, Kostas",
+   "Vovk, Volodya",
+   "Gammerman, Alex"
+  ],
+  "year": 2002,
+  "venue": "Lecture Notes in Computer Science",
+  "volume": null,
+  "issue": null,
+  "page": "345-356",
+  "type": "book-chapter",
+  "publisher": "Springer Berlin Heidelberg"
+ },
+ "10.1080/01621459.2017.1307116": {
+  "title": "Distribution-Free Predictive Inference for Regression",
+  "authors": [
+   "Lei, Jing",
+   "G\u2019Sell, Max",
+   "Rinaldo, Alessandro",
+   "Tibshirani, Ryan J.",
+   "Wasserman, Larry"
+  ],
+  "year": 2018,
+  "venue": "Journal of the American Statistical Association",
+  "volume": "113",
+  "issue": "523",
+  "page": "1094-1111",
+  "type": "journal-article",
+  "publisher": "Informa UK Limited"
+ },
+ "10.1080/01621459.2017.1395341": {
+  "title": "Least Ambiguous Set-Valued Classifiers With Bounded Error Levels",
+  "authors": [
+   "Sadinle, Mauricio",
+   "Lei, Jing",
+   "Wasserman, Larry"
+  ],
+  "year": 2018,
+  "venue": "Journal of the American Statistical Association",
+  "volume": "114",
+  "issue": "525",
+  "page": "223-234",
+  "type": "journal-article",
+  "publisher": "Informa UK Limited"
+ },
+ "10.1111/rssb.12021": {
+  "title": "Distribution-free Prediction Bands for Non-parametric Regression",
+  "authors": [
+   "Lei, Jing",
+   "Wasserman, Larry"
+  ],
+  "year": 2013,
+  "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+  "volume": "76",
+  "issue": "1",
+  "page": "71-96",
+  "type": "journal-article",
+  "publisher": "Oxford University Press (OUP)"
+ },
+ "10.1093/imaiai/iaaa017": {
+  "title": "The limits of distribution-free conditional predictive inference",
+  "authors": [
+   "Foygel Barber, Rina",
+   "Cand\u00e8s, Emmanuel J",
+   "Ramdas, Aaditya",
+   "Tibshirani, Ryan J"
+  ],
+  "year": 2020,
+  "venue": "Information and Inference: A Journal of the IMA",
+  "volume": "10",
+  "issue": "2",
+  "page": "455-482",
+  "type": "journal-article",
+  "publisher": "Oxford University Press (OUP)"
+ },
+ "10.1093/jrsssb/qkaf008": {
+  "title": "Conformal prediction with conditional guarantees",
+  "authors": [
+   "Gibbs, Isaac",
+   "Cherian, John J",
+   "Cand\u00e8s, Emmanuel J"
+  ],
+  "year": 2025,
+  "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology",
+  "volume": "87",
+  "issue": "4",
+  "page": "1100-1126",
+  "type": "journal-article",
+  "publisher": "Oxford University Press (OUP)"
+ },
+ "10.1214/23-AOS2276": {
+  "title": "Conformal prediction beyond exchangeability",
+  "authors": [
+   "Barber, Rina Foygel",
+   "Cand\u00e8s, Emmanuel J.",
+   "Ramdas, Aaditya",
+   "Tibshirani, Ryan J."
+  ],
+  "year": 2023,
+  "venue": "The Annals of Statistics",
+  "volume": "51",
+  "issue": "2",
+  "page": "816-845",
+  "type": "journal-article",
+  "publisher": "Institute of Mathematical Statistics"
+ },
+ "10.1214/20-AOS1965": {
+  "title": "Predictive inference with the jackknife+",
+  "authors": [
+   "Barber, Rina Foygel",
+   "Cand\u00e8s, Emmanuel J.",
+   "Ramdas, Aaditya",
+   "Tibshirani, Ryan J."
+  ],
+  "year": 2021,
+  "venue": "The Annals of Statistics",
+  "volume": "49",
+  "issue": "1",
+  "page": "486-507",
+  "type": "journal-article",
+  "publisher": "Institute of Mathematical Statistics"
+ },
+ "10.1561/2200000101": {
+  "title": "Conformal Prediction: A Gentle Introduction",
+  "authors": [
+   "Angelopoulos, Anastasios N.",
+   "Bates, Stephen"
+  ],
+  "year": 2023,
+  "venue": "Foundations and Trends\u00ae in Machine Learning",
+  "volume": "16",
+  "issue": "4",
+  "page": "494-591",
+  "type": "journal-article",
+  "publisher": "Emerald"
+ },
+ "10.1613/jair.3198": {
+  "title": "Regression Conformal Prediction with Nearest Neighbours",
+  "authors": [
+   "Papadopoulos, H.",
+   "Vovk, V.",
+   "Gammerman, A."
+  ],
+  "year": 2011,
+  "venue": "Journal of Artificial Intelligence Research",
+  "volume": "40",
+  "issue": null,
+  "page": "815-840",
+  "type": "journal-article",
+  "publisher": "AI Access Foundation"
+ },
+ "10.1080/01621459.2022.2060112": {
+  "title": "Distribution-Free Prediction Sets for Two-Layer Hierarchical Models",
+  "authors": [
+   "Dunn, Robin",
+   "Wasserman, Larry",
+   "Ramdas, Aaditya"
+  ],
+  "year": 2022,
+  "venue": "Journal of the American Statistical Association",
+  "volume": "118",
+  "issue": "544",
+  "page": "2491-2502",
+  "type": "journal-article",
+  "publisher": "Informa UK Limited"
+ },
+ "10.1016/j.patter.2023.100804": {
+  "title": "Leakage and the reproducibility crisis in machine-learning-based science",
+  "authors": [
+   "Kapoor, Sayash",
+   "Narayanan, Arvind"
+  ],
+  "year": 2023,
+  "venue": "Patterns",
+  "volume": "4",
+  "issue": "9",
+  "page": "100804",
+  "type": "journal-article",
+  "publisher": "Elsevier BV"
+ },
+ "10.1145/2382577.2382579": {
+  "title": "Leakage in data mining",
+  "authors": [
+   "Kaufman, Shachar",
+   "Rosset, Saharon",
+   "Perlich, Claudia",
+   "Stitelman, Ori"
+  ],
+  "year": 2012,
+  "venue": "ACM Transactions on Knowledge Discovery from Data",
+  "volume": "6",
+  "issue": "4",
+  "page": "1-21",
+  "type": "journal-article",
+  "publisher": "Association for Computing Machinery (ACM)"
+ },
+ "10.1109/TSE.2013.11": {
+  "title": "Data Quality: Some Comments on the NASA Software Defect Datasets",
+  "authors": [
+   "Shepperd, Martin",
+   "Song, Qinbao",
+   "Sun, Zhongbin",
+   "Mair, Carolyn"
+  ],
+  "year": 2013,
+  "venue": "IEEE Transactions on Software Engineering",
+  "volume": "39",
+  "issue": "9",
+  "page": "1208-1215",
+  "type": "journal-article",
+  "publisher": "Institute of Electrical and Electronics Engineers (IEEE)"
+ },
+ "10.1049/ic.2011.0012": {
+  "title": "The misuse of the NASA Metrics Data Program data sets for automated software defect prediction",
+  "authors": [
+   "Gray, D.",
+   "Bowes, D.",
+   "Davey, N.",
+   "Yi Sun",
+   "Christianson, B."
+  ],
+  "year": 2011,
+  "venue": "15th Annual Conference on Evaluation &amp; Assessment in Software Engineering (EASE 2011)",
+  "volume": null,
+  "issue": null,
+  "page": "96-103",
+  "type": "proceedings-article",
+  "publisher": "IET"
+ },
+ "10.1109/CISDA.2009.5356528": {
+  "title": "A detailed analysis of the KDD CUP 99 data set",
+  "authors": [
+   "Tavallaee, Mahbod",
+   "Bagheri, Ebrahim",
+   "Lu, Wei",
+   "Ghorbani, Ali A."
+  ],
+  "year": 2009,
+  "venue": "2009 IEEE Symposium on Computational Intelligence for Security and Defense Applications",
+  "volume": null,
+  "issue": null,
+  "page": "1-6",
+  "type": "proceedings-article",
+  "publisher": "IEEE"
+ },
+ "10.3390/jimaging6060041": {
+  "title": "Do We Train on Test Data? Purging CIFAR of Near-Duplicates",
+  "authors": [
+   "Barz, Bj\u00f6rn",
+   "Denzler, Joachim"
+  ],
+  "year": 2020,
+  "venue": "Journal of Imaging",
+  "volume": "6",
+  "issue": "6",
+  "page": "41",
+  "type": "journal-article",
+  "publisher": "MDPI AG"
+ },
+ "10.18653/v1/2022.acl-long.577": {
+  "title": "Deduplicating Training Data Makes Language Models Better",
+  "authors": [
+   "Lee, Katherine",
+   "Ippolito, Daphne",
+   "Nystrom, Andrew",
+   "Zhang, Chiyuan",
+   "Eck, Douglas",
+   "Callison-Burch, Chris",
+   "Carlini, Nicholas"
+  ],
+  "year": 2022,
+  "venue": "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+  "volume": null,
+  "issue": null,
+  "page": "8424-8445",
+  "type": "proceedings-article",
+  "publisher": "Association for Computational Linguistics"
+ },
+ "10.1145/3359591.3359735": {
+  "title": "The adverse effects of code duplication in machine learning models of code",
+  "authors": [
+   "Allamanis, Miltiadis"
+  ],
+  "year": 2019,
+  "venue": "Proceedings of the 2019 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software",
+  "volume": null,
+  "issue": null,
+  "page": "143-153",
+  "type": "proceedings-article",
+  "publisher": "ACM"
+ },
+ "10.1021/ci5001168": {
+  "title": "Introducing Conformal Prediction in Predictive Modeling. A Transparent and Flexible Alternative to Applicability Domain Determination",
+  "authors": [
+   "Norinder, Ulf",
+   "Carlsson, Lars",
+   "Boyer, Scott",
+   "Eklund, Martin"
+  ],
+  "year": 2014,
+  "venue": "Journal of Chemical Information and Modeling",
+  "volume": "54",
+  "issue": "6",
+  "page": "1596-1603",
+  "type": "journal-article",
+  "publisher": "American Chemical Society (ACS)"
+ },
+ "10.1021/ci400084k": {
+  "title": "Time-Split Cross-Validation as a Method for Estimating the Goodness of Prospective Prediction.",
+  "authors": [
+   "Sheridan, Robert P."
+  ],
+  "year": 2013,
+  "venue": "Journal of Chemical Information and Modeling",
+  "volume": "53",
+  "issue": "4",
+  "page": "783-790",
+  "type": "journal-article",
+  "publisher": "American Chemical Society (ACS)"
+ },
+ "10.1186/s13321-021-00511-5": {
+  "title": "Assessing the calibration in toxicological in vitro models with conformal prediction",
+  "authors": [
+   "Morger, Andrea",
+   "Svensson, Fredrik",
+   "Arvidsson McShane, Staffan",
+   "Gauraha, Niharika",
+   "Norinder, Ulf",
+   "Spjuth, Ola",
+   "Volkamer, Andrea"
+  ],
+  "year": 2021,
+  "venue": "Journal of Cheminformatics",
+  "volume": "13",
+  "issue": "1",
+  "page": "35",
+  "type": "journal-article",
+  "publisher": "Springer Science and Business Media LLC"
+ },
+ "10.1145/3357713.3384290": {
+  "title": "Does learning require memorization? a short tale about a long tail",
+  "authors": [
+   "Feldman, Vitaly"
+  ],
+  "year": 2020,
+  "venue": "Proceedings of the 52nd Annual ACM SIGACT Symposium on Theory of Computing",
+  "volume": null,
+  "issue": null,
+  "page": "954-959",
+  "type": "proceedings-article",
+  "publisher": "ACM"
+ },
+ "10.1145/3446776": {
+  "title": "Understanding deep learning (still) requires rethinking generalization",
+  "authors": [
+   "Zhang, Chiyuan",
+   "Bengio, Samy",
+   "Hardt, Moritz",
+   "Recht, Benjamin",
+   "Vinyals, Oriol"
+  ],
+  "year": 2021,
+  "venue": "Communications of the ACM",
+  "volume": "64",
+  "issue": "3",
+  "page": "107-115",
+  "type": "journal-article",
+  "publisher": "Association for Computing Machinery (ACM)"
+ },
+ "10.18653/v1/2021.eacl-main.113": {
+  "title": "Memorization vs. Generalization : Quantifying Data Leakage in NLP Performance Evaluation",
+  "authors": [
+   "Elangovan, Aparna",
+   "He, Jiayuan",
+   "Verspoor, Karin"
+  ],
+  "year": 2021,
+  "venue": "Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume",
+  "volume": null,
+  "issue": null,
+  "page": "1325-1335",
+  "type": "proceedings-article",
+  "publisher": "Association for Computational Linguistics"
+ },
+ "10.18653/v1/2021.eacl-main.86": {
+  "title": "Question and Answer Test-Train Overlap in Open-Domain Question Answering Datasets",
+  "authors": [
+   "Lewis, Patrick",
+   "Stenetorp, Pontus",
+   "Riedel, Sebastian"
+  ],
+  "year": 2021,
+  "venue": "Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume",
+  "volume": null,
+  "issue": null,
+  "page": "1000-1008",
+  "type": "proceedings-article",
+  "publisher": "Association for Computational Linguistics"
+ },
+ "10.1002/sta4.261": {
+  "title": "A comparison of some conformal quantile regression methods",
+  "authors": [
+   "Sesia, Matteo",
+   "Cand\u00e8s, Emmanuel J."
+  ],
+  "year": 2020,
+  "venue": "Stat",
+  "volume": "9",
+  "issue": "1",
+  "page": "e261",
+  "type": "journal-article",
+  "publisher": "Wiley"
+ },
+ "10.1162/99608f92.03f00592": {
+  "title": "With Malice Toward None: Assessing Uncertainty via Equalized Coverage",
+  "authors": [
+   "Romano, Yaniv",
+   "Barber, Rina Foygel",
+   "Sabatti, Chiara",
+   "Cand\u00e8s, Emmanuel"
+  ],
+  "year": 2020,
+  "venue": "Harvard Data Science Review",
+  "volume": null,
+  "issue": null,
+  "page": null,
+  "type": "journal-article",
+  "publisher": "MIT Press"
+ },
+ "10.3233/IDA-150786": {
+  "title": "Bias reduction through conditional conformal prediction",
+  "authors": [
+   "L\u00f6fstr\u00f6m, Tuve",
+   "Bostr\u00f6m, Henrik",
+   "Linusson, Henrik",
+   "Johansson, Ulf"
+  ],
+  "year": 2015,
+  "venue": "Intelligent Data Analysis",
+  "volume": "19",
+  "issue": "6",
+  "page": "1355-1375",
+  "type": "journal-article",
+  "publisher": "SAGE Publications"
+ },
+ "10.1023/A:1010933404324": {
+  "title": "Random Forests",
+  "authors": [
+   "Breiman, Leo"
+  ],
+  "year": 2001,
+  "venue": "Machine Learning",
+  "volume": "45",
+  "issue": "1",
+  "page": "5-32",
+  "type": "journal-article",
+  "publisher": "Springer Science and Business Media LLC"
+ },
+ "10.2307/3001968": {
+  "title": "Individual Comparisons by Ranking Methods",
+  "authors": [
+   "Wilcoxon, Frank"
+  ],
+  "year": 1945,
+  "venue": "Biometrics Bulletin",
+  "volume": "1",
+  "issue": "6",
+  "page": "80",
+  "type": "journal-article",
+  "publisher": "JSTOR"
+ },
+ "10.1007/s44443-025-00175-3": {
+  "title": "Conformal deep forest for uncertainty-aware classification",
+  "authors": [
+   "Zhang, Jing",
+   "Qiu, Yunfei",
+   "Dong, Libo"
+  ],
+  "year": 2025,
+  "venue": "Journal of King Saud University Computer and Information Sciences",
+  "volume": "37",
+  "issue": "6",
+  "page": "155",
+  "type": "journal-article",
+  "publisher": "Springer Science and Business Media LLC"
+ },
+ "10.1007/s44443-026-00706-6": {
+  "title": "HF-DIF: Hierarchical feature-selected deep isolation forest for unsupervised anomaly detection on tabular data",
+  "authors": [
+   "Tang, Xiaoliang",
+   "Chen, Lulu",
+   "Zhang, Lijuan"
+  ],
+  "year": 2026,
+  "venue": "Journal of King Saud University Computer and Information Sciences",
+  "volume": "38",
+  "issue": "6",
+  "page": "371",
+  "type": "journal-article",
+  "publisher": "Springer Science and Business Media LLC"
+ },
+ "10.1609/aaai.v29i1.9602": {
+  "title": "Obtaining Well Calibrated Probabilities Using Bayesian Binning",
+  "authors": [
+   "Pakdaman Naeini, Mahdi",
+   "Cooper, Gregory",
+   "Hauskrecht, Milos"
+  ],
+  "year": 2015,
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "volume": "29",
+  "issue": "1",
+  "page": null,
+  "type": "journal-article",
+  "publisher": "Association for the Advancement of Artificial Intelligence (AAAI)"
+ },
+ "10.1080/01621459.2023.2197686": {
+  "title": "Cross-Validation: What Does It Estimate and How Well Does It Do It?",
+  "authors": [
+   "Bates, Stephen",
+   "Hastie, Trevor",
+   "Tibshirani, Robert"
+  ],
+  "year": 2023,
+  "venue": "Journal of the American Statistical Association",
+  "volume": "119",
+  "issue": "546",
+  "page": "1434-1445",
+  "type": "journal-article",
+  "publisher": "Informa UK Limited"
+ },
+ "10.1093/biomet/asaa037": {
+  "title": "A unified approach to the calculation of information operators in semiparametric models",
+  "authors": [
+   "Mao, Lu"
+  ],
+  "year": 2020,
+  "venue": "Biometrika",
+  "volume": "107",
+  "issue": "4",
+  "page": "983-995",
+  "type": "journal-article",
+  "publisher": "Oxford University Press (OUP)"
+ },
+ "10.1016/j.neucom.2022.08.073": {
+  "title": "Capsule networks for image classification: A review",
+  "authors": [
+   "Pawan, S.J.",
+   "Rajan, Jeny"
+  ],
+  "year": 2022,
+  "venue": "Neurocomputing",
+  "volume": "509",
+  "issue": null,
+  "page": "102-120",
+  "type": "journal-article",
+  "publisher": "Elsevier BV"
+ },
+ "10.5281/zenodo.23119065": {
+  "error": "HTTP Error 404: Not Found"
+ },
+ "10.1007/s10994-021-06045-3": {
+  "error": "HTTP Error 404: Not Found"
+ },
+ "10.1145/3641289": {
+  "title": "A Survey on Evaluation of Large Language Models",
+  "authors": [
+   "Chang, Yupeng",
+   "Wang, Xu",
+   "Wang, Jindong",
+   "Wu, Yuan",
+   "Yang, Linyi",
+   "Zhu, Kaijie",
+   "Chen, Hao",
+   "Yi, Xiaoyuan",
+   "Wang, Cunxiang",
+   "Wang, Yidong",
+   "Ye, Wei",
+   "Zhang, Yue",
+   "Chang, Yi",
+   "Yu, Philip S.",
+   "Yang, Qiang",
+   "Xie, Xing"
+  ],
+  "year": 2024,
+  "venue": "ACM Transactions on Intelligent Systems and Technology",
+  "volume": "15",
+  "issue": "3",
+  "page": "1-45",
+  "type": "journal-article",
+  "publisher": "Association for Computing Machinery (ACM)"
+ },
+ "10.1109/MSP.2012.2211477": {
+  "title": "The MNIST Database of Handwritten Digit Images for Machine Learning Research [Best of the Web]",
+  "authors": [
+   "Li Deng"
+  ],
+  "year": 2012,
+  "venue": "IEEE Signal Processing Magazine",
+  "volume": "29",
+  "issue": "6",
+  "page": "141-142",
+  "type": "journal-article",
+  "publisher": "Institute of Electrical and Electronics Engineers (IEEE)"
+ }
+}

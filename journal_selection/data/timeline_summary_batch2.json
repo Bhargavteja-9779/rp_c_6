@@ -1,0 +1,231 @@
+{
+  "verified_on": "2026-10-20",
+  "window": [
+    "2026-01-01",
+    "2026-10-20"
+  ],
+  "journals": {
+    "Journal of King Saud University - Engineering Sciences": {
+      "n": 57,
+      "median": 136,
+      "p25": 98,
+      "p75": 207,
+      "p90": 264,
+      "mean": 156.8,
+      "share_le_72": 0.105,
+      "articles_retrieved": 58,
+      "issn": "1018-3639",
+      "publisher": "Springer Nature"
+    },
+    "Neural Processing Letters": {
+      "n": 1,
+      "median": 160,
+      "p25": 160,
+      "p75": 160,
+      "p90": 160,
+      "mean": 160,
+      "share_le_72": 0.0,
+      "articles_retrieved": 1,
+      "issn": "1370-4621",
+      "publisher": "Springer Nature"
+    },
+    "BMC Bioinformatics": {
+      "n": 338,
+      "median": 138.0,
+      "p25": 99,
+      "p75": 214,
+      "p90": 302,
+      "mean": 172.0,
+      "share_le_72": 0.118,
+      "articles_retrieved": 342,
+      "issn": "1471-2105",
+      "publisher": "Springer Nature (BMC)"
+    },
+    "Journal of Cloud Computing": {
+      "n": 172,
+      "median": 160.5,
+      "p25": 70,
+      "p75": 265,
+      "p90": 367,
+      "mean": 186.2,
+      "share_le_72": 0.262,
+      "articles_retrieved": 172,
+      "issn": "2192-113X",
+      "publisher": "Springer Nature"
+    },
+    "International Journal of Data Science and Analytics": {
+      "n": 338,
+      "median": 168.0,
+      "p25": 112,
+      "p75": 261,
+      "p90": 381,
+      "mean": 202.5,
+      "share_le_72": 0.089,
+      "articles_retrieved": 342,
+      "issn": "2364-415X",
+      "publisher": "Springer Nature"
+    },
+    "Arabian Journal for Science and Engineering": {
+      "n": 394,
+      "median": 168.0,
+      "p25": 117,
+      "p75": 247,
+      "p90": 328,
+      "mean": 192.8,
+      "share_le_72": 0.074,
+      "articles_retrieved": 400,
+      "issn": "2193-567X",
+      "publisher": "Springer Nature"
+    },
+    "Soft Computing": {
+      "n": 166,
+      "median": 366.0,
+      "p25": 242,
+      "p75": 570,
+      "p90": 1214,
+      "mean": 524.4,
+      "share_le_72": 0.006,
+      "articles_retrieved": 400,
+      "issn": "1432-7643",
+      "publisher": "Springer Nature"
+    },
+    "Journal of Intelligent Manufacturing": {
+      "n": 233,
+      "median": 161,
+      "p25": 118,
+      "p75": 213,
+      "p90": 279,
+      "mean": 174.8,
+      "share_le_72": 0.073,
+      "articles_retrieved": 237,
+      "issn": "0956-5515",
+      "publisher": "Springer Nature"
+    },
+    "Evolving Systems": {
+      "n": 105,
+      "median": 370,
+      "p25": 259,
+      "p75": 491,
+      "p90": 603,
+      "mean": 392.5,
+      "share_le_72": 0.0,
+      "articles_retrieved": 106,
+      "issn": "1868-6478",
+      "publisher": "Springer Nature"
+    },
+    "Journal of Supercomputing": {
+      "n": 0,
+      "articles_retrieved": 0,
+      "issn": "0920-8542",
+      "publisher": "Springer Nature"
+    },
+    "PeerJ Computer Science": {
+      "n": 0,
+      "articles_retrieved": 400,
+      "issn": "2376-5992",
+      "publisher": "PeerJ"
+    },
+    "Journal of Computational Design and Engineering": {
+      "n": 0,
+      "articles_retrieved": 90,
+      "issn": "2288-5048",
+      "publisher": "Oxford University Press"
+    },
+    "International Journal of Digital Earth": {
+      "n": 237,
+      "median": 144,
+      "p25": 114,
+      "p75": 177,
+      "p90": 216,
+      "mean": 153.3,
+      "share_le_72": 0.013,
+      "articles_retrieved": 238,
+      "issn": "1753-8947",
+      "publisher": "Taylor & Francis"
+    },
+    "Geo-spatial Information Science": {
+      "n": 173,
+      "median": 224,
+      "p25": 173,
+      "p75": 334,
+      "p90": 454,
+      "mean": 265.0,
+      "share_le_72": 0.0,
+      "articles_retrieved": 173,
+      "issn": "1009-5020",
+      "publisher": "Taylor & Francis"
+    },
+    "Journal of Big Data (check)": {
+      "n": 215,
+      "median": 257,
+      "p25": 187,
+      "p75": 367,
+      "p90": 460,
+      "mean": 288.4,
+      "share_le_72": 0.014,
+      "articles_retrieved": 216,
+      "issn": "2196-1115",
+      "publisher": "Springer Nature"
+    },
+    "EPJ Data Science": {
+      "n": 97,
+      "median": 182,
+      "p25": 145,
+      "p75": 252,
+      "p90": 284,
+      "mean": 195.7,
+      "share_le_72": 0.021,
+      "articles_retrieved": 98,
+      "issn": "2193-1127",
+      "publisher": "Springer Nature"
+    },
+    "Journal of Cheminformatics": {
+      "n": 172,
+      "median": 132.0,
+      "p25": 105,
+      "p75": 179,
+      "p90": 248,
+      "mean": 151.9,
+      "share_le_72": 0.07,
+      "articles_retrieved": 176,
+      "issn": "1758-2946",
+      "publisher": "Springer Nature"
+    },
+    "Cybersecurity": {
+      "n": 244,
+      "median": 132.0,
+      "p25": 96,
+      "p75": 180,
+      "p90": 245,
+      "mean": 148.3,
+      "share_le_72": 0.119,
+      "articles_retrieved": 244,
+      "issn": "2523-3246",
+      "publisher": "Springer Nature"
+    },
+    "Visual Intelligence": {
+      "n": 27,
+      "median": 137,
+      "p25": 125,
+      "p75": 169,
+      "p90": 180,
+      "mean": 143.9,
+      "share_le_72": 0.074,
+      "articles_retrieved": 28,
+      "issn": "2731-9008",
+      "publisher": "Springer Nature"
+    },
+    "Machine Intelligence Research": {
+      "n": 70,
+      "median": 136.5,
+      "p25": 94,
+      "p75": 174,
+      "p90": 224,
+      "mean": 142.6,
+      "share_le_72": 0.114,
+      "articles_retrieved": 78,
+      "issn": "2731-538X",
+      "publisher": "Springer Nature"
+    }
+  }
+}
