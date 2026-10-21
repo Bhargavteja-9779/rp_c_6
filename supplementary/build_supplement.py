@@ -75,16 +75,21 @@ def main():
             out.append(f"\n# {name}\n\n`gap`/`mcp_gap`: novel-record coverage − 0.9 for split / novelty-Mondrian CP; "
                        "`limit_gap`: memorization limit −απ/(1−π).\n")
             out.append(md_table(pd.DataFrame(rows), 4))
-    out.append("\n# S11 Computational environment\n")
+    out.append("\n# S11 Computational cost (Experiment G)\n")
+    out.append(md_table(pd.read_csv(os.path.join(T, "T9_cost.csv")), 4))
+    out.append("\n# Fig. S1\n\n![**Fig. S1** Novel-record coverage gap per duplicated dataset (dots) and learner, split CP vs novelty-Mondrian CP, alpha = 0.1; bars: medians](FigS1.png)\n")
+    out.append("\n# S12 Computational environment\n")
     env = json.load(open(os.path.join(RES, "logs", "environment.json")))
     out.append(md_table(pd.DataFrame([env]).T.reset_index().rename(columns={"index": "item", 0: "value"})))
     md = "\n".join(out)
     p_md = os.path.join(HERE, "Online_Resource_1.md")
     open(p_md, "w").write(md)
-    subprocess.run(["pandoc", p_md, "-o", os.path.join(HERE, "Online_Resource_1.docx")], check=True)
+    figs = os.path.join(RES, "figures")
+    subprocess.run(["pandoc", p_md, "-o", os.path.join(HERE, "Online_Resource_1.docx"), "--resource-path", figs], check=True)
     html = os.path.join(HERE, "Online_Resource_1.html")
     css = os.path.join(HERE, "supp.css")
-    subprocess.run(["pandoc", p_md, "-s", "--embed-resources", "--css", css, "--metadata", "lang=en", "-o", html], check=True)
+    subprocess.run(["pandoc", p_md, "-s", "--embed-resources", "--css", css, "--metadata", "lang=en",
+                    "--resource-path", figs, "-o", html], check=True)
     chrome = os.environ.get("CHROME", "/opt/pw-browsers/chromium-1194/chrome-linux/chrome")
     subprocess.run([chrome, "--headless", "--no-sandbox", "--disable-gpu", "--no-pdf-header-footer",
                     f"--print-to-pdf={os.path.join(HERE, 'Online_Resource_1.pdf')}", "file://" + html],

@@ -126,6 +126,8 @@ the manuscript.
 | 2 | After the main results (primary H1 **not** supported at the median level) | Added **exploratory** analyses: (a) exposure strata π < 0.1, 0.1–0.3, ≥ 0.3; (b) the Proposition 1 decomposition of each dataset × learner gap into a seen-over-coverage term and a marginal term; (c) counts of dataset × learner pairs with gaps below −0.02 and −0.05; (d) Fig. 8 | To explain *where* the gap arises. The theory says exposure alone is not sufficient: seen rows must also be over-covered. These analyses test that consequence | None. All pre-registered tests are reported unchanged and the new analyses are labelled exploratory |
 
 | 3 | After the main results | **Verification run** on solar_flare (OpenML 44966): 200 extra random splits (seeds 1000–1199), ridge and LightGBM, absolute-residual score, α = 0.1 (`code/experiments/verify_solar_flare.py`) | With 10 seeds, MCP novel coverage on this dataset was 0.84–0.88, apparently contradicting Proposition 3 | Confirms that it was sampling noise: MCP novel coverage 0.909 (95% CI 0.899–0.918) for LightGBM and 0.907 (0.896–0.917) for ridge; SCP novel coverage 0.78 and 0.77. Per-split SD ≈ 0.07 with about 36 novel calibration rows. Reported as a verification and a stated limitation (high split-to-split variability when novel calibration sets are small) |
+| 4 | After review round 1 (Reviews 1 and 5: suites are curated, and CTR23 excludes grouped data), **before any outcome on these data** | **External validation set**, specified in advance: every NASA MDP defect dataset on OpenML not in CC18 with ≥ 300 rows (mc1 #1056, pc2 #1069, kc3 #1065, mw1 #1071), plus KDDCup99 (10% version, #1113; documented heavy redundancy, Tavallaee et al. 2009). Same configuration as the main grid (10 seeds, 5 learners, both protocols). KDDCup99 (494,020 rows) is **uniformly row-subsampled** to 30,000 rows (seed 2026), because group-preserving subsampling cannot keep groups larger than the cap. Pre-specified test: novel-record gap of SCP-R per dataset and learner (LAC, α = 0.1), with seed-level 95% t-intervals; and the MCP-R novel gap | Tests whether the mechanism appears where duplication is known to be common | Additional evidence only; the confirmatory suite analysis is unchanged |
+| 5 | Review round 1 (Review 7) | Experiment G (computational cost of the audit and of MCP vs SCP), pre-registered but not yet run, is run now | Omission | None |
 
 No dataset, seed or learner was excluded after outcomes were seen. No hyperparameter was
 changed.
@@ -286,26 +288,26 @@ Medians over datasets of seed-averaged metrics; split CP with a random split (sc
 
 | family | rate | gap | mcp_gap | limit_gap | exposure | cov_seen |
 |---|---|---|---|---|---|---|
-| classification_knn | 0.0000 | 0.0478 | 0.0478 | -0.0000 | 0.0000 |  |
-| classification_knn | 0.1000 | 0.0305 | 0.0396 | -0.0121 | 0.1081 | 0.9725 |
-| classification_knn | 0.2500 | 0.0327 | 0.0475 | -0.0317 | 0.2410 | 0.9727 |
-| classification_knn | 0.5000 | 0.0207 | 0.0394 | -0.0680 | 0.4046 | 0.9701 |
-| classification_knn | 1.0000 | 0.0128 | 0.0373 | -0.1484 | 0.5973 | 0.9715 |
-| classification_lgbm | 0.0000 | 0.0003 | 0.0003 | -0.0000 | 0.0000 |  |
-| classification_lgbm | 0.1000 | -0.0123 | 0.0003 | -0.0121 | 0.1081 | 1.0000 |
-| classification_lgbm | 0.2500 | -0.0245 | 0.0010 | -0.0317 | 0.2410 | 0.9995 |
-| classification_lgbm | 0.5000 | -0.0545 | 0.0001 | -0.0680 | 0.4046 | 0.9922 |
-| classification_lgbm | 1.0000 | -0.0762 | 0.0020 | -0.1484 | 0.5973 | 0.9550 |
-| classification_logreg | 0.0000 | -0.0005 | -0.0005 | -0.0000 | 0.0000 |  |
-| classification_logreg | 0.1000 | -0.0021 | 0.0014 | -0.0121 | 0.1081 | 0.9183 |
-| classification_logreg | 0.2500 | -0.0040 | 0.0017 | -0.0317 | 0.2410 | 0.9109 |
-| classification_logreg | 0.5000 | -0.0047 | 0.0020 | -0.0680 | 0.4046 | 0.9081 |
-| classification_logreg | 1.0000 | -0.0076 | 0.0008 | -0.1484 | 0.5973 | 0.9043 |
-| classification_rf | 0.0000 | 0.0012 | 0.0012 | -0.0000 | 0.0000 |  |
-| classification_rf | 0.1000 | -0.0121 | -0.0004 | -0.0121 | 0.1081 | 1.0000 |
-| classification_rf | 0.2500 | -0.0265 | 0.0033 | -0.0317 | 0.2410 | 1.0000 |
-| classification_rf | 0.5000 | -0.0627 | 0.0027 | -0.0680 | 0.4046 | 1.0000 |
-| classification_rf | 1.0000 | -0.1236 | 0.0037 | -0.1484 | 0.5973 | 0.9971 |
+| classification_knn | 0.0000 | 0.0471 | 0.0471 | -0.0000 | 0.0000 |  |
+| classification_knn | 0.1000 | 0.0297 | 0.0333 | -0.0121 | 0.1081 | 0.9751 |
+| classification_knn | 0.2500 | 0.0311 | 0.0458 | -0.0317 | 0.2410 | 0.9713 |
+| classification_knn | 0.5000 | 0.0175 | 0.0383 | -0.0680 | 0.4046 | 0.9692 |
+| classification_knn | 1.0000 | 0.0150 | 0.0366 | -0.1484 | 0.5973 | 0.9658 |
+| classification_lgbm | 0.0000 | 0.0000 | 0.0000 | -0.0000 | 0.0000 |  |
+| classification_lgbm | 0.1000 | -0.0128 | -0.0004 | -0.0121 | 0.1081 | 1.0000 |
+| classification_lgbm | 0.2500 | -0.0261 | 0.0009 | -0.0317 | 0.2410 | 0.9996 |
+| classification_lgbm | 0.5000 | -0.0567 | 0.0002 | -0.0680 | 0.4046 | 0.9953 |
+| classification_lgbm | 1.0000 | -0.0791 | 0.0023 | -0.1484 | 0.5973 | 0.9610 |
+| classification_logreg | 0.0000 | -0.0006 | -0.0006 | -0.0000 | 0.0000 |  |
+| classification_logreg | 0.1000 | -0.0025 | 0.0021 | -0.0121 | 0.1081 | 0.9217 |
+| classification_logreg | 0.2500 | -0.0043 | 0.0011 | -0.0317 | 0.2410 | 0.9112 |
+| classification_logreg | 0.5000 | -0.0054 | 0.0021 | -0.0680 | 0.4046 | 0.9100 |
+| classification_logreg | 1.0000 | -0.0084 | 0.0007 | -0.1484 | 0.5973 | 0.9049 |
+| classification_rf | 0.0000 | 0.0013 | 0.0013 | -0.0000 | 0.0000 |  |
+| classification_rf | 0.1000 | -0.0117 | -0.0002 | -0.0121 | 0.1081 | 1.0000 |
+| classification_rf | 0.2500 | -0.0268 | 0.0016 | -0.0317 | 0.2410 | 1.0000 |
+| classification_rf | 0.5000 | -0.0614 | 0.0030 | -0.0680 | 0.4046 | 1.0000 |
+| classification_rf | 1.0000 | -0.1275 | 0.0035 | -0.1484 | 0.5973 | 0.9994 |
 | regression_knn | 0.0000 | 0.0026 | 0.0026 | -0.0000 | 0.0000 |  |
 | regression_knn | 0.1000 | -0.0040 | 0.0002 | -0.0121 | 0.1081 | 0.9314 |
 | regression_knn | 0.2500 | -0.0073 | 0.0016 | -0.0316 | 0.2401 | 0.9383 |
@@ -358,7 +360,28 @@ Medians over datasets of seed-averaged metrics; split CP with a random split (sc
 | regression_rf | 3 | -0.0061 | -0.0008 | -0.0243 | 0.1956 | 0.9208 |
 
 
-# S11 Computational environment
+# S11 Computational cost (Experiment G)
+
+| task | data_id | name | n_rows | n_features | t_keys_s | t_audit_s | t_taxonomy_s | t_scp_threshold_s | t_mcp_threshold_s | t_lgbm_fit_predict_s |
+|---|---|---|---|---|---|---|---|---|---|---|
+| classification | 1486 | nomao | 30000 | 118 | 0.1647 | 0.0073 | 0.0061 | 0.0000 | 0.0001 | 2.7280 |
+| classification | 1590 | adult | 30000 | 14 | 0.0673 | 0.0056 | 0.0063 | 0.0000 | 0.0000 | 0.9187 |
+| classification | 23517 | numerai28.6 | 30000 | 21 | 0.0086 | 0.0077 | 0.0063 | 0.0000 | 0.0000 | 0.8931 |
+| classification | 41027 | jungle_chess_2pcs_raw_endgame_complete | 30000 | 6 | 0.0029 | 0.0064 | 0.0061 | 0.0000 | 0.0000 | 1.7293 |
+| classification | 40668 | connect-4 | 30000 | 42 | 0.1556 | 0.0063 | 0.0067 | 0.0000 | 0.0000 | 2.7043 |
+| regression | 44976 | sarcos | 30000 | 21 | 0.0117 | 0.0079 | 0.0060 | 0.0000 | 0.0001 | 1.3192 |
+| regression | 44963 | physiochemical_protein | 30000 | 9 | 0.0040 | 0.0072 | 0.0063 | 0.0000 | 0.0001 | 0.6004 |
+| regression | 44974 | video_transcoding | 30000 | 18 | 0.0199 | 0.0064 | 0.0058 | 0.0000 | 0.0000 | 0.7358 |
+| regression | 44979 | diamonds | 30000 | 9 | 0.0179 | 0.0064 | 0.0056 | 0.0000 | 0.0000 | 0.6299 |
+| regression | 44975 | wave_energy | 30000 | 48 | 0.0244 | 0.0074 | 0.0062 | 0.0000 | 0.0000 | 2.8234 |
+
+
+# Fig. S1
+
+![**Fig. S1** Novel-record coverage gap per duplicated dataset (dots) and learner, split CP vs novelty-Mondrian CP, alpha = 0.1; bars: medians](FigS1.png)
+
+
+# S12 Computational environment
 
 | item | value |
 |---|---|
@@ -371,4 +394,4 @@ Medians over datasets of seed-averaged metrics; split CP with a random split (sc
 | scipy | 1.18.1 |
 | sklearn | 1.9.1 |
 | lightgbm | 4.7.0 |
-| time | 2026-10-21 02:25:36 |
+| time | 2026-10-21 03:12:28 |
