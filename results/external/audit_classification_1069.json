@@ -1,0 +1,19 @@
+{
+ "n_rows": 5589,
+ "n_groups": 1404,
+ "dup_row_frac": 0.8271604938271605,
+ "excess_row_frac": 0.748792270531401,
+ "max_group": 316,
+ "pred_exposure": 0.8053914328393961,
+ "conflict_group_frac": 0.0045662100456621,
+ "conflict_row_frac": 0.01789228842368939,
+ "data_id": 1069,
+ "task": "classification",
+ "name": "pc2",
+ "n_raw": 5589,
+ "subsampled": false,
+ "n_features": 36,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 35.4
+}

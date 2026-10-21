@@ -1,0 +1,19 @@
+{
+ "n_rows": 403,
+ "n_groups": 379,
+ "dup_row_frac": 0.10173697270471464,
+ "excess_row_frac": 0.05955334987593052,
+ "max_group": 4,
+ "pred_exposure": 0.07327230237430638,
+ "conflict_group_frac": 0.17647058823529413,
+ "conflict_row_frac": 0.017369727047146403,
+ "data_id": 1071,
+ "task": "classification",
+ "name": "mw1",
+ "n_raw": 403,
+ "subsampled": false,
+ "n_features": 37,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 13.1
+}

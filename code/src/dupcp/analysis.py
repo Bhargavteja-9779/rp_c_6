@@ -229,6 +229,30 @@ def run(res, cfg, quick=False):
         "strata": strata.to_dict("records"),
     }
 
+    # ---------------- seed-level evidence for high-exposure datasets (Review 3) and Table 1
+    hi_ids = aud[(aud.set == "DUP") & (aud.pred_exposure >= 0.3)][["task", "data_id"]]
+    out_stats["seedlevel_high_exposure"] = _seedlevel(main.merge(hi_ids, on=["task", "data_id"]), tables, "X3_seedlevel_high_exposure")
+    t1 = (aud.groupby(["task", "set"]).agg(n=("data_id", "size"), median_rows=("n_rows", "median"),
+                                          median_dup_row_frac=("dup_row_frac", "median"),
+                                          median_pred_exposure=("pred_exposure", "median"),
+                                          max_pred_exposure=("pred_exposure", "max"),
+                                          n_with_conflicts=("conflict_row_frac", lambda v: int((v > 0).sum())))
+          .reset_index())
+    t1.to_csv(os.path.join(tables, "T0_audit_summary.csv"), index=False)
+    out_stats["table1"] = t1.to_dict("records")
+
+    # ---------------- external validation (pre-specified after review round 1)
+    ext_files = glob.glob(os.path.join(res, "external", "classification_*.csv"))
+    if ext_files:
+        ext = pd.concat([pd.read_csv(f) for f in ext_files], ignore_index=True)
+        ext = ext[ext["error"].isna()] if "error" in ext else ext
+        ext["exposure"] = ext["n_te_seen"] / ext["n_te"]
+        eaud = pd.DataFrame([json.load(open(f)) for f in glob.glob(os.path.join(res, "external", "audit_*.json"))])
+        eaud.to_csv(os.path.join(tables, "T10_external_audit.csv"), index=False)
+        out_stats["external"] = {"audit": eaud[["data_id", "name", "n_raw", "n_rows", "dup_row_frac", "conflict_row_frac",
+                                                "pred_exposure"]].to_dict("records"),
+                                 "seedlevel": _seedlevel(ext, tables, "T10_external_seedlevel")}
+
     # ---------------- H1b: Friedman across learners
     fr = {}
     for task, score in [("classification", "lac"), ("classification", "aps"), ("regression", "absres")]:
@@ -334,6 +358,33 @@ def run(res, cfg, quick=False):
         print("FIGURE ERROR", repr(e))
         raise
     return out_stats
+
+
+def _seedlevel(df, tables, name):
+    """Per dataset x learner: seed-mean novel gap (SCP-R, MCP-R) with t-based 95% CI over the 10 splits."""
+    q = df[(df.protocol == "R") & np.isclose(df.alpha, ALPHA0) & df.score.isin(["lac", "absres"])
+           & df.method.isin(["SCP", "MCP"])]
+    rows = []
+    for (task, did, name_, model, method), g in q.groupby(["task", "data_id", "name", "model", "method"]):
+        v = g.cov_novel.dropna().to_numpy() - (1 - ALPHA0)
+        if len(v) < 2:
+            continue
+        se = v.std(ddof=1) / np.sqrt(len(v))
+        h = stats.t.ppf(0.975, len(v) - 1) * se
+        rows.append(dict(task=task, data_id=did, name=name_, model=model, method=method, n_seeds=len(v),
+                         exposure=float(g.exposure.mean()), cov_seen=float(g.cov_seen.mean()),
+                         gap_mean=float(v.mean()), ci_lo=float(v.mean() - h), ci_hi=float(v.mean() + h),
+                         n_ca_novel=float(g.n_ca_novel.mean()), n_te_novel=float(g.n_te_novel.mean())))
+    out = pd.DataFrame(rows)
+    out.to_csv(os.path.join(tables, f"{name}.csv"), index=False)
+    s = out[out.method == "SCP"]
+    m = out[out.method == "MCP"]
+    return {"n_pairs": int(len(s)), "scp_ci_below_zero": int((s.ci_hi < 0).sum()),
+            "scp_ci_below_m002": int((s.ci_hi < -0.02).sum()),
+            "mcp_ci_below_zero": int((m.ci_hi < 0).sum()), "mcp_ci_below_m002": int((m.ci_hi < -0.02).sum()),
+            "scp_gap_min": float(s.gap_mean.min()) if len(s) else np.nan,
+            "mcp_gap_min": float(m.gap_mean.min()) if len(m) else np.nan,
+            "rows": out.to_dict("records")}
 
 
 def _js(o):

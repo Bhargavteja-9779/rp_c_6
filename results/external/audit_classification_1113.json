@@ -1,0 +1,19 @@
+{
+ "n_rows": 30000,
+ "n_groups": 12040,
+ "dup_row_frac": 0.6258666666666667,
+ "excess_row_frac": 0.5986666666666667,
+ "max_group": 11573,
+ "pred_exposure": 0.6089256631500453,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1113,
+ "task": "classification",
+ "name": "KDDCup99",
+ "n_raw": 494020,
+ "subsampled": true,
+ "n_features": 41,
+ "dropped_missing_target": 0,
+ "n_classes": 22,
+ "seconds": 279.3
+}

@@ -166,3 +166,8 @@
 02:57:12 run_capacity regression 44964: done 1488s
 02:57:19 run_capacity regression 44970: done 7s
 02:57:42 run_capacity regression 44993: done 102s
+03:12:59 run_dataset classification 1065: done 17s
+03:13:12 run_dataset classification 1071: done 13s
+03:13:17 run_dataset classification 1069: done 35s
+03:13:35 run_dataset classification 1056: done 53s
+03:17:51 run_dataset classification 1113: done 279s

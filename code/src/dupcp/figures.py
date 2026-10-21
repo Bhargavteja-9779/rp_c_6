@@ -125,7 +125,7 @@ def fig_gap_by_learner(agg, figs):
     fig.legend(h, ["Split CP", "Novelty-Mondrian CP", "Median over datasets"], loc="lower center", ncol=3,
                frameon=False, bbox_to_anchor=(0.5, -0.05))
     fig.tight_layout(rect=(0, 0.05, 1, 1))
-    _save(fig, figs, "Fig3")
+    _save(fig, figs, "FigS1")
 
 
 def fig_dose(df, xvar, xlabel, figs, name, xticks=None, xticklabels=None):
@@ -245,7 +245,7 @@ def fig_mechanism(res, figs):
     ax.set_title("(b) Coverage of seen records", loc="left")
     ax.grid(True)
     fig.tight_layout()
-    _save(fig, figs, "Fig8")
+    _save(fig, figs, "Fig3")
 
 
 def make_all(res, agg, aud, calib, dist_agg, inj, cap):

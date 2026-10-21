@@ -74,7 +74,7 @@ def _run_pool(fn, jobs, cfg, out_dir, workers, log):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", choices=["quick", "full"], default="quick")
-    ap.add_argument("--stage", choices=["all", "main", "inject", "capacity", "analyze"], default="all")
+    ap.add_argument("--stage", choices=["all", "main", "inject", "capacity", "external", "analyze"], default="all")
     ap.add_argument("--config", default=os.path.join(HERE, "configs", "default.json"))
     ap.add_argument("--workers", type=int, default=None)
     args = ap.parse_args()
@@ -115,6 +115,13 @@ def main():
                 sizes[(t, i)] = -1
         main_jobs = sorted([j for j in jobs if sizes[j] >= 0], key=lambda j: -sizes[j])
         _run_pool(E.run_dataset, main_jobs, cfg, raw, workers, log)
+
+    if args.stage in ("all", "external") and not quick:
+        from dupcp.data import EXTERNAL_IDS
+        ext = [("classification", i) for i in EXTERNAL_IDS]
+        for t, i in ext:
+            load_dataset(i, t, cfg["cache_dir"])
+        _run_pool(E.run_dataset, ext, cfg, os.path.join(res, "external"), workers, log)
 
     if args.stage in ("all", "inject", "capacity"):
         import glob

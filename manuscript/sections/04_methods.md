@@ -1,6 +1,6 @@
 # Experimental design
 
-The protocol below was written and committed to version control before any full-scale run (Sect. "Data and code availability"). Deviations are listed in Online Resource 1.
+The protocol below was written and committed to version control before any full-scale run (it was not lodged in an external registry). Deviations and post-hoc analyses are listed in Online Resource 1 (Table S2).
 
 ## Data
 
@@ -24,7 +24,7 @@ Each configuration was repeated for ten random splits (seeds 0–9).
 
 The primary outcome is the **novel-record coverage gap**, the coverage on novel test rows minus $1-\alpha$. Secondary outcomes are coverage on seen rows and on all rows, average set size (classification) or interval width divided by the standard deviation of the training targets (regression), and the frequency of the trivial-set fallback. For classifiers we also recorded accuracy and top-label calibration on seen and novel test rows. Because the expected calibration error (ECE; Naeini et al. 2015; Guo et al. 2017) is biased upwards in small samples, calibration was compared using the signed *overconfidence* (mean confidence minus accuracy), and novel-row ECE was compared against the ECE of size-matched random subsets of all test rows.
 
-The unit of analysis is the dataset: every metric was first averaged over the ten splits. Hypothesis H1 (novel-record under-coverage under SCP-R) was tested per family (task × learner × score; 16 families) with one-sided Wilcoxon signed-rank tests (Wilcoxon 1945) and Holm correction across families (Holm 1979). Effect sizes are medians with bootstrap 95% confidence intervals (10,000 resamples of datasets). The comparison of MCP-R with SCP-R (H2) used paired one-sided Wilcoxon tests, together with a non-inferiority criterion: the bootstrap confidence interval of the median MCP-R novel gap must lie above $-0.01$. Differences between learners were assessed with Friedman tests (Friedman 1937) and Holm-corrected pairwise Wilcoxon tests.
+The unit of analysis is the dataset: every metric was first averaged over the ten splits. Hypothesis H1 (novel-record under-coverage under SCP-R) was tested per family (task × learner × score; 16 families) with one-sided Wilcoxon signed-rank tests (Wilcoxon 1945) and Holm correction across families (Holm 1979). Effect sizes are medians with bootstrap 95% confidence intervals (10,000 resamples of datasets). The comparison of MCP-R with SCP-R (H2) used paired one-sided Wilcoxon tests, together with a non-inferiority criterion: the bootstrap confidence interval of the median MCP-R novel gap must lie above $-0.01$. Differences between learners were assessed with Friedman tests (Friedman 1937) and Holm-corrected pairwise Wilcoxon tests. Spearman correlations for H1a are reported per family without multiplicity correction.
 
 ## Controlled experiments
 
@@ -33,3 +33,5 @@ The unit of analysis is the dataset: every metric was first averaged over the te
 **Capacity.** On datasets with $\bar\pi\ge 0.05$, we varied the flexibility of three learners: $k\in\{1,5,25,100\}$ for $k$-NN, minimum leaf size $\in\{1,5,25,100\}$ for random forests, and regularization $C\in\{100,1,0.01\}$ (ridge $\lambda\in\{0.01,1,100\}$) for linear models. Again $\alpha=0.1$ with five seeds.
 
 **Near-duplicates (exploratory).** Novel test rows were binned by quintiles of their distance to the nearest training row, in the standardized feature space. The bin edges came from leave-one-out nearest-neighbour distances within the training set, so the taxonomy depends on training data only. We report split-CP coverage per bin and a six-bin Mondrian variant (Boström and Johansson 2020). This analysis was not part of the confirmatory hypotheses.
+
+**Computational cost.** On the five largest datasets of each suite (30,000 rows), we timed the record hashing, the audit, the seen/novel taxonomy and the threshold computation of split CP and novelty-Mondrian CP (median of 5 repetitions on one CPU core).

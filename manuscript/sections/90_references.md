@@ -8,6 +8,8 @@ Barber RF, Candès EJ, Ramdas A, Tibshirani RJ (2023) Conformal prediction beyon
 
 Barz B, Denzler J (2020) Do we train on test data? Purging CIFAR of near-duplicates. J Imaging 6(6):41. https://doi.org/10.3390/jimaging6060041
 
+Bastani O, Gupta V, Jung C, Noarov G, Ramalingam R, Roth A (2022) Practical adversarial multivalid conformal prediction. In: Advances in Neural Information Processing Systems 35, pp 29362–29373. https://doi.org/10.52202/068431-2129
+
 Bischl B, Casalicchio G, Feurer M, Gijsbers P, Hutter F, Lang M, Mantovani RG, van Rijn JN, Vanschoren J (2021) OpenML benchmarking suites. In: Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks 1. arXiv:1708.03731
 
 Boström H, Johansson U (2020) Mondrian conformal regressors. In: Proceedings of the Ninth Symposium on Conformal and Probabilistic Prediction and Applications, PMLR 128:114–133

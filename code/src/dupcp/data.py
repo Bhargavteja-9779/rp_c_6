@@ -17,6 +17,9 @@ SUITES = {"classification": 99, "regression": 353}  # OpenML-CC18, OpenML-CTR23
 # Raw-pixel image datasets in CC18: not tabular data (pre-registered exclusion).
 EXCLUDED_IMAGE_IDS = {554, 40996, 40927, 40923}
 MAX_ROWS = 30_000
+# External-validation datasets whose duplicate groups exceed the cap: uniform row subsample instead
+ROW_SUBSAMPLE_IDS = {1113}
+EXTERNAL_IDS = [1056, 1069, 1065, 1071, 1113]
 SUBSAMPLE_SEED = 2026
 
 
@@ -94,7 +97,10 @@ def load_dataset(data_id: int, task: str, cache_dir: str) -> dict:
         y = y_raw.astype(float).to_numpy()
     keys = row_keys(X)
     n_raw = len(y)
-    idx = group_preserving_subsample(keys, MAX_ROWS, SUBSAMPLE_SEED)
+    if data_id in ROW_SUBSAMPLE_IDS and n_raw > MAX_ROWS:
+        idx = np.sort(np.random.default_rng(SUBSAMPLE_SEED).choice(n_raw, MAX_ROWS, replace=False))
+    else:
+        idx = group_preserving_subsample(keys, MAX_ROWS, SUBSAMPLE_SEED)
     sub = len(idx) < n_raw
     X, y, keys = X.iloc[idx].reset_index(drop=True), y[idx], keys[idx]
     return {"X": X, "y": y, "keys": keys, "name": meta["name"], "n_raw": n_raw,

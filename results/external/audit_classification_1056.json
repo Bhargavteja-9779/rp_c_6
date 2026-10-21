@@ -1,0 +1,19 @@
+{
+ "n_rows": 9466,
+ "n_groups": 2006,
+ "dup_row_frac": 0.8428058313965773,
+ "excess_row_frac": 0.7880836678639341,
+ "max_group": 1060,
+ "pred_exposure": 0.8202090942797431,
+ "conflict_group_frac": 0.019305019305019305,
+ "conflict_row_frac": 0.011197971688147053,
+ "data_id": 1056,
+ "task": "classification",
+ "name": "mc1",
+ "n_raw": 9466,
+ "subsampled": false,
+ "n_features": 38,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 53.3
+}

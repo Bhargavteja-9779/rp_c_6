@@ -73,7 +73,8 @@ def compute_numbers(res):
     sp = M.dropna(subset=["spearman_exposure_gap"])
     n["h1a_n_neg_sig"] = int(((sp.spearman_exposure_gap < 0) & (sp.p_spearman < 0.05)).sum())
     n["h1a_rho_range"] = f"{sp.spearman_exposure_gap.min():.2f} to {sp.spearman_exposure_gap.max():.2f}".replace("-", "−")
-    n["h2_mcp_median_range"] = f"{signed_pp(M.mcp_gap_median.min())} to {signed_pp(M.mcp_gap_median.max())}"
+    n["h2_mcp_median_range"] = f"{signed_pp(Mx.mcp_gap_median.min())} to {signed_pp(Mx.mcp_gap_median.max())}"
+    n["h2_mcp_knn_lac"] = signed_pp(M[(M.model == "knn") & (M.score == "lac")].mcp_gap_median.iloc[0])
     n["h2_mcp_cilo_min"] = signed_pp(M.mcp_gap_ci_lo.min())
     n["h2_noninf_all"] = "all" if (M.mcp_gap_ci_lo > -0.01).all() else f"{int((M.mcp_gap_ci_lo > -0.01).sum())} of {len(M)}"
     n["h2_n_sig"] = int((M.p_H2_holm < 0.05).sum())
@@ -88,9 +89,9 @@ def compute_numbers(res):
     # per-family table for the manuscript (Table 2)
     rows = []
     for _, r in M.iterrows():
-        rows.append(f"| {r.task[:5].capitalize()}. | {LBL[r.model]} | {r.score.upper() if r.score != 'absres' else '|res|'} | "
+        rows.append(f"| {'Class.' if r.task == 'classification' else 'Regr.'} | {LBL[r.model]} | {r.score.upper() if r.score != 'absres' else 'Abs. res.'} | "
                     f"{r.n_datasets} | {signed_pp(r.scp_gap_median, 2)} [{signed_pp(r.scp_gap_ci_lo, 2)}, {signed_pp(r.scp_gap_ci_hi, 2)}] | "
-                    f"{signed_pp(r.scp_gap_min, 1)} | {pval(r.p_H1_holm)} | {r.spearman_exposure_gap:.2f}".replace("-", "−")
+                    f"{signed_pp(r.scp_gap_min, 1)} | {pval(r.p_H1_holm)} | " + f"{r.spearman_exposure_gap:.2f}".replace("-", "−")
                     + f" | {signed_pp(r.mcp_gap_median, 2)} [{signed_pp(r.mcp_gap_ci_lo, 2)}, {signed_pp(r.mcp_gap_ci_hi, 2)}] | "
                     f"{pval(r.p_H2_holm)} | {r.size_ratio_novel_median:.3f} |")
     n["table2_rows"] = "\n".join(rows)
@@ -121,8 +122,9 @@ def compute_numbers(res):
         q = X1[(X1.data_id == did) & X1.score.isin(["lac", "absres"])]
         if len(q):
             nov = q.gap + 0.9
-            n[f"{key}_novel_range"] = f"{nov.min():.2f}–{nov.max():.2f}"
-            n[f"{key}_seen_range"] = f"{q.cov_seen.min():.2f}–{q.cov_seen.max():.2f}"
+            rng = lambda v: f"{v.min():.2f}" if f"{v.min():.2f}" == f"{v.max():.2f}" else f"{v.min():.2f}–{v.max():.2f}"
+            n[f"{key}_novel_range"] = rng(nov)
+            n[f"{key}_seen_range"] = rng(q.cov_seen)
     n["x_rho_exp"] = f"{E['spearman_exposure_vs_gap_pooled'][0]:.2f}".replace("-", "−")
     st = pd.DataFrame(E["strata"])
     for lab, key in [("pi<0.1", "lo"), ("0.1<=pi<0.3", "mid"), ("pi>=0.3", "hi")]:
@@ -138,11 +140,61 @@ def compute_numbers(res):
     # stratum table
     srows = []
     for _, r in st.iterrows():
-        srows.append(f"| {r.stratum.replace('pi', 'π').replace('<=', '≤')} | {r.score if r.score != 'absres' else '|res|'} | {r.n_datasets} | {r.n_pairs} | "
+        srows.append(f"| {r.stratum.replace('pi', 'π').replace('>=', '≥').replace('<=', '≤')} | {r.score.upper() if r.score != 'absres' else 'Abs. res.'} | {r.n_datasets} | {r.n_pairs} | "
                      f"{signed_pp(r.gap_median, 2)} | {signed_pp(r.gap_p10, 1)} | {signed_pp(r.gap_min, 1)} | {pct(r.share_lt_m002, 0)} | "
                      f"{signed_pp(r.mcp_gap_median, 2)} | {signed_pp(r.mcp_gap_min, 1)} |")
     n["table3_rows"] = "\n".join(srows)
 
+    t1 = pd.DataFrame(S["table1"])
+    order = {"DUP": 0, "LOW": 1, "CLEAN": 2}
+    t1 = t1.assign(o=t1.set.map(order)).sort_values(["task", "o"])
+    n["table1_rows"] = "\n".join(
+        f"| {r.task.capitalize()} | {r.set} | {r.n} | {int(r.median_rows):,} | {pct(r.median_dup_row_frac)}% | "
+        f"{r.median_pred_exposure:.3f} / {r.max_pred_exposure:.3f} | {r.n_with_conflicts} |" for _, r in t1.iterrows())
+    # seed-level high exposure
+    SL = S["seedlevel_high_exposure"]
+    n["sl_pairs"] = SL["n_pairs"]
+    n["sl_scp_below0"] = SL["scp_ci_below_zero"]
+    n["sl_scp_below2"] = SL["scp_ci_below_m002"]
+    n["sl_mcp_below0"] = SL["mcp_ci_below_zero"]
+    n["sl_mcp_below2"] = SL["mcp_ci_below_m002"]
+    if "external" in S:
+        EX = S["external"]
+        ea = pd.DataFrame(EX["audit"]).set_index("data_id")
+        sl = pd.DataFrame(EX["seedlevel"]["rows"])
+        n["ext_pairs"] = EX["seedlevel"]["n_pairs"]
+        n["ext_scp_below0"] = EX["seedlevel"]["scp_ci_below_zero"]
+        n["ext_scp_below2"] = EX["seedlevel"]["scp_ci_below_m002"]
+        n["ext_mcp_below0"] = EX["seedlevel"]["mcp_ci_below_zero"]
+        k0 = EX["seedlevel"]["mcp_ci_below_zero"]
+        n["ext_mcp_below0_text"] = "none of its confidence intervals lies" if k0 == 0 else f"{k0} of its confidence intervals lie"
+        n["ext_scp_min"] = signed_pp(EX["seedlevel"]["scp_gap_min"])
+        n["ext_mcp_min"] = signed_pp(EX["seedlevel"]["mcp_gap_min"])
+        n["ext_n"] = len(ea)
+        rows = []
+        for did, g in sl.groupby("data_id"):
+            a_ = ea.loc[did]
+            sc = g[g.method == "SCP"].set_index("model")
+            mc = g[g.method == "MCP"].set_index("model")
+            cells = []
+            for m in ["logreg", "rf", "lgbm", "knn", "mlp"]:
+                if m in sc.index:
+                    r = sc.loc[m]
+                    cells.append(f"{signed_pp(r.gap_mean)} [{signed_pp(r.ci_lo)}, {signed_pp(r.ci_hi)}]")
+                else:
+                    cells.append("")
+            mrange = f"{signed_pp(mc.gap_mean.min())} to {signed_pp(mc.gap_mean.max())}" if len(mc) else ""
+            rows.append(f"| {a_['name']} | {int(a_.n_raw):,} | {pct(a_.dup_row_frac, 0)}% | {a_.pred_exposure:.2f} | " + " | ".join(cells) + f" | {mrange} |")
+        n["table5_rows"] = "\n".join(rows)
+    c9 = os.path.join(T, "T9_cost.csv")
+    if os.path.exists(c9):
+        C9 = pd.read_csv(c9)
+        n["cost_keys_max"] = f"{C9.t_keys_s.max():.2f}"
+        n["cost_audit_max"] = f"{1000 * C9.t_audit_s.max():.0f}"
+        n["cost_tax_max"] = f"{1000 * C9.t_taxonomy_s.max():.0f}"
+        n["cost_scp_us"] = f"{1e6 * C9.t_scp_threshold_s.median():.0f}"
+        n["cost_mcp_us"] = f"{1e6 * C9.t_mcp_threshold_s.median():.0f}"
+        n["cost_fit_range"] = f"{C9.t_lgbm_fit_predict_s.min():.1f}–{C9.t_lgbm_fit_predict_s.max():.1f}"
     # Friedman
     F = S["H1b_friedman"]
     for k, v in F.items():
@@ -197,6 +249,8 @@ def compute_numbers(res):
                 n[f"{lab}_{k}_{tag}_pi"] = f3(r.exposure)
                 n[f"{lab}_{k}_{tag}_seen"] = f3(r.cov_seen)
         n[f"{lab}_n_ds"] = max(v["n_datasets"] for v in D.values())
+        for t in ("classification", "regression"):
+            n[f"{lab}_n_ds_{t[:3]}"] = max(v["n_datasets"] for k, v in D.items() if k.startswith(t))
     if "D_injection" in S:
         ps = [v["p_spearman_lt0"] for v in S["D_injection"].values()]
         n["inj_all_sig"] = "all" if all(p < 0.05 for p in ps if p == p) else f"{sum(p < 0.05 for p in ps)} of {len(ps)}"
