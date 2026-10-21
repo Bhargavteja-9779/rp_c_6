@@ -193,6 +193,42 @@ def run(res, cfg, quick=False):
         T.to_csv(os.path.join(tables, f"T2_main_alpha{alpha:g}.csv"), index=False)
         out_stats[f"main_alpha_{alpha:g}"] = T.to_dict("records")
 
+    # ---------------- EXPLORATORY (post hoc, not pre-registered): exposure strata and mechanism
+    q = agg[(agg.protocol == "R") & np.isclose(agg.alpha, ALPHA0) & (agg.set == "DUP")
+            & agg.score.isin(["lac", "aps", "absres", "cqr"])]
+    s_ = q[q.method == "SCP"].set_index(["task", "data_id", "model", "score"])
+    m_ = q[q.method == "MCP"].set_index(["task", "data_id", "model", "score"])
+    X = pd.DataFrame({"gap": s_.cov_novel - (1 - ALPHA0), "mcp_gap": m_.cov_novel - (1 - ALPHA0),
+                      "exposure": s_.exposure, "cov_seen": s_.cov_seen, "cov_all": s_.cov_all}).dropna(subset=["gap"])
+    # Proposition 1 decomposition: gap = [-(pi)(c_S-(1-a)) + (c-(1-a))]/(1-pi)
+    X["seen_excess_term"] = -X.exposure * (X.cov_seen - (1 - ALPHA0)) / (1 - X.exposure)
+    X["marginal_term"] = (X.cov_all - (1 - ALPHA0)) / (1 - X.exposure)
+    X["stratum"] = pd.cut(X.exposure, [0, 0.1, 0.3, 1.0], labels=["pi<0.1", "0.1<=pi<0.3", "pi>=0.3"], include_lowest=True)
+    X.reset_index().to_csv(os.path.join(tables, "X1_exploratory_pairs.csv"), index=False)
+    strata = (X.reset_index().groupby(["stratum", "score"], observed=True)
+              .agg(n_pairs=("gap", "size"), n_datasets=("data_id", "nunique"), gap_median=("gap", "median"),
+                   gap_p10=("gap", lambda v: float(np.percentile(v, 10))), gap_min=("gap", "min"),
+                   share_lt_m002=("gap", lambda v: float((v < -0.02).mean())),
+                   share_lt_m005=("gap", lambda v: float((v < -0.05).mean())),
+                   mcp_gap_median=("mcp_gap", "median"), mcp_gap_min=("mcp_gap", "min"),
+                   mcp_share_lt_m002=("mcp_gap", lambda v: float((v < -0.02).mean())))
+              .reset_index())
+    strata.to_csv(os.path.join(tables, "X2_exposure_strata.csv"), index=False)
+    rho_mech = stats.spearmanr(X.seen_excess_term, X.gap)
+    rho_exp = stats.spearmanr(X.exposure, X.gap)
+    out_stats["exploratory"] = {
+        "n_pairs": int(len(X)), "n_datasets": int(X.reset_index().data_id.nunique()),
+        "pairs_gap_lt_m002": int((X.gap < -0.02).sum()), "pairs_gap_lt_m005": int((X.gap < -0.05).sum()),
+        "datasets_any_gap_lt_m002": int(X[X.gap < -0.02].reset_index().data_id.nunique()),
+        "datasets_any_gap_lt_m005": int(X[X.gap < -0.05].reset_index().data_id.nunique()),
+        "worst_gap": float(X.gap.min()), "worst_mcp_gap": float(X.mcp_gap.min()),
+        "mcp_pairs_gap_lt_m002": int((X.mcp_gap < -0.02).sum()),
+        "spearman_seen_excess_term_vs_gap": [float(rho_mech[0]), float(rho_mech[1])],
+        "spearman_exposure_vs_gap_pooled": [float(rho_exp[0]), float(rho_exp[1])],
+        "median_abs_marginal_term": float(X.marginal_term.abs().median()),
+        "strata": strata.to_dict("records"),
+    }
+
     # ---------------- H1b: Friedman across learners
     fr = {}
     for task, score in [("classification", "lac"), ("classification", "aps"), ("regression", "absres")]:
@@ -341,7 +377,7 @@ def _dose(df, xvar, tables, name):
                 rhos.append(stats.spearmanr(gg[xvar], gg.gap)[0])
         rhos = np.array(rhos)
         p = wilcoxon_1s(rhos, "less")[0] if len(rhos) >= 5 else np.nan
-        summ = g.groupby(xvar)[["gap", "mcp_gap", "limit_gap", "exposure"]].median().reset_index()
+        summ = g.groupby(xvar)[["gap", "mcp_gap", "limit_gap", "exposure", "cov_seen"]].median().reset_index()
         res[f"{task}_{model}"] = {"n_datasets": int(g.data_id.nunique()), "median_spearman": float(np.median(rhos)) if len(rhos) else np.nan,
                                   "p_spearman_lt0": p, "by_level": summ.to_dict("records")}
     pd.DataFrame([dict(key=k, **{kk: vv for kk, vv in v.items() if kk != "by_level"}) for k, v in res.items()]).to_csv(

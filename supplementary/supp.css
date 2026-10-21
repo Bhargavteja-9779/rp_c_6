@@ -1,0 +1,6 @@
+@page { size: A4 landscape; margin: 12mm; }
+body { font-family: "Liberation Sans", Arial, sans-serif; font-size: 9pt; margin: 0; }
+table { border-collapse: collapse; font-size: 6.3pt; width: 100%; table-layout: auto; }
+th, td { border-bottom: 0.4pt solid #888; padding: 1pt 2pt; word-break: break-word; }
+th { font-weight: bold; }
+h1 { font-size: 12pt; margin: 10pt 0 4pt; } h1.title { font-size: 13pt; }

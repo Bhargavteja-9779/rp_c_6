@@ -1,0 +1,27 @@
+# Discussion
+
+## What the evidence establishes
+
+Under a random row split, the marginal guarantee of split CP is honoured on average (overall coverage was at nominal throughout), but it can conceal a shortfall on records the model has not seen. Proposition 1 states exactly when this happens: novel records are under-covered by the amount by which seen records are over-covered, scaled by $\pi/(1-\pi)$. The empirical results follow that mechanism. The shortfall grew with exposure in the benchmark data, it appeared as a dose–response when duplicates were injected into clean data, and it disappeared on datasets where duplicate groups carry conflicting labels, because there the model cannot over-cover its seen records. The role of model flexibility is supported only partly. In the injection experiment flexible ensembles were affected far more than regularized linear models, but varying regularization within a learner at the moderate exposures of the benchmark data produced no detectable change in the gap, although seen-record coverage fell as expected. Novelty-Mondrian calibration restored nominal coverage on novel records in every family, with set-size increases of a few percent, and it did nothing on duplicate-free data, as it should.
+
+The pre-registered primary hypothesis was nonetheless not supported. Across the duplicated datasets of two standard suites, the *median* gap is a fraction of a percentage point. For most benchmark datasets used in CP research, duplicate leakage therefore does not materially distort reported coverage, and this negative result is itself useful. The practical risk lies in the tail: datasets with high exposure and consistent duplicate labels, such as the NASA defect data, whose duplication problems are documented in the software-engineering literature (Gray et al. 2011; Shepperd et al. 2013), where novel-record coverage can be 5–17 points below what is reported.
+
+## Recommendations
+
+1. **Audit before evaluating.** Count duplicate groups and compute the expected exposure (Proposition 2). It is label-free, takes seconds, and predicted observed exposure almost exactly.
+2. **Report coverage separately for seen and novel test rows** whenever exposure is not negligible (in our data, $\bar\pi\ge 0.1$ was the regime with material shortfalls). Over-coverage of seen rows is the warning sign.
+3. **Choose the estimand deliberately.** If deployment involves new entities, use novelty-Mondrian calibration, which keeps the standard split and is valid for any mix of seen and new records, or a group-aware split, which evaluates new records only. If identical profiles legitimately recur at deployment, the row-level guarantee may be the right target, but the seen/novel breakdown should still be reported.
+
+## Relation to prior work
+
+Our findings complement the duplicate audits of Li (2026) and Roth (2026). They show inflated accuracy and distorted rankings; we show that the formal coverage guarantee of CP is affected in a predictable, quantifiable way, and that a remedy with a guarantee exists. Group-conditional CP has been used for protected groups (Romano et al. 2020b), classes (Löfström et al. 2015; Ding et al. 2023) and difficulty strata (Boström and Johansson 2020). The grouping studied here differs in two ways: it is induced by the split itself, and it is defined by membership of the training set. Lemma 0 shows that conditioning on the training set makes such a data-dependent taxonomy admissible. The near-duplicate analysis indicates that exact duplication is the extreme case of a broader dependence of coverage on distance to the training data, consistent with work on localized and difficulty-adaptive CP (Papadopoulos et al. 2011; Guan 2023).
+
+## Limitations
+
+* **Scope of data.** The study uses two curated OpenML suites (103 datasets after excluding four image datasets) with fixed default hyperparameters. Other domains, such as logs, electronic health records or intrusion-detection data, may contain far more duplication. Tuned models may memorize more or less than our defaults; the capacity experiment brackets this, but not exhaustively.
+* **Exact duplicates only.** Records duplicated with small perturbations are counted as novel, so measured exposure is a lower bound. The near-duplicate analysis is exploratory.
+* **Few high-exposure datasets.** Only {{n_dup_exposure_ge03}} benchmark datasets have exposure of at least 0.3. The large gaps rest on a small number of datasets, which is why the controlled injection experiment was used to establish the dose–response causally.
+* **Variability with small novel calibration sets.** Novelty-Mondrian CP is valid in expectation, but when few novel calibration rows exist, its coverage varies considerably from split to split (per-split SD ≈ 0.07 with about 36 rows on solar_flare). Training-conditional (PAC-type) guarantees would require larger calibration sets.
+* **Estimand assumption.** Whether new deployment records behave like novel held-out rows is an assumption about the data-generating process, not something the theory or the benchmark data can establish.
+* **Capacity hypothesis.** The within-learner capacity experiment was underpowered for the small gap differences that the theory predicts at moderate exposure, and for $k$-NN it was dominated by tied scores. The capacity hypothesis was therefore not confirmed.
+* **Post hoc analyses.** The exposure-stratified and decomposition analyses were added after the primary result and are exploratory.

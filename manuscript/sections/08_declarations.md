@@ -1,4 +1,4 @@
-# Statements and Declarations
+# Statements and Declarations {-}
 
 **Competing interests.** [AUTHOR TO CONFIRM: The authors declare that they have no known competing financial or non-financial interests.]
 

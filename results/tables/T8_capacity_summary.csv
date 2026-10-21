@@ -1,0 +1,7 @@
+key,n_datasets,median_spearman,p_spearman_lt0
+classification_knn,20,-1.0,2.539401909339832e-05
+classification_logreg,20,0.5,0.8506512220025149
+classification_rf,20,0.7,0.9480223298562955
+regression_knn,9,-0.39999999999999997,0.275390625
+regression_logreg,9,0.8660254037844387,0.93359375
+regression_rf,9,1.0,0.814453125

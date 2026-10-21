@@ -1,4 +1,4 @@
-# References
+# References {-}
 
 Allamanis M (2019) The adverse effects of code duplication in machine learning models of code. In: Proceedings of the 2019 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward! 2019), pp 143–153. https://doi.org/10.1145/3359591.3359735
 

@@ -217,9 +217,41 @@ def fig_distance(dist_agg, figs):
     _save(fig, figs, "Fig7")
 
 
+def fig_mechanism(res, figs):
+    p = os.path.join(res, "tables", "X1_exploratory_pairs.csv")
+    if not os.path.exists(p):
+        return
+    X = pd.read_csv(p)
+    fig, axs = plt.subplots(1, 2, figsize=(174 * MM, 64 * MM))
+    ax = axs[0]
+    for i, (task, lab) in enumerate([("classification", "Classification"), ("regression", "Regression")]):
+        q = X[X.task == task]
+        ax.scatter(q.seen_excess_term, q.gap, s=9, color=C[i], edgecolor="white", linewidth=0.3, label=lab, zorder=3)
+    lo = min(X.seen_excess_term.min(), X.gap.min()) - 0.01
+    ax.plot([lo, 0.02], [lo, 0.02], color=INK2, ls="--", lw=0.8, zorder=2)
+    ax.axhline(0, color=INK, lw=0.8)
+    ax.set_xlabel("Seen-coverage term  −π(c$_S$ − (1 − α))/(1 − π)")
+    ax.set_ylabel("Novel-record coverage gap (split CP)")
+    ax.set_title("(a) Proposition 1 decomposition", loc="left")
+    ax.grid(True)
+    ax.legend(frameon=False, loc="upper left")
+    ax = axs[1]
+    for i, (task, lab) in enumerate([("classification", "Classification"), ("regression", "Regression")]):
+        q = X[X.task == task]
+        ax.scatter(q.exposure, q.cov_seen, s=9, color=C[i], edgecolor="white", linewidth=0.3, label=lab, zorder=3)
+    _nominal(ax)
+    ax.set_xlabel("Exposure π")
+    ax.set_ylabel("Coverage on seen records (split CP)")
+    ax.set_title("(b) Coverage of seen records", loc="left")
+    ax.grid(True)
+    fig.tight_layout()
+    _save(fig, figs, "Fig8")
+
+
 def make_all(res, agg, aud, calib, dist_agg, inj, cap):
     figs = os.path.join(res, "figures")
     os.makedirs(figs, exist_ok=True)
+    fig_mechanism(res, figs)
     fig_theory_and_exposure(aud, figs)
     fig_coverage_vs_exposure(agg, figs)
     fig_gap_by_learner(agg, figs)

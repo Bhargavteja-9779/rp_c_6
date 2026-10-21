@@ -53,11 +53,19 @@ def main():
     open(out_md, "w", encoding="utf8").write(md)
     figs = os.path.join(res, "figures")
     docx = os.path.join(HERE, "Final_Manuscript.docx")
-    subprocess.run(["pandoc", out_md, "-o", docx, "--reference-doc", os.path.join(HERE, "build", "reference.docx"),
-                    "--resource-path", f"{figs}:{HERE}", "-f", "markdown+tex_math_dollars+pipe_tables+implicit_figures"],
+    fmt = "markdown+tex_math_dollars+pipe_tables+implicit_figures"
+    subprocess.run(["pandoc", out_md, "-o", docx, "--number-sections", "--reference-doc",
+                    os.path.join(HERE, "build", "reference.docx"), "--resource-path", f"{figs}:{HERE}", "-f", fmt],
                    check=True)
-    subprocess.run(["soffice", "--headless", "--convert-to", "pdf", "--outdir", HERE, docx], check=True,
-                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # PDF for review: pandoc -> standalone HTML with MathML -> headless Chromium (LibreOffice drops OMML maths)
+    html = os.path.join(HERE, "build", "manuscript.html")
+    subprocess.run(["pandoc", out_md, "-s", "--mathml", "--number-sections", "--embed-resources", "-f", fmt,
+                    "--css", os.path.join(HERE, "build", "print.css"), "--resource-path", f"{figs}:{HERE}",
+                    "--metadata", "lang=en", "-o", html], check=True)
+    chrome = os.environ.get("CHROME", "/opt/pw-browsers/chromium-1194/chrome-linux/chrome")
+    subprocess.run([chrome, "--headless", "--no-sandbox", "--disable-gpu", "--no-pdf-header-footer",
+                    f"--print-to-pdf={os.path.join(HERE, 'Final_Manuscript.pdf')}", "file://" + html],
+                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print("built", docx)
 
 
