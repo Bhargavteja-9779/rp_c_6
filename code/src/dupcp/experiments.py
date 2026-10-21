@@ -96,7 +96,12 @@ def run_dataset(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
             if proto == "R":
                 tr, ca, te = random_split(len(y), seed, cfg["fracs"])
             else:
-                tr, ca, te = group_split(keys, seed, cfg["fracs"])
+                try:
+                    tr, ca, te = group_split(keys, seed, cfg["fracs"])
+                except ValueError as e:  # dominant record group: logged, not silently dropped
+                    rows.append(dict(data_id=data_id, name=d["name"], task=task, seed=seed, protocol=proto,
+                                     model="all", error=repr(e)[:300]))
+                    continue
             tr_keys = set(keys[tr].tolist())
             seen_ca = np.array([k in tr_keys for k in keys[ca]], dtype=int)
             seen_te = np.array([k in tr_keys for k in keys[te]], dtype=int)
@@ -343,5 +348,157 @@ def run_normalized(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
                 rows.append(_record(dict(base, method=mname), cov, width, seen_te, q, (seen_ca == SEEN).sum(),
                                     (seen_ca == NOVEL).sum(), thr.get(SEEN, thr.get("all")),
                                     thr.get(NOVEL, thr.get("all")), width_scale=scale))
+    pd.DataFrame(rows).to_csv(path, index=False)
+    return f"done {time.time() - t0:.0f}s"
+
+
+# ---------------------------------------------------------------- reinforcement cycle (U3, U4)
+def inject_near_duplicates(X: pd.DataFrame, y: np.ndarray, rate: float, sigma: float, seed: int):
+    """Append copies of a random `rate` share of rows; numeric features of each copy get
+    N(0, (sigma * sd_j)^2) jitter. Returns X, y and the source-record id of every row."""
+    rng = np.random.default_rng(seed + 777)
+    n = len(y)
+    pick = rng.choice(n, size=int(round(rate * n)), replace=False)
+    C = X.iloc[pick].copy()
+    if sigma > 0:
+        jr = np.random.default_rng(seed + 999)
+        for c in C.columns:
+            if pd.api.types.is_numeric_dtype(C[c]):
+                sd = float(np.nanstd(X[c].to_numpy(dtype=float)))
+                if sd > 0:
+                    C[c] = C[c].to_numpy(dtype=float) + jr.normal(0, sigma * sd, len(C))
+    X2 = pd.concat([X, C], ignore_index=True)
+    return X2, np.concatenate([y, y[pick]]), np.concatenate([np.arange(n), pick])
+
+
+def run_neardup(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
+    from .data import row_keys
+    os.makedirs(out_dir, exist_ok=True)
+    path = os.path.join(out_dir, f"neardup_{task}_{data_id}.csv")
+    if os.path.exists(path):
+        return "cached"
+    t0 = time.time()
+    d = load_dataset(data_id, task, cfg["cache_dir"])
+    X0, y0 = d["X"], d["y"]
+    if len(y0) > cfg["inject_max_rows"]:
+        idx = np.random.default_rng(data_id).choice(len(y0), cfg["inject_max_rows"], replace=False)
+        X0, y0 = X0.iloc[idx].reset_index(drop=True), y0[idx]
+    K = int(d["y"].max()) + 1 if task == "classification" else None
+    a = cfg["primary_alpha"]
+    rows = []
+    for sigma in cfg["neardup_sigmas"]:
+        for seed in cfg["neardup_seeds"]:
+            X, y, src = inject_near_duplicates(X0, y0, cfg["neardup_rate"], sigma, seed)
+            keys = row_keys(X)
+            tr, ca, te = random_split(len(y), seed, cfg["fracs"])
+            tr_keys, tr_src = set(keys[tr].tolist()), set(src[tr].tolist())
+            seen_ca = np.array([k in tr_keys for k in keys[ca]], dtype=int)
+            seen_te = np.array([k in tr_keys for k in keys[te]], dtype=int)
+            orc_ca = np.array([s in tr_src for s in src[ca]], dtype=int)
+            orc_te = np.array([s in tr_src for s in src[te]], dtype=int)
+            truly_new = orc_te == 0
+            try:
+                bins = _distance_bins(X, tr, ca, te, seen_ca == SEEN, seen_te == SEEN)
+            except Exception:
+                bins = None
+            detect = float(seen_te[orc_te == 1].mean()) if (orc_te == 1).any() else np.nan
+            for model in cfg["neardup_models"]:
+                base = dict(data_id=data_id, name=d["name"], task=task, sigma=sigma, seed=seed, model=model,
+                            exposure_true=float(orc_te.mean()), exposure_key=float(seen_te.mean()),
+                            key_detect_rate=detect, n_truly_new=int(truly_new.sum()))
+                if task == "classification":
+                    Pc, Pt = fit_predict(model, task, X.iloc[tr], y[tr], [X.iloc[ca], X.iloc[te]], seed, n_classes=K)
+                    sc = 1 - Pc[np.arange(len(ca)), y[ca]]
+                    st = 1 - Pt[np.arange(len(te)), y[te]]
+                else:
+                    yc, yt = fit_predict(model, task, X.iloc[tr], y[tr], [X.iloc[ca], X.iloc[te]], seed)
+                    sc, st = np.abs(y[ca] - yc), np.abs(y[te] - yt)
+                meths = {"SCP": (None, None, None), "MCP_exact": (seen_ca, seen_te, (NOVEL, SEEN)),
+                         "MCP_oracle": (orc_ca, orc_te, (NOVEL, SEEN))}
+                if bins is not None:
+                    meths["DCP"] = (bins[0], bins[1], tuple(range(6)))
+                for mname, (gca, gte, glab) in meths.items():
+                    thr = thresholds(sc, gca, a, glab or (0, 1))
+                    q = test_thresholds(thr, gte, len(te))
+                    cov = st <= q
+                    rows.append(dict(base, method=mname, cov_truly_new=float(cov[truly_new].mean()),
+                                     cov_all=float(cov.mean())))
+    pd.DataFrame(rows).to_csv(path, index=False)
+    return f"done {time.time() - t0:.0f}s"
+
+
+def run_prospective(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
+    """Pre-specified prospective validation (revised protocol section 1)."""
+    from sklearn.neighbors import NearestNeighbors
+    from .audit import purity_exposure
+    from .conformal import pac_thresholds
+    os.makedirs(out_dir, exist_ok=True)
+    path = os.path.join(out_dir, f"prosp_{task}_{data_id}.csv")
+    if os.path.exists(path):
+        return "cached"
+    t0 = time.time()
+    d = load_dataset(data_id, task, cfg["cache_dir"], rule="v2")
+    X, y, keys = d["X"], d["y"], d["keys"]
+    K = int(y.max()) + 1 if task == "classification" else None
+    a, delta = cfg["primary_alpha"], cfg["pac_delta"]
+    rows = []
+    for seed in cfg["prosp_seeds"]:
+        tr, ca, te = random_split(len(y), seed, cfg["fracs"])
+        tr_keys = set(keys[tr].tolist())
+        seen_ca = np.array([k in tr_keys for k in keys[ca]], dtype=int)
+        seen_te = np.array([k in tr_keys for k in keys[te]], dtype=int)
+        pi, pi_p = purity_exposure(keys, y, tr, te, task)
+        try:
+            bins = _distance_bins(X, tr, ca, te, seen_ca == SEEN, seen_te == SEEN)
+        except Exception:
+            bins = None
+        sig = None
+        if task == "regression":
+            try:
+                Z_tr, (Z_ca, Z_te) = dense_features(X.iloc[tr], [X.iloc[ca], X.iloc[te]])
+                nn = NearestNeighbors(n_neighbors=10).fit(Z_tr)
+                sig = (nn.kneighbors(Z_ca)[0].mean(1), nn.kneighbors(Z_te)[0].mean(1))
+            except Exception:
+                sig = None
+        for model in cfg["prosp_models"]:
+            base = dict(data_id=data_id, name=d["name"], task=task, seed=seed, model=model, alpha=a,
+                        pi=pi, pi_p=pi_p)
+            try:
+                if task == "classification":
+                    Pc, Pt = fit_predict(model, task, X.iloc[tr], y[tr], [X.iloc[ca], X.iloc[te]], seed, n_classes=K)
+                    sc = 1 - Pc[np.arange(len(ca)), y[ca]]
+                    st = 1 - Pt[np.arange(len(te)), y[te]]
+                    variants = [("lac", sc, st, None)]
+                else:
+                    yc, yt = fit_predict(model, task, X.iloc[tr], y[tr], [X.iloc[ca], X.iloc[te]], seed)
+                    variants = [("absres", np.abs(y[ca] - yc), np.abs(y[te] - yt), None)]
+                    if sig is not None:
+                        beta_ = float(np.median(sig[0])) or 1e-8
+                        variants.append(("normres", np.abs(y[ca] - yc) / (sig[0] + beta_),
+                                         np.abs(y[te] - yt) / (sig[1] + beta_), sig[1] + beta_))
+                for score, sc_, st_, wscale in variants:
+                    meths = [("SCP", None, None, None, False), ("MCP", seen_ca, seen_te, (NOVEL, SEEN), False),
+                             ("PAC_MCP", seen_ca, seen_te, (NOVEL, SEEN), True)]
+                    if bins is not None and score != "normres":
+                        meths.append(("DCP", bins[0], bins[1], tuple(range(6)), False))
+                    for mname, gca, gte, glab, pac in meths:
+                        if pac:
+                            thr = pac_thresholds(sc_, gca, a, delta, glab)
+                        else:
+                            thr = thresholds(sc_, gca, a, glab or (0, 1))
+                        q = test_thresholds(thr, gte, len(te))
+                        cov = (st_ <= q).astype(float)
+                        if task == "classification":
+                            size = classification_sets(1 - Pt, q).sum(1).astype(float)
+                            scale = None
+                        else:
+                            size = 2 * q * (wscale if wscale is not None else 1.0)
+                            scale = float(np.std(y[tr])) or 1.0
+                        rows.append(_record(dict(base, score=score, method=mname), cov, size, seen_te, q,
+                                            (seen_ca == SEEN).sum(), (seen_ca == NOVEL).sum(),
+                                            thr.get(SEEN, thr.get("all")), thr.get(NOVEL, thr.get("all")),
+                                            width_scale=scale))
+            except Exception as e:
+                rows.append(dict(base, error=repr(e)[:300]))
     pd.DataFrame(rows).to_csv(path, index=False)
     return f"done {time.time() - t0:.0f}s"

@@ -1,18 +1,116 @@
 {
-  "seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-  "protocols": ["R", "G"],
-  "fracs": [0.6, 0.2, 0.2],
-  "models": ["logreg", "rf", "lgbm", "knn", "mlp"],
-  "cls_scores": ["lac", "aps"],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "protocols": [
+    "R",
+    "G"
+  ],
+  "fracs": [
+    0.6,
+    0.2,
+    0.2
+  ],
+  "models": [
+    "logreg",
+    "rf",
+    "lgbm",
+    "knn",
+    "mlp"
+  ],
+  "cls_scores": [
+    "lac",
+    "aps"
+  ],
   "cqr": true,
-  "alphas": [0.05, 0.1, 0.2],
+  "alphas": [
+    0.05,
+    0.1,
+    0.2
+  ],
   "primary_alpha": 0.1,
   "distance": true,
-  "inject_rates": [0.0, 0.1, 0.25, 0.5, 1.0],
-  "inject_seeds": [0, 1, 2, 3, 4],
-  "inject_models": ["logreg", "rf", "lgbm", "knn"],
+  "inject_rates": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "inject_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "inject_models": [
+    "logreg",
+    "rf",
+    "lgbm",
+    "knn"
+  ],
   "inject_max_rows": 10000,
-  "capacity_seeds": [0, 1, 2, 3, 4],
+  "capacity_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
   "capacity_min_exposure": 0.05,
-  "workers": 4
+  "workers": 4,
+  "neardup_sigmas": [
+    0.0,
+    0.001,
+    0.01,
+    0.1
+  ],
+  "neardup_seeds": [
+    0,
+    1,
+    2
+  ],
+  "neardup_rate": 0.5,
+  "neardup_models": [
+    "rf",
+    "lgbm"
+  ],
+  "prosp_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "prosp_models": [
+    "rf",
+    "lgbm",
+    "logreg"
+  ],
+  "pac_delta": 0.1
 }

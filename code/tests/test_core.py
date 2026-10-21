@@ -119,3 +119,49 @@ def test_randomized_aps_exact_coverage():
         s = S[np.arange(301), y]
         covs.append(s[300] <= conformal_quantile(s[:300], 0.1))
     assert 0.86 < np.mean(covs) < 0.94
+
+
+def test_pac_threshold_training_conditional():
+    from dupcp.conformal import pac_quantile
+    rng = np.random.default_rng(11)
+    cov_plain, cov_pac = [], []
+    for _ in range(3000):
+        s = rng.random(40)  # calibration scores; test coverage of threshold t is exactly t (uniform)
+        cov_plain.append(conformal_quantile(s, 0.1))
+        cov_pac.append(min(pac_quantile(s, 0.1, 0.1), 1.0))
+    # plain: about half of calibration draws give coverage below 0.9; PAC: at most delta = 10%
+    assert np.mean(np.array(cov_plain) < 0.9) > 0.25
+    assert np.mean(np.array(cov_pac) < 0.9) <= 0.12
+
+
+def test_purity_exposure_and_bound():
+    from dupcp.audit import purity_exposure, purity_bound
+    keys = np.array([1, 1, 2, 2, 3, 3, 4])
+    y = np.array([0, 0, 0, 1, 1, 1, 0])
+    tr = np.array([0, 2, 4]); te = np.array([1, 3, 5, 6])
+    pi, pi_p = purity_exposure(keys, y, tr, te, "classification")
+    assert pi == pytest.approx(3 / 4)       # rows 1, 3, 5 have a training copy
+    assert pi_p == pytest.approx(2 / 4)     # row 3 label differs from its training copy
+    assert purity_bound(0.5, 0.1) == pytest.approx(-0.1)
+    assert purity_bound(0.95, 0.1) == pytest.approx(-0.9)
+
+
+def test_purity_limit_simulation():
+    """Proposition 4: memorised pure rows score 0, all other rows share one score law."""
+    rng = np.random.default_rng(3)
+    covs = []
+    pi_p = 0.4
+    for _ in range(800):
+        n = 2000
+        pure = rng.random(n) < pi_p
+        s = np.where(pure, 0.0, rng.random(n))
+        q = conformal_quantile(s[:1000], 0.1)
+        nov = ~pure[1000:]
+        covs.append(np.mean(s[1000:][nov] <= q))
+    assert abs(np.mean(covs) - (1 - 0.1 / (1 - pi_p))) < 0.01
+
+
+def test_group_split_infeasible_raises():
+    keys = np.concatenate([np.zeros(900, dtype=np.uint64), np.arange(1, 101, dtype=np.uint64)])
+    with pytest.raises(ValueError):
+        group_split(keys, 0)

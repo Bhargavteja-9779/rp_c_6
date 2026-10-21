@@ -72,3 +72,27 @@ Everything in the v1 protocol stays as reported; this document adds to it.
 
 All prospective datasets are reported. Failed downloads, failed fits and infeasible splits are
 logged and reported. No seed or dataset is selected by outcome.
+
+## Amendment 1 (2026-10-21 ~21:05 UTC, before any prospective dataset was downloaded or run)
+
+**Reason.** Since 20:50 UTC every connection from this environment to openml.org (www, api and
+test hosts) is closed by the network proxy (`ws_closed_mid_exchange`). The UCI repository and
+PyPI remain reachable.
+
+**Contingency rule.**
+* If OpenML is still unreachable at 22:50 UTC (two hours after the first failure), the
+  prospective pool of §1 is replaced by **every dataset listed by the UCI Machine Learning
+  Repository API** (`ucimlrepo.list_available_datasets()`; the snapshot is saved with the
+  selection file). They are loaded with `fetch_ucirepo(id)`. If OpenML becomes reachable before
+  then, §1 applies unchanged.
+* UCI-specific eligibility, applied in this order and recorded: (i) exactly one target column
+  that is non-missing; (ii) task taken from the UCI metadata (`Classification` → classification;
+  else `Regression` → regression; otherwise excluded); (iii) 300 ≤ rows ≤ 5,000,000 and ≤ 2,000
+  features.
+* **Overlap with v1 (content-based, conservative).** Names differ between UCI and OpenML (e.g.
+  "Breast Cancer Wisconsin (Original)" is OpenML *breast-w*), so a UCI dataset is excluded if its
+  number of rows lies within ±2% of a v1 dataset whose number of features differs by at most 1,
+  or if its normalized name matches a v1 name. This may exclude some unrelated datasets, which
+  is acceptable.
+* Everything else (subsampling rule, inclusion π̄ ≥ 0.01, learners, seeds, methods, tests P1–P5)
+  is unchanged.

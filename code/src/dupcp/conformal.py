@@ -64,3 +64,25 @@ def classification_sets(S_test: np.ndarray, q: np.ndarray) -> np.ndarray:
 
 def regression_intervals(lo: np.ndarray, hi: np.ndarray, q: np.ndarray):
     return lo - q, hi + q
+
+
+def pac_quantile(scores: np.ndarray, alpha: float, delta: float) -> float:
+    """Training-conditional (PAC) split-conformal threshold (Vovk 2012).
+
+    With continuous scores, the coverage of the r-th smallest calibration score is Beta(r, n - r + 1).
+    Return the smallest-rank score r with P{Beta(r, n - r + 1) < 1 - alpha} <= delta; +inf if none.
+    """
+    from scipy.stats import beta
+    n = len(scores)
+    if n == 0:
+        return np.inf
+    r = np.arange(1, n + 1)
+    ok = beta.cdf(1 - alpha, r, n - r + 1) <= delta
+    if not ok.any():
+        return np.inf
+    k = int(r[ok][0])
+    return float(np.partition(scores, k - 1)[k - 1])
+
+
+def pac_thresholds(cal_scores, cal_groups, alpha, delta, groups=(0, 1)) -> dict:
+    return {g: pac_quantile(cal_scores[cal_groups == g], alpha, delta) for g in groups}

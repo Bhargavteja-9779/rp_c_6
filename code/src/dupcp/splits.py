@@ -29,4 +29,7 @@ def group_split(keys: np.ndarray, seed: int, fracs=(0.6, 0.2, 0.2)):
     part[order[in_cal]] = 1
     row_part = part[inv]
     idx = np.arange(len(keys))
-    return idx[row_part == 0], idx[row_part == 1], idx[row_part == 2]
+    out = idx[row_part == 0], idx[row_part == 1], idx[row_part == 2]
+    if min(len(o) for o in out) == 0:
+        raise ValueError("infeasible group split: a record group is too large for the 60/20/20 partition")
+    return out

@@ -74,7 +74,7 @@ def _run_pool(fn, jobs, cfg, out_dir, workers, log):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", choices=["quick", "full"], default="quick")
-    ap.add_argument("--stage", choices=["all", "main", "inject", "capacity", "external", "normalized", "analyze"], default="all")
+    ap.add_argument("--stage", choices=["all", "main", "inject", "capacity", "external", "normalized", "neardup", "prospective", "analyze"], default="all")
     ap.add_argument("--config", default=os.path.join(HERE, "configs", "default.json"))
     ap.add_argument("--workers", type=int, default=None)
     args = ap.parse_args()
@@ -131,6 +131,19 @@ def main():
             if a["excess_row_frac"] > 0 and a["pred_exposure"] >= 0.01:
                 dupreg.append(("regression", a["data_id"]))
         _run_pool(E.run_normalized, sorted(dupreg), cfg, os.path.join(res, "normalized"), workers, log)
+
+    if args.stage in ("all", "prospective") and not quick:
+        sel = json.load(open(os.path.join(res, "reinforcement", "prospective_selection.json")))
+        pj = [(x["task"], x["data_id"]) for x in sel["included"]]
+        _run_pool(E.run_prospective, pj, cfg, os.path.join(res, "reinforcement", "prospective"), workers, log)
+
+    if args.stage in ("all", "neardup"):
+        import glob as _g
+        ids = sorted({(r.split("_")[1], int(r.split("_")[2].split(".")[0]))
+                      for r in map(os.path.basename, _g.glob(os.path.join(res, "inject", "inject_*.csv")))})
+        if quick:
+            ids = ids[:1]
+        _run_pool(E.run_neardup, ids, cfg, os.path.join(res, "reinforcement", "neardup"), workers, log)
 
     if args.stage in ("all", "inject", "capacity"):
         import glob

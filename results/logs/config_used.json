@@ -69,5 +69,49 @@
  ],
  "capacity_min_exposure": 0.05,
  "workers": 4,
+ "neardup_sigmas": [
+  0.0,
+  0.001,
+  0.01,
+  0.1
+ ],
+ "neardup_seeds": [
+  0,
+  1,
+  2
+ ],
+ "neardup_rate": 0.5,
+ "neardup_models": [
+  "rf",
+  "lgbm"
+ ],
+ "prosp_seeds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "prosp_models": [
+  "rf",
+  "lgbm",
+  "logreg"
+ ],
+ "pac_delta": 0.1,
  "cache_dir": "/home/user/rp_c_6/data_cache"
 }

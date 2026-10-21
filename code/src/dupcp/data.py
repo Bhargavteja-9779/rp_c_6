@@ -66,7 +66,7 @@ def group_preserving_subsample(keys: np.ndarray, max_rows: int, seed: int) -> np
     return np.flatnonzero(chosen[inv])
 
 
-def load_dataset(data_id: int, task: str, cache_dir: str) -> dict:
+def load_dataset(data_id: int, task: str, cache_dir: str, rule: str = "v1") -> dict:
     """Return dict(X=DataFrame, y=ndarray, keys=ndarray, name=str, n_raw=int, subsampled=bool)."""
     os.makedirs(cache_dir, exist_ok=True)
     pq = os.path.join(cache_dir, f"{data_id}.parquet")
@@ -97,7 +97,8 @@ def load_dataset(data_id: int, task: str, cache_dir: str) -> dict:
         y = y_raw.astype(float).to_numpy()
     keys = row_keys(X)
     n_raw = len(y)
-    if data_id in ROW_SUBSAMPLE_IDS and n_raw > MAX_ROWS:
+    big_group = np.unique(keys, return_counts=True)[1].max() > 0.2 * MAX_ROWS
+    if n_raw > MAX_ROWS and (data_id in ROW_SUBSAMPLE_IDS or (rule == "v2" and big_group)):
         idx = np.sort(np.random.default_rng(SUBSAMPLE_SEED).choice(n_raw, MAX_ROWS, replace=False))
     else:
         idx = group_preserving_subsample(keys, MAX_ROWS, SUBSAMPLE_SEED)

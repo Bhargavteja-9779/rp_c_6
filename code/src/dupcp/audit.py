@@ -50,3 +50,28 @@ def audit(keys: np.ndarray, y: np.ndarray, task: str, train_frac: float = 0.6) -
     out["conflict_group_frac"] = float(np.mean(nlab[sizes > 1] > 1)) if (sizes > 1).any() else 0.0
     out["conflict_row_frac"] = float(sizes[nlab > 1].sum() / N)
     return out
+
+
+def purity_exposure(keys: np.ndarray, y: np.ndarray, tr: np.ndarray, te: np.ndarray, task: str) -> tuple[float, float]:
+    """Exposure pi and label-purity-adjusted exposure pi_P on one realised split (Proposition 4).
+
+    A test row counts towards pi_P if it has at least one training row with the same feature key and
+    every such training row carries exactly the test row's label (classification) or target value
+    (regression). Uses labels and group structure only; no model.
+    """
+    import pandas as pd
+    yy = y if task == "classification" else np.round(np.asarray(y, float), 12)
+    trd = pd.DataFrame({"k": keys[tr], "y": yy[tr]})
+    stats = trd.groupby("k")["y"].agg(["nunique", "first"])
+    ted = pd.DataFrame({"k": keys[te], "y": yy[te]})
+    m = ted.join(stats, on="k")
+    seen = m["nunique"].notna().to_numpy()
+    pure = seen & (m["nunique"].to_numpy() == 1) & (m["first"].to_numpy() == m["y"].to_numpy())
+    return float(seen.mean()), float(pure.mean())
+
+
+def purity_bound(pi_p: float, alpha: float) -> float:
+    """Predicted novel-record coverage gap under Proposition 4: -alpha*pi_P/(1-pi_P), floored at -(1-alpha)."""
+    if pi_p >= 1 - alpha:
+        return -(1 - alpha)
+    return -alpha * pi_p / (1 - pi_p)
