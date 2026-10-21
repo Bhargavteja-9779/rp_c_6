@@ -1,0 +1,21 @@
+{
+  "verified_on": "2026-10-21",
+  "window": [
+    "2026-04-01",
+    "2026-10-21"
+  ],
+  "journals": {
+    "Journal of King Saud University - Computer and Information Sciences": {
+      "n": 647,
+      "median": 67,
+      "p25": 53,
+      "p75": 91,
+      "p90": 115,
+      "mean": 74.4,
+      "share_le_72": 0.569,
+      "articles_retrieved": 648,
+      "issn": "1319-1578",
+      "publisher": "Springer Nature"
+    }
+  }
+}
