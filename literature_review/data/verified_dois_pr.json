@@ -1,0 +1,74 @@
+{
+ "10.1016/j.patcog.2026.114113": {
+  "title": "Calibrated Mondrian conformal prediction for uncertainty quantification in spatial modeling",
+  "authors": [
+   "Seo, Jung-In",
+   "Jeon, Young Eun",
+   "Kim, Yongku"
+  ],
+  "year": 2026,
+  "venue": "Pattern Recognition",
+  "volume": "180",
+  "issue": null,
+  "page": "114113",
+  "type": "journal-article",
+  "publisher": "Elsevier BV"
+ },
+ "10.1016/j.patcog.2025.112338": {
+  "title": "A mondrian conformal predictive system with improved decision trees for uncertainty quantification under heteroscedasticity",
+  "authors": [
+   "Zhang, Ruiyao",
+   "Zhou, Ping"
+  ],
+  "year": 2026,
+  "venue": "Pattern Recognition",
+  "volume": "172",
+  "issue": null,
+  "page": "112338",
+  "type": "journal-article",
+  "publisher": "Elsevier BV"
+ },
+ "10.1016/j.patcog.2025.112501": {
+  "title": "Conformal prediction of molecule-induced cancer cell growth inhibition challenged by strong distribution shifts",
+  "authors": [
+   "Hernandez-Hernandez, Saiveth",
+   "Guo, Qianrong",
+   "Ballester, Pedro J."
+  ],
+  "year": 2026,
+  "venue": "Pattern Recognition",
+  "volume": "172",
+  "issue": null,
+  "page": "112501",
+  "type": "journal-article",
+  "publisher": "Elsevier BV"
+ },
+ "10.1016/j.patcog.2025.112330": {
+  "title": "Reliable classification through rank-based conformal prediction sets",
+  "authors": [
+   "Luo, Rui",
+   "Zhou, Zhixin"
+  ],
+  "year": 2026,
+  "venue": "Pattern Recognition",
+  "volume": "172",
+  "issue": null,
+  "page": "112330",
+  "type": "journal-article",
+  "publisher": "Elsevier BV"
+ },
+ "10.1016/j.patcog.2025.111999": {
+  "title": "Beyond conformal predictors: Adaptive Conformal Inference with confidence predictors",
+  "authors": [
+   "Hallberg Szabadv\u00e1ry, Johan",
+   "L\u00f6fstr\u00f6m, Tuwe"
+  ],
+  "year": 2026,
+  "venue": "Pattern Recognition",
+  "volume": "170",
+  "issue": null,
+  "page": "111999",
+  "type": "journal-article",
+  "publisher": "Elsevier BV"
+ }
+}

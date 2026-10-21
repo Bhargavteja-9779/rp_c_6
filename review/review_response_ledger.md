@@ -34,3 +34,7 @@ All ten reviews are role-separated passes by the same AI system, not independent
 | 10 | R10.3 | MODERATE | Over-generalization: 'datasets with conflicting labels are unaffected' rests on one datase… | Narrowed to 'a dataset (cps88wages)'.… | Fixed |
 | 10 | R10.4 | MODERATE | Discussion claimed '5–17 points' for the NASA defect data, but kc1 shows 3–7.… | Replaced with exact, sourced figures (suites: up to 16.9 pp on solar_flare; external: up t… | Fixed |
 | 10 | R10.5 | MINOR | Capacity half of H5 not supported.… | Reported as not supported, with explanation (underpowered at moderate exposure; k-NN ties)… | Disclosed |
+| 11 | R11.1 | MAJOR | Would a locally adaptive (normalized) score already remove the gap?… | New pre-specified baseline: yes, largely in regression (worst −3.4 pp); reported; Mondrian kept as the guaranteed option… | Fixed with new evidence (claim weakened, stated) |
+| 11 | R11.2 | MAJOR | Novelty bar of Pattern Recognition… | Framed as characterization + evaluation finding; cascade plan… | Residual risk HIGH |
+| 11 | R11.3 | MODERATE | Elsevier formatting… | Numbered refs, highlights, bios, AI declaration, 31 pages… | Fixed |
+| 11 | R11.4 | MODERATE | Cite the journal's related work… | Three 2026 Pattern Recognition papers added (title-level)… | Fixed |

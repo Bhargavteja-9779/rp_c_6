@@ -305,3 +305,43 @@ def run_capacity(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
                     rows.append(dict(base, error=repr(e)[:300]))
     pd.DataFrame(rows).to_csv(path, index=False)
     return f"done {time.time() - t0:.0f}s"
+
+
+def run_normalized(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
+    """Review-round-2 baseline: kNN-difficulty normalized residual score (regression)."""
+    from sklearn.neighbors import NearestNeighbors
+    os.makedirs(out_dir, exist_ok=True)
+    path = os.path.join(out_dir, f"normalized_{task}_{data_id}.csv")
+    if os.path.exists(path):
+        return "cached"
+    t0 = time.time()
+    d = load_dataset(data_id, task, cfg["cache_dir"])
+    X, y, keys = d["X"], d["y"], d["keys"]
+    a = cfg["primary_alpha"]
+    rows = []
+    for seed in cfg["seeds"]:
+        tr, ca, te = random_split(len(y), seed, cfg["fracs"])
+        tr_keys = set(keys[tr].tolist())
+        seen_ca = np.array([k in tr_keys for k in keys[ca]], dtype=int)
+        seen_te = np.array([k in tr_keys for k in keys[te]], dtype=int)
+        Z_tr, (Z_ca, Z_te) = dense_features(X.iloc[tr], [X.iloc[ca], X.iloc[te]])
+        nn = NearestNeighbors(n_neighbors=10).fit(Z_tr)
+        sig_ca = nn.kneighbors(Z_ca)[0].mean(1)
+        sig_te = nn.kneighbors(Z_te)[0].mean(1)
+        beta = float(np.median(sig_ca)) or 1e-8
+        for model in ("rf", "lgbm"):
+            base = dict(data_id=data_id, name=d["name"], task=task, seed=seed, model=model, score="normres", alpha=a)
+            yc, yt = fit_predict(model, task, X.iloc[tr], y[tr], [X.iloc[ca], X.iloc[te]], seed)
+            sc = np.abs(y[ca] - yc) / (sig_ca + beta)
+            st = np.abs(y[te] - yt) / (sig_te + beta)
+            scale = float(np.std(y[tr])) or 1.0
+            for mname, gca, gte, glab in _cp_methods("R", seen_ca, seen_te, None):
+                thr = thresholds(sc, gca, a, glab or (0, 1))
+                q = test_thresholds(thr, gte, len(te))
+                cov = (st <= q).astype(float)
+                width = 2 * q * (sig_te + beta)
+                rows.append(_record(dict(base, method=mname), cov, width, seen_te, q, (seen_ca == SEEN).sum(),
+                                    (seen_ca == NOVEL).sum(), thr.get(SEEN, thr.get("all")),
+                                    thr.get(NOVEL, thr.get("all")), width_scale=scale))
+    pd.DataFrame(rows).to_csv(path, index=False)
+    return f"done {time.time() - t0:.0f}s"

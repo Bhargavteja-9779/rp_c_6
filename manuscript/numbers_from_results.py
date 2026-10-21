@@ -169,6 +169,7 @@ def compute_numbers(res):
         k0 = EX["seedlevel"]["mcp_ci_below_zero"]
         n["ext_mcp_below0_text"] = "none of its confidence intervals lies" if k0 == 0 else f"{k0} of its confidence intervals lie"
         n["ext_scp_min"] = signed_pp(EX["seedlevel"]["scp_gap_min"])
+        n["ext_scp_min_abs"] = f"{abs(100 * EX['seedlevel']['scp_gap_min']):.1f}"
         n["ext_mcp_min"] = signed_pp(EX["seedlevel"]["mcp_gap_min"])
         n["ext_n"] = len(ea)
         rows = []
@@ -195,6 +196,16 @@ def compute_numbers(res):
         n["cost_scp_us"] = f"{1e6 * C9.t_scp_threshold_s.median():.0f}"
         n["cost_mcp_us"] = f"{1e6 * C9.t_mcp_threshold_s.median():.0f}"
         n["cost_fit_range"] = f"{C9.t_lgbm_fit_predict_s.min():.1f}–{C9.t_lgbm_fit_predict_s.max():.1f}"
+    if "normalized_baseline" in S:
+        for m, v in S["normalized_baseline"].items():
+            n[f"nb_{m}_n"] = v["n"]
+            n[f"nb_{m}_scp_med"] = signed_pp(v["normres_scp_gap_median"])
+            n[f"nb_{m}_scp_min"] = signed_pp(v["normres_scp_gap_min"])
+            n[f"nb_{m}_abs_min"] = signed_pp(v["absres_scp_gap_min"])
+            n[f"nb_{m}_mcp_med"] = signed_pp(v["normres_mcp_gap_median"])
+            n[f"nb_{m}_mcp_min"] = signed_pp(v["normres_mcp_gap_min"])
+            n[f"nb_{m}_n_lt2"] = v["n_normres_gap_lt_m002"]
+            n[f"nb_{m}_p"] = pval(v["p_mcp_gt_scp_normres"])
     # Friedman
     F = S["H1b_friedman"]
     for k, v in F.items():

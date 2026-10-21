@@ -1,66 +1,69 @@
-# Selected target journal: Journal of King Saud University – Computer and Information Sciences (JKSU-CIS)
+# Selected target journal (revised 2026-10-21): Pattern Recognition (Elsevier)
 
-Decision date: 2026-10-20 (Research Director, after Agent 1's screen). Status: **Gate A passed, with
-the caveats stated below.**
+## Why the target changed
 
-| Item | Value | Source / verification status |
-|---|---|---|
-| Journal | Journal of King Saud University – Computer and Information Sciences | Springer journal homepage (link.springer.com/journal/44443), fetched 2026-10-20 |
-| Owner / publisher | King Saud University; published by Springer Nature (moved from Elsevier in 2025; DOIs 10.1007/s44443-…) | Springer homepage; Crossref DOI prefixes |
-| ISSN (print, regulatory) / eISSN | 1319-1578 / 2213-1248 | Springer homepage |
-| Publication model | Fully open access (APC payable on acceptance) | Springer homepage; DOAJ entry |
-| APC | ≈ USD 1,990 / EUR 1,690 / GBP 1,490 (LetPub); DOAJ lists "up to USD 2,090". **Not verified on an official Springer fee page** | Secondary sources; must be confirmed by the author before submission |
-| Journal Impact Factor | **6.4 (JCR 2025 release)**; 5-year JIF 6.0 | Springer homepage (Springer reproduces the Clarivate figure) |
-| JCR category / quartile | COMPUTER SCIENCE, INFORMATION SYSTEMS — **Q1** (reported rank 6/149 for the JCR 2024 edition by OOIR, which mirrors Web of Science; Peeref and ivySCI also list JCR Q1 in this category) | **Secondary sources only.** Clarivate JCR is paywalled and could not be accessed. With JIF 6.4, Q1 in this category is highly plausible, but the quartile is reported as *Q1 per secondary sources, not verified directly in JCR*. Not mixed with the SCImago quartile (SJR 2025 = 1.434, Scopus Q1), which is a different system. |
-| Editor-in-Chief | Nasser-Eddine Rikli | Springer homepage |
-| Scope | "a refereed, international journal that covers all aspects of both foundations of computer and its practical applications" | Springer homepage overview |
-| Peer review | Double-anonymous; usually two referees plus one Associate Editor; Editors-in-Chief make final decisions | Submission guidelines (fetched 2026-10-20) |
-| Timeline evidence | Observed median submission→acceptance **72 days** (n = 1,054 articles published Oct 2025–Oct 2026; bootstrap 95% CI 70–74; IQR 55–98; 50.6% ≤ 72 days). For papers accepted since 1 Apr 2026: median **67 days**, 58% ≤ 72 days | Our Crossref analysis (`journal_comparison.md`, `data/jksu_full/`). Evidence level 3 (observed sample) |
-| Official publisher timeline statistic | Not shown on the Springer homepage (no "submission to acceptance" figure displayed) | Springer homepage |
+The user dropped the 72-day submission-to-acceptance constraint. The new instruction is: target a
+**high-impact-factor journal** and maximize the chance of **acceptance**. No journal can guarantee
+acceptance. The selection below maximizes impact factor *subject to* a demonstrated editorial
+appetite for this kind of contribution: conformal-prediction methodology and evaluation with
+elementary but exact theory, a large empirical study and a practical remedy.
 
-## Is the 72-day hard constraint satisfied?
+The previous target, JKSU-CIS (JIF 6.4; median 72 days to acceptance), is kept as the fast,
+broad-scope fallback. Its package (`manuscript/Final_Manuscript.docx`) remains valid.
 
-**Borderline, and the most defensible verified match available.** Of ~40 assessed reputable non-MDPI
-journals, JKSU-CIS is the only one with a credible, transparent, large-sample basis for a
-submission-to-acceptance time of about 72 days. Its median equals the limit, and the recent cohort
-(median 67 days) sits below it. The evidence does **not** support a guarantee: about 42–49% of
-accepted papers took longer than 72 days, and desk-rejected or rejected papers are not in the
-sample. No journal could offer a credible *maximum* of 72 days, because no publisher reports maxima
-and every observed distribution has a long right tail.
+## Evidence used
 
-Rather than silently relax the constraint, it is stated as follows: the selected journal is the only
-assessed Q1 journal whose **typical (median) observed** submission-to-acceptance time meets 72 days.
-A single submission has roughly a 50–58% observed chance of acceptance within 72 days, *conditional
-on being accepted*.
+1. **Receptiveness:** the number of papers with "conformal" in the title published 2023–2026,
+   counted per candidate journal through the Crossref API (`data/conformal_paper_counts.json`;
+   query "conformal prediction", top-600 relevance hits per journal, titles checked).
+2. **Impact factor:** secondary sources only, because Clarivate JCR is paywalled and ScienceDirect
+   journal pages are blocked from this environment. Figures disagree between sources and are
+   reported as ranges.
 
-## Why this journal fits the project
+| Journal | Publisher | 2025 JIF (secondary sources) | Conformal-titled papers 2023–26 | Fit for this paper | Main risk |
+|---|---|---|---|---|---|
+| **Pattern Recognition** | Elsevier | 7.6–9.1 (sources disagree), JCR Q1 | **19** (part from a 2024–25 special issue on conformal prediction, now closed; regular-issue papers also in 2026, incl. two Mondrian papers) | **High**: active conformal community; recent Mondrian work in the journal | Selective; novelty bar for methods |
+| Knowledge-Based Systems | Elsevier | 7.6–9.6, Q1 | 3 (applied) | Medium | Expects applied systems |
+| Expert Systems with Applications | Elsevier | 7.5–9.4, Q1 | 3 (applied CP intervals) | Medium–low | Application focus; very long review times reported |
+| Information Sciences | Elsevier | 6.8–7.7, Q1 | 1 | Low–medium | Few CP papers |
+| IEEE TNNLS | IEEE | ≈ 10 | 3 | Low | Novelty bar for neural-network methods; elementary theory |
+| Neurocomputing | Elsevier | ≈ 5.5–6.5 | 6 (incl. a conformal software paper) | Medium–high | Lower IF |
+| Machine Learning | Springer | ≈ 2.9–4 | 6 | High | Low IF |
+| JKSU-CIS (previous) | Springer Nature | 6.4 | 1 | Medium | Broad audience |
 
-* The scope is broad computer science, explicitly including foundations and practical
-  applications. Our contribution (validity of uncertainty quantification under record duplication,
-  with theory, a remedy and a large benchmark study) is a methodological ML / data-quality
-  contribution with direct practical consequences.
-* The journal has recently published closely related work, e.g. "Conformal deep forest for
-  uncertainty-aware classification" (2025, doi:10.1007/s44443-025-00175-3), "HF-DIF: hierarchical
-  feature-selected deep isolation forest for unsupervised anomaly detection on tabular data" (2026,
-  doi:10.1007/s44443-026-00706-6), "Representing uncertainty and imprecision in machine learning: a
-  survey on belief functions" (2024, doi:10.1016/j.jksuci.2023.101904), and "Robust representation of
-  domain incomplete tabular data via cross-modal debiasing and prototype-fused reconstruction" (2025,
-  doi:10.1007/s44443-025-00225-w). Titles and DOIs were verified via the Crossref API on 2026-10-20.
-* Word is preferred, and LaTeX is accepted for mathematical papers. The double-anonymous review and
-  the "Statements and Declarations" requirements are documented in `journal_verification.md`.
+## Decision
 
-## Principal editorial rejection risks
+**Primary target: Pattern Recognition (ISSN 0031-3203, Elsevier).** It has the highest impact factor
+among journals with a demonstrated, recent appetite for conformal-prediction methodology,
+including Mondrian calibration:
 
-1. Readers of JKSU-CIS mainly see applied deep-learning papers. A statistical-methodology paper must
-   make its practical stakes explicit early.
-2. The contribution could be judged incremental if it is framed as "just Mondrian conformal
-   prediction". The paper must lead with the *finding* (a silent guarantee failure on novel records,
-   with a closed-form magnitude), and present the remedy as a necessary, validated complement.
-3. Desk rejection for missing declarations or non-anonymized files.
+* Seo et al. (2026), Calibrated Mondrian CP for spatial modeling, 180:114113.
+* Zhang & Zhou (2026), Mondrian conformal predictive system, 172:112338.
 
-## Backup strategy
+**Cascade if rejected:** Neurocomputing → JKSU-CIS (package ready) → Machine Learning
+(best topical fit, lower IF).
 
-No other assessed journal meets the timeline constraint, so there is no compliant backup. If
-JKSU-CIS rejects the paper, the author must decide whether to relax the timeline. Non-compliant
-candidates with strong scope fit are listed in `journal_comparison.md`: Machine Learning (Springer),
-Data Mining and Knowledge Discovery, Statistics and Computing, Int. J. Data Science and Analytics.
+## Requirements applied (official guide confirmed through search snippets; full page not fetchable)
+
+* 20–35 pages including figures, tables, references and biographies (appendices excluded). Our
+  review-format build (12 pt, double spacing) is 31 pages.
+* Abstract ≤ 250 words (ours: 234); 3–5 highlights of ≤ 85 characters (ours: 5, max 79); 1–7
+  keywords (ours: 6).
+* Author biographies required (placeholder).
+* Declaration of generative-AI use at submission (included).
+* Elsevier declarations: CRediT, competing interests, funding, data availability.
+* References: numbered in order of citation.
+* Review model: reported as single-anonymized (Wikipedia; not verified on the official page).
+  The manuscript is anonymized anyway and a separate title page is supplied, which is compatible
+  with either model.
+
+## Honest acceptance assessment
+
+* Strengths for this journal: exact theory, a large pre-specified study, causal and external
+  evidence, an open pipeline, and a practical recommendation.
+* Main risk: reviewers may judge the remedy (standard Mondrian CP) and the elementary theory
+  incremental, and the primary hypothesis was not supported on typical benchmarks.
+* Mitigations: the paper is framed around the exact characterization, the predictability of
+  failure and the external evidence; it states clearly what is not new.
+* No acceptance probability can be stated credibly. Desk rejection at a selective Q1 journal is a
+  real possibility, so the cascade above is part of the plan.

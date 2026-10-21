@@ -1,5 +1,7 @@
 # Final audit: consistency, reproducibility, rejection risk, readiness (Phases 20–27)
 
+**Update 2026-10-21 (re-targeting).** The primary target is now **Pattern Recognition** (Elsevier; JIF 7.6–9.1 per secondary sources); JKSU-CIS is the fallback. Review round 11 added a normalized-score baseline, which removes most of the regression shortfall. This is reported and tempers the remedy claim. Both journal builds pass the consistency checks below; the Pattern Recognition build is 31 pages in review format (limit 20–35), with an abstract of 244 words, 5 highlights of ≤ 79 characters, and numbered references (49 + 3 new).
+
 Audit date: 2026-10-21. Everything in this file was produced by the same AI system acting in
 separate roles. **No independent human expert, reviewer or editor has examined this work.**
 
@@ -35,7 +37,7 @@ Requirements: Python 3.13, pinned packages (`code/requirements.txt`), internet a
 | # | Risk | Evidence | Severity | Fixed? | Residual |
 |---|---|---|---|---|---|
 | 1 | Journal-scope mismatch | JKSU-CIS is broad CS; it has published conformal and tabular-ML papers | Moderate | Framing adjusted | Moderate |
-| 2 | Insufficient novelty | Remedy is standard Mondrian CP; theory elementary | Major | Claims narrowed to finding + quantification + admissibility | **Moderate–high** (the main risk) |
+| 2 | Insufficient novelty | Remedy is standard Mondrian CP; theory elementary; a normalized score largely solves the regression case | Major | Claims narrowed; adaptive-score result reported | **High at Pattern Recognition**, moderate at JKSU-CIS (the main risk) |
 | 3 | Insufficient significance | Primary H1 not supported; typical datasets unaffected | Major | External validation (−27.5 pp) and injection added | Moderate |
 | 4 | Weak gap justification | Searches documented; two preprints as motivation | Moderate | Own audit added | Low–moderate |
 | 5 | Methodological weaknesses | Untuned learners; exact duplicates only | Moderate | Disclosed; capacity and near-duplicate analyses | Low–moderate |
@@ -52,7 +54,7 @@ Requirements: Python 3.13, pinned packages (`code/requirements.txt`), internet a
 | 16 | Manuscript clarity | Dense results section, many numbers | Moderate | — | Moderate (human editing advised) |
 | 17 | Guideline compliance | Format checked; author fields open | Moderate | Partly | **Blocking until the author completes them** |
 | 18 | Ethics / publication integrity | AI-assisted authorship must be declared and accepted by the journal | Major | Statement drafted | Author must confirm against the current policy |
-| 19 | Timeline uncertainty | Median 72 days (67 for recent cohort), ~42–49% of papers take longer; conditional on acceptance | Major (for the user's constraint) | Disclosed | High: a 72-day acceptance cannot be guaranteed |
+| 19 | Timeline uncertainty | The 72-day constraint was dropped by the user; Pattern Recognition review times are months, not weeks (not measured: Elsevier deposits no dates) | Moderate | Disclosed | Moderate |
 | 20 | Technical limitations | Variability of MCP with small novel calibration sets | Moderate | Disclosed | Low |
 
 Acceptance is not guaranteed, and the rejection risk is not zero.

@@ -74,7 +74,7 @@ def _run_pool(fn, jobs, cfg, out_dir, workers, log):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", choices=["quick", "full"], default="quick")
-    ap.add_argument("--stage", choices=["all", "main", "inject", "capacity", "external", "analyze"], default="all")
+    ap.add_argument("--stage", choices=["all", "main", "inject", "capacity", "external", "normalized", "analyze"], default="all")
     ap.add_argument("--config", default=os.path.join(HERE, "configs", "default.json"))
     ap.add_argument("--workers", type=int, default=None)
     args = ap.parse_args()
@@ -122,6 +122,15 @@ def main():
         for t, i in ext:
             load_dataset(i, t, cfg["cache_dir"])
         _run_pool(E.run_dataset, ext, cfg, os.path.join(res, "external"), workers, log)
+
+    if args.stage in ("all", "normalized") and not quick:
+        import glob as _g
+        dupreg = []
+        for p in _g.glob(os.path.join(raw, "audit_regression_*.json")):
+            a = json.load(open(p))
+            if a["excess_row_frac"] > 0 and a["pred_exposure"] >= 0.01:
+                dupreg.append(("regression", a["data_id"]))
+        _run_pool(E.run_normalized, sorted(dupreg), cfg, os.path.join(res, "normalized"), workers, log)
 
     if args.stage in ("all", "inject", "capacity"):
         import glob

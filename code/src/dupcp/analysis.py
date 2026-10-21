@@ -253,6 +253,31 @@ def run(res, cfg, quick=False):
                                                 "pred_exposure"]].to_dict("records"),
                                  "seedlevel": _seedlevel(ext, tables, "T10_external_seedlevel")}
 
+    # ---------------- review-round-2 baseline: normalized residual score (regression DUP)
+    nfiles = glob.glob(os.path.join(res, "normalized", "normalized_*.csv"))
+    if nfiles:
+        nd = pd.concat([pd.read_csv(f) for f in nfiles], ignore_index=True)
+        nd["exposure"] = nd["n_te_seen"] / nd["n_te"]
+        na = nd.groupby(["data_id", "name", "model", "method"])[["cov_novel", "cov_seen", "cov_all", "exposure",
+                                                                   "size_novel_norm", "size_all_norm"]].mean().reset_index()
+        na.to_csv(os.path.join(tables, "T11_normalized_baseline.csv"), index=False)
+        res_n = {}
+        for model in ("rf", "lgbm"):
+            sN = na[(na.model == model) & (na.method == "SCP")].set_index("data_id")
+            mN = na[(na.model == model) & (na.method == "MCP")].set_index("data_id")
+            sA = fam("regression", model, "absres", "SCP").reindex(sN.index)
+            gN = sN.cov_novel - (1 - ALPHA0)
+            gA = sA.cov_novel - (1 - ALPHA0)
+            res_n[model] = {"n": int(len(sN)), "normres_scp_gap_median": float(gN.median()),
+                            "normres_scp_gap_min": float(gN.min()),
+                            "absres_scp_gap_median": float(gA.median()), "absres_scp_gap_min": float(gA.min()),
+                            "normres_mcp_gap_median": float((mN.cov_novel - (1 - ALPHA0)).median()),
+                            "normres_mcp_gap_min": float((mN.cov_novel - (1 - ALPHA0)).min()),
+                            "p_normres_scp_lt0": wilcoxon_1s(gN, "less")[0],
+                            "p_mcp_gt_scp_normres": wilcoxon_1s((mN.cov_novel - sN.cov_novel).dropna(), "greater")[0],
+                            "n_normres_gap_lt_m002": int((gN < -0.02).sum())}
+        out_stats["normalized_baseline"] = res_n
+
     # ---------------- H1b: Friedman across learners
     fr = {}
     for task, score in [("classification", "lac"), ("classification", "aps"), ("regression", "absres")]:

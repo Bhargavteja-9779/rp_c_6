@@ -1,7 +1,8 @@
 # Seen or new? Duplicate records and conformal coverage on novel inputs
 
-Research project and submission package targeting the *Journal of King Saud University –
-Computer and Information Sciences* (Springer Nature). Produced by an AI research agent; see
+Research project and submission package. **Primary target: *Pattern Recognition* (Elsevier).**
+Fallback: *Journal of King Saud University – Computer and Information Sciences*. Both builds
+are included. Produced by an AI research agent; see
 "Status" below before using any of it.
 
 ## Main findings
@@ -21,6 +22,8 @@ Computer and Information Sciences* (Springer Nature). Produced by an AI research
   of −14.8 pp). Within-learner capacity variation showed no detectable effect at benchmark
   exposures (reported as not supported).
 * The remedy costs ≤ 4.4% in median set size for novel records, and its computation is negligible.
+* In regression, a distance-normalized score (k-NN difficulty) removes most of the shortfall on
+  its own (worst −3.4 pp vs −16.9 pp). It is an effective heuristic but carries no guarantee.
 
 ## Package map
 
@@ -31,7 +34,7 @@ Computer and Information Sciences* (Springer Nature). Produced by an AI research
 | `research_design/` | Research questions and hypotheses, theory with proofs, pre-specified protocol (frozen at commit `0e58bdd`), deviations, leakage audit, exploratory pilot |
 | `code/` | Pipeline (`run_all.py`), tests, configs, extra experiments; see `code/README.md` |
 | `results/` | Raw per-split results, tables, `statistics.json`, figures (PNG/EPS/TIFF), logs |
-| `manuscript/` | `Final_Manuscript.docx` (native Word equations), `Final_Manuscript.pdf`, `title_page.docx`, `cover_letter.docx`, section sources, build scripts, claim–evidence matrix |
+| `manuscript/` | Pattern Recognition build: `Final_Manuscript_PatternRecognition.docx/.pdf`, `highlights_PatternRecognition.docx`, `cover_letter_PatternRecognition.docx`. JKSU-CIS build: `Final_Manuscript.docx/.pdf`, `cover_letter.docx`. Shared `title_page.docx`, section sources, build scripts (`python build_manuscript.py pr|jksu`), claim–evidence matrix |
 | `supplementary/` | Online Resource 1 (DOCX/PDF) |
 | `review/` | Ten role-separated adversarial reviews, response ledger, final audit and readiness decision |
 
@@ -44,5 +47,6 @@ Computer and Information Sciences* (Springer Nature). Produced by an AI research
   are placeholders.
 * The AI-use statement must be confirmed against the journal's policy.
 * The reviews were simulated role passes by one AI system, not independent human review.
-* The 72-day acceptance target is supported only at the median (observed median 72 days; 67 days
-  for papers accepted since April 2026). It is not a guarantee.
+* Acceptance cannot be guaranteed at any journal. At Pattern Recognition the main risk is that
+  the contribution is judged incremental; see `journal_selection/selected_journal.md` for the
+  fallback cascade.

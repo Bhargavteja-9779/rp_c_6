@@ -75,6 +75,11 @@ def main():
             out.append(f"\n# {name}\n\n`gap`/`mcp_gap`: novel-record coverage − 0.9 for split / novelty-Mondrian CP; "
                        "`limit_gap`: memorization limit −απ/(1−π).\n")
             out.append(md_table(pd.DataFrame(rows), 4))
+    nb = os.path.join(T, "T11_normalized_baseline.csv")
+    if os.path.exists(nb):
+        out.append("\n# S10b Normalized-residual baseline (regression DUP datasets, alpha = 0.1)\n\nMean over 10 splits. "
+                   "Score |y - yhat| / (sigma(x) + beta), sigma = mean distance to 10 nearest training rows.\n")
+        out.append(md_table(pd.read_csv(nb), 4))
     out.append("\n# S11 Computational cost (Experiment G)\n")
     out.append(md_table(pd.read_csv(os.path.join(T, "T9_cost.csv")), 4))
     out.append("\n# Fig. S1\n\n![**Fig. S1** Novel-record coverage gap per duplicated dataset (dots) and learner, split CP vs novelty-Mondrian CP, alpha = 0.1; bars: medians](FigS1.png)\n")

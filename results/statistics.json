@@ -4190,6 +4190,32 @@
    ]
   }
  },
+ "normalized_baseline": {
+  "rf": {
+   "n": 12,
+   "normres_scp_gap_median": 0.0012719000047521356,
+   "normres_scp_gap_min": -0.03429799673266787,
+   "absres_scp_gap_median": -0.008057470646681997,
+   "absres_scp_gap_min": -0.15788128576147686,
+   "normres_mcp_gap_median": -0.000592012055975033,
+   "normres_mcp_gap_min": -0.03582661199734438,
+   "p_normres_scp_lt0": 0.661376953125,
+   "p_mcp_gt_scp_normres": 0.545166015625,
+   "n_normres_gap_lt_m002": 1
+  },
+  "lgbm": {
+   "n": 12,
+   "normres_scp_gap_median": -0.0007630057039827443,
+   "normres_scp_gap_min": -0.02572244906602794,
+   "absres_scp_gap_median": -0.00621909431984824,
+   "absres_scp_gap_min": -0.16916680573033993,
+   "normres_mcp_gap_median": 0.0028406212346641646,
+   "normres_mcp_gap_min": -0.049957378604891134,
+   "p_normres_scp_lt0": 0.71533203125,
+   "p_mcp_gt_scp_normres": 0.55078125,
+   "n_normres_gap_lt_m002": 1
+  }
+ },
  "H1b_friedman": {
   "classification_lac": {
    "n": 24,

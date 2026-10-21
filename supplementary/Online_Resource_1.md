@@ -128,6 +128,7 @@ the manuscript.
 | 3 | After the main results | **Verification run** on solar_flare (OpenML 44966): 200 extra random splits (seeds 1000–1199), ridge and LightGBM, absolute-residual score, α = 0.1 (`code/experiments/verify_solar_flare.py`) | With 10 seeds, MCP novel coverage on this dataset was 0.84–0.88, apparently contradicting Proposition 3 | Confirms that it was sampling noise: MCP novel coverage 0.909 (95% CI 0.899–0.918) for LightGBM and 0.907 (0.896–0.917) for ridge; SCP novel coverage 0.78 and 0.77. Per-split SD ≈ 0.07 with about 36 novel calibration rows. Reported as a verification and a stated limitation (high split-to-split variability when novel calibration sets are small) |
 | 4 | After review round 1 (Reviews 1 and 5: suites are curated, and CTR23 excludes grouped data), **before any outcome on these data** | **External validation set**, specified in advance: every NASA MDP defect dataset on OpenML not in CC18 with ≥ 300 rows (mc1 #1056, pc2 #1069, kc3 #1065, mw1 #1071), plus KDDCup99 (10% version, #1113; documented heavy redundancy, Tavallaee et al. 2009). Same configuration as the main grid (10 seeds, 5 learners, both protocols). KDDCup99 (494,020 rows) is **uniformly row-subsampled** to 30,000 rows (seed 2026), because group-preserving subsampling cannot keep groups larger than the cap. Pre-specified test: novel-record gap of SCP-R per dataset and learner (LAC, α = 0.1), with seed-level 95% t-intervals; and the MCP-R novel gap | Tests whether the mechanism appears where duplication is known to be common | Additional evidence only; the confirmatory suite analysis is unchanged |
 | 5 | Review round 1 (Review 7) | Experiment G (computational cost of the audit and of MCP vs SCP), pre-registered but not yet run, is run now | Omission | None |
+| 6 | Review round 2 (re-targeting to Pattern Recognition; anticipated baseline request), **before outcomes** | **Normalized-residual baseline** (Papadopoulos et al. 2011): regression DUP datasets (12), RF and LightGBM, 10 seeds, α = 0.1. Score |y − ŷ| / (σ̂(x) + β), where σ̂(x) is the mean distance to the k = 10 nearest training rows in the standardized feature space and β is the median of σ̂ over calibration rows. Compared as SCP-R and MCP-R with the same score. Pre-specified question: does the adaptive score alone remove the novel-record gap? | A locally adaptive score shrinks intervals near training copies and might absorb the effect | Additional baseline; confirmatory results unchanged |
 
 No dataset, seed or learner was excluded after outcomes were seen. No hyperparameter was
 changed.
@@ -360,6 +361,62 @@ Medians over datasets of seed-averaged metrics; split CP with a random split (sc
 | regression_rf | 3 | -0.0061 | -0.0008 | -0.0243 | 0.1956 | 0.9208 |
 
 
+# S10b Normalized-residual baseline (regression DUP datasets, alpha = 0.1)
+
+Mean over 10 splits. Score |y - yhat| / (sigma(x) + beta), sigma = mean distance to 10 nearest training rows.
+
+| data_id | name | model | method | cov_novel | cov_seen | cov_all | exposure | size_novel_norm | size_all_norm |
+|---|---|---|---|---|---|---|---|---|---|
+| 44959 | concrete_compressive_strength | lgbm | MCP | 0.9188 | 0.9875 | 0.9214 | 0.0403 | 0.9513 | inf |
+| 44959 | concrete_compressive_strength | lgbm | SCP | 0.9192 | 0.9607 | 0.9209 | 0.0403 | 0.9538 | 0.9437 |
+| 44959 | concrete_compressive_strength | rf | MCP | 0.9020 | 0.9875 | 0.9053 | 0.0403 | 1.0618 | inf |
+| 44959 | concrete_compressive_strength | rf | SCP | 0.9056 | 0.9607 | 0.9078 | 0.0403 | 1.0744 | 1.0631 |
+| 44962 | forest_fires | lgbm | MCP | 0.9325 | 1.0000 | 0.9346 | 0.0298 | 2.3814 | inf |
+| 44962 | forest_fires | lgbm | SCP | 0.9325 | 1.0000 | 0.9346 | 0.0298 | 2.3673 | 2.3615 |
+| 44962 | forest_fires | rf | MCP | 0.9356 | 1.0000 | 0.9375 | 0.0298 | 1.9488 | inf |
+| 44962 | forest_fires | rf | SCP | 0.9346 | 1.0000 | 0.9365 | 0.0298 | 1.9335 | 1.9278 |
+| 44963 | physiochemical_protein | lgbm | MCP | 0.8983 | 0.9026 | 0.8985 | 0.0473 | 2.2672 | 2.2374 |
+| 44963 | physiochemical_protein | lgbm | SCP | 0.8957 | 0.9527 | 0.8984 | 0.0473 | 2.2488 | 2.2337 |
+| 44963 | physiochemical_protein | rf | MCP | 0.8988 | 0.9017 | 0.8990 | 0.0473 | 2.1199 | 2.0499 |
+| 44963 | physiochemical_protein | rf | SCP | 0.8939 | 0.9894 | 0.8984 | 0.0473 | 2.0798 | 2.0658 |
+| 44964 | superconductivity | lgbm | MCP | 0.9009 | 0.9003 | 0.9007 | 0.3335 | 1.6095 | 1.4871 |
+| 44964 | superconductivity | lgbm | SCP | 0.9066 | 0.8876 | 0.9002 | 0.3335 | 1.6661 | 1.4936 |
+| 44964 | superconductivity | rf | MCP | 0.9008 | 0.9024 | 0.9013 | 0.3335 | 1.4951 | 1.4265 |
+| 44964 | superconductivity | rf | SCP | 0.9115 | 0.8788 | 0.9006 | 0.3335 | 1.6094 | 1.4426 |
+| 44966 | solar_flare | lgbm | MCP | 0.8500 | 0.9058 | 0.8986 | 0.8535 | 3.8773 | 2.4263 |
+| 44966 | solar_flare | lgbm | SCP | 0.8976 | 0.9015 | 0.9019 | 0.8535 | 4.5336 | 2.3932 |
+| 44966 | solar_flare | rf | MCP | 0.8642 | 0.9023 | 0.8981 | 0.8535 | 4.3156 | 2.8043 |
+| 44966 | solar_flare | rf | SCP | 0.9069 | 0.8909 | 0.8939 | 0.8535 | 5.2725 | 2.7854 |
+| 44970 | QSAR_fish_toxicity | lgbm | MCP | 0.9074 | 0.9433 | 0.9133 | 0.1856 | 2.2286 | 2.0839 |
+| 44970 | QSAR_fish_toxicity | lgbm | SCP | 0.8981 | 0.9610 | 0.9094 | 0.1856 | 2.1365 | 2.0188 |
+| 44970 | QSAR_fish_toxicity | rf | MCP | 0.8968 | 0.9260 | 0.9011 | 0.1856 | 2.1146 | 1.9655 |
+| 44970 | QSAR_fish_toxicity | rf | SCP | 0.8885 | 0.9580 | 0.9017 | 0.1856 | 2.0188 | 1.9084 |
+| 44971 | white_wine | lgbm | MCP | 0.9031 | 0.8872 | 0.8991 | 0.2338 | 2.6822 | 2.3386 |
+| 44971 | white_wine | lgbm | SCP | 0.8743 | 0.9895 | 0.9012 | 0.2338 | 2.4438 | 2.3782 |
+| 44971 | white_wine | rf | MCP | 0.8967 | 0.8910 | 0.8952 | 0.2338 | 2.5892 | 2.1740 |
+| 44971 | white_wine | rf | SCP | 0.8657 | 0.9992 | 0.8968 | 0.2338 | 2.3475 | 2.2845 |
+| 44972 | red_wine | lgbm | MCP | 0.9080 | 0.8909 | 0.9050 | 0.1806 | 2.9832 | 2.5499 |
+| 44972 | red_wine | lgbm | SCP | 0.8809 | 1.0000 | 0.9025 | 0.1806 | 2.7420 | 2.6989 |
+| 44972 | red_wine | rf | MCP | 0.9026 | 0.9004 | 0.9022 | 0.1806 | 2.8203 | 2.4780 |
+| 44972 | red_wine | rf | SCP | 0.8863 | 1.0000 | 0.9069 | 0.1806 | 2.6533 | 2.6117 |
+| 44976 | sarcos | lgbm | MCP | 0.8995 | 0.9095 | 0.9006 | 0.1090 | 0.5241 | 0.5125 |
+| 44976 | sarcos | lgbm | SCP | 0.8961 | 0.9395 | 0.9008 | 0.1090 | 0.5158 | 0.5122 |
+| 44976 | sarcos | rf | MCP | 0.8993 | 0.8979 | 0.8992 | 0.1090 | 0.5470 | 0.5097 |
+| 44976 | sarcos | rf | SCP | 0.8869 | 0.9931 | 0.8985 | 0.1090 | 0.5187 | 0.5151 |
+| 44984 | cps88wages | lgbm | MCP | 0.8965 | 0.9017 | 0.9010 | 0.8527 | 3.0157 | 3.7609 |
+| 44984 | cps88wages | lgbm | SCP | 0.9988 | 0.8835 | 0.9005 | 0.8527 | 19.9767 | 5.9962 |
+| 44984 | cps88wages | rf | MCP | 0.8982 | 0.9019 | 0.9013 | 0.8527 | 3.4465 | 3.9701 |
+| 44984 | cps88wages | rf | SCP | 0.9987 | 0.8843 | 0.9011 | 0.8527 | 20.9491 | 6.2874 |
+| 44990 | brazilian_houses | lgbm | MCP | 0.9033 | 0.9022 | 0.9032 | 0.0829 | 0.6377 | 0.6131 |
+| 44990 | brazilian_houses | lgbm | SCP | 0.9004 | 0.9353 | 0.9033 | 0.0829 | 0.6279 | 0.6117 |
+| 44990 | brazilian_houses | rf | MCP | 0.8995 | 0.9001 | 0.8995 | 0.0829 | 0.6119 | 0.5870 |
+| 44990 | brazilian_houses | rf | SCP | 0.8970 | 0.9265 | 0.8994 | 0.0829 | 0.6044 | 0.5885 |
+| 44993 | health_insurance | lgbm | MCP | 0.9026 | 0.9021 | 0.9026 | 0.0970 | 3.0965 | 3.0631 |
+| 44993 | health_insurance | lgbm | SCP | 0.9124 | 0.7915 | 0.9007 | 0.0970 | 3.2024 | 3.0830 |
+| 44993 | health_insurance | rf | MCP | 0.9031 | 0.9024 | 0.9030 | 0.0970 | 3.2356 | 3.2470 |
+| 44993 | health_insurance | rf | SCP | 0.9165 | 0.7597 | 0.9013 | 0.0970 | 3.4218 | 3.2943 |
+
+
 # S11 Computational cost (Experiment G)
 
 | task | data_id | name | n_rows | n_features | t_keys_s | t_audit_s | t_taxonomy_s | t_scp_threshold_s | t_mcp_threshold_s | t_lgbm_fit_predict_s |
@@ -394,4 +451,4 @@ Medians over datasets of seed-averaged metrics; split CP with a random split (sc
 | scipy | 1.18.1 |
 | sklearn | 1.9.1 |
 | lightgbm | 4.7.0 |
-| time | 2026-10-21 03:12:28 |
+| time | 2026-10-21 11:05:55 |

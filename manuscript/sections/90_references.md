@@ -36,6 +36,8 @@ Guan L (2023) Localized conformal prediction: a generalized inference framework 
 
 Guo C, Pleiss G, Sun Y, Weinberger KQ (2017) On calibration of modern neural networks. In: Proceedings of the 34th International Conference on Machine Learning, PMLR 70:1321–1330
 
+Hernandez-Hernandez S, Guo Q, Ballester PJ (2026) Conformal prediction of molecule-induced cancer cell growth inhibition challenged by strong distribution shifts. Pattern Recognit 172:112501. https://doi.org/10.1016/j.patcog.2025.112501
+
 Holm S (1979) A simple sequentially rejective multiple test procedure. Scand J Stat 6(2):65–70
 
 Kapoor S, Narayanan A (2023) Leakage and the reproducibility crisis in machine-learning-based science. Patterns 4(9):100804. https://doi.org/10.1016/j.patter.2023.100804
@@ -66,15 +68,17 @@ Papadopoulos H, Vovk V, Gammerman A (2011) Regression conformal prediction with 
 
 Pedregosa F, Varoquaux G, Gramfort A, et al (2011) Scikit-learn: machine learning in Python. J Mach Learn Res 12:2825–2830
 
+Romano Y, Barber RF, Sabatti C, Candès EJ (2020b) With malice toward none: assessing uncertainty via equalized coverage. Harv Data Sci Rev. https://doi.org/10.1162/99608f92.03f00592
+
 Romano Y, Patterson E, Candès EJ (2019) Conformalized quantile regression. In: Advances in Neural Information Processing Systems 32. arXiv:1905.03222
 
 Romano Y, Sesia M, Candès EJ (2020a) Classification with valid and adaptive coverage. In: Advances in Neural Information Processing Systems 33. arXiv:2006.02544
 
-Romano Y, Barber RF, Sabatti C, Candès EJ (2020b) With malice toward none: assessing uncertainty via equalized coverage. Harv Data Sci Rev. https://doi.org/10.1162/99608f92.03f00592
-
 Roth S (2026) Which leakage types matter? A quantitative landscape across 2,047 benchmark datasets. arXiv:2604.04199 (preprint, not peer reviewed)
 
 Sadinle M, Lei J, Wasserman L (2019) Least ambiguous set-valued classifiers with bounded error levels. J Am Stat Assoc 114(525):223–234. https://doi.org/10.1080/01621459.2017.1395341
+
+Seo J-I, Jeon YE, Kim Y (2026) Calibrated Mondrian conformal prediction for uncertainty quantification in spatial modeling. Pattern Recognit 180:114113. https://doi.org/10.1016/j.patcog.2026.114113
 
 Shepperd M, Song Q, Sun Z, Mair C (2013) Data quality: some comments on the NASA software defect datasets. IEEE Trans Softw Eng 39(9):1208–1215. https://doi.org/10.1109/TSE.2013.11
 
@@ -91,3 +95,6 @@ Vovk V (2012) Conditional validity of inductive conformal predictors. In: Procee
 Vovk V, Gammerman A, Shafer G (2022) Algorithmic learning in a random world, 2nd edn. Springer, Cham. https://doi.org/10.1007/978-3-031-06649-8
 
 Wilcoxon F (1945) Individual comparisons by ranking methods. Biometrics Bull 1(6):80–83. https://doi.org/10.2307/3001968
+
+
+Zhang R, Zhou P (2026) A Mondrian conformal predictive system with improved decision trees for uncertainty quantification under heteroscedasticity. Pattern Recognit 172:112338. https://doi.org/10.1016/j.patcog.2025.112338

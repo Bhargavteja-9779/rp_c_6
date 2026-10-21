@@ -28,3 +28,4 @@ inserted value.
 | 20 | "To our knowledge, effect on UQ not examined" | Literature / novelty | candidate_directions.md searches | Supported by documented searches (not exhaustive) | Keep, hedged |
 | 21 | Practical threshold π̄ ≥ 0.1 | Interpretive | X2 strata | Interpretive, post hoc | Labelled as derived from our data |
 | 22 | Typicality confound addressed by injection | Interpretive | Injection design | Interpretive | Keep |
+| 23 | In regression, a distance-normalized score removes most of the shortfall (worst −3.4/−2.6 pp vs −15.8/−16.9 pp) | Empirical (baseline added in review round 2, pre-specified) | statistics.json → normalized_baseline; tables/T11 | Directly supported (regression, 12 datasets, RF/LightGBM only) | Keep; it tempers the remedy claim |

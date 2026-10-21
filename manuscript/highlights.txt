@@ -1,0 +1,5 @@
+Duplicate records split a conformal guarantee between seen and genuinely new rows
+Coverage on new records equals (c − πc_S)/(1 − π); worst case 1 − α/(1 − π)
+A label-free audit of duplicate groups predicts exposure π before any training
+New-record coverage fell up to 27.5 points short on duplicated defect data
+Novelty-Mondrian calibration restores coverage for any mix of seen and new rows

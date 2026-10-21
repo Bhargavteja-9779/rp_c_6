@@ -1,0 +1,311 @@
+{
+"Pattern Recognition": [
+[
+"10.1016/j.patcog.2024.110454",
+"Classification of Childhood Obstructive Sleep Apnea based on X-ray images analysis by Quasi-conformal Geometry",
+2024
+],
+[
+"10.1016/j.patcog.2025.111674",
+"Conformal e-prediction",
+2025
+],
+[
+"10.1016/j.patcog.2025.111758",
+"Expanding conformal prediction to system identification",
+2025
+],
+[
+"10.1016/j.patcog.2025.111841",
+"Conformal e-testing",
+2025
+],
+[
+"10.1016/j.patcog.2025.111999",
+"Beyond conformal predictors: Adaptive Conformal Inference with confidence predictors",
+2026
+],
+[
+"10.1016/j.patcog.2025.112051",
+"Verifiably robust conformal prediction for probabilistic guarantees under adversarial attacks",
+2026
+],
+[
+"10.1016/j.patcog.2025.112219",
+"A novel score function for conformal prediction in rule-based binary classification",
+2026
+],
+[
+"10.1016/j.patcog.2025.112347",
+"Copula-based conformal prediction for prioritized heterogeneous multi-task learning",
+2026
+],
+[
+"10.1016/j.patcog.2025.112330",
+"Reliable classification through rank-based conformal prediction sets",
+2026
+],
+[
+"10.1016/j.patcog.2025.112338",
+"A mondrian conformal predictive system with improved decision trees for uncertainty quantification under heteroscedasticity",
+2026
+],
+[
+"10.1016/j.patcog.2025.112501",
+"Conformal prediction of molecule-induced cancer cell growth inhibition challenged by strong distribution shifts",
+2026
+],
+[
+"10.1016/j.patcog.2025.112514",
+"FCP-Pro: Federated conformal prediction algorithm based on prototype similarity",
+2026
+],
+[
+"10.1016/j.patcog.2025.112515",
+"Conformal Compressors",
+2026
+],
+[
+"10.1016/j.patcog.2025.112513",
+"Density-sorted prediction set: Efficient conformal prediction for multi-target regression",
+2026
+],
+[
+"10.1016/j.patcog.2026.113144",
+"Uncertainty-aware calibrated 3D human motion forecasting with latent conformal prediction",
+2026
+],
+[
+"10.1016/j.patcog.2026.114113",
+"Calibrated Mondrian conformal prediction for uncertainty quantification in spatial modeling",
+2026
+],
+[
+"10.1016/j.patcog.2026.114298",
+"ENVISAGE: An image captioning dataset and conformal uncertainty modeling framework to assist visually impaired individuals",
+2026
+],
+[
+"10.1016/j.patcog.2026.114406",
+"Online conformal inference with retrospective adjustment for faster adaptation to distribution shift",
+2026
+],
+[
+"10.1016/j.patcog.2026.114450",
+"Conformal Recursive Feature Elimination",
+2026
+]
+],
+"Expert Systems with Applications": [
+[
+"10.1016/j.eswa.2023.123087",
+"Conformal prediction of option prices",
+2024
+],
+[
+"10.1016/j.eswa.2024.123743",
+"Uncertainty forecasting system for tropical cyclone tracks based on conformal prediction",
+2024
+],
+[
+"10.1016/j.eswa.2024.126231",
+"Carbonation depth assessment of recycled aggregate concrete: An application of conformal prediction intervals",
+2025
+]
+],
+"Knowledge-Based Systems": [
+[
+"10.1016/j.knosys.2025.114222",
+"Mamba based adaptive conformal inference for probabilistic short-term load forecasting",
+2025
+],
+[
+"10.1016/j.knosys.2026.116110",
+"Trustworthy virtual sensing via physics-residual transformers and conformal prediction",
+2026
+],
+[
+"10.1016/j.knosys.2026.116772",
+"Projected random forests and conformal prediction of circular data",
+2026
+]
+],
+"Information Sciences": [
+[
+"10.1016/j.ins.2025.122037",
+"Conjunction subspaces test for conformal and selective classification",
+2025
+]
+],
+"Neurocomputing": [
+[
+"10.1016/j.neucom.2024.128434",
+"A general framework for multi-step ahead adaptive conformal heteroscedastic time series forecasting",
+2024
+],
+[
+"10.1016/j.neucom.2024.128704",
+"Pruning convolutional neural networks for inductive conformal prediction",
+2025
+],
+[
+"10.1016/j.neucom.2025.130542",
+"A collaborative content moderation framework for toxicity detection based on multitask neural networks and conformal estimates of annotation disagreement",
+2025
+],
+[
+"10.1016/j.neucom.2025.132362",
+"coverforest: Conformal predictions with random forest in python",
+2026
+],
+[
+"10.1016/j.neucom.2026.133182",
+"Conformal prediction-based multi-sensor classification",
+2026
+],
+[
+"10.1016/j.neucom.2026.134318",
+"Look around when in doubt: Adaptive contextual reasoning for conformal and explainable road object detection with CAESAR++",
+2026
+]
+],
+"Neural Networks": [
+[
+"10.1016/j.neunet.2023.09.008",
+"Reliable prediction intervals with directly optimized inductive conformal regression for deep learning",
+2023
+],
+[
+"10.1016/j.neunet.2025.107809",
+"Conformalized prediction of post-fault voltage trajectories using pre-trained and finetuned attention-driven neural operators",
+2025
+]
+],
+"Eng. Appl. of AI": [
+[
+"10.1016/j.engappai.2024.109724",
+"Towards robust ferrous scrap material classification with deep learning and conformal prediction",
+2025
+],
+[
+"10.1016/j.engappai.2025.110363",
+"Integrating permutation feature importance with conformal prediction for robust Explainable Artificial Intelligence in predictive process monitoring",
+2025
+]
+],
+"Applied Soft Computing": [
+[
+"10.1016/j.asoc.2025.113476",
+"A novel wind power interval prediction method based on neural ensemble search and dynamic conformalized quantile regression",
+2025
+],
+[
+"10.1016/j.asoc.2025.113825",
+"Dual-splitting conformal prediction for multi-step time series forecasting",
+2025
+],
+[
+"10.1016/j.asoc.2026.116256",
+"Adaptive conformal prediction for spatio-temporal hypergraph neural networks",
+2026
+]
+],
+"IEEE TNNLS": [
+[
+"10.1109/tnnls.2024.3356512",
+"Conformal Loss-Controlling Prediction",
+2025
+],
+[
+"10.1109/tnnls.2024.3511670",
+"Conformal Symplectic Optimization for Stable Reinforcement Learning",
+2025
+],
+[
+"10.1109/tnnls.2025.3598481",
+"Satellite Pose Set Estimation by Uncertainty-Guided Conformal Keypoint Detection",
+2025
+]
+],
+"Machine Learning": [
+[
+"10.1007/s10994-024-06571-6",
+"Conformal predictions for probabilistically robust scalable machine learning classification",
+2024
+],
+[
+"10.1007/s10994-024-06594-z",
+"Distribution-free conformal joint prediction regions for neural marked temporal point processes",
+2024
+],
+[
+"10.1007/s10994-024-06615-x",
+"Conformal prediction for regression models with asymmetrically distributed errors: application to aircraft navigation during landing maneuver",
+2024
+],
+[
+"10.1007/s10994-024-06713-w",
+"Conformal load prediction with transductive graph autoencoders",
+2025
+],
+[
+"10.1007/s10994-025-06762-9",
+"Correction to: Conformal load prediction with transductive graph autoencoders",
+2025
+],
+[
+"10.1007/s10994-024-06722-9",
+"Conformal multistep-ahead multivariate time-series forecasting",
+2025
+]
+],
+"Int J Approx Reasoning": [
+[
+"10.1016/j.ijar.2026.109751",
+"Conformal prediction for dose-response models with continuous treatments",
+2026
+]
+],
+"Pattern Recognition Letters": [],
+"Information Fusion": [
+[
+"10.1016/j.inffus.2024.102529",
+"Comprehensive Botnet Detection by Mitigating Adversarial Attacks, Navigating the Subtleties of Perturbation Distances and Fortifying Predictions with Conformal Layers",
+2024
+]
+],
+"Data Min Knowl Disc": [],
+"Reliability Eng & Sys Safety": [
+[
+"10.1016/j.ress.2025.111782",
+"Sequential surrogate modeling for inverse design with conformal inference-based uncertainty quantification",
+2026
+],
+[
+"10.1016/j.ress.2026.112417",
+"Conformal machine learning for reliable anomaly detection in industrial cyber-physical systems",
+2026
+],
+[
+"10.1016/j.ress.2026.112945",
+"Credible long-term degradation prediction for proton exchange membrane fuel cell: A physics-informed neural network with conformal prediction approach",
+2026
+],
+[
+"10.1016/j.ress.2026.113634",
+"Similarity-calibrated conformal prediction: data-free coverage guarantees for remaining-useful-life intervals under operating-regime transfer",
+2027
+]
+],
+"IEEE TKDE": [],
+"Neural Comput & Applic": [],
+"Applied Intelligence": [
+[
+"10.1007/s10489-025-06708-7",
+"Conformal prediction for out-of-distribution time-series classification",
+2025
+]
+],
+"Journal of Big Data": [],
+"Inf Proc & Mgmt": []
+}
