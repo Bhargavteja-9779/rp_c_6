@@ -1,0 +1,19 @@
+{
+ "n_rows": 1372,
+ "n_groups": 1348,
+ "dup_row_frac": 0.025510204081632654,
+ "excess_row_frac": 0.01749271137026239,
+ "max_group": 4,
+ "pred_exposure": 0.021857793311289404,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1462,
+ "task": "classification",
+ "name": "banknote-authentication",
+ "n_raw": 1372,
+ "subsampled": false,
+ "n_features": 4,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 14.5
+}

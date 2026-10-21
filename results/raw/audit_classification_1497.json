@@ -1,0 +1,19 @@
+{
+ "n_rows": 5456,
+ "n_groups": 5456,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1497,
+ "task": "classification",
+ "name": "wall-robot-navigation",
+ "n_raw": 5456,
+ "subsampled": false,
+ "n_features": 24,
+ "dropped_missing_target": 0,
+ "n_classes": 4,
+ "seconds": 74.4
+}

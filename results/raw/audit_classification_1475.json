@@ -1,0 +1,19 @@
+{
+ "n_rows": 6118,
+ "n_groups": 5502,
+ "dup_row_frac": 0.17276887871853547,
+ "excess_row_frac": 0.10068649885583524,
+ "max_group": 21,
+ "pred_exposure": 0.12149891380445882,
+ "conflict_group_frac": 0.2675736961451247,
+ "conflict_row_frac": 0.05459300424975482,
+ "data_id": 1475,
+ "task": "classification",
+ "name": "first-order-theorem-proving",
+ "n_raw": 6118,
+ "subsampled": false,
+ "n_features": 51,
+ "dropped_missing_target": 0,
+ "n_classes": 6,
+ "seconds": 191.3
+}

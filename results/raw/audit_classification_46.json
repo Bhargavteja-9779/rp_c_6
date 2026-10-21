@@ -1,0 +1,19 @@
+{
+ "n_rows": 3190,
+ "n_groups": 3005,
+ "dup_row_frac": 0.09717868338557993,
+ "excess_row_frac": 0.05799373040752351,
+ "max_group": 5,
+ "pred_exposure": 0.07135700061824962,
+ "conflict_group_frac": 0.008,
+ "conflict_row_frac": 0.0006269592476489029,
+ "data_id": 46,
+ "task": "classification",
+ "name": "splice",
+ "n_raw": 3190,
+ "subsampled": false,
+ "n_features": 60,
+ "dropped_missing_target": 0,
+ "n_classes": 3,
+ "seconds": 72.8
+}

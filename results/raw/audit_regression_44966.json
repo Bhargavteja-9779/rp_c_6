@@ -1,0 +1,19 @@
+{
+ "n_rows": 1066,
+ "n_groups": 244,
+ "dup_row_frac": 0.8939962476547842,
+ "excess_row_frac": 0.7711069418386491,
+ "max_group": 73,
+ "pred_exposure": 0.8481022744399077,
+ "conflict_group_frac": 0.5648854961832062,
+ "conflict_row_frac": 0.6651031894934334,
+ "data_id": 44966,
+ "task": "regression",
+ "name": "solar_flare",
+ "n_raw": 1066,
+ "subsampled": false,
+ "n_features": 10,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 15.7
+}

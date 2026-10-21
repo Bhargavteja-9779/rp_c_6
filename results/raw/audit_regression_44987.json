@@ -1,0 +1,19 @@
+{
+ "n_rows": 1156,
+ "n_groups": 1156,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 44987,
+ "task": "regression",
+ "name": "socmob",
+ "n_raw": 1156,
+ "subsampled": false,
+ "n_features": 5,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 22.7
+}

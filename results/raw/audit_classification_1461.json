@@ -1,0 +1,19 @@
+{
+ "n_rows": 30000,
+ "n_groups": 30000,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1461,
+ "task": "classification",
+ "name": "bank-marketing",
+ "n_raw": 45211,
+ "subsampled": true,
+ "n_features": 16,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 198.3
+}

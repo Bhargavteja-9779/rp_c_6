@@ -1,0 +1,19 @@
+{
+ "n_rows": 11055,
+ "n_groups": 5785,
+ "dup_row_frac": 0.7131614654002714,
+ "excess_row_frac": 0.4767073722297603,
+ "max_group": 25,
+ "pred_exposure": 0.5755898602104536,
+ "conflict_group_frac": 0.02448355011476664,
+ "conflict_row_frac": 0.03229308005427409,
+ "data_id": 4534,
+ "task": "classification",
+ "name": "PhishingWebsites",
+ "n_raw": 11055,
+ "subsampled": false,
+ "n_features": 30,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 97.4
+}

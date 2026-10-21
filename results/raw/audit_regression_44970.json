@@ -1,0 +1,19 @@
+{
+ "n_rows": 908,
+ "n_groups": 775,
+ "dup_row_frac": 0.23898678414096916,
+ "excess_row_frac": 0.14647577092511013,
+ "max_group": 7,
+ "pred_exposure": 0.17960310261415,
+ "conflict_group_frac": 1.0,
+ "conflict_row_frac": 0.23898678414096916,
+ "data_id": 44970,
+ "task": "regression",
+ "name": "QSAR_fish_toxicity",
+ "n_raw": 908,
+ "subsampled": false,
+ "n_features": 6,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 15.7
+}

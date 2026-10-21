@@ -1,0 +1,19 @@
+{
+ "n_rows": 3196,
+ "n_groups": 3196,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 3,
+ "task": "classification",
+ "name": "kr-vs-kp",
+ "n_raw": 3196,
+ "subsampled": false,
+ "n_features": 36,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 37.8
+}

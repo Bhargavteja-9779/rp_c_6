@@ -1,0 +1,19 @@
+{
+ "n_rows": 7797,
+ "n_groups": 7797,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 300,
+ "task": "classification",
+ "name": "isolet",
+ "n_raw": 7797,
+ "subsampled": false,
+ "n_features": 617,
+ "dropped_missing_target": 0,
+ "n_classes": 26,
+ "seconds": 4577.0
+}

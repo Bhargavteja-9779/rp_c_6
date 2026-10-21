@@ -1,0 +1,19 @@
+{
+ "n_rows": 30000,
+ "n_groups": 30000,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 41027,
+ "task": "classification",
+ "name": "jungle_chess_2pcs_raw_endgame_complete",
+ "n_raw": 44819,
+ "subsampled": true,
+ "n_features": 6,
+ "dropped_missing_target": 0,
+ "n_classes": 3,
+ "seconds": 213.0
+}

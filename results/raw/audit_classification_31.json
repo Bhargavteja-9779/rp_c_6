@@ -1,0 +1,19 @@
+{
+ "n_rows": 1000,
+ "n_groups": 1000,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 31,
+ "task": "classification",
+ "name": "credit-g",
+ "n_raw": 1000,
+ "subsampled": false,
+ "n_features": 20,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 17.2
+}

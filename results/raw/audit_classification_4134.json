@@ -1,0 +1,19 @@
+{
+ "n_rows": 3751,
+ "n_groups": 3751,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 4134,
+ "task": "classification",
+ "name": "Bioresponse",
+ "n_raw": 3751,
+ "subsampled": false,
+ "n_features": 1776,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 224.1
+}

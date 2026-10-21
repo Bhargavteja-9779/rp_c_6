@@ -1,0 +1,19 @@
+{
+ "n_rows": 19178,
+ "n_groups": 19178,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 45012,
+ "task": "regression",
+ "name": "fifa",
+ "n_raw": 19178,
+ "subsampled": false,
+ "n_features": 28,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 625.0
+}

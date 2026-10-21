@@ -1,0 +1,19 @@
+{
+ "n_rows": 1599,
+ "n_groups": 1359,
+ "dup_row_frac": 0.2876797998749218,
+ "excess_row_frac": 0.150093808630394,
+ "max_group": 4,
+ "pred_exposure": 0.18141333449343267,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 44972,
+ "task": "regression",
+ "name": "red_wine",
+ "n_raw": 1599,
+ "subsampled": false,
+ "n_features": 11,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 27.3
+}

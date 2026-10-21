@@ -1,0 +1,19 @@
+{
+ "n_rows": 10000,
+ "n_groups": 10000,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 44973,
+ "task": "regression",
+ "name": "grid_stability",
+ "n_raw": 10000,
+ "subsampled": false,
+ "n_features": 12,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 211.6
+}

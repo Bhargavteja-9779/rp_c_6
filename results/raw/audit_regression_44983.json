@@ -1,0 +1,19 @@
+{
+ "n_rows": 13932,
+ "n_groups": 13922,
+ "dup_row_frac": 0.0013637668676428367,
+ "excess_row_frac": 0.000717772035601493,
+ "max_group": 3,
+ "pred_exposure": 0.0008699813380268419,
+ "conflict_group_frac": 1.0,
+ "conflict_row_frac": 0.0013637668676428367,
+ "data_id": 44983,
+ "task": "regression",
+ "name": "miami_housing",
+ "n_raw": 13932,
+ "subsampled": false,
+ "n_features": 15,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 344.9
+}

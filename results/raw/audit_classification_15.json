@@ -1,0 +1,19 @@
+{
+ "n_rows": 699,
+ "n_groups": 463,
+ "dup_row_frac": 0.4062947067238913,
+ "excess_row_frac": 0.3376251788268956,
+ "max_group": 27,
+ "pred_exposure": 0.37672229981335337,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 15,
+ "task": "classification",
+ "name": "breast-w",
+ "n_raw": 699,
+ "subsampled": false,
+ "n_features": 9,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 7.1
+}

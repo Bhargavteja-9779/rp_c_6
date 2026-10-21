@@ -1,0 +1,19 @@
+{
+ "n_rows": 1080,
+ "n_groups": 1052,
+ "dup_row_frac": 0.04722222222222222,
+ "excess_row_frac": 0.025925925925925925,
+ "max_group": 4,
+ "pred_exposure": 0.03151528616557617,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1468,
+ "task": "classification",
+ "name": "cnae-9",
+ "n_raw": 1080,
+ "subsampled": false,
+ "n_features": 856,
+ "dropped_missing_target": 0,
+ "n_classes": 9,
+ "seconds": 44.5
+}

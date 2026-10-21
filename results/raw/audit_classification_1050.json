@@ -1,0 +1,19 @@
+{
+ "n_rows": 1563,
+ "n_groups": 1436,
+ "dup_row_frac": 0.12284069097888675,
+ "excess_row_frac": 0.08125399872040946,
+ "max_group": 35,
+ "pred_exposure": 0.09444242476118829,
+ "conflict_group_frac": 0.046153846153846156,
+ "conflict_row_frac": 0.005758157389635317,
+ "data_id": 1050,
+ "task": "classification",
+ "name": "pc3",
+ "n_raw": 1563,
+ "subsampled": false,
+ "n_features": 37,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 18.1
+}

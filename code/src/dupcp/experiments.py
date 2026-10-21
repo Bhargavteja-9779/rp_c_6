@@ -212,6 +212,7 @@ def inject_duplicates(X: pd.DataFrame, y: np.ndarray, rate: float, seed: int):
 
 def run_injection(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
     from .data import row_keys
+    os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, f"inject_{task}_{data_id}.csv")
     if os.path.exists(path):
         return "cached"
@@ -265,6 +266,7 @@ CAPACITY_GRID = {
 
 
 def run_capacity(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
+    os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, f"capacity_{task}_{data_id}.csv")
     if os.path.exists(path):
         return "cached"

@@ -1,0 +1,19 @@
+{
+ "n_rows": 2000,
+ "n_groups": 1994,
+ "dup_row_frac": 0.006,
+ "excess_row_frac": 0.003,
+ "max_group": 2,
+ "pred_exposure": 0.0036018009004501776,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 16,
+ "task": "classification",
+ "name": "mfeat-karhunen",
+ "n_raw": 2000,
+ "subsampled": false,
+ "n_features": 64,
+ "dropped_missing_target": 0,
+ "n_classes": 10,
+ "seconds": 162.7
+}

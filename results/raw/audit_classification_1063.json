@@ -1,0 +1,19 @@
+{
+ "n_rows": 522,
+ "n_groups": 369,
+ "dup_row_frac": 0.3563218390804598,
+ "excess_row_frac": 0.29310344827586204,
+ "max_group": 63,
+ "pred_exposure": 0.3202303459775208,
+ "conflict_group_frac": 0.18181818181818182,
+ "conflict_row_frac": 0.2260536398467433,
+ "data_id": 1063,
+ "task": "classification",
+ "name": "kc2",
+ "n_raw": 522,
+ "subsampled": false,
+ "n_features": 21,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 9.2
+}

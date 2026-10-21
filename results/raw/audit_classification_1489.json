@@ -1,0 +1,19 @@
+{
+ "n_rows": 5404,
+ "n_groups": 5395,
+ "dup_row_frac": 0.0033308660251665434,
+ "excess_row_frac": 0.0016654330125832717,
+ "max_group": 2,
+ "pred_exposure": 0.0019986429120151823,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1489,
+ "task": "classification",
+ "name": "phoneme",
+ "n_raw": 5404,
+ "subsampled": false,
+ "n_features": 5,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 38.6
+}

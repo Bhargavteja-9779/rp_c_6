@@ -1,0 +1,19 @@
+{
+ "n_rows": 5620,
+ "n_groups": 5620,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 28,
+ "task": "classification",
+ "name": "optdigits",
+ "n_raw": 5620,
+ "subsampled": false,
+ "n_features": 64,
+ "dropped_missing_target": 0,
+ "n_classes": 10,
+ "seconds": 89.7
+}

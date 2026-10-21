@@ -1,0 +1,19 @@
+{
+ "n_rows": 748,
+ "n_groups": 502,
+ "dup_row_frac": 0.42112299465240643,
+ "excess_row_frac": 0.32887700534759357,
+ "max_group": 35,
+ "pred_exposure": 0.3666405854789202,
+ "conflict_group_frac": 0.4492753623188406,
+ "conflict_row_frac": 0.26737967914438504,
+ "data_id": 1464,
+ "task": "classification",
+ "name": "blood-transfusion-service-center",
+ "n_raw": 748,
+ "subsampled": false,
+ "n_features": 4,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 8.7
+}

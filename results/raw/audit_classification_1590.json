@@ -1,0 +1,19 @@
+{
+ "n_rows": 30000,
+ "n_groups": 29965,
+ "dup_row_frac": 0.0023333333333333335,
+ "excess_row_frac": 0.0011666666666666668,
+ "max_group": 2,
+ "pred_exposure": 0.001400046668266828,
+ "conflict_group_frac": 0.08571428571428572,
+ "conflict_row_frac": 0.0002,
+ "data_id": 1590,
+ "task": "classification",
+ "name": "adult",
+ "n_raw": 48842,
+ "subsampled": true,
+ "n_features": 14,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 585.3
+}

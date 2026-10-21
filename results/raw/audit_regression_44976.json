@@ -1,0 +1,19 @@
+{
+ "n_rows": 30000,
+ "n_groups": 27271,
+ "dup_row_frac": 0.18193333333333334,
+ "excess_row_frac": 0.09096666666666667,
+ "max_group": 2,
+ "pred_exposure": 0.10916363879143354,
+ "conflict_group_frac": 0.00036643459142543056,
+ "conflict_row_frac": 6.666666666666667e-05,
+ "data_id": 44976,
+ "task": "regression",
+ "name": "sarcos",
+ "n_raw": 48933,
+ "subsampled": true,
+ "n_features": 21,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 1172.7
+}

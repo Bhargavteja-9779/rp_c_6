@@ -1,0 +1,19 @@
+{
+ "n_rows": 8192,
+ "n_groups": 8192,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 44980,
+ "task": "regression",
+ "name": "kin8nm",
+ "n_raw": 8192,
+ "subsampled": false,
+ "n_features": 8,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 145.4
+}

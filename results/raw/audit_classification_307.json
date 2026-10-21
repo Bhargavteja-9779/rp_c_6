@@ -1,0 +1,19 @@
+{
+ "n_rows": 990,
+ "n_groups": 990,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 307,
+ "task": "classification",
+ "name": "vowel",
+ "n_raw": 990,
+ "subsampled": false,
+ "n_features": 12,
+ "dropped_missing_target": 0,
+ "n_classes": 11,
+ "seconds": 41.9
+}

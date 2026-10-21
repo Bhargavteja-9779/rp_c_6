@@ -1,0 +1,19 @@
+{
+ "n_rows": 5500,
+ "n_groups": 5473,
+ "dup_row_frac": 0.009818181818181818,
+ "excess_row_frac": 0.004909090909090909,
+ "max_group": 2,
+ "pred_exposure": 0.005891980360111942,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 40499,
+ "task": "classification",
+ "name": "texture",
+ "n_raw": 5500,
+ "subsampled": false,
+ "n_features": 40,
+ "dropped_missing_target": 0,
+ "n_classes": 11,
+ "seconds": 177.0
+}

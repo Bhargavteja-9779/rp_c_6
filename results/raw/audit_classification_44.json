@@ -1,0 +1,19 @@
+{
+ "n_rows": 4601,
+ "n_groups": 4207,
+ "dup_row_frac": 0.12540752010432515,
+ "excess_row_frac": 0.08563355792219082,
+ "max_group": 69,
+ "pred_exposure": 0.09850558911300183,
+ "conflict_group_frac": 0.01639344262295082,
+ "conflict_row_frac": 0.0013040643338404696,
+ "data_id": 44,
+ "task": "classification",
+ "name": "spambase",
+ "n_raw": 4601,
+ "subsampled": false,
+ "n_features": 57,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 40.3
+}

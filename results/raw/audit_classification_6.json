@@ -1,0 +1,19 @@
+{
+ "n_rows": 20000,
+ "n_groups": 18668,
+ "dup_row_frac": 0.10885,
+ "excess_row_frac": 0.0666,
+ "max_group": 26,
+ "pred_exposure": 0.08061683371203926,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 6,
+ "task": "classification",
+ "name": "letter",
+ "n_raw": 20000,
+ "subsampled": false,
+ "n_features": 16,
+ "dropped_missing_target": 0,
+ "n_classes": 26,
+ "seconds": 503.2
+}

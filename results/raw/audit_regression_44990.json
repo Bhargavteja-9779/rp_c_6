@@ -1,0 +1,19 @@
+{
+ "n_rows": 10692,
+ "n_groups": 9968,
+ "dup_row_frac": 0.10699588477366255,
+ "excess_row_frac": 0.06771417882528993,
+ "max_group": 24,
+ "pred_exposure": 0.08051860756450985,
+ "conflict_group_frac": 0.48333333333333334,
+ "conflict_row_frac": 0.058361391694725026,
+ "data_id": 44990,
+ "task": "regression",
+ "name": "brazilian_houses",
+ "n_raw": 10692,
+ "subsampled": false,
+ "n_features": 9,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 162.7
+}

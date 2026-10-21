@@ -1,0 +1,19 @@
+{
+ "n_rows": 841,
+ "n_groups": 841,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 458,
+ "task": "classification",
+ "name": "analcatdata_authorship",
+ "n_raw": 841,
+ "subsampled": false,
+ "n_features": 70,
+ "dropped_missing_target": 0,
+ "n_classes": 4,
+ "seconds": 19.9
+}

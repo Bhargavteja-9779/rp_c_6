@@ -1,0 +1,19 @@
+{
+ "n_rows": 2000,
+ "n_groups": 1888,
+ "dup_row_frac": 0.111,
+ "excess_row_frac": 0.056,
+ "max_group": 4,
+ "pred_exposure": 0.0673052922376376,
+ "conflict_group_frac": 0.9636363636363636,
+ "conflict_row_frac": 0.107,
+ "data_id": 18,
+ "task": "classification",
+ "name": "mfeat-morphological",
+ "n_raw": 2000,
+ "subsampled": false,
+ "n_features": 6,
+ "dropped_missing_target": 0,
+ "n_classes": 10,
+ "seconds": 39.0
+}

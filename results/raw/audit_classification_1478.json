@@ -1,0 +1,19 @@
+{
+ "n_rows": 10299,
+ "n_groups": 10299,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1478,
+ "task": "classification",
+ "name": "har",
+ "n_raw": 10299,
+ "subsampled": false,
+ "n_features": 561,
+ "dropped_missing_target": 0,
+ "n_classes": 6,
+ "seconds": 1800.6
+}

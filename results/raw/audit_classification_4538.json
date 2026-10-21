@@ -1,0 +1,19 @@
+{
+ "n_rows": 9873,
+ "n_groups": 9873,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 4538,
+ "task": "classification",
+ "name": "GesturePhaseSegmentationProcessed",
+ "n_raw": 9873,
+ "subsampled": false,
+ "n_features": 32,
+ "dropped_missing_target": 0,
+ "n_classes": 5,
+ "seconds": 223.5
+}

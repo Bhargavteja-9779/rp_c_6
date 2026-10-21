@@ -1,0 +1,19 @@
+{
+ "n_rows": 1473,
+ "n_groups": 1358,
+ "dup_row_frac": 0.143245078071962,
+ "excess_row_frac": 0.07807196198234895,
+ "max_group": 4,
+ "pred_exposure": 0.09518289701933039,
+ "conflict_group_frac": 0.6458333333333334,
+ "conflict_row_frac": 0.09504412763068568,
+ "data_id": 23,
+ "task": "classification",
+ "name": "cmc",
+ "n_raw": 1473,
+ "subsampled": false,
+ "n_features": 9,
+ "dropped_missing_target": 0,
+ "n_classes": 3,
+ "seconds": 19.8
+}

@@ -1,0 +1,19 @@
+{
+ "n_rows": 28155,
+ "n_groups": 6362,
+ "dup_row_frac": 0.8982418753329782,
+ "excess_row_frac": 0.7740365832001421,
+ "max_group": 71,
+ "pred_exposure": 0.8530023111337797,
+ "conflict_group_frac": 0.9974263654561052,
+ "conflict_row_frac": 0.8976025572722429,
+ "data_id": 44984,
+ "task": "regression",
+ "name": "cps88wages",
+ "n_raw": 28155,
+ "subsampled": false,
+ "n_features": 6,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 133.1
+}

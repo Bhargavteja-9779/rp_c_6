@@ -1,0 +1,19 @@
+{
+ "n_rows": 1030,
+ "n_groups": 996,
+ "dup_row_frac": 0.05145631067961165,
+ "excess_row_frac": 0.03300970873786408,
+ "max_group": 4,
+ "pred_exposure": 0.04092443471097258,
+ "conflict_group_frac": 0.47368421052631576,
+ "conflict_row_frac": 0.019417475728155338,
+ "data_id": 44959,
+ "task": "regression",
+ "name": "concrete_compressive_strength",
+ "n_raw": 1030,
+ "subsampled": false,
+ "n_features": 8,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 25.0
+}

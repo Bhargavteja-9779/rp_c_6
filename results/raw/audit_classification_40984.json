@@ -1,0 +1,19 @@
+{
+ "n_rows": 2310,
+ "n_groups": 2068,
+ "dup_row_frac": 0.20346320346320346,
+ "excess_row_frac": 0.10476190476190476,
+ "max_group": 6,
+ "pred_exposure": 0.12596842442260736,
+ "conflict_group_frac": 0.0043859649122807015,
+ "conflict_row_frac": 0.0021645021645021645,
+ "data_id": 40984,
+ "task": "classification",
+ "name": "segment",
+ "n_raw": 2310,
+ "subsampled": false,
+ "n_features": 18,
+ "dropped_missing_target": 0,
+ "n_classes": 7,
+ "seconds": 43.0
+}

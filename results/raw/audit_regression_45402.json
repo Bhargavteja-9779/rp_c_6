@@ -1,0 +1,19 @@
+{
+ "n_rows": 3107,
+ "n_groups": 3107,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 45402,
+ "task": "regression",
+ "name": "space_ga",
+ "n_raw": 3107,
+ "subsampled": false,
+ "n_features": 6,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 51.0
+}

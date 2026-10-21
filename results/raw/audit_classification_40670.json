@@ -1,0 +1,19 @@
+{
+ "n_rows": 3186,
+ "n_groups": 3001,
+ "dup_row_frac": 0.0973006905210295,
+ "excess_row_frac": 0.05806654111738858,
+ "max_group": 5,
+ "pred_exposure": 0.07145684814053803,
+ "conflict_group_frac": 0.008,
+ "conflict_row_frac": 0.0006277463904582549,
+ "data_id": 40670,
+ "task": "classification",
+ "name": "dna",
+ "n_raw": 3186,
+ "subsampled": false,
+ "n_features": 180,
+ "dropped_missing_target": 0,
+ "n_classes": 3,
+ "seconds": 136.6
+}

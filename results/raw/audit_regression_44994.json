@@ -1,0 +1,19 @@
+{
+ "n_rows": 804,
+ "n_groups": 803,
+ "dup_row_frac": 0.0024875621890547263,
+ "excess_row_frac": 0.0012437810945273632,
+ "max_group": 2,
+ "pred_exposure": 0.0014931568806031135,
+ "conflict_group_frac": 1.0,
+ "conflict_row_frac": 0.0024875621890547263,
+ "data_id": 44994,
+ "task": "regression",
+ "name": "cars",
+ "n_raw": 804,
+ "subsampled": false,
+ "n_features": 17,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 12.6
+}

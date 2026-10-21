@@ -1,0 +1,19 @@
+{
+ "n_rows": 1458,
+ "n_groups": 1343,
+ "dup_row_frac": 0.11454046639231824,
+ "excess_row_frac": 0.07887517146776406,
+ "max_group": 31,
+ "pred_exposure": 0.09098331134987475,
+ "conflict_group_frac": 0.019230769230769232,
+ "conflict_row_frac": 0.00205761316872428,
+ "data_id": 1049,
+ "task": "classification",
+ "name": "pc4",
+ "n_raw": 1458,
+ "subsampled": false,
+ "n_features": 37,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 17.2
+}

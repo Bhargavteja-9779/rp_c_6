@@ -1,0 +1,19 @@
+{
+ "n_rows": 10992,
+ "n_groups": 10992,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 32,
+ "task": "classification",
+ "name": "pendigits",
+ "n_raw": 10992,
+ "subsampled": false,
+ "n_features": 16,
+ "dropped_missing_target": 0,
+ "n_classes": 10,
+ "seconds": 142.1
+}

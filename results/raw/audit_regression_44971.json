@@ -1,0 +1,19 @@
+{
+ "n_rows": 4898,
+ "n_groups": 3961,
+ "dup_row_frac": 0.34891792568395263,
+ "excess_row_frac": 0.19130257247856267,
+ "max_group": 8,
+ "pred_exposure": 0.23159436169934988,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 44971,
+ "task": "regression",
+ "name": "white_wine",
+ "n_raw": 4898,
+ "subsampled": false,
+ "n_features": 11,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 75.4
+}

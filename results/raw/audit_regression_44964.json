@@ -1,0 +1,19 @@
+{
+ "n_rows": 21263,
+ "n_groups": 15170,
+ "dup_row_frac": 0.40027277430277947,
+ "excess_row_frac": 0.28655410807506,
+ "max_group": 110,
+ "pred_exposure": 0.3338593613282138,
+ "conflict_group_frac": 0.9818031430934657,
+ "conflict_row_frac": 0.39613412970888395,
+ "data_id": 44964,
+ "task": "regression",
+ "name": "superconductivity",
+ "n_raw": 21263,
+ "subsampled": false,
+ "n_features": 81,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 2128.4
+}

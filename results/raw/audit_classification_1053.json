@@ -1,0 +1,19 @@
+{
+ "n_rows": 10885,
+ "n_groups": 8824,
+ "dup_row_frac": 0.2508038585209003,
+ "excess_row_frac": 0.1893431327514929,
+ "max_group": 173,
+ "pred_exposure": 0.2144848173193153,
+ "conflict_group_frac": 0.13153961136023917,
+ "conflict_row_frac": 0.08167202572347267,
+ "data_id": 1053,
+ "task": "classification",
+ "name": "jm1",
+ "n_raw": 10885,
+ "subsampled": false,
+ "n_features": 21,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 77.4
+}

@@ -1,0 +1,19 @@
+{
+ "n_rows": 3279,
+ "n_groups": 2419,
+ "dup_row_frac": 0.3470570295821897,
+ "excess_row_frac": 0.26227508386703263,
+ "max_group": 58,
+ "pred_exposure": 0.299885269607299,
+ "conflict_group_frac": 0.01079136690647482,
+ "conflict_row_frac": 0.01646843549862763,
+ "data_id": 40978,
+ "task": "classification",
+ "name": "Internet-Advertisements",
+ "n_raw": 3279,
+ "subsampled": false,
+ "n_features": 1558,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 980.5
+}

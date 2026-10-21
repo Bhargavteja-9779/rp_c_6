@@ -1,0 +1,19 @@
+{
+ "n_rows": 4839,
+ "n_groups": 4819,
+ "dup_row_frac": 0.008266170696424881,
+ "excess_row_frac": 0.0041330853482124405,
+ "max_group": 2,
+ "pred_exposure": 0.004960044136389483,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 40983,
+ "task": "classification",
+ "name": "wilt",
+ "n_raw": 4839,
+ "subsampled": false,
+ "n_features": 5,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 22.0
+}

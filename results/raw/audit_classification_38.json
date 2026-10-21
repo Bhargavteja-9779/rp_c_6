@@ -1,0 +1,19 @@
+{
+ "n_rows": 3772,
+ "n_groups": 3711,
+ "dup_row_frac": 0.024920466595970307,
+ "excess_row_frac": 0.016171792152704135,
+ "max_group": 6,
+ "pred_exposure": 0.019978283660237944,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 38,
+ "task": "classification",
+ "name": "sick",
+ "n_raw": 3772,
+ "subsampled": false,
+ "n_features": 29,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 36.8
+}

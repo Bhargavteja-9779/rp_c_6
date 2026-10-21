@@ -1,0 +1,19 @@
+{
+ "n_rows": 625,
+ "n_groups": 625,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 11,
+ "task": "classification",
+ "name": "balance-scale",
+ "n_raw": 625,
+ "subsampled": false,
+ "n_features": 4,
+ "dropped_missing_target": 0,
+ "n_classes": 3,
+ "seconds": 10.0
+}

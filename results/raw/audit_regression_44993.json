@@ -1,0 +1,19 @@
+{
+ "n_rows": 22272,
+ "n_groups": 20494,
+ "dup_row_frac": 0.12414691091954023,
+ "excess_row_frac": 0.07983117816091954,
+ "max_group": 19,
+ "pred_exposure": 0.09598514410233633,
+ "conflict_group_frac": 0.6727456940222898,
+ "conflict_row_frac": 0.08782327586206896,
+ "data_id": 44993,
+ "task": "regression",
+ "name": "health_insurance",
+ "n_raw": 22272,
+ "subsampled": false,
+ "n_features": 11,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 202.7
+}

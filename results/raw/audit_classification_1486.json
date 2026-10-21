@@ -1,0 +1,19 @@
+{
+ "n_rows": 30000,
+ "n_groups": 27975,
+ "dup_row_frac": 0.10613333333333333,
+ "excess_row_frac": 0.0675,
+ "max_group": 136,
+ "pred_exposure": 0.07921465266167002,
+ "conflict_group_frac": 0.001725625539257981,
+ "conflict_row_frac": 0.0002666666666666667,
+ "data_id": 1486,
+ "task": "classification",
+ "name": "nomao",
+ "n_raw": 34465,
+ "subsampled": true,
+ "n_features": 118,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 340.1
+}

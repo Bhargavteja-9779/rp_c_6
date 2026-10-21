@@ -1,0 +1,19 @@
+{
+ "n_rows": 30000,
+ "n_groups": 28820,
+ "dup_row_frac": 0.07276666666666666,
+ "excess_row_frac": 0.03933333333333333,
+ "max_group": 9,
+ "pred_exposure": 0.047683857882897515,
+ "conflict_group_frac": 0.028913260219341975,
+ "conflict_row_frac": 0.0022333333333333333,
+ "data_id": 44963,
+ "task": "regression",
+ "name": "physiochemical_protein",
+ "n_raw": 45730,
+ "subsampled": true,
+ "n_features": 9,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 642.1
+}

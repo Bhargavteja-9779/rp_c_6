@@ -1,0 +1,19 @@
+{
+ "n_rows": 500,
+ "n_groups": 499,
+ "dup_row_frac": 0.004,
+ "excess_row_frac": 0.002,
+ "max_group": 2,
+ "pred_exposure": 0.0024048096192385185,
+ "conflict_group_frac": 1.0,
+ "conflict_row_frac": 0.004,
+ "data_id": 23381,
+ "task": "classification",
+ "name": "dresses-sales",
+ "n_raw": 500,
+ "subsampled": false,
+ "n_features": 12,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 14.4
+}

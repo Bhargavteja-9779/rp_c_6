@@ -1,0 +1,19 @@
+{
+ "n_rows": 583,
+ "n_groups": 570,
+ "dup_row_frac": 0.044596912521440824,
+ "excess_row_frac": 0.022298456260720412,
+ "max_group": 2,
+ "pred_exposure": 0.02681944911083136,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1480,
+ "task": "classification",
+ "name": "ilpd",
+ "n_raw": 583,
+ "subsampled": false,
+ "n_features": 10,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 11.4
+}

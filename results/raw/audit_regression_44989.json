@@ -1,0 +1,19 @@
+{
+ "n_rows": 21613,
+ "n_groups": 21612,
+ "dup_row_frac": 9.253689908851155e-05,
+ "excess_row_frac": 4.6268449544255775e-05,
+ "max_group": 2,
+ "pred_exposure": 5.55255648441625e-05,
+ "conflict_group_frac": 1.0,
+ "conflict_row_frac": 9.253689908851155e-05,
+ "data_id": 44989,
+ "task": "regression",
+ "name": "kings_county",
+ "n_raw": 21613,
+ "subsampled": false,
+ "n_features": 21,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 783.7
+}

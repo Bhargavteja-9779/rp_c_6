@@ -1,0 +1,19 @@
+{
+ "n_rows": 846,
+ "n_groups": 846,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 54,
+ "task": "classification",
+ "name": "vehicle",
+ "n_raw": 846,
+ "subsampled": false,
+ "n_features": 18,
+ "dropped_missing_target": 0,
+ "n_classes": 4,
+ "seconds": 18.8
+}

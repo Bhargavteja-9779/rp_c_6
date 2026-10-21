@@ -1,0 +1,19 @@
+{
+ "n_rows": 797,
+ "n_groups": 246,
+ "dup_row_frac": 0.8933500627352572,
+ "excess_row_frac": 0.6913425345043914,
+ "max_group": 29,
+ "pred_exposure": 0.8109753553716206,
+ "conflict_group_frac": 0.937888198757764,
+ "conflict_row_frac": 0.8619824341279799,
+ "data_id": 469,
+ "task": "classification",
+ "name": "analcatdata_dmft",
+ "n_raw": 797,
+ "subsampled": false,
+ "n_features": 4,
+ "dropped_missing_target": 0,
+ "n_classes": 6,
+ "seconds": 16.8
+}

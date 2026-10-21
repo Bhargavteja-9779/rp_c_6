@@ -1,0 +1,19 @@
+{
+ "n_rows": 1055,
+ "n_groups": 1052,
+ "dup_row_frac": 0.005687203791469194,
+ "excess_row_frac": 0.002843601895734597,
+ "max_group": 2,
+ "pred_exposure": 0.003415559772295302,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1494,
+ "task": "classification",
+ "name": "qsar-biodeg",
+ "n_raw": 1055,
+ "subsampled": false,
+ "n_features": 41,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 15.9
+}

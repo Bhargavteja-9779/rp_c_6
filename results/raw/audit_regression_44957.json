@@ -1,0 +1,19 @@
+{
+ "n_rows": 1503,
+ "n_groups": 1503,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 44957,
+ "task": "regression",
+ "name": "airfoil_self_noise",
+ "n_raw": 1503,
+ "subsampled": false,
+ "n_features": 5,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 24.5
+}

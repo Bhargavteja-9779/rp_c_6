@@ -1,0 +1,19 @@
+{
+ "n_rows": 1593,
+ "n_groups": 1593,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1501,
+ "task": "classification",
+ "name": "semeion",
+ "n_raw": 1593,
+ "subsampled": false,
+ "n_features": 256,
+ "dropped_missing_target": 0,
+ "n_classes": 10,
+ "seconds": 54.9
+}

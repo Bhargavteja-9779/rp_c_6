@@ -1,0 +1,19 @@
+{
+ "n_rows": 540,
+ "n_groups": 540,
+ "dup_row_frac": 0.0,
+ "excess_row_frac": 0.0,
+ "max_group": 1,
+ "pred_exposure": 0.0,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 40994,
+ "task": "classification",
+ "name": "climate-model-simulation-crashes",
+ "n_raw": 540,
+ "subsampled": false,
+ "n_features": 18,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 9.0
+}

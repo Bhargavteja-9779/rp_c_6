@@ -1,0 +1,19 @@
+{
+ "n_rows": 30000,
+ "n_groups": 29964,
+ "dup_row_frac": 0.0024,
+ "excess_row_frac": 0.0012,
+ "max_group": 2,
+ "pred_exposure": 0.0014400480016458802,
+ "conflict_group_frac": 1.0,
+ "conflict_row_frac": 0.0024,
+ "data_id": 44974,
+ "task": "regression",
+ "name": "video_transcoding",
+ "n_raw": 68784,
+ "subsampled": true,
+ "n_features": 18,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 532.2
+}

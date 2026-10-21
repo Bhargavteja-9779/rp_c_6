@@ -1,0 +1,19 @@
+{
+ "n_rows": 30000,
+ "n_groups": 29810,
+ "dup_row_frac": 0.0125,
+ "excess_row_frac": 0.006333333333333333,
+ "max_group": 5,
+ "pred_exposure": 0.00761064960826688,
+ "conflict_group_frac": 0.5945945945945946,
+ "conflict_row_frac": 0.0074,
+ "data_id": 44979,
+ "task": "regression",
+ "name": "diamonds",
+ "n_raw": 53940,
+ "subsampled": true,
+ "n_features": 9,
+ "dropped_missing_target": 0,
+ "n_classes": null,
+ "seconds": 373.1
+}

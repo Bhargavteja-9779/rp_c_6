@@ -1,0 +1,19 @@
+{
+ "n_rows": 2534,
+ "n_groups": 2526,
+ "dup_row_frac": 0.003551696921862668,
+ "excess_row_frac": 0.0031570639305445935,
+ "max_group": 9,
+ "pred_exposure": 0.003549411315211487,
+ "conflict_group_frac": 0.0,
+ "conflict_row_frac": 0.0,
+ "data_id": 1487,
+ "task": "classification",
+ "name": "ozone-level-8hr",
+ "n_raw": 2534,
+ "subsampled": false,
+ "n_features": 72,
+ "dropped_missing_target": 0,
+ "n_classes": 2,
+ "seconds": 41.0
+}
