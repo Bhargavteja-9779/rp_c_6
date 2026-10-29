@@ -28,8 +28,6 @@ Fischer SF, Feurer M, Bischl B (2023) OpenML-CTR23 – a curated tabular regress
 
 Foygel Barber R, Candès EJ, Ramdas A, Tibshirani RJ (2021) The limits of distribution-free conditional predictive inference. Inf Inference 10(2):455–482. https://doi.org/10.1093/imaiai/iaaa017
 
-Friedman M (1937) The use of ranks to avoid the assumption of normality implicit in the analysis of variance. J Am Stat Assoc 32(200):675–701. https://doi.org/10.1080/01621459.1937.10503522
-
 Gibbs I, Cherian JJ, Candès EJ (2025) Conformal prediction with conditional guarantees. J R Stat Soc Ser B Stat Methodol 87(4):1100–1126. https://doi.org/10.1093/jrsssb/qkaf008
 
 Gijsbers P, Bueno MLP, Coors S, LeDell E, Poirier S, Thomas J, Bischl B, Vanschoren J (2024) AMLB: an AutoML benchmark. J Mach Learn Res 25(101):1–65
@@ -39,8 +37,6 @@ Gray D, Bowes D, Davey N, Sun Y, Christianson B (2011) The misuse of the NASA me
 Grinsztajn L, Oyallon E, Varoquaux G (2022) Why do tree-based models still outperform deep learning on typical tabular data? In: Advances in Neural Information Processing Systems 35 (Datasets and Benchmarks Track). https://doi.org/10.52202/068431-0037
 
 Guan L (2023) Localized conformal prediction: a generalized inference framework for conformal prediction. Biometrika 110(1):33–50. https://doi.org/10.1093/biomet/asac040
-
-Guo C, Pleiss G, Sun Y, Weinberger KQ (2017) On calibration of modern neural networks. In: Proceedings of the 34th International Conference on Machine Learning, PMLR 70:1321–1330
 
 Hernandez-Hernandez S, Guo Q, Ballester PJ (2026) Conformal prediction of molecule-induced cancer cell growth inhibition challenged by strong distribution shifts. Pattern Recognit 172:112501. https://doi.org/10.1016/j.patcog.2025.112501
 
@@ -63,8 +59,6 @@ Li H (2026) Rows are not samples: duplicate records, evaluation bias, and rankin
 Löfström T, Boström H, Linusson H, Johansson U (2015) Bias reduction through conditional conformal prediction. Intell Data Anal 19(6):1355–1375. https://doi.org/10.3233/IDA-150786
 
 Morger A, Svensson F, Arvidsson McShane S, Gauraha N, Norinder U, Spjuth O, Volkamer A (2021) Assessing the calibration in toxicological in vitro models with conformal prediction. J Cheminform 13:35. https://doi.org/10.1186/s13321-021-00511-5
-
-Naeini MP, Cooper G, Hauskrecht M (2015) Obtaining well calibrated probabilities using Bayesian binning. Proc AAAI Conf Artif Intell 29(1). https://doi.org/10.1609/aaai.v29i1.9602
 
 Norinder U, Carlsson L, Boyer S, Eklund M (2014) Introducing conformal prediction in predictive modeling. A transparent and flexible alternative to applicability domain determination. J Chem Inf Model 54(6):1596–1603. https://doi.org/10.1021/ci5001168
 

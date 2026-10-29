@@ -21,7 +21,7 @@ $$\bar\pi=\sum_g \frac{m_g}{N}\Big[1-\binom{N-m_g}{n_T}\Big/\binom{N-1}{n_T}\Big
 
 *Label purity.* Exposure alone can mislead. If repeated rows disagree on the label (in survey or wage data, identical profiles often have different outcomes), memorizing them does not help the model, and seen rows are not over-covered. Let $\pi_P$ be the share of test rows whose training copies all carry exactly the test row's label (or, in regression, its target value). These are the rows a flexible model can simply look up. If those rows receive the lowest possible score and all other rows share one score distribution, the calibration threshold settles where $\pi_P+(1-\pi_P)F(\hat q)=1-\alpha$, so coverage of new cases tends to
 $$c_N \to 1-\frac{\alpha}{1-\pi_P}, \qquad \text{a shortfall of } g^*=-\frac{\alpha\,\pi_P}{1-\pi_P}. \tag{3}$$
-We call $g^*$ the *predicted shortfall*. It is a worst case for models that memorize their training rows; less flexible models should fall short by less. It can fail when repeated rows disagree on the label but are still easy to predict, for example when their regression targets differ only slightly. We test both points below. A short derivation of Eqs. (1)–(3) and a simulation check are given in Appendix A.
+We call $g^*$ the *predicted shortfall* (or predicted gap). It is a worst case for models that memorize their training rows; less flexible models should fall short by less. It can fail when repeated rows disagree on the label but are still easy to predict, for example when their regression targets differ only slightly. We test both points below. A short derivation of Eqs. (1)–(3) and a simulation check are given in Appendix A.
 
 ## The fix: calibrate seen and new cases separately
 

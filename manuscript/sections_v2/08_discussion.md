@@ -12,7 +12,7 @@ The routine matters most where a model will meet records it has never seen: a ne
 
 ## Should one simply remove duplicates?
 
-A common first reaction is to delete repeated rows before analysis. That is not always right. If the same input really does recur in deployment, for example a frequent network connection pattern, then repeats are part of the population, and deleting them changes the question being answered. Deleting repeats with conflicting labels also throws away information about label noise. Separate calibration avoids the choice: it keeps the data as they are and gives a valid promise for seen and for new cases, so the user can weight the two according to what is expected in deployment.
+A common first reaction is to delete repeated rows before analysis. That is not always right. If the same input really does recur in deployment, for example a frequent network connection pattern, then repeats are part of the population, and deleting them changes the question being answered. Deleting repeats with conflicting labels also throws away information about label noise. Where records arrive over time, a time-based split (Sheridan 2013) is another honest evaluation, but it answers a different question again. Separate calibration avoids the choice: it keeps the data as they are and gives a valid promise for seen and for new cases, so the user can weight the two according to what is expected in deployment.
 
 ## Limitations
 
@@ -22,7 +22,7 @@ A common first reaction is to delete repeated rows before analysis. That is not 
 
 *The typical benchmark is not affected.* Our planned test of a general shortfall across benchmark data sets with repeats was negative, and our attempt to show the role of model flexibility by varying it within a learner was inconclusive. The problem is real but concentrated. We present the check precisely because it tells the two situations apart.
 
-*Seen rows are defined by the training data.* Coverage on held-out new rows equals coverage on genuinely new records only if future records come from the same population. If deployment brings a distribution shift, separate calibration does not help with that.
+*Seen rows are defined by the training data.* Coverage on held-out new rows equals coverage on genuinely new records only if future records come from the same population. If deployment brings a distribution shift, separate calibration does not help with that; weighted or shift-aware conformal methods are needed (Tibshirani et al. 2019; Barber et al. 2023).
 
 *Group splits and small calibration sets.* With very few new calibration rows (around 30), separate calibration is valid on average but noisy from split to split. The safety margin addresses this at the price of larger sets, and if no valid threshold exists it returns the full set, which is the honest answer.
 

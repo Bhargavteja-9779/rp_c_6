@@ -21,7 +21,8 @@ def compute_numbers_v2(res):
     cs = pd.read_csv(os.path.join(R, "tables", "case_studies.csv"))
     rf = cs[cs.model == "rf"].set_index("name")
     for nm, key in [("mc1", "mc1"), ("pc2", "pc2"), ("kc1", "kc1"), ("KDDCup99", "kdd"), ("PhishingWebsites", "phish"),
-                    ("kc3", "kc3"), ("mw1", "mw1")]:
+                    ("kc3", "kc3"), ("mw1", "mw1"), ("kc2", "kc2"), ("pc1", "pc1"), ("pc3", "pc3"),
+                    ("pc4", "pc4"), ("jm1", "jm1")]:
         r = rf.loc[nm]
         n[f"cs_{key}_reported"] = p1(r.reported_cov)
         n[f"cs_{key}_new"] = p1(r.new_cov_standard)
@@ -43,8 +44,14 @@ def compute_numbers_v2(res):
     n["cs_n_noflag"] = len(noflag)
     n["cs_flag_new_range"] = f"{p1(flag.new_cov_standard.min())}–{p1(flag.new_cov_standard.max())}"
     n["cs_flag_fixed_range"] = f"{p1(flag.new_cov_fixed.min())}–{p1(flag.new_cov_fixed.max())}"
+    safe = rf.loc[["pc1", "pc3", "pc4", "jm1", "mw1"]]
+    n["cs_safe_range"] = f"{p1(safe.new_cov_standard.min())}–{p1(safe.new_cov_standard.max())}"
     n["cs_noflag_new_range"] = f"{p1(noflag.new_cov_standard.min())}–{p1(noflag.new_cov_standard.max())}"
 
+    # v1 ranges given as proportions "0.73–0.79" -> percentages "73–79%" for the plain-language text
+    for k in ("sf_novel_range", "cps_novel_range", "h6_median_range_noknn"):
+        a, b = (float(x) for x in str(n[k]).split("–"))
+        n[k + "_pct"] = f"{100 * a:.0f}–{100 * b:.0f}%" if k != "h6_median_range_noknn" else f"{100 * a:.1f}–{100 * b:.1f}%"
     S = json.load(open(os.path.join(R, "statistics_reinforcement.json")))
     # retrospective purity
     for x in S.get("retrospective", []):
