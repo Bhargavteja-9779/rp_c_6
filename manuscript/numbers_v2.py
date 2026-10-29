@@ -26,7 +26,7 @@ def compute_numbers_v2(res):
         n[f"cs_{key}_reported"] = p1(r.reported_cov)
         n[f"cs_{key}_new"] = p1(r.new_cov_standard)
         n[f"cs_{key}_fixed"] = p1(r.new_cov_fixed)
-        n[f"cs_{key}_pi"] = f"{r.pi:.2f}"
+        n[f"cs_{key}_pi"] = f"{100 * r.pi:.0f}%"
         n[f"cs_{key}_pred"] = signed_pp(r.predicted_gap)
         n[f"cs_{key}_size_std"] = f"{r.size_new_standard:.2f}"
         n[f"cs_{key}_size_fix"] = f"{r.size_new_fixed:.2f}"

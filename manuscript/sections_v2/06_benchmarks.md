@@ -18,7 +18,7 @@ The benchmark comparison is observational, so we also created the problem delibe
 
 We also tried to show the other half of the mechanism by making models less flexible (larger leaves, stronger regularization) on the benchmark data. Coverage of seen rows did drop, as expected, but the change in the new-case gap was too small to detect at these data sets' moderate exposure (trend tests $p$ = {{cap_classification_rf_p}} and {{cap_regression_rf_p}} for random forests). We therefore rely on the learner comparison in the injection experiment, not on this experiment, for the role of model flexibility.
 
-![**Fig. 2** Copies added on purpose to data sets without repeats: median coverage gap on new cases (coverage − 90%) against the share of rows copied, for standard calibration (solid) and separate calibration (dotted)](Fig4.png)
+![**Fig. 2** Copies added on purpose to data sets without repeats: median coverage gap on new cases (coverage − 90%) against the share of rows copied, for standard calibration (solid) and separate calibration (dotted)](Fig_inject.png)
 
 ## What the fix costs
 

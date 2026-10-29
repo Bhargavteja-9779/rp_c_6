@@ -128,11 +128,11 @@ def fig_gap_by_learner(agg, figs):
     _save(fig, figs, "FigS1")
 
 
-def fig_dose(df, xvar, xlabel, figs, name, xticks=None, xticklabels=None):
+def fig_dose(df, xvar, xlabel, figs, name, xticks=None, xticklabels=None, plain=False):
     if not len(df):
         return
     s = df.groupby(["task", "data_id", "model", xvar, "method"])[["cov_novel", "exposure"]].mean().reset_index()
-    s["gap"] = s.cov_novel - (1 - ALPHA0)
+    s["gap"] = (s.cov_novel - (1 - ALPHA0)) * (100 if plain else 1)
     tasks = [t for t in ("classification", "regression") if t in s.task.unique()]
     models = [m for m in ["logreg", "rf", "lgbm", "knn"] if m in s.model.unique()]
     fig, axs = plt.subplots(1, len(tasks), figsize=(174 * MM, 62 * MM), sharey=True, squeeze=False)
@@ -151,10 +151,11 @@ def fig_dose(df, xvar, xlabel, figs, name, xticks=None, xticklabels=None):
             if xticklabels is not None:
                 ax.set_xticklabels(xticklabels)
         ax.grid(True)
-    axs[0][0].set_ylabel("Median novel-record coverage − (1 − α)")
+    axs[0][0].set_ylabel("Coverage gap on new cases (pp)" if plain else "Median novel-record coverage − (1 − α)")
     h, l = axs[0][0].get_legend_handles_labels()
     h += [plt.Line2D([], [], color=INK2, ls="-"), plt.Line2D([], [], color=INK2, ls=":")]
-    l += ["Split CP (solid)", "Novelty-Mondrian CP (dotted)"]
+    l += (["Standard calibration (solid)", "Fix: seen/new calibrated separately (dotted)"] if plain
+          else ["Split CP (solid)", "Novelty-Mondrian CP (dotted)"])
     fig.legend(h, l, loc="lower center", ncol=3, frameon=False, bbox_to_anchor=(0.5, -0.09))
     fig.tight_layout(rect=(0, 0.08, 1, 1))
     _save(fig, figs, name)

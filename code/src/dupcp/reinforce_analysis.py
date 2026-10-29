@@ -144,6 +144,11 @@ def run(res):
         S["neardup"] = {"n_datasets": int(N.data_id.nunique()), "summary": summ.round(4).to_dict("records"),
                         "key_detect": det.round(4).to_dict("records")}
         _fig_neardup(g, F)
+    # plain-language version of the v1 injection figure for the revised manuscript
+    from .analysis import _load_glob
+    from .figures import fig_dose
+    inj_raw = _load_glob(os.path.join(res, "inject", "inject_*.csv"))
+    fig_dose(inj_raw, "rate", "Share of rows copied", F, "Fig_inject", xticks=[0, 0.1, 0.25, 0.5, 1.0], plain=True)
     json.dump(S, open(os.path.join(R, "statistics_reinforcement.json"), "w"), indent=1, default=str)
     return S
 
