@@ -1,52 +1,58 @@
-# Seen or new? Duplicate records and conformal coverage on novel inputs
+# Duplicate Data Rows Make Prediction Uncertainty Look Better Than It Is: A Simple Check and Fix for New Cases
 
-Research project and submission package. **Primary target: *Pattern Recognition* (Elsevier).**
-Fallback: *Journal of King Saud University – Computer and Information Sciences*. Both builds
-are included. Produced by an AI research agent; see
-"Status" below before using any of it.
+Research project and submission package. **Current version: v2 (revised, application-framed).**
+**Target journal: *Journal of King Saud University – Computer and Information Sciences*** (median
+67 days from submission to acceptance; 57% of its papers are accepted within 72 days).
 
-## Main findings
+Produced with an AI research agent under human direction. The AI use is declared in the manuscript.
+The review passes in this repository were role-separated passes of one AI system, not independent
+human review.
 
-* **Theory.** Under a random row split, coverage of split conformal prediction on records with
-  no training copy equals (c − π c_S)/(1 − π). Here π is the share of test rows that have an exact
-  training copy and c_S is their coverage. If seen rows are always covered, the error rate on new
-  records is α/(1 − π). A label-free formula predicts π from duplicate-group sizes. Novelty-Mondrian
-  CP is exactly valid for any mix of seen and new records.
-* **Benchmarks (103 OpenML-CC18/CTR23 datasets).** The predicted exposure matched the observed
-  exposure (MAE 0.0012). The pre-specified primary hypothesis (typical under-coverage) was **not
-  supported**: median gaps were −0.8 to +0.5 pp. Shortfalls are concentrated in high-exposure
-  datasets whose seen rows are over-covered, with a worst case of −16.9 pp.
-* **External data with documented duplication** (NASA MDP mc1/pc2/kc3/mw1, KDD Cup'99). Shortfalls
-  reach −27.5 pp. Novelty-Mondrian restores coverage (worst −2.1 pp, no CI below zero).
-* **Controlled injection.** Shows a monotone dose–response (RF −12.8 pp at ρ = 1, against a limit
-  of −14.8 pp). Within-learner capacity variation showed no detectable effect at benchmark
-  exposures (reported as not supported).
-* The remedy costs ≤ 4.4% in median set size for novel records, and its computation is negligible.
-* In regression, a distance-normalized score (k-NN difficulty) removes most of the shortfall on
-  its own (worst −3.4 pp vs −16.9 pp). It is an effective heuristic but carries no guarantee.
+## The idea in three sentences
 
-## Package map
+Conformal prediction promises, say, 90% coverage, and teams check this on a random test split. If the
+data contain repeated rows, many test rows have a copy in the training data, so the check can report
+90% while genuinely new cases are covered far less often. The routine we propose has three steps:
+* **check:** predict the risk from the data alone, before training;
+* **fix:** calibrate seen and new cases separately;
+* **report:** give coverage on new cases next to the usual figure.
+
+## Main findings (v2)
+
+* **Applications.** In the NASA mc1 software-defect data, a random forest's 90% sets reported 91.7%
+  coverage but covered 62.7% of new modules; after the fix, 90.3%. Phishing and KDD Cup'99 intrusion
+  data show similar, smaller shortfalls.
+* **Benchmarks (103 OpenML data sets).** The typical data set is not affected; the pre-specified
+  primary hypothesis was not supported. Shortfalls are concentrated in data with many label-pure
+  repeats.
+* **Fresh validation (20 unseen data sets, time-stamped plan).**
+  * The fix kept new-case coverage on target.
+  * The model-free predicted gap held as a limit (20/20 data sets) and worked as a screen.
+  * It did **not** rank data sets by severity, and the rank test failed.
+  * All five pre-specified tests are reported.
+* **Near-copies.** Exact matching cannot see slightly perturbed copies. Calibration by distance to
+  the training rows still keeps coverage on target.
+
+## Where things are
 
 | Folder | Content |
 |---|---|
-| `journal_selection/` | Crossref-based submission-to-acceptance analysis of ~40 journals, selected-journal report, guideline checklist, journal-fit audit |
-| `literature_review/` | Candidate directions (17), literature matrix (43 entries), research-gap chain, novelty map, DOI verification data |
-| `research_design/` | Research questions and hypotheses, theory with proofs, pre-specified protocol (frozen at commit `0e58bdd`), deviations, leakage audit, exploratory pilot |
-| `code/` | Pipeline (`run_all.py`), tests, configs, extra experiments; see `code/README.md` |
-| `results/` | Raw per-split results, tables, `statistics.json`, figures (PNG/EPS/TIFF), logs |
-| `manuscript/` | Pattern Recognition build: `Final_Manuscript_PatternRecognition.docx/.pdf`, `highlights_PatternRecognition.docx`, `cover_letter_PatternRecognition.docx`. JKSU-CIS build: `Final_Manuscript.docx/.pdf`, `cover_letter.docx`. Shared `title_page.docx`, section sources, build scripts (`python build_manuscript.py pr|jksu`), claim–evidence matrix |
-| `supplementary/` | Online Resource 1 (DOCX/PDF) |
-| `review/` | Ten role-separated adversarial reviews, response ledger, final audit and readiness decision |
+| `manuscript/` | **v2:** `Revised_Manuscript.docx/.pdf`, `Revised_Cover_Letter.docx`, `Revised_Title_Page.docx`, sources in `sections_v2/`, build with `python build_manuscript.py v2`. **v1 (preserved, unchanged):** `Final_Manuscript*.docx/.pdf`, `sections/`, `sections_pr/` |
+| `supplementary/` | v2: `Supplementary_Material_v2.docx/.pdf`; v1: `Online_Resource_1.*` |
+| `reinforcement/` | Reinforcement cycle: integrity audit, risk register (R01–R18, with resolutions), journal-fit assessment, revised protocol and deviations, second adversarial review, consistency audit, **`submission_readiness_report.md`** |
+| `code/` | Pipeline (`run_all.py`, stages main/inject/capacity/external/normalized/neardup/prospective/analyze), tests (15), experiment scripts |
+| `results/` | Raw per-split results, tables, statistics, figures; `results/reinforcement/` holds the v2 analyses |
+| `research_design/`, `literature_review/`, `journal_selection/`, `review/` | v1 design, literature, journal analysis and review trail |
+
+The v1 state is commit `bb7afa9` (local tag `v1-original-submission`).
 
 ## Status
 
-**NOT READY for submission. Only the author's actions remain**
-(`review/final_audit.md`):
+**Decision A: scientifically reinforced, ready for submission**
+(`reinforcement/submission_readiness_report.md`). What remains is author-only:
+* names and affiliations;
+* competing interests and funding;
+* a Zenodo DOI for the code;
+* confirming the AI-use statement against the journal's policy.
 
-* Author names, affiliations, declarations, an anonymized repository/DOI, and APC verification
-  are placeholders.
-* The AI-use statement must be confirmed against the journal's policy.
-* The reviews were simulated role passes by one AI system, not independent human review.
-* Acceptance cannot be guaranteed at any journal. At Pattern Recognition the main risk is that
-  the contribution is judged incremental; see `journal_selection/selected_journal.md` for the
-  fallback cascade.
+Acceptance cannot be guaranteed at any journal.
