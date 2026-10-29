@@ -113,6 +113,55 @@ def cover_letter_pr(n):
     d.save(os.path.join(HERE, "cover_letter_PatternRecognition.docx"))
 
 
+TITLE_V2 = ("Duplicate Data Rows Make Prediction Uncertainty Look Better Than It Is: A Simple Check and Fix for "
+            "New Cases")
+
+
+def title_page_v2():
+    d = _doc()
+    d.add_heading("Title page", level=1)
+    d.add_paragraph().add_run(TITLE_V2).bold = True
+    for label in ["Author names (in final order)", "Affiliations (department, institution, city, country)",
+                  "Corresponding author and active e-mail address", "ORCID iDs (16 digits, if available)",
+                  "Acknowledgments", "Funding statement", "Competing interests statement",
+                  "Author contributions (CRediT)"]:
+        p = d.add_paragraph()
+        p.add_run(f"{label}: ").bold = True
+        p.add_run("[AUTHOR TO COMPLETE]")
+    d.save(os.path.join(HERE, "Revised_Title_Page.docx"))
+
+
+def cover_letter_v2(n):
+    d = _doc()
+    d.add_paragraph("[DATE]")
+    d.add_paragraph("Editor-in-Chief\nJournal of King Saud University – Computer and Information Sciences")
+    d.add_paragraph("Dear Editor,")
+    body = [
+        f"We submit the manuscript “{TITLE_V2}” for consideration as a research article.",
+        "Many teams attach conformal prediction sets to their models to state how sure a prediction is, and they "
+        "check the promised coverage on a random test split. We show that this check can be badly wrong when the "
+        "data contain repeated rows, which is common in software-defect, network-intrusion and phishing data. "
+        f"On the NASA mc1 defect data, for example, the usual check reports {n['cs_mc1_reported']}% coverage while "
+        f"new modules are covered only {n['cs_mc1_new']}% of the time, often with an empty prediction set.",
+        "The paper gives practitioners a short routine. A check that needs only the data predicts how large the "
+        "problem can be before any model is trained; a fix (separate calibration of seen and new cases) restores "
+        f"the promised coverage for new cases (on mc1, {n['cs_mc1_fixed']}%); and a reporting rule makes the problem "
+        f"visible. We evaluate the routine on three applications, on {n['n_total']} standard benchmark data sets, "
+        "in controlled experiments, and on a fresh set of data sets analysed under a plan fixed in advance. "
+        + n["cover_prospective"],
+        "We report negative results openly: on most benchmark data the problem is small, and the check correctly "
+        "says so. All code and results are openly available, and one command reproduces every number.",
+        "[AUTHOR TO CONFIRM: This manuscript is original, has not been published, and is not under consideration "
+        "elsewhere. All authors have approved the submission. We declare no competing interests.]",
+        "The manuscript was prepared with substantial assistance from an AI system, as described in its "
+        "“Use of AI tools” statement.",
+        "Sincerely,\n[CORRESPONDING AUTHOR NAME, AFFILIATION, E-MAIL]",
+    ]
+    for b in body:
+        d.add_paragraph(b)
+    d.save(os.path.join(HERE, "Revised_Cover_Letter.docx"))
+
+
 def highlights_docx():
     d = _doc()
     d.add_heading("Highlights", level=1)
@@ -123,6 +172,12 @@ def highlights_docx():
 
 
 if __name__ == "__main__":
+    if sys.argv[1:] == ["v2"]:
+        from numbers_v2 import compute_numbers_v2
+        title_page_v2()
+        cover_letter_v2(compute_numbers_v2(os.path.join(os.path.dirname(HERE), "results")))
+        print("ok")
+        sys.exit()
     nums = compute_numbers(os.path.join(os.path.dirname(HERE), "results"))
     title_page()
     cover_letter(nums)

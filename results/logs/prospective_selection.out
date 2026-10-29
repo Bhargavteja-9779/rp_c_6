@@ -17,3 +17,6 @@
 4541 Diabetes130US classification 0.0
 4549 Buzzinsocialmedia_Twitter regression 0.021
 40498 wine-quality-white classification 0.232
+40685 shuttle classification 0.0
+/usr/local/lib/python3.13/dist-packages/sklearn/datasets/_openml.py:131: UserWarning: A network error occurred while downloading https://www.openml.org/api/v1/json/data/features/40900. Retrying...
+  warn(
