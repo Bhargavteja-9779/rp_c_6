@@ -104,3 +104,26 @@ was never performed. When the prospective stage was finally run (2026-10-29 13:0
 was reachable again, and **no dataset had been downloaded from either source**. The primary pool
 (§1, OpenML) was therefore used unchanged, and the UCI contingency was not triggered. The UCI
 script (`code/experiments/prospective_selection_uci.py`) is kept but was not run.
+
+## Deviation 2: selection details (2026-10-29, before any prospective outcome was computed)
+
+1. **Parsing bug fixed.** The first selection attempt crashed because some OpenML "qualities" are
+   lists, not numbers. The parser now skips non-numeric qualities (they are not used). No dataset
+   was evaluated before the fix.
+2. **Same data under two ids.** The selection (24 of 163 included) contained four data sets twice:
+   wine_quality (287, 44136), yprop_4_1 (416, 45032), Mercedes_Benz_Greener_Manufacturing (42570,
+   44061) and nyc-taxi-green-dec-2016 (44065, 44143); the Grinsztajn suites re-host AMLB data. §1
+   de-duplicated only against v1. To avoid counting a data set twice, one copy per normalized name
+   is kept, the one with the lowest id. The rule uses names only (no labels, no outcomes). This
+   leaves **20** data sets.
+3. **Transient download failures.** Seven downloads failed. Two are genuine parse failures (sparse
+   ARFF, QSAR-TID-11 and QSAR-TID-10980) and stay excluded. Five were server-side (HTTP 503,
+   "not found" while the API returned 503, or checksum errors, which were probably caused by two
+   parallel download helpers writing the same file). These five were retried: Satellite (40900)
+   succeeded at once. The others are retried every 2 minutes for at most 60 minutes, a cut-off set
+   before retrying. Any data set that is still unavailable at the cut-off stays excluded as
+   "download failed", as §1 prescribes. Data sets added by a successful retry go through the same
+   label-free inclusion rule.
+4. **Early start.** To save time, the prospective runs for the 20 data sets fixed by points 1–2
+   were started while the retries were pending. The code and configuration are identical to
+   `run_all.py --stage prospective`.

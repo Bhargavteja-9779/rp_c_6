@@ -79,6 +79,15 @@ def main():
         else:
             log.append({**rec, "excluded": "predicted exposure < 0.01"})
         print(did, name, task, round(a["pred_exposure"], 3), flush=True)
+    # Deviation 2 (label-free, fixed before any outcome was computed): the pool lists some data sets
+    # under two ids (e.g. an AMLB and a Grinsztajn copy). Keep one per normalized name, the lowest id.
+    keep, seen_names = [], set()
+    for rec in sorted(included, key=lambda r: r["data_id"]):
+        if norm(rec["name"]) in seen_names:
+            log.append({**rec, "included": False, "excluded": "same data set already included under a lower id"})
+        else:
+            seen_names.add(norm(rec["name"])); keep.append(rec)
+    included = keep
     json.dump({"date": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()), "pool_size": len(cand),
                "included": included, "excluded": log}, open(OUT, "w"), indent=1)
     print("included", len(included), "of", len(cand))
