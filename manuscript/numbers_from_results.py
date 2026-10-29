@@ -19,7 +19,8 @@ def f3(x):
 
 
 def signed_pp(x, d=1):
-    return f"{100 * x:+.{d}f}".replace("-", "−")
+    s = f"{100 * x:+.{d}f}"
+    return s[1:] if float(s) == 0 else s.replace("-", "−")
 
 
 def pval(p):

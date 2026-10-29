@@ -107,6 +107,36 @@ def compute_numbers_v2(res):
             rows.append((gstar, f"| {name} | {task[:5]}. | {gg.pi.iloc[0]:.2f} | {pi_p:.2f} | {signed_pp(gstar)} | "
                                 f"{cell('SCP')} | {cell('MCP')} | {cell('PAC_MCP')} | {cell('DCP')} |"))
         n["pr_table_rows"] = "\n".join(r for _, r in sorted(rows, key=lambda t: t[0]))
+        # screening view: does a predicted gap worse than -2 pp flag the data sets that really fall short?
+        sp = pd.read_csv(os.path.join(R, "tables", "prospective_scp_purity.csv"))
+        lab = {"rf": "random forest", "lgbm": "LightGBM", "logreg": "linear model"}
+        for pred in ("g_star", "g_pi"):
+            tag = "gs" if pred == "g_star" else "gp"
+            q = sp[sp.model == "rf"]
+            n[f"pr_{tag}_nflag"] = int((q[pred] < -0.02).sum())
+            for m in ("rf", "lgbm", "logreg"):
+                q = sp[sp.model == m]
+                fl, un = q[q[pred] < -0.02], q[q[pred] >= -0.02]
+                n[f"pr_{tag}_{m}_hit"] = int((fl.gap_scp < -0.02).sum())
+                n[f"pr_{tag}_{m}_miss"] = int((un.gap_scp < -0.02).sum())
+                n[f"pr_{tag}_{m}_unflag_worst"] = signed_pp(un.gap_scp.min())
+        # the rule stated in the Discussion before the fresh results existed: g* >= -2 pp and exposure < 0.1
+        q = sp[(sp.g_star >= -0.02) & (sp.pi < 0.1)]
+        n["pr_rule_n"] = int(q.data_id.nunique())
+        n["pr_rule_worst"] = signed_pp(q.gap_scp.min())
+        get = lambda name, m, col: sp[(sp.name == name) & (sp.model == m)][col].iloc[0]
+        for key, name in [("sup", "analcatdata_supreme"), ("bf", "black_friday"), ("sc", "seattlecrime6"),
+                          ("air", "airlines"), ("cond", "superconduct"), ("wine", "wine_quality")]:
+            n[f"pr_{key}_pi"] = f"{100 * get(name, 'rf', 'pi'):.0f}%"
+            n[f"pr_{key}_pip"] = f"{100 * get(name, 'rf', 'pi_p'):.0f}%"
+            n[f"pr_{key}_gs"] = signed_pp(get(name, "rf", "g_star"))
+            n[f"pr_{key}_gp"] = signed_pp(get(name, "rf", "g_pi"))
+            for m in ("rf", "lgbm", "logreg"):
+                n[f"pr_{key}_{m}_gap"] = signed_pp(get(name, m, "gap_scp"))
+        T2 = pd.read_csv(os.path.join(R, "tables", "prospective_per_dataset.csv"))
+        fb = T2[(T2.method == "MCP") & (T2.fallback > 0)]
+        n["pr_fb_names"] = ", ".join(sorted(fb.name.unique()))
+        n["pr_fb_rate"] = p1(fb.fallback.max()) if len(fb) else "0"
     # near-duplicates
     if "neardup" in S:
         nd = pd.DataFrame(S["neardup"]["summary"])

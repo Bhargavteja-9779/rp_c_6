@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-from .analysis import C, INK, INK2, boot_ci_median, holm, wilcoxon_1s
+from .analysis import C, GRID, INK, INK2, boot_ci_median, holm, wilcoxon_1s
 from .audit import purity_bound
 
 A = 0.1
@@ -132,6 +132,7 @@ def run(res):
         S["holm_primary"] = dict(zip(keys, map(float, adj)))
         scp.to_csv(os.path.join(T, "prospective_scp_purity.csv"), index=False)
         _fig_purity(scp, os.path.join(R, "purity_retrospective.csv"), F)
+        _fig_fresh(scp, F)
     # ---------------- near-duplicates
     nf = glob.glob(os.path.join(R, "neardup", "neardup_*.csv"))
     if nf:
@@ -177,6 +178,32 @@ def _fig_purity(scp, retro_path, F):
     axs[0].legend(frameon=False, loc="upper left")
     fig.tight_layout()
     _save(fig, F, "Fig_purity")
+
+
+def _fig_fresh(scp, F):
+    """Fresh data (random forest): observed gap and the two model-free predictions, one row per data set
+    for which exposure alone predicts a gap worse than -2 pp."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from .figures import MM, _save
+    q = scp[(scp.model == "rf") & (scp.g_pi < -0.02)].sort_values("g_pi", ascending=False).reset_index(drop=True)
+    fig, ax = plt.subplots(figsize=(84 * MM, 70 * MM))
+    yy = np.arange(len(q))
+    ax.axvline(0, color=INK, lw=0.8, zorder=1)
+    ax.axvspan(-2, 0, color=GRID, lw=0, zorder=0)
+    ax.scatter(100 * q.g_pi, yy, s=20, facecolor="white", edgecolor=C[0], linewidth=1.0, zorder=3,
+               label="Predicted: exposure only")
+    ax.scatter(100 * q.g_star, yy, s=20, marker="D", color=C[1], edgecolor="white", linewidth=0.5, zorder=4,
+               label="Predicted: with label purity")
+    ax.scatter(100 * q.gap_scp, yy, s=40, marker="|", color=INK, linewidth=1.4, zorder=5, label="Observed")
+    ax.set_yticks(yy, [n.replace("analcatdata_", "") for n in q["name"]])
+    ax.invert_yaxis()
+    ax.set_xlabel("Coverage gap on new cases (pp)")
+    ax.grid(axis="x")
+    ax.legend(loc="lower center", bbox_to_anchor=(0.4, 1.0), ncol=3, frameon=False, fontsize=6.2, handletextpad=0.2,
+              columnspacing=0.7)
+    _save(fig, F, "Fig_fresh")
 
 
 def _fig_neardup(g, F):

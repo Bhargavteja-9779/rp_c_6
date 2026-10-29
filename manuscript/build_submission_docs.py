@@ -148,7 +148,9 @@ def cover_letter_v2(n):
         f"the promised coverage for new cases (on mc1, {n['cs_mc1_fixed']}%); and a reporting rule makes the problem "
         f"visible. We evaluate the routine on three applications, on {n['n_total']} standard benchmark data sets, "
         "in controlled experiments, and on a fresh set of data sets analysed under a plan fixed in advance. "
-        + n["cover_prospective"],
+        + f"On the {n['pr_n']} fresh data sets the fix kept new-case coverage on target for all learners, and the "
+        "check separated data sets that need the fix from those that do not; it did not, however, rank data sets by "
+        "the size of their shortfall, and we say so.",
         "We report negative results openly: on most benchmark data the problem is small, and the check correctly "
         "says so. All code and results are openly available, and one command reproduces every number.",
         "[AUTHOR TO CONFIRM: This manuscript is original, has not been published, and is not under consideration "
