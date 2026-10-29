@@ -18,6 +18,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from numbers_from_results import compute_numbers  # noqa: E402
+from numbers_v2 import compute_numbers_v2  # noqa: E402
 
 SECTIONS = ["00_front.md", "01_intro.md", "02_related.md", "03_theory.md", "04_methods.md", "05_results.md",
             "06_discussion.md", "07_conclusion.md", "08_declarations.md", "90_references.md"]
@@ -26,6 +27,12 @@ JOURNALS = {
     "jksu": {"suffix": "", "sections": SECTIONS, "numbered": False, "css": "print.css"},
     "pr": {"suffix": "_PatternRecognition", "numbered": True, "css": "print_review.css",
            "sections": SECTIONS[:8] + ["../sections_pr/08_declarations.md", "90_references.md", "../sections_pr/95_bios.md"]},
+    # revised version (reinforcement cycle): application framing, new sections and numbers
+    "v2": {"suffix": "_v2", "numbered": False, "css": "print.css", "dir": "sections_v2", "numbers": "v2",
+           "out": "Revised_Manuscript",
+           "sections": ["00_front.md", "01_intro.md", "02_related.md", "03_problem.md", "04_design.md", "05_cases.md",
+                        "06_benchmarks.md", "07_validation.md", "08_discussion.md", "09_conclusion.md",
+                        "10_appendix.md", "11_declarations.md", "90_references.md"]},
 }
 
 
@@ -41,11 +48,11 @@ def fill(text, nums):
 def main(journal="jksu"):
     J = JOURNALS[journal]
     res = os.path.join(ROOT, "results")
-    nums = compute_numbers(res)
-    json.dump(nums, open(os.path.join(HERE, "build", "numbers_used.json"), "w"), indent=1)
+    nums = compute_numbers_v2(res) if J.get("numbers") == "v2" else compute_numbers(res)
+    json.dump(nums, open(os.path.join(HERE, "build", f"numbers_used{J['suffix']}.json"), "w"), indent=1)
     parts = []
     for s in J["sections"]:
-        p = os.path.join(HERE, "sections", s)
+        p = os.path.join(HERE, J.get("dir", "sections"), s)
         if os.path.exists(p):
             parts.append(fill(open(p, encoding="utf8").read(), nums))
     md = "\n\n".join(parts)
@@ -72,19 +79,21 @@ def main(journal="jksu"):
     out_md = os.path.join(HERE, "build", f"manuscript{J['suffix']}.md")
     open(out_md, "w", encoding="utf8").write(md)
     figs = os.path.join(res, "figures")
-    docx = os.path.join(HERE, f"Final_Manuscript{J['suffix']}.docx")
+    figs2 = os.path.join(res, "reinforcement", "figures")
+    stem = J.get("out", "Final_Manuscript" + J["suffix"])
+    docx = os.path.join(HERE, f"{stem}.docx")
     fmt = "markdown+tex_math_dollars+pipe_tables+implicit_figures"
     subprocess.run(["pandoc", out_md, "-o", docx, "--number-sections", "--reference-doc",
-                    os.path.join(HERE, "build", "reference.docx"), "--resource-path", f"{figs}:{HERE}", "-f", fmt],
+                    os.path.join(HERE, "build", "reference.docx"), "--resource-path", f"{figs}:{figs2}:{HERE}", "-f", fmt],
                    check=True)
     # PDF for review: pandoc -> standalone HTML with MathML -> headless Chromium (LibreOffice drops OMML maths)
     html = os.path.join(HERE, "build", f"manuscript{J['suffix']}.html")
     subprocess.run(["pandoc", out_md, "-s", "--mathml", "--number-sections", "--embed-resources", "-f", fmt,
-                    "--css", os.path.join(HERE, "build", J["css"]), "--resource-path", f"{figs}:{HERE}",
+                    "--css", os.path.join(HERE, "build", J["css"]), "--resource-path", f"{figs}:{figs2}:{HERE}",
                     "--metadata", "lang=en", "-o", html], check=True)
     chrome = os.environ.get("CHROME", "/opt/pw-browsers/chromium-1194/chrome-linux/chrome")
     subprocess.run([chrome, "--headless", "--no-sandbox", "--disable-gpu", "--no-pdf-header-footer",
-                    f"--print-to-pdf={os.path.join(HERE, 'Final_Manuscript' + J['suffix'] + '.pdf')}", "file://" + html],
+                    f"--print-to-pdf={os.path.join(HERE, stem + '.pdf')}", "file://" + html],
                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print("built", docx)
 

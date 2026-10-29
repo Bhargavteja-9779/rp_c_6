@@ -49,7 +49,12 @@ def main():
             log.append({**rec, "excluded": "id already used in v1"}); continue
         try:
             dd = get(f"https://www.openml.org/api/v1/json/data/{did}")["data_set_description"]
-            q = {x["name"]: float(x["value"]) for x in get(f"https://www.openml.org/api/v1/json/data/qualities/{did}")["data_qualities"]["quality"] if x.get("value") not in (None, "")}
+            q = {}
+            for x in get(f"https://www.openml.org/api/v1/json/data/qualities/{did}")["data_qualities"]["quality"]:
+                try:
+                    q[x["name"]] = float(x["value"])
+                except (TypeError, ValueError):  # some qualities are lists or empty; not needed here
+                    pass
         except Exception as e:
             log.append({**rec, "excluded": f"metadata failed: {e!r}"[:200]}); continue
         name = dd["name"]; rec["name"] = name

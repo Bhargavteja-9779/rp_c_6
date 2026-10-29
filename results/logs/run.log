@@ -192,3 +192,67 @@
 20:58:10 run_neardup classification 28: done 140s
 20:58:32 run_neardup classification 1461: done 54s
 20:59:33 run_neardup classification 1497: done 60s
+21:02:26 run_neardup classification 1485: done 256s
+21:04:39 run_neardup classification 1501: done 306s
+21:07:37 run_neardup classification 4538: done 179s
+21:09:18 run_neardup classification 23517: done 101s
+21:10:23 run_neardup classification 40668: done 65s
+21:10:58 run_neardup classification 40701: done 35s
+21:12:34 run_neardup classification 40966: done 96s
+21:12:45 run_neardup classification 40975: done 11s
+21:13:40 run_neardup classification 40982: done 55s
+21:14:17 run_neardup classification 41027: done 37s
+21:14:28 run_neardup classification 4134: done 722s
+21:14:34 run_neardup regression 41021: done 16s
+21:14:44 run_neardup regression 44957: done 10s
+21:14:57 run_neardup regression 44958: done 13s
+21:15:04 run_neardup regression 44956: done 35s
+21:17:07 run_neardup regression 44965: done 131s
+21:17:49 run_neardup regression 44969: done 165s
+21:19:49 run_neardup regression 44973: done 161s
+21:21:40 run_neardup regression 44977: done 112s
+21:23:21 run_neardup classification 1478: done 1518s
+21:24:41 run_neardup regression 44978: done 181s
+21:24:54 run_neardup regression 44980: done 93s
+21:25:02 run_neardup regression 44987: done 8s
+21:28:20 run_neardup regression 44975: done 631s
+21:29:02 run_neardup regression 44992: done 239s
+21:29:27 run_neardup regression 45402: done 26s
+21:30:07 run_neardup regression 44981: done 326s
+21:33:39 run_neardup regression 45012: done 319s
+13:09:32 run_neardup classification 3: cached
+13:09:32 run_neardup classification 31: cached
+13:09:32 run_neardup classification 182: cached
+13:09:32 run_neardup classification 151: cached
+13:09:32 run_neardup classification 28: cached
+13:09:32 run_neardup classification 32: cached
+13:09:32 run_neardup classification 1461: cached
+13:09:32 run_neardup classification 1485: cached
+13:09:32 run_neardup classification 1497: cached
+13:09:32 run_neardup classification 1478: cached
+13:09:32 run_neardup classification 1501: cached
+13:09:32 run_neardup classification 4538: cached
+13:09:32 run_neardup classification 4134: cached
+13:09:32 run_neardup classification 40668: cached
+13:09:32 run_neardup classification 40701: cached
+13:09:32 run_neardup classification 23517: cached
+13:09:32 run_neardup classification 40966: cached
+13:09:32 run_neardup classification 40975: cached
+13:09:32 run_neardup classification 40982: cached
+13:09:32 run_neardup classification 41027: cached
+13:09:32 run_neardup regression 41021: cached
+13:09:32 run_neardup regression 44956: cached
+13:09:32 run_neardup regression 44957: cached
+13:09:32 run_neardup regression 44958: cached
+13:09:32 run_neardup regression 44965: cached
+13:09:32 run_neardup regression 44969: cached
+13:09:32 run_neardup regression 44975: cached
+13:09:32 run_neardup regression 44973: cached
+13:09:32 run_neardup regression 44977: cached
+13:09:32 run_neardup regression 44978: cached
+13:09:32 run_neardup regression 44980: cached
+13:09:32 run_neardup regression 44987: cached
+13:09:32 run_neardup regression 44981: cached
+13:09:32 run_neardup regression 44992: cached
+13:09:32 run_neardup regression 45012: cached
+13:09:32 run_neardup regression 45402: cached

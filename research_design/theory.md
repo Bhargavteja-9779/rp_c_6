@@ -112,3 +112,30 @@ evidence. We record how often it happens.
 * For the group-aware split (whole record groups assigned to one partition) we give no
   row-level guarantee. Groups of unequal size make row-level exchangeability between calibration
   and test fail. Its validity is assessed empirically.
+
+## Proposition 4 (purity-adjusted memorization limit), added in the reinforcement cycle
+
+Let $\pi_P$ be the probability that a random test row has at least one training row with the same
+feature vector **and** every such training row carries exactly the test row's label (or target
+value). Call these rows *memorizable*. Assume:
+
+* **(M)** the fitted model assigns memorizable rows the minimal score 0 (for LAC, p̂_y = 1; for
+  |res|, ŷ = y);
+* **(E)** all other rows (novel rows, and seen rows whose training copies disagree in label) have
+  scores drawn from one common distribution F with no atom at 0.
+
+Calibration rows are memorizable with the same probability π_P. As n_C → ∞, the conformal
+threshold converges to the (1 − α)-quantile of the mixture π_P δ_0 + (1 − π_P)F. If π_P < 1 − α,
+this is the point t with π_P + (1 − π_P)F(t) = 1 − α, so novel rows are covered with probability
+
+$$F(t) = 1 - \frac{\alpha}{1-\pi_P},\qquad\text{gap } g^* = -\frac{\alpha\,\pi_P}{1-\pi_P}.$$
+
+If π_P ≥ 1 − α the threshold is 0 and novel coverage → 0.
+
+*Proof.* Mixture quantile and the law of large numbers for the empirical quantile. ∎
+
+Unlike Proposition 1, this needs **no trained model**. π_P depends only on labels and group
+structure. (M) is an idealization that flexible learners approach and regularized learners do
+not, so g* is a **memorization-limit prediction**. (E) fails when label-conflicting duplicate
+groups are nonetheless easy, for example near-identical regression targets. Both failure modes
+are tested empirically. Unit test `test_purity_limit_simulation` confirms the limit numerically.

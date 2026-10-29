@@ -71,6 +71,8 @@ def load_dataset(data_id: int, task: str, cache_dir: str, rule: str = "v1") -> d
     os.makedirs(cache_dir, exist_ok=True)
     pq = os.path.join(cache_dir, f"{data_id}.parquet")
     meta_p = os.path.join(cache_dir, f"{data_id}.json")
+    if isinstance(data_id, str) and not (os.path.exists(pq) and os.path.exists(meta_p)):
+        raise FileNotFoundError(f"{data_id}: non-OpenML dataset must be cached by its loader first")
     if os.path.exists(pq) and os.path.exists(meta_p):
         df = pd.read_parquet(pq)
         meta = json.load(open(meta_p))

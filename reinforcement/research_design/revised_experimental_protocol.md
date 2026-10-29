@@ -96,3 +96,11 @@ PyPI remain reachable.
   is acceptable.
 * Everything else (subsampling rule, inclusion π̄ ≥ 0.01, learners, seeds, methods, tests P1–P5)
   is unchanged.
+
+## Deviation note on Amendment 1 (2026-10-29)
+
+The session was suspended between 2026-10-21 ~21:15 UTC and 2026-10-29, so the 22:50 UTC check
+was never performed. When the prospective stage was finally run (2026-10-29 13:08 UTC), OpenML
+was reachable again, and **no dataset had been downloaded from either source**. The primary pool
+(§1, OpenML) was therefore used unchanged, and the UCI contingency was not triggered. The UCI
+script (`code/experiments/prospective_selection_uci.py`) is kept but was not run.
