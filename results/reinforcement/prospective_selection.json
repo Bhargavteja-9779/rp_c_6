@@ -1,0 +1,1876 @@
+{
+ "date": "2026-10-29 14:10 UTC",
+ "pool_size": 163,
+ "included": [
+  {
+   "data_id": 181,
+   "studies": [
+    271
+   ],
+   "name": "yeast",
+   "task": "classification",
+   "n_raw": 1484,
+   "n_rows": 1484,
+   "subsampled": false,
+   "pred_exposure": 0.025073019831229615,
+   "dup_row_frac": 0.04177897574123989,
+   "included": true
+  },
+  {
+   "data_id": 287,
+   "studies": [
+    269
+   ],
+   "name": "wine_quality",
+   "task": "regression",
+   "n_raw": 6497,
+   "n_rows": 6497,
+   "subsampled": false,
+   "pred_exposure": 0.21960178515643763,
+   "dup_row_frac": 0.3343081422194859,
+   "included": true
+  },
+  {
+   "data_id": 416,
+   "studies": [
+    269
+   ],
+   "name": "yprop_4_1",
+   "task": "regression",
+   "n_raw": 8885,
+   "n_rows": 8885,
+   "subsampled": false,
+   "pred_exposure": 0.015087766356531869,
+   "dup_row_frac": 0.024198086662915026,
+   "included": true
+  },
+  {
+   "data_id": 505,
+   "studies": [
+    269
+   ],
+   "name": "tecator",
+   "task": "regression",
+   "n_raw": 240,
+   "n_rows": 240,
+   "subsampled": false,
+   "pred_exposure": 0.10041841004183402,
+   "dup_row_frac": 0.16666666666666666,
+   "included": true
+  },
+  {
+   "data_id": 1169,
+   "studies": [
+    271
+   ],
+   "name": "airlines",
+   "task": "classification",
+   "n_raw": 539383,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.7086960581194968,
+   "dup_row_frac": 0.9220333333333334,
+   "included": true
+  },
+  {
+   "data_id": 4549,
+   "studies": [
+    269
+   ],
+   "name": "Buzzinsocialmedia_Twitter",
+   "task": "regression",
+   "n_raw": 583250,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.02058404175409511,
+   "dup_row_frac": 0.0231,
+   "included": true
+  },
+  {
+   "data_id": 40498,
+   "studies": [
+    271
+   ],
+   "name": "wine-quality-white",
+   "task": "classification",
+   "n_raw": 4898,
+   "n_rows": 4898,
+   "subsampled": false,
+   "pred_exposure": 0.23159436169934983,
+   "dup_row_frac": 0.34891792568395263,
+   "included": true
+  },
+  {
+   "data_id": 41540,
+   "studies": [
+    269
+   ],
+   "name": "black_friday",
+   "task": "regression",
+   "n_raw": 166821,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.6325057271799395,
+   "dup_row_frac": 0.7236666666666667,
+   "included": true
+  },
+  {
+   "data_id": 42570,
+   "studies": [
+    269
+   ],
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "task": "regression",
+   "n_raw": 4209,
+   "n_rows": 4209,
+   "subsampled": false,
+   "pred_exposure": 0.08618973071067612,
+   "dup_row_frac": 0.12235685435970539,
+   "included": true
+  },
+  {
+   "data_id": 42732,
+   "studies": [
+    271
+   ],
+   "name": "sf-police-incidents",
+   "task": "classification",
+   "n_raw": 2215023,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.305953071359685,
+   "dup_row_frac": 0.4186,
+   "included": true
+  },
+  {
+   "data_id": 44055,
+   "studies": [
+    335
+   ],
+   "name": "analcatdata_supreme",
+   "task": "regression",
+   "n_raw": 4052,
+   "n_rows": 4052,
+   "subsampled": false,
+   "pred_exposure": 0.9303266590245958,
+   "dup_row_frac": 0.952862783810464,
+   "included": true
+  },
+  {
+   "data_id": 44061,
+   "studies": [
+    335
+   ],
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "task": "regression",
+   "n_raw": 4209,
+   "n_rows": 4209,
+   "subsampled": false,
+   "pred_exposure": 0.2586595812624885,
+   "dup_row_frac": 0.3050605844618674,
+   "included": true
+  },
+  {
+   "data_id": 44065,
+   "studies": [
+    335
+   ],
+   "name": "nyc-taxi-green-dec-2016",
+   "task": "regression",
+   "n_raw": 581835,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.011868388812832737,
+   "dup_row_frac": 0.0191,
+   "included": true
+  },
+  {
+   "data_id": 44068,
+   "studies": [
+    335
+   ],
+   "name": "particulate-matter-ukair-2017",
+   "task": "regression",
+   "n_raw": 394299,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.017112567219214045,
+   "dup_row_frac": 0.0282,
+   "included": true
+  },
+  {
+   "data_id": 44125,
+   "studies": [
+    337
+   ],
+   "name": "MagicTelescope",
+   "task": "classification",
+   "n_raw": 13376,
+   "n_rows": 13376,
+   "subsampled": false,
+   "pred_exposure": 0.010318271251566966,
+   "dup_row_frac": 0.017194976076555023,
+   "included": true
+  },
+  {
+   "data_id": 44136,
+   "studies": [
+    336
+   ],
+   "name": "wine_quality",
+   "task": "regression",
+   "n_raw": 6497,
+   "n_rows": 6497,
+   "subsampled": false,
+   "pred_exposure": 0.21960178515643763,
+   "dup_row_frac": 0.3343081422194859,
+   "included": true
+  },
+  {
+   "data_id": 44142,
+   "studies": [
+    336
+   ],
+   "name": "Bike_Sharing_Demand",
+   "task": "regression",
+   "n_raw": 17379,
+   "n_rows": 17379,
+   "subsampled": false,
+   "pred_exposure": 0.027378412868628632,
+   "dup_row_frac": 0.044594050290580584,
+   "included": true
+  },
+  {
+   "data_id": 44143,
+   "studies": [
+    336
+   ],
+   "name": "nyc-taxi-green-dec-2016",
+   "task": "regression",
+   "n_raw": 581835,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.011836390946473993,
+   "dup_row_frac": 0.019366666666666667,
+   "included": true
+  },
+  {
+   "data_id": 44148,
+   "studies": [
+    336
+   ],
+   "name": "superconduct",
+   "task": "regression",
+   "n_raw": 21263,
+   "n_rows": 21263,
+   "subsampled": false,
+   "pred_exposure": 0.3338593613282138,
+   "dup_row_frac": 0.40027277430277947,
+   "included": true
+  },
+  {
+   "data_id": 45022,
+   "studies": [
+    337
+   ],
+   "name": "Diabetes130US",
+   "task": "classification",
+   "n_raw": 71090,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.21445351491231063,
+   "dup_row_frac": 0.2899333333333333,
+   "included": true
+  },
+  {
+   "data_id": 45026,
+   "studies": [
+    337
+   ],
+   "name": "heloc",
+   "task": "classification",
+   "n_raw": 10000,
+   "n_rows": 10000,
+   "subsampled": false,
+   "pred_exposure": 0.055820012001199924,
+   "dup_row_frac": 0.0559,
+   "included": true
+  },
+  {
+   "data_id": 45032,
+   "studies": [
+    336
+   ],
+   "name": "yprop_4_1",
+   "task": "regression",
+   "n_raw": 8885,
+   "n_rows": 8885,
+   "subsampled": false,
+   "pred_exposure": 0.015087766356531866,
+   "dup_row_frac": 0.024198086662915026,
+   "included": true
+  },
+  {
+   "data_id": 45039,
+   "studies": [
+    334
+   ],
+   "name": "compas-two-years",
+   "task": "classification",
+   "n_raw": 4966,
+   "n_rows": 4966,
+   "subsampled": false,
+   "pred_exposure": 0.6544150565297531,
+   "dup_row_frac": 0.738421264599275,
+   "included": true
+  },
+  {
+   "data_id": 45043,
+   "studies": [
+    335
+   ],
+   "name": "seattlecrime6",
+   "task": "regression",
+   "n_raw": 52031,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.9988435765424308,
+   "dup_row_frac": 0.9993,
+   "included": true
+  }
+ ],
+ "excluded": [
+  {
+   "data_id": 3,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 12,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 23,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 31,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 54,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 188,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 201,
+   "studies": [
+    269
+   ],
+   "name": "pol",
+   "task": "regression",
+   "n_raw": 15000,
+   "n_rows": 15000,
+   "subsampled": false,
+   "pred_exposure": 0.0033602240149363336,
+   "dup_row_frac": 0.0056,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 216,
+   "studies": [
+    269
+   ],
+   "name": "elevators",
+   "task": "regression",
+   "n_raw": 16599,
+   "n_rows": 16599,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 422,
+   "studies": [
+    269
+   ],
+   "name": "topo_2_1",
+   "task": "regression",
+   "n_raw": 8885,
+   "n_rows": 8885,
+   "subsampled": false,
+   "pred_exposure": 0.003376857271481031,
+   "dup_row_frac": 0.005627462014631401,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 507,
+   "studies": [
+    269
+   ],
+   "name": "space_ga",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 531,
+   "studies": [
+    269
+   ],
+   "name": "boston",
+   "task": "regression",
+   "n_raw": 506,
+   "n_rows": 506,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 541,
+   "studies": [
+    269
+   ],
+   "name": "socmob",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 546,
+   "studies": [
+    269
+   ],
+   "name": "sensory",
+   "task": "regression",
+   "n_raw": 576,
+   "n_rows": 576,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 550,
+   "studies": [
+    269
+   ],
+   "name": "quake",
+   "task": "regression",
+   "n_raw": 2178,
+   "n_rows": 2178,
+   "subsampled": false,
+   "pred_exposure": 0.002756508164283013,
+   "dup_row_frac": 0.004591368227731864,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 574,
+   "studies": [
+    269
+   ],
+   "name": "house_16H",
+   "task": "regression",
+   "n_raw": 22784,
+   "n_rows": 22784,
+   "subsampled": false,
+   "pred_exposure": 5.266930990647614e-05,
+   "dup_row_frac": 8.778089887640449e-05,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 1049,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1067,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1111,
+   "studies": [
+    271
+   ],
+   "name": "KDDCup09_appetency",
+   "task": "classification",
+   "n_raw": 50000,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 1457,
+   "studies": [
+    271
+   ],
+   "name": "amazon-commerce-reviews",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 1461,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1464,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1468,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1475,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1486,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1487,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1489,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1494,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1515,
+   "studies": [
+    271
+   ],
+   "name": "micro-mass",
+   "task": "classification",
+   "n_raw": 571,
+   "n_rows": 571,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 1590,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 1596,
+   "studies": [
+    271
+   ],
+   "name": "covertype",
+   "task": "classification",
+   "n_raw": 581012,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 3050,
+   "studies": [
+    269
+   ],
+   "name": "QSAR-TID-11",
+   "task": "regression",
+   "excluded": "download/parse failed: ValueError(\"Sparse ARFF datasets cannot be loaded with as_frame=True. Use as_frame=False or as_frame='auto' instead.\")"
+  },
+  {
+   "data_id": 3277,
+   "studies": [
+    269
+   ],
+   "name": "QSAR-TID-10980",
+   "task": "regression",
+   "excluded": "download/parse failed: ValueError(\"Sparse ARFF datasets cannot be loaded with as_frame=True. Use as_frame=False or as_frame='auto' instead.\")"
+  },
+  {
+   "data_id": 4134,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 4135,
+   "studies": [
+    271
+   ],
+   "name": "Amazon_employee_access",
+   "task": "classification",
+   "n_raw": 32769,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 4534,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 4538,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 4541,
+   "studies": [
+    271
+   ],
+   "name": "Diabetes130US",
+   "task": "classification",
+   "n_raw": 101766,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 23517,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 40668,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 40670,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 40685,
+   "studies": [
+    271
+   ],
+   "name": "shuttle",
+   "task": "classification",
+   "n_raw": 58000,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 40701,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 40900,
+   "studies": [
+    271
+   ],
+   "name": "Satellite",
+   "task": "classification",
+   "excluded": "download/parse failed: <HTTPError 503: 'Service Temporarily Unavailable'>"
+  },
+  {
+   "data_id": 40975,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 40978,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 40981,
+   "studies": [
+    271
+   ],
+   "name": "Australian",
+   "task": "classification",
+   "n_raw": 690,
+   "n_rows": 690,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 40982,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 40983,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 40984,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 40996,
+   "studies": [
+    271
+   ],
+   "name": "Fashion-MNIST",
+   "task": "classification",
+   "n_raw": 70000,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41021,
+   "studies": [
+    269
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 41027,
+   "studies": [
+    271
+   ],
+   "excluded": "id already used in v1"
+  },
+  {
+   "data_id": 41138,
+   "studies": [
+    271
+   ],
+   "name": "APSFailure",
+   "task": "classification",
+   "n_raw": 76000,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41142,
+   "studies": [
+    271
+   ],
+   "name": "christine",
+   "task": "classification",
+   "n_raw": 5418,
+   "n_rows": 5418,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41143,
+   "studies": [
+    271
+   ],
+   "name": "jasmine",
+   "task": "classification",
+   "n_raw": 2984,
+   "n_rows": 2984,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41144,
+   "studies": [
+    271
+   ],
+   "name": "madeline",
+   "task": "classification",
+   "n_raw": 3140,
+   "n_rows": 3140,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41145,
+   "studies": [
+    271
+   ],
+   "name": "philippine",
+   "task": "classification",
+   "n_raw": 5832,
+   "n_rows": 5832,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41146,
+   "studies": [
+    271
+   ],
+   "name": "sylvine",
+   "task": "classification",
+   "n_raw": 5124,
+   "n_rows": 5124,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41147,
+   "studies": [
+    271
+   ],
+   "name": "albert",
+   "task": "classification",
+   "excluded": "download/parse failed: OpenMLError('Dataset with data_id 41147 not found.')"
+  },
+  {
+   "data_id": 41150,
+   "studies": [
+    271
+   ],
+   "name": "MiniBooNE",
+   "task": "classification",
+   "n_raw": 130064,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41156,
+   "studies": [
+    271
+   ],
+   "name": "ada",
+   "task": "classification",
+   "n_raw": 4147,
+   "n_rows": 4147,
+   "subsampled": false,
+   "pred_exposure": 0.000289412335922313,
+   "dup_row_frac": 0.0004822763443453099,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41157,
+   "studies": [
+    271
+   ],
+   "name": "arcene",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 41158,
+   "studies": [
+    271
+   ],
+   "name": "gina",
+   "task": "classification",
+   "n_raw": 3153,
+   "n_rows": 3153,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41159,
+   "studies": [
+    271
+   ],
+   "name": "guillermo",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 41161,
+   "studies": [
+    271
+   ],
+   "name": "riccardo",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 41162,
+   "studies": [
+    271
+   ],
+   "name": "kick",
+   "task": "classification",
+   "n_raw": 72983,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41163,
+   "studies": [
+    271
+   ],
+   "name": "dilbert",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 41164,
+   "studies": [
+    271
+   ],
+   "name": "fabert",
+   "task": "classification",
+   "n_raw": 8237,
+   "n_rows": 8237,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41165,
+   "studies": [
+    271
+   ],
+   "name": "robert",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 41166,
+   "studies": [
+    271
+   ],
+   "name": "volkert",
+   "task": "classification",
+   "excluded": "download/parse failed: OpenMLError('Dataset with data_id 41166 not found.')"
+  },
+  {
+   "data_id": 41167,
+   "studies": [
+    271
+   ],
+   "name": "dionis",
+   "task": "classification",
+   "n_raw": 416188,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0001600053335162089,
+   "dup_row_frac": 0.0002666666666666667,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41168,
+   "studies": [
+    271
+   ],
+   "name": "jannis",
+   "task": "classification",
+   "n_raw": 83733,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41169,
+   "studies": [
+    271
+   ],
+   "name": "helena",
+   "task": "classification",
+   "n_raw": 65196,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.00012000400013715668,
+   "dup_row_frac": 0.0002,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 41980,
+   "studies": [
+    269
+   ],
+   "name": "SAT11-HAND-runtime-regression",
+   "task": "regression",
+   "n_raw": 4440,
+   "n_rows": 4440,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42225,
+   "studies": [
+    269
+   ],
+   "name": "diamonds",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 42563,
+   "studies": [
+    269
+   ],
+   "name": "house_prices_nominal",
+   "task": "regression",
+   "n_raw": 1460,
+   "n_rows": 1460,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42571,
+   "studies": [
+    269
+   ],
+   "name": "Allstate_Claims_Severity",
+   "task": "regression",
+   "n_raw": 188318,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 4.000133337905223e-05,
+   "dup_row_frac": 6.666666666666667e-05,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42572,
+   "studies": [
+    269
+   ],
+   "name": "Santander_transaction_value",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 42688,
+   "studies": [
+    269
+   ],
+   "name": "Brazilian_houses",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 42705,
+   "studies": [
+    269
+   ],
+   "name": "Yolanda",
+   "task": "regression",
+   "excluded": "download/parse failed: ValueError('The md5 checksum of the file downloaded from https://openml.org/data/v1/download/22044600/Yolanda.arff and cached at /home/user/rp_c_6/data_cache/_sk/openml/openml.o"
+  },
+  {
+   "data_id": 42724,
+   "studies": [
+    269
+   ],
+   "name": "OnlineNewsPopularity",
+   "task": "regression",
+   "n_raw": 39644,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42726,
+   "studies": [
+    269
+   ],
+   "name": "abalone",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 42727,
+   "studies": [
+    269
+   ],
+   "name": "colleges",
+   "task": "regression",
+   "n_raw": 7063,
+   "n_rows": 7063,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42728,
+   "studies": [
+    269
+   ],
+   "name": "Airlines_DepDelay_10M",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 42729,
+   "studies": [
+    269
+   ],
+   "name": "nyc-taxi-green-dec-2016",
+   "task": "regression",
+   "n_raw": 581835,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0001600053335162089,
+   "dup_row_frac": 0.0002666666666666667,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42730,
+   "studies": [
+    269
+   ],
+   "name": "us_crime",
+   "task": "regression",
+   "n_raw": 1994,
+   "n_rows": 1994,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42731,
+   "studies": [
+    269
+   ],
+   "name": "house_sales",
+   "task": "regression",
+   "n_raw": 21613,
+   "n_rows": 21613,
+   "subsampled": false,
+   "pred_exposure": 5.55255648441625e-05,
+   "dup_row_frac": 9.253689908851155e-05,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42733,
+   "studies": [
+    271
+   ],
+   "name": "Click_prediction_small",
+   "task": "classification",
+   "n_raw": 39948,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0006800226674438879,
+   "dup_row_frac": 0.0011333333333333334,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42734,
+   "studies": [
+    271
+   ],
+   "name": "okcupid-stem",
+   "task": "classification",
+   "n_raw": 50789,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0001240037334319996,
+   "dup_row_frac": 0.00016666666666666666,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42742,
+   "studies": [
+    271
+   ],
+   "name": "porto-seguro",
+   "task": "classification",
+   "n_raw": 595212,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 42746,
+   "studies": [
+    271
+   ],
+   "name": "KDDCup99",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 42769,
+   "studies": [
+    271
+   ],
+   "name": "Higgs",
+   "task": "classification",
+   "excluded": "download/parse failed: ValueError('The md5 checksum of the file downloaded from https://openml.org/data/v1/download/22044863/Higgs.arff and cached at /home/user/rp_c_6/data_cache/_sk/openml/openml.org"
+  },
+  {
+   "data_id": 43071,
+   "studies": [
+    269
+   ],
+   "name": "MIP-2016-regression",
+   "task": "regression",
+   "n_raw": 1090,
+   "n_rows": 1090,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 43072,
+   "studies": [
+    271
+   ],
+   "name": "KDDCup09-Upselling",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 44056,
+   "studies": [
+    335
+   ],
+   "name": "visualizing_soil",
+   "task": "regression",
+   "n_raw": 8641,
+   "n_rows": 8641,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44059,
+   "studies": [
+    335
+   ],
+   "name": "diamonds",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 44062,
+   "studies": [
+    335
+   ],
+   "name": "Brazilian_houses",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 44063,
+   "studies": [
+    335
+   ],
+   "name": "Bike_Sharing_Demand",
+   "task": "regression",
+   "n_raw": 17379,
+   "n_rows": 17379,
+   "subsampled": false,
+   "pred_exposure": 0.005738070860280163,
+   "dup_row_frac": 0.009494217158639738,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44066,
+   "studies": [
+    335
+   ],
+   "name": "house_sales",
+   "task": "regression",
+   "n_raw": 21613,
+   "n_rows": 21613,
+   "subsampled": false,
+   "pred_exposure": 5.55255648441625e-05,
+   "dup_row_frac": 9.253689908851155e-05,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44069,
+   "studies": [
+    335
+   ],
+   "name": "SGEMM_GPU_kernel_performance",
+   "task": "regression",
+   "n_raw": 241600,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.001656053601720513,
+   "dup_row_frac": 0.0026,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44089,
+   "studies": [
+    337
+   ],
+   "name": "credit",
+   "task": "classification",
+   "n_raw": 16714,
+   "n_rows": 16714,
+   "subsampled": false,
+   "pred_exposure": 0.0001435950620428383,
+   "dup_row_frac": 0.00023932033026205577,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44120,
+   "studies": [
+    337
+   ],
+   "name": "electricity",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 44121,
+   "studies": [
+    337
+   ],
+   "name": "covertype",
+   "task": "classification",
+   "n_raw": 566602,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44122,
+   "studies": [
+    337
+   ],
+   "name": "pol",
+   "task": "classification",
+   "n_raw": 10082,
+   "n_rows": 10082,
+   "subsampled": false,
+   "pred_exposure": 0.0035709562305831543,
+   "dup_row_frac": 0.005951200158698671,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44123,
+   "studies": [
+    337
+   ],
+   "name": "house_16H",
+   "task": "classification",
+   "n_raw": 13488,
+   "n_rows": 13488,
+   "subsampled": false,
+   "pred_exposure": 8.897676696019235e-05,
+   "dup_row_frac": 0.0001482799525504152,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44126,
+   "studies": [
+    337
+   ],
+   "name": "bank-marketing",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 44128,
+   "studies": [
+    337
+   ],
+   "name": "MiniBooNE",
+   "task": "classification",
+   "n_raw": 72998,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0057666666666666665,
+   "dup_row_frac": 0.0057666666666666665,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44129,
+   "studies": [
+    337
+   ],
+   "name": "Higgs",
+   "task": "classification",
+   "n_raw": 940160,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.002600086669638395,
+   "dup_row_frac": 0.004333333333333333,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44130,
+   "studies": [
+    337
+   ],
+   "name": "eye_movements",
+   "task": "classification",
+   "n_raw": 7608,
+   "n_rows": 7608,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44132,
+   "studies": [
+    336
+   ],
+   "name": "cpu_act",
+   "task": "regression",
+   "n_raw": 8192,
+   "n_rows": 8192,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44133,
+   "studies": [
+    336
+   ],
+   "name": "pol",
+   "task": "regression",
+   "n_raw": 15000,
+   "n_rows": 15000,
+   "subsampled": false,
+   "pred_exposure": 0.0033602240149363336,
+   "dup_row_frac": 0.0056,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44134,
+   "studies": [
+    336
+   ],
+   "name": "elevators",
+   "task": "regression",
+   "n_raw": 16599,
+   "n_rows": 16599,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44137,
+   "studies": [
+    336
+   ],
+   "name": "Ailerons",
+   "task": "regression",
+   "n_raw": 13750,
+   "n_rows": 13750,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44138,
+   "studies": [
+    336
+   ],
+   "name": "houses",
+   "task": "regression",
+   "n_raw": 20640,
+   "n_rows": 20640,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44139,
+   "studies": [
+    336
+   ],
+   "name": "house_16H",
+   "task": "regression",
+   "n_raw": 22784,
+   "n_rows": 22784,
+   "subsampled": false,
+   "pred_exposure": 5.266930990647614e-05,
+   "dup_row_frac": 8.778089887640449e-05,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44140,
+   "studies": [
+    336
+   ],
+   "name": "diamonds",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 44141,
+   "studies": [
+    336
+   ],
+   "name": "Brazilian_houses",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 44144,
+   "studies": [
+    336
+   ],
+   "name": "house_sales",
+   "task": "regression",
+   "n_raw": 21613,
+   "n_rows": 21613,
+   "subsampled": false,
+   "pred_exposure": 5.55255648441625e-05,
+   "dup_row_frac": 9.253689908851155e-05,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44145,
+   "studies": [
+    336
+   ],
+   "name": "sulfur",
+   "task": "regression",
+   "n_raw": 10081,
+   "n_rows": 10081,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44146,
+   "studies": [
+    336
+   ],
+   "name": "medical_charges",
+   "task": "regression",
+   "n_raw": 163065,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44147,
+   "studies": [
+    336
+   ],
+   "name": "MiamiHousing2016",
+   "task": "regression",
+   "n_raw": 13932,
+   "n_rows": 13932,
+   "subsampled": false,
+   "pred_exposure": 0.0008699813380268419,
+   "dup_row_frac": 0.0013637668676428367,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44156,
+   "studies": [
+    334
+   ],
+   "name": "electricity",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 44157,
+   "studies": [
+    334
+   ],
+   "name": "eye_movements",
+   "task": "classification",
+   "n_raw": 7608,
+   "n_rows": 7608,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44159,
+   "studies": [
+    334
+   ],
+   "name": "covertype",
+   "task": "classification",
+   "n_raw": 423680,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 45019,
+   "studies": [
+    337
+   ],
+   "name": "Bioresponse",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 45020,
+   "studies": [
+    337
+   ],
+   "name": "default-of-credit-card-clients",
+   "task": "classification",
+   "n_raw": 13272,
+   "n_rows": 13272,
+   "subsampled": false,
+   "pred_exposure": 0.006582609140910571,
+   "dup_row_frac": 0.010247136829415311,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 45021,
+   "studies": [
+    337
+   ],
+   "name": "jannis",
+   "task": "classification",
+   "n_raw": 57580,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 45028,
+   "studies": [
+    337
+   ],
+   "name": "california",
+   "task": "classification",
+   "n_raw": 20634,
+   "n_rows": 20634,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 45033,
+   "studies": [
+    336
+   ],
+   "name": "abalone",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 45034,
+   "studies": [
+    336
+   ],
+   "name": "delays_zurich_transport",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 45035,
+   "studies": [
+    334
+   ],
+   "name": "albert",
+   "task": "classification",
+   "n_raw": 58252,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 45036,
+   "studies": [
+    334
+   ],
+   "name": "default-of-credit-card-clients",
+   "task": "classification",
+   "n_raw": 13272,
+   "n_rows": 13272,
+   "subsampled": false,
+   "pred_exposure": 0.004068920485475852,
+   "dup_row_frac": 0.006781193490054249,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 45038,
+   "studies": [
+    334
+   ],
+   "name": "road-safety",
+   "task": "classification",
+   "n_raw": 111762,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 8.000266675810445e-05,
+   "dup_row_frac": 0.00013333333333333334,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 45041,
+   "studies": [
+    335
+   ],
+   "name": "topo_2_1",
+   "task": "regression",
+   "n_raw": 8885,
+   "n_rows": 8885,
+   "subsampled": false,
+   "pred_exposure": 0.003376857271481031,
+   "dup_row_frac": 0.005627462014631401,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 45042,
+   "studies": [
+    335
+   ],
+   "name": "abalone",
+   "excluded": "name already used in v1"
+  },
+  {
+   "data_id": 45045,
+   "studies": [
+    335
+   ],
+   "name": "delays_zurich_transport",
+   "excluded": "size limits"
+  },
+  {
+   "data_id": 45046,
+   "studies": [
+    335
+   ],
+   "name": "Allstate_Claims_Severity",
+   "task": "regression",
+   "n_raw": 188318,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 45047,
+   "studies": [
+    335
+   ],
+   "name": "Airlines_DepDelay_1M",
+   "task": "regression",
+   "n_raw": 1000000,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.002540082669354505,
+   "dup_row_frac": 0.004033333333333333,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 45048,
+   "studies": [
+    335
+   ],
+   "name": "medical_charges",
+   "task": "regression",
+   "n_raw": 163065,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  }
+ ]
+}

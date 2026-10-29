@@ -177,79 +177,151 @@
   }
  ],
  "neardup": {
-  "n_datasets": 7,
+  "n_datasets": 37,
   "summary": [
    {
     "task": "classification",
     "model": "lgbm",
     "sigma": 0.0,
-    "DCP": 0.0029,
-    "MCP_exact": -0.0015,
-    "MCP_oracle": -0.0015,
-    "SCP": -0.0376
+    "DCP": -0.0001,
+    "MCP_exact": -0.0012,
+    "MCP_oracle": -0.0012,
+    "SCP": -0.0553
    },
    {
     "task": "classification",
     "model": "lgbm",
     "sigma": 0.001,
     "DCP": -0.0008,
-    "MCP_exact": -0.0253,
-    "MCP_oracle": -0.0023,
-    "SCP": -0.0253
+    "MCP_exact": -0.0323,
+    "MCP_oracle": -0.0008,
+    "SCP": -0.0403
    },
    {
     "task": "classification",
     "model": "lgbm",
     "sigma": 0.01,
-    "DCP": 0.0009,
-    "MCP_exact": -0.0253,
-    "MCP_oracle": -0.0021,
-    "SCP": -0.0253
+    "DCP": -0.0025,
+    "MCP_exact": -0.0275,
+    "MCP_oracle": -0.0004,
+    "SCP": -0.034
    },
    {
     "task": "classification",
     "model": "lgbm",
     "sigma": 0.1,
-    "DCP": 0.0039,
-    "MCP_exact": -0.0184,
-    "MCP_oracle": 0.0003,
-    "SCP": -0.0184
+    "DCP": -0.0004,
+    "MCP_exact": -0.0224,
+    "MCP_oracle": -0.0004,
+    "SCP": -0.0228
    },
    {
     "task": "classification",
     "model": "rf",
     "sigma": 0.0,
-    "DCP": 0.0051,
-    "MCP_exact": -0.0026,
-    "MCP_oracle": -0.0026,
-    "SCP": -0.061
+    "DCP": 0.0048,
+    "MCP_exact": 0.0032,
+    "MCP_oracle": 0.0032,
+    "SCP": -0.0581
    },
    {
     "task": "classification",
     "model": "rf",
     "sigma": 0.001,
-    "DCP": 0.0083,
-    "MCP_exact": -0.0404,
-    "MCP_oracle": -0.0023,
-    "SCP": -0.0404
+    "DCP": 0.002,
+    "MCP_exact": -0.0411,
+    "MCP_oracle": -0.0008,
+    "SCP": -0.043
    },
    {
     "task": "classification",
     "model": "rf",
     "sigma": 0.01,
-    "DCP": 0.008,
+    "DCP": 0.0011,
     "MCP_exact": -0.0346,
-    "MCP_oracle": -0.0012,
-    "SCP": -0.0346
+    "MCP_oracle": -0.0002,
+    "SCP": -0.0364
    },
    {
     "task": "classification",
     "model": "rf",
     "sigma": 0.1,
-    "DCP": 0.0095,
+    "DCP": 0.005,
     "MCP_exact": -0.0241,
     "MCP_oracle": 0.0009,
-    "SCP": -0.0241
+    "SCP": -0.0271
+   },
+   {
+    "task": "regression",
+    "model": "lgbm",
+    "sigma": 0.0,
+    "DCP": 0.0023,
+    "MCP_exact": 0.0032,
+    "MCP_oracle": 0.0032,
+    "SCP": -0.041
+   },
+   {
+    "task": "regression",
+    "model": "lgbm",
+    "sigma": 0.001,
+    "DCP": 0.0017,
+    "MCP_exact": -0.0311,
+    "MCP_oracle": 0.0025,
+    "SCP": -0.0311
+   },
+   {
+    "task": "regression",
+    "model": "lgbm",
+    "sigma": 0.01,
+    "DCP": 0.0007,
+    "MCP_exact": -0.0267,
+    "MCP_oracle": 0.0028,
+    "SCP": -0.0267
+   },
+   {
+    "task": "regression",
+    "model": "lgbm",
+    "sigma": 0.1,
+    "DCP": 0.0058,
+    "MCP_exact": -0.0042,
+    "MCP_oracle": 0.0019,
+    "SCP": -0.0042
+   },
+   {
+    "task": "regression",
+    "model": "rf",
+    "sigma": 0.0,
+    "DCP": 0.0066,
+    "MCP_exact": 0.0055,
+    "MCP_oracle": 0.0055,
+    "SCP": -0.0519
+   },
+   {
+    "task": "regression",
+    "model": "rf",
+    "sigma": 0.001,
+    "DCP": 0.0025,
+    "MCP_exact": -0.0411,
+    "MCP_oracle": 0.0048,
+    "SCP": -0.0411
+   },
+   {
+    "task": "regression",
+    "model": "rf",
+    "sigma": 0.01,
+    "DCP": 0.0012,
+    "MCP_exact": -0.0328,
+    "MCP_oracle": 0.0053,
+    "SCP": -0.0328
+   },
+   {
+    "task": "regression",
+    "model": "rf",
+    "sigma": 0.1,
+    "DCP": 0.005,
+    "MCP_exact": -0.0081,
+    "MCP_oracle": 0.0053,
+    "SCP": -0.0081
    }
   ],
   "key_detect": [
@@ -270,6 +342,26 @@
    },
    {
     "task": "classification",
+    "sigma": 0.1,
+    "key_detect_rate": 0.0
+   },
+   {
+    "task": "regression",
+    "sigma": 0.0,
+    "key_detect_rate": 1.0
+   },
+   {
+    "task": "regression",
+    "sigma": 0.001,
+    "key_detect_rate": 0.0
+   },
+   {
+    "task": "regression",
+    "sigma": 0.01,
+    "key_detect_rate": 0.0
+   },
+   {
+    "task": "regression",
     "sigma": 0.1,
     "key_detect_rate": 0.0
    }

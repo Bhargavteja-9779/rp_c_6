@@ -180,20 +180,22 @@ def _fig_neardup(g, F):
     import matplotlib.pyplot as plt
     from .figures import MM, _save
     fig, axs = plt.subplots(1, 2, figsize=(174 * MM, 62 * MM), sharey=True)
-    labels = {"SCP": "Split CP", "MCP_exact": "Novelty-Mondrian (exact key)", "DCP": "Distance-Mondrian",
-              "MCP_oracle": "Mondrian on true record identity (oracle)"}
+    labels = {"SCP": "Standard calibration", "MCP_exact": "Fix: seen/new by exact match",
+              "DCP": "Fix: calibration by distance to training rows",
+              "MCP_oracle": "Seen/new by true record identity (reference)"}
+    g = g[g.model == "rf"]
     for ax, task in zip(axs, ["classification", "regression"]):
         for i, (meth, lab) in enumerate(labels.items()):
-            q = g[(g.task == task) & (g.method == meth)].groupby("sigma").gap.median()
+            q = 100 * g[(g.task == task) & (g.method == meth)].groupby("sigma").gap.median()
             x = np.arange(len(q))
             ax.plot(x, q.values, marker="o", ms=3.5, color=C[i], label=lab)
         ax.axhline(0, color=INK, lw=0.8)
         ax.set_xticks(range(4))
         ax.set_xticklabels(["0 (exact)", "0.001", "0.01", "0.1"])
-        ax.set_xlabel("Jitter of copied records (× feature SD)")
+        ax.set_xlabel("Noise added to the copies (× feature SD)")
         ax.set_title(f"({'a' if task == 'classification' else 'b'}) {task.capitalize()}", loc="left")
         ax.grid(True)
-    axs[0].set_ylabel("Median coverage gap on truly new records")
+    axs[0].set_ylabel("Coverage gap on truly new cases (pp)")
     h, l = axs[0].get_legend_handles_labels()
     fig.legend(h, l, loc="lower center", ncol=2, frameon=False, bbox_to_anchor=(0.5, -0.12))
     fig.tight_layout(rect=(0, 0.1, 1, 1))
