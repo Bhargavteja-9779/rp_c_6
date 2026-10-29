@@ -20,3 +20,8 @@
 40685 shuttle classification 0.0
 /usr/local/lib/python3.13/dist-packages/sklearn/datasets/_openml.py:131: UserWarning: A network error occurred while downloading https://www.openml.org/api/v1/json/data/features/40900. Retrying...
   warn(
+40981 Australian classification 0.0
+40996 Fashion-MNIST classification 0.0
+41138 APSFailure classification 0.0
+41142 christine classification 0.0
+41143 jasmine classification 0.0
