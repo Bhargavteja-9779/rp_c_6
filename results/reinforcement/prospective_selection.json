@@ -1,5 +1,5 @@
 {
- "date": "2026-10-29 14:10 UTC",
+ "date": "2026-10-29 14:36 UTC",
  "pool_size": 163,
  "included": [
   {
@@ -157,20 +157,6 @@
    "included": true
   },
   {
-   "data_id": 44061,
-   "studies": [
-    335
-   ],
-   "name": "Mercedes_Benz_Greener_Manufacturing",
-   "task": "regression",
-   "n_raw": 4209,
-   "n_rows": 4209,
-   "subsampled": false,
-   "pred_exposure": 0.2586595812624885,
-   "dup_row_frac": 0.3050605844618674,
-   "included": true
-  },
-  {
    "data_id": 44065,
    "studies": [
     335
@@ -213,20 +199,6 @@
    "included": true
   },
   {
-   "data_id": 44136,
-   "studies": [
-    336
-   ],
-   "name": "wine_quality",
-   "task": "regression",
-   "n_raw": 6497,
-   "n_rows": 6497,
-   "subsampled": false,
-   "pred_exposure": 0.21960178515643763,
-   "dup_row_frac": 0.3343081422194859,
-   "included": true
-  },
-  {
    "data_id": 44142,
    "studies": [
     336
@@ -238,20 +210,6 @@
    "subsampled": false,
    "pred_exposure": 0.027378412868628632,
    "dup_row_frac": 0.044594050290580584,
-   "included": true
-  },
-  {
-   "data_id": 44143,
-   "studies": [
-    336
-   ],
-   "name": "nyc-taxi-green-dec-2016",
-   "task": "regression",
-   "n_raw": 581835,
-   "n_rows": 30000,
-   "subsampled": true,
-   "pred_exposure": 0.011836390946473993,
-   "dup_row_frac": 0.019366666666666667,
    "included": true
   },
   {
@@ -294,20 +252,6 @@
    "subsampled": false,
    "pred_exposure": 0.055820012001199924,
    "dup_row_frac": 0.0559,
-   "included": true
-  },
-  {
-   "data_id": 45032,
-   "studies": [
-    336
-   ],
-   "name": "yprop_4_1",
-   "task": "regression",
-   "n_raw": 8885,
-   "n_rows": 8885,
-   "subsampled": false,
-   "pred_exposure": 0.015087766356531866,
-   "dup_row_frac": 0.024198086662915026,
    "included": true
   },
   {
@@ -739,7 +683,12 @@
    ],
    "name": "Satellite",
    "task": "classification",
-   "excluded": "download/parse failed: <HTTPError 503: 'Service Temporarily Unavailable'>"
+   "n_raw": 5100,
+   "n_rows": 5100,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
   },
   {
    "data_id": 40975,
@@ -1028,7 +977,12 @@
    ],
    "name": "volkert",
    "task": "classification",
-   "excluded": "download/parse failed: OpenMLError('Dataset with data_id 41166 not found.')"
+   "n_raw": 58310,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.00030623170479864725,
+   "dup_row_frac": 0.0003333333333333333,
+   "excluded": "predicted exposure < 0.01"
   },
   {
    "data_id": 41167,
@@ -1871,6 +1825,66 @@
    "pred_exposure": 0.0,
    "dup_row_frac": 0.0,
    "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": 44061,
+   "studies": [
+    335
+   ],
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "task": "regression",
+   "n_raw": 4209,
+   "n_rows": 4209,
+   "subsampled": false,
+   "pred_exposure": 0.2586595812624885,
+   "dup_row_frac": 0.3050605844618674,
+   "included": false,
+   "excluded": "same data set already included under a lower id"
+  },
+  {
+   "data_id": 44136,
+   "studies": [
+    336
+   ],
+   "name": "wine_quality",
+   "task": "regression",
+   "n_raw": 6497,
+   "n_rows": 6497,
+   "subsampled": false,
+   "pred_exposure": 0.21960178515643763,
+   "dup_row_frac": 0.3343081422194859,
+   "included": false,
+   "excluded": "same data set already included under a lower id"
+  },
+  {
+   "data_id": 44143,
+   "studies": [
+    336
+   ],
+   "name": "nyc-taxi-green-dec-2016",
+   "task": "regression",
+   "n_raw": 581835,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.011836390946473993,
+   "dup_row_frac": 0.019366666666666667,
+   "included": false,
+   "excluded": "same data set already included under a lower id"
+  },
+  {
+   "data_id": 45032,
+   "studies": [
+    336
+   ],
+   "name": "yprop_4_1",
+   "task": "regression",
+   "n_raw": 8885,
+   "n_rows": 8885,
+   "subsampled": false,
+   "pred_exposure": 0.015087766356531866,
+   "dup_row_frac": 0.024198086662915026,
+   "included": false,
+   "excluded": "same data set already included under a lower id"
   }
  ]
 }
