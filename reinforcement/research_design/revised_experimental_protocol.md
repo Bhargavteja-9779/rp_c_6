@@ -127,3 +127,10 @@ script (`code/experiments/prospective_selection_uci.py`) is kept but was not run
 4. **Early start.** To save time, the prospective runs for the 20 data sets fixed by points 1–2
    were started while the retries were pending. The code and configuration are identical to
    `run_all.py --stage prospective`.
+5. **Outcome of the retries (cut-off reached 15:20 UTC).** Satellite (40900) and volkert (41166)
+   were downloaded; both have predicted exposure below 0.01 and are excluded by the inclusion
+   rule. albert (41147) still returned HTTP 503 at the cut-off. Yolanda (42705) and Higgs (42769)
+   failed OpenML's own md5 check on every attempt. A last attempt with the local download cache
+   cleared fetched both files afresh and they still failed, so the mismatch is on the server side.
+   These three stay excluded as "download failed". A selection re-run with the de-duplication
+   rule (`results/logs/prospective_selection_rerun1.log`) reproduced the same **20** data sets.
