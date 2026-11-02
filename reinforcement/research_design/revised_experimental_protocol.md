@@ -210,3 +210,13 @@ practitioner actually makes: fix or not. The tests below are fixed now, before a
   * accuracy of the top-1 prediction on new cases.
 * **Purpose:** descriptive. The comparison answers the question "why not just remove duplicates?"
   with data. No hypothesis test.
+
+### Deviations under Amendment 2 (recorded before any wave-2 outcome was computed)
+1. **Parsing fix.** The first wave-2 selection run stopped with an error on a UCI file that repeats
+   column names. Repeated names are now made unique (a suffix is added), and any other per-data-set
+   error is logged as "parse failed" instead of stopping the run. The selection was then re-run from
+   the start. Only the complete re-run is used (`results/reinforcement/prospective_selection_w2.json`,
+   log `results/logs/prospective_selection_w2.log`): 27 of 209 data sets were included.
+2. **Interrupted runs.** A restart of the compute environment stopped the wave-1 SCP-rand re-run after
+   18 of 20 data sets. It was resumed; completed data sets were kept, because results are cached per
+   data set and are deterministic given the seed.
