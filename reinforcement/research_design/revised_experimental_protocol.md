@@ -134,3 +134,79 @@ script (`code/experiments/prospective_selection_uci.py`) is kept but was not run
    cleared fetched both files afresh and they still failed, so the mismatch is on the server side.
    These three stay excluded as "download failed". A selection re-run with the de-duplication
    rule (`results/logs/prospective_selection_rerun1.log`) reproduced the same **20** data sets.
+
+## Amendment 2: second validation wave and two explanatory analyses (2026-11-02, before any of the data below were downloaded or any of these analyses run)
+
+**Why.** Wave 1 (20 OpenML data sets) had low power. Only one data set showed a large shortfall,
+and the rank test P1 failed. A second, independent source adds power for the decision a
+practitioner actually makes: fix or not. The tests below are fixed now, before any data are seen.
+
+### W. Second validation wave (UCI Machine Learning Repository)
+* **Pool:** every data set listed by `ucimlrepo.list_available_datasets()` at selection time; the
+  listing is saved with the selection file `results/reinforcement/prospective_selection_w2.json`.
+* **Eligibility, in this order, all recorded:**
+  1. Exactly one target column.
+  2. A task in the UCI metadata: "Classification" gives classification, otherwise "Regression"
+     gives regression, otherwise the data set is excluded.
+  3. 300 ≤ rows ≤ 5,000,000 and ≤ 2,000 features.
+  4. A numeric target for regression.
+* **Overlap exclusion:** a data set is excluded if either of the following holds.
+  * Its normalized name matches any data set used in v1 or in wave 1.
+  * Its row count lies within ±2% of such a data set whose feature count differs by at most 1.
+
+  Within the pool, one copy per normalized name is kept (the lowest UCI id).
+* **Inclusion:** predicted exposure π̄ ≥ 0.01 after subsampling, using the v2 rule. Inclusion uses
+  no labels and no models.
+* **Analysis:** identical to wave 1:
+  * seeds 0–19;
+  * learners RF, LightGBM and LR/ridge;
+  * scores LAC or |res|, plus normres;
+  * methods SCP, MCP, PAC-MCP and DCP;
+  * α = 0.1.
+
+  One method is added: **SCP-rand**, split CP with random tie-breaking. Every calibration and test
+  score receives an independent uniform jitter of 10⁻⁶ (classification) or 10⁻⁶ · sd(y_train)
+  (regression); for classification the jitter also enters the set construction.
+* **Endpoints (unit = data set; "gap" = mean over seeds of new-case coverage − 0.9):**
+  * **W1 (primary, screening).**
+    * *Flag:* g* < −0.02 or π̄ ≥ 0.10. This is the combined rule stated in the manuscript before
+      wave 1 results existed.
+    * *Positive:* a data set whose SCP gap is < −0.02 for RF or for LightGBM.
+    * *Reported:* sensitivity = flagged positives / positives, with an exact binomial 95% CI, for
+      wave 2 alone and pooled with wave 1. Also reported: specificity, and the worst gap (any
+      learner) among unflagged data sets.
+    * *Hypothesis:* sensitivity ≥ 0.8 (point estimate). If there are no positives, W1 is reported
+      as not evaluable.
+  * **W2 (primary, fix).** For each learner, the bootstrap 95% CI of the median MCP gap has a lower
+    bound > −0.01.
+  * **W3 (secondary).** The share of data sets with RF gap ≥ g* − 0.02, with an exact binomial CI.
+  * **W4 (secondary).** Spearman ρ(g*, RF SCP gap), one-sided.
+  * **W5 (secondary, explanatory).** On data sets with π̄ ≥ 0.10 (wave 1 and wave 2 pooled), test
+    whether random tie-breaking removes over-coverage: is the positive part of the RF gap smaller
+    under SCP-rand than under SCP (one-sided paired Wilcoxon)? ρ(g*, RF SCP-rand gap) is reported
+    alongside.
+  * **Multiplicity:** Holm across W1 (sensitivity ≥ 0.8; exact one-sided binomial test of
+    H0: sensitivity ≤ 0.5) and W2 (RF).
+* **Wave 1 re-run for W5:** SCP-rand is computed for the 20 wave-1 data sets with the same seeds.
+  Nothing else in wave 1 is recomputed or changed.
+
+### R. Remedy comparison on the application data sets (exploratory, specified before running)
+* **Data:** the 12 application data sets (10 NASA MDP, KDD Cup'99, PhishingWebsites).
+* **Setup:** RF and LightGBM, LAC, α = 0.1, seeds 0–9, and the same 60/20/20 random split as the
+  main analysis.
+* **Methods:**
+  1. SCP (standard).
+  2. **Dedup.** Repeated feature vectors are dropped from the training part (first occurrence
+     kept), and calibration rows that repeat a training row or an earlier calibration row are
+     dropped. One threshold is then applied to all test rows. This is "remove duplicates before
+     calibrating".
+  3. **Group split.** Whole groups of identical rows are assigned to one part, followed by SCP.
+  4. MCP (the fix).
+  5. PAC-MCP.
+  6. DCP.
+* **Reported per method:**
+  * coverage and mean set size on new and on seen test rows (group split has no seen rows);
+  * the share of empty sets for new cases;
+  * accuracy of the top-1 prediction on new cases.
+* **Purpose:** descriptive. The comparison answers the question "why not just remove duplicates?"
+  with data. No hypothesis test.
