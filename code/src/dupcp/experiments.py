@@ -427,13 +427,32 @@ def run_neardup(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
     return f"done {time.time() - t0:.0f}s"
 
 
+def _scp_rand_rows(base, task, variant, Pt, y, tr, te, seen_te, seen_ca, a, seed):
+    """Split CP with random tie-breaking (Amendment 2): an independent uniform jitter of 1e-6 (classification)
+    or 1e-6 * sd(y_train) (regression) is added to every calibration and test score."""
+    score, sc_, st_, _ = variant
+    rng = np.random.default_rng(10_000 + seed)
+    eps = 1e-6 if task == "classification" else 1e-6 * (float(np.std(y[tr])) or 1.0)
+    thr = thresholds(sc_ + eps * rng.random(len(sc_)), None, a, (0, 1))
+    q = test_thresholds(thr, None, len(te))
+    if task == "classification":
+        S = (1 - Pt) + eps * rng.random(Pt.shape)  # jittered scores for every candidate label
+        cov = (S[np.arange(len(te)), y[te]] <= q).astype(float)
+        size, scale = classification_sets(S, q).sum(1).astype(float), None
+    else:
+        cov = (st_ + eps * rng.random(len(st_)) <= q).astype(float)
+        size, scale = 2 * q, float(np.std(y[tr])) or 1.0
+    return [_record(dict(base, score=score, method="SCP_rand"), cov, size, seen_te, q, (seen_ca == SEEN).sum(),
+                    (seen_ca == NOVEL).sum(), thr.get("all"), thr.get("all"), width_scale=scale)]
+
+
 def run_prospective(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
     """Pre-specified prospective validation (revised protocol section 1)."""
     from sklearn.neighbors import NearestNeighbors
     from .audit import purity_exposure
     from .conformal import pac_thresholds
     os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, f"prosp_{task}_{data_id}.csv")
+    path = os.path.join(out_dir, f"{cfg.get('prosp_prefix', 'prosp')}_{task}_{data_id}.csv")
     if os.path.exists(path):
         return "cached"
     t0 = time.time()
@@ -476,6 +495,11 @@ def run_prospective(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
                         beta_ = float(np.median(sig[0])) or 1e-8
                         variants.append(("normres", np.abs(y[ca] - yc) / (sig[0] + beta_),
                                          np.abs(y[te] - yt) / (sig[1] + beta_), sig[1] + beta_))
+                if cfg.get("tie_break"):
+                    rows.extend(_scp_rand_rows(base, task, variants[0], Pt if task == "classification" else None,
+                                               y, tr, te, seen_te, seen_ca, a, seed))
+                if cfg.get("tie_break_only"):
+                    continue
                 for score, sc_, st_, wscale in variants:
                     meths = [("SCP", None, None, None, False), ("MCP", seen_ca, seen_te, (NOVEL, SEEN), False),
                              ("PAC_MCP", seen_ca, seen_te, (NOVEL, SEEN), True)]
@@ -500,5 +524,77 @@ def run_prospective(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
                                             width_scale=scale))
             except Exception as e:
                 rows.append(dict(base, error=repr(e)[:300]))
+    pd.DataFrame(rows).to_csv(path, index=False)
+    return f"done {time.time() - t0:.0f}s"
+
+
+def run_remedies(data_id: int, task: str, cfg: dict, out_dir: str) -> str:
+    """Amendment 2, part R: remedy comparison on the application data sets (exploratory, descriptive).
+    Methods: SCP, Dedup, group split (GSCP), MCP, PAC_MCP, DCP. Classification, LAC score."""
+    from .conformal import pac_thresholds
+    os.makedirs(out_dir, exist_ok=True)
+    path = os.path.join(out_dir, f"remedies_{task}_{data_id}.csv")
+    if os.path.exists(path):
+        return "cached"
+    t0 = time.time()
+    d = load_dataset(data_id, task, cfg["cache_dir"])
+    X, y, keys = d["X"], d["y"], d["keys"]
+    K = int(y.max()) + 1
+    a, delta = cfg["primary_alpha"], cfg["pac_delta"]
+    rows = []
+
+    def evaluate(base, method, P_te, y_te, q, seen_te, n_tr, n_ca):
+        S = 1 - P_te
+        sets = classification_sets(S, q)
+        cov = sets[np.arange(len(y_te)), y_te].astype(float)
+        size = sets.sum(1).astype(float)
+        new, seen = seen_te == NOVEL, seen_te == SEEN
+        acc = (P_te.argmax(1) == y_te).astype(float)
+        rows.append(dict(base, method=method, n_train=n_tr, n_cal=n_ca, n_te_new=int(new.sum()),
+                         n_te_seen=int(seen.sum()), cov_new=_nanmean(cov[new]), cov_seen=_nanmean(cov[seen]),
+                         size_new=_nanmean(size[new]), size_seen=_nanmean(size[seen]),
+                         empty_new=_nanmean((size[new] == 0).astype(float)), acc_new=_nanmean(acc[new])))
+
+    for seed in cfg["remedy_seeds"]:
+        tr, ca, te = random_split(len(y), seed, cfg["fracs"])
+        tr_keys = set(keys[tr].tolist())
+        seen_ca = np.array([k in tr_keys for k in keys[ca]], dtype=int)
+        seen_te = np.array([k in tr_keys for k in keys[te]], dtype=int)
+        try:
+            bins = _distance_bins(X, tr, ca, te, seen_ca == SEEN, seen_te == SEEN)
+        except Exception:
+            bins = None
+        # Dedup: first occurrence per feature vector in training; calibration rows new and not repeated
+        _, first = np.unique(keys[tr], return_index=True)
+        tr_d = tr[np.sort(first)]
+        ca_new = ca[seen_ca == NOVEL]
+        _, first_c = np.unique(keys[ca_new], return_index=True)
+        ca_d = ca_new[np.sort(first_c)]
+        for model in cfg["remedy_models"]:
+            base = dict(data_id=data_id, name=d["name"], seed=seed, model=model, alpha=a)
+            try:
+                Pc, Pt = fit_predict(model, task, X.iloc[tr], y[tr], [X.iloc[ca], X.iloc[te]], seed, n_classes=K)
+                sc = 1 - Pc[np.arange(len(ca)), y[ca]]
+                for mname, gca, gte, glab, pac in [("SCP", None, None, (0, 1), False),
+                                                  ("MCP", seen_ca, seen_te, (NOVEL, SEEN), False),
+                                                  ("PAC_MCP", seen_ca, seen_te, (NOVEL, SEEN), True)] + (
+                        [("DCP", bins[0], bins[1], tuple(range(6)), False)] if bins is not None else []):
+                    thr = pac_thresholds(sc, gca, a, delta, glab) if pac else thresholds(sc, gca, a, glab)
+                    evaluate(base, mname, Pt, y[te], test_thresholds(thr, gte, len(te)), seen_te, len(tr), len(ca))
+                Pc_d, Pt_d = fit_predict(model, task, X.iloc[tr_d], y[tr_d], [X.iloc[ca_d], X.iloc[te]], seed,
+                                         n_classes=K)
+                thr = thresholds(1 - Pc_d[np.arange(len(ca_d)), y[ca_d]], None, a, (0, 1))
+                evaluate(base, "Dedup", Pt_d, y[te], test_thresholds(thr, None, len(te)), seen_te, len(tr_d), len(ca_d))
+            except Exception as e:
+                rows.append(dict(base, method="error", error=repr(e)[:300]))
+            try:
+                gtr, gca, gte = group_split(keys, seed, cfg["fracs"])
+                Pc_g, Pt_g = fit_predict(model, task, X.iloc[gtr], y[gtr], [X.iloc[gca], X.iloc[gte]], seed,
+                                         n_classes=K)
+                thr = thresholds(1 - Pc_g[np.arange(len(gca)), y[gca]], None, a, (0, 1))
+                evaluate(base, "GSCP", Pt_g, y[gte], test_thresholds(thr, None, len(gte)),
+                         np.full(len(gte), NOVEL), len(gtr), len(gca))
+            except Exception as e:
+                rows.append(dict(base, method="GSCP", error=repr(e)[:300]))
     pd.DataFrame(rows).to_csv(path, index=False)
     return f"done {time.time() - t0:.0f}s"
