@@ -1,0 +1,15 @@
+{
+ "n_rows": 9466,
+ "repeated_row_share": 0.8428058313965773,
+ "exposure": 0.8202090942802414,
+ "pure_exposure": 0.8122413142710537,
+ "predicted_gap": -0.4325985299256026,
+ "exposure_only_gap": -0.45620165880843117,
+ "alpha": 0.1,
+ "verdict": "FIX RECOMMENDED: calibrate seen and new cases separately (SeenNewConformal).",
+ "reasons": [
+  "81% of test rows will have a training copy with the same label; a model that memorizes them can miss new cases 53% of the time instead of 10%.",
+  "82% of test rows will be seen in training; report coverage on new cases separately."
+ ],
+ "seconds_check": 0.025789499282836914
+}
