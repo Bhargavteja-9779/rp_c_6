@@ -65,6 +65,35 @@ def v2_sections():
     out.append(md_table(pd.read_csv(os.path.join(R, "tables", "neardup_summary.csv")), 4))
     out.append("\n# R9 Retrospective test of Eq. (3) (non-blind)\n")
     out.append(md_table(pd.DataFrame([{k: v for k, v in x.items() if k != "violations"} for x in st["retrospective"]]), 4))
+    a2p = os.path.join(R, "statistics_amendment2.json")
+    if os.path.exists(os.path.join(R, "prospective_selection_w2.json")):
+        sel2 = json.load(open(os.path.join(R, "prospective_selection_w2.json")))
+        out.append(f"\n# R11 Validation wave 2 (UCI): selection log\n\nSelection date {sel2['date']}; pool of "
+                   f"{sel2['pool_size']} UCI data sets. Inclusion used no labels and no models.\n\n## Included\n")
+        out.append(md_table(pd.DataFrame(sel2["included"])[["data_id", "name", "task", "n_raw", "n_rows", "subsampled",
+                                                            "dup_row_frac", "pred_exposure"]]))
+        ex2 = pd.DataFrame(sel2["excluded"])
+        ex2["reason"] = ex2["excluded"].str.slice(0, 90)
+        out.append("\n## Excluded (with reason)\n")
+        out.append(md_table(ex2[["data_id", "name", "reason"]].fillna("")))
+    for fn, title, note in [("screening.csv", "R12 Screening (W1): flag versus observed shortfall, waves 1 and 2",
+                             "`flag`: predicted gap g* < −0.02 or predicted exposure ≥ 0.10. `positive`: SCP gap < −0.02 "
+                             "for RF or LightGBM. Gaps are means over 20 splits."),
+                            ("tiebreak.csv", "R13 Random tie-breaking (W5)", "`gap`: SCP; `gap_rand`: SCP with random "
+                             "tie-breaking; same seeds."),
+                            ("remedies_summary.csv", "R14 Remedy comparison on the application data sets",
+                             "Means over 10 splits. `n_train`, `n_cal`: rows used for training and calibration.")]:
+        fp = os.path.join(R, "tables", fn)
+        if os.path.exists(fp):
+            df = pd.read_csv(fp)
+            keep = [c for c in df.columns if c not in ("alpha", "score")]
+            out.append(f"\n# {title}\n\n{note}\n")
+            out.append(md_table(df[keep], 3))
+    if os.path.exists(a2p):
+        st2 = json.load(open(a2p))
+        out.append("\n# R15 Pre-specified tests of Amendment 2 (W1–W5)\n\n```\n" +
+                   json.dumps({k: v for k, v in st2.items() if k not in ("remedies_median", "remedies_worst_new")},
+                              indent=1, default=float)[:12000] + "\n```\n")
     out.append("\n# R10 Reinforcement protocol and deviations\n")
     prot = open(os.path.join(ROOT, "reinforcement", "research_design", "revised_experimental_protocol.md")).read()
     out.append(prot.split("\n", 1)[1].replace("\n# ", "\n## "))
