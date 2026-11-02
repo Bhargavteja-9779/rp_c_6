@@ -1,0 +1,2593 @@
+{
+ "date": "2026-11-02 08:44 UTC",
+ "source": "UCI (amendment 2, wave 2)",
+ "pool_size": 209,
+ "listing": [
+  [
+   "Abalone",
+   1
+  ],
+  [
+   "Adult",
+   2
+  ],
+  [
+   "Annealing",
+   3
+  ],
+  [
+   "Audiology (Standardized)",
+   8
+  ],
+  [
+   "Auto MPG",
+   9
+  ],
+  [
+   "Automobile",
+   10
+  ],
+  [
+   "Balance Scale",
+   12
+  ],
+  [
+   "Balloons",
+   13
+  ],
+  [
+   "Breast Cancer",
+   14
+  ],
+  [
+   "Breast Cancer Wisconsin (Original)",
+   15
+  ],
+  [
+   "Breast Cancer Wisconsin (Prognostic)",
+   16
+  ],
+  [
+   "Breast Cancer Wisconsin (Diagnostic)",
+   17
+  ],
+  [
+   "Pittsburgh Bridges",
+   18
+  ],
+  [
+   "Car Evaluation",
+   19
+  ],
+  [
+   "Census Income",
+   20
+  ],
+  [
+   "Chess (King-Rook vs. King-Pawn)",
+   22
+  ],
+  [
+   "Chess (King-Rook vs. King)",
+   23
+  ],
+  [
+   "Connect-4",
+   26
+  ],
+  [
+   "Credit Approval",
+   27
+  ],
+  [
+   "Japanese Credit Screening",
+   28
+  ],
+  [
+   "Computer Hardware",
+   29
+  ],
+  [
+   "Contraceptive Method Choice",
+   30
+  ],
+  [
+   "Covertype",
+   31
+  ],
+  [
+   "Cylinder Bands",
+   32
+  ],
+  [
+   "Dermatology",
+   33
+  ],
+  [
+   "Echocardiogram",
+   38
+  ],
+  [
+   "Ecoli",
+   39
+  ],
+  [
+   "Flags",
+   40
+  ],
+  [
+   "Glass Identification",
+   42
+  ],
+  [
+   "Haberman's Survival",
+   43
+  ],
+  [
+   "Hayes-Roth",
+   44
+  ],
+  [
+   "Heart Disease",
+   45
+  ],
+  [
+   "Hepatitis",
+   46
+  ],
+  [
+   "Horse Colic",
+   47
+  ],
+  [
+   "Image Segmentation",
+   50
+  ],
+  [
+   "Ionosphere",
+   52
+  ],
+  [
+   "Iris",
+   53
+  ],
+  [
+   "ISOLET",
+   54
+  ],
+  [
+   "Lenses",
+   58
+  ],
+  [
+   "Letter Recognition",
+   59
+  ],
+  [
+   "Liver Disorders",
+   60
+  ],
+  [
+   "Lung Cancer",
+   62
+  ],
+  [
+   "Lymphography",
+   63
+  ],
+  [
+   "Molecular Biology (Splice-junction Gene Sequences)",
+   69
+  ],
+  [
+   "MONK's Problems",
+   70
+  ],
+  [
+   "Mushroom",
+   73
+  ],
+  [
+   "Musk (Version 1)",
+   74
+  ],
+  [
+   "Musk (Version 2)",
+   75
+  ],
+  [
+   "Nursery",
+   76
+  ],
+  [
+   "Page Blocks Classification",
+   78
+  ],
+  [
+   "Optical Recognition of Handwritten Digits",
+   80
+  ],
+  [
+   "Pen-Based Recognition of Handwritten Digits",
+   81
+  ],
+  [
+   "Post-Operative Patient",
+   82
+  ],
+  [
+   "Primary Tumor",
+   83
+  ],
+  [
+   "Servo",
+   87
+  ],
+  [
+   "Shuttle Landing Control",
+   88
+  ],
+  [
+   "Solar Flare",
+   89
+  ],
+  [
+   "Soybean (Large)",
+   90
+  ],
+  [
+   "Soybean (Small)",
+   91
+  ],
+  [
+   "Challenger USA Space Shuttle O-Ring",
+   92
+  ],
+  [
+   "Spambase",
+   94
+  ],
+  [
+   "SPECT Heart",
+   95
+  ],
+  [
+   "SPECTF Heart",
+   96
+  ],
+  [
+   "Tic-Tac-Toe Endgame",
+   101
+  ],
+  [
+   "Congressional Voting Records",
+   105
+  ],
+  [
+   "Waveform Database Generator (Version 1)",
+   107
+  ],
+  [
+   "Wine",
+   109
+  ],
+  [
+   "Yeast",
+   110
+  ],
+  [
+   "Zoo",
+   111
+  ],
+  [
+   "US Census Data (1990)",
+   116
+  ],
+  [
+   "Census-Income (KDD)",
+   117
+  ],
+  [
+   "El Nino",
+   122
+  ],
+  [
+   "Statlog (Australian Credit Approval)",
+   143
+  ],
+  [
+   "Statlog (German Credit Data)",
+   144
+  ],
+  [
+   "Statlog (Heart)",
+   145
+  ],
+  [
+   "Statlog (Landsat Satellite)",
+   146
+  ],
+  [
+   "Statlog (Image Segmentation)",
+   147
+  ],
+  [
+   "Statlog (Shuttle)",
+   148
+  ],
+  [
+   "Statlog (Vehicle Silhouettes)",
+   149
+  ],
+  [
+   "Connectionist Bench (Sonar, Mines vs. Rocks)",
+   151
+  ],
+  [
+   "Cloud",
+   155
+  ],
+  [
+   "Poker Hand",
+   158
+  ],
+  [
+   "MAGIC Gamma Telescope",
+   159
+  ],
+  [
+   "Mammographic Mass",
+   161
+  ],
+  [
+   "Forest Fires",
+   162
+  ],
+  [
+   "Concrete Compressive Strength",
+   165
+  ],
+  [
+   "Ozone Level Detection",
+   172
+  ],
+  [
+   "Parkinsons",
+   174
+  ],
+  [
+   "Blood Transfusion Service Center",
+   176
+  ],
+  [
+   "Communities and Crime",
+   183
+  ],
+  [
+   "Acute Inflammations",
+   184
+  ],
+  [
+   "Wine Quality",
+   186
+  ],
+  [
+   "Parkinsons Telemonitoring",
+   189
+  ],
+  [
+   "Cardiotocography",
+   193
+  ],
+  [
+   "Steel Plates Faults",
+   198
+  ],
+  [
+   "Communities and Crime Unnormalized",
+   211
+  ],
+  [
+   "Vertebral Column",
+   212
+  ],
+  [
+   "Bank Marketing",
+   222
+  ],
+  [
+   "ILPD (Indian Liver Patient Dataset)",
+   225
+  ],
+  [
+   "Skin Segmentation",
+   229
+  ],
+  [
+   "Individual Household Electric Power Consumption",
+   235
+  ],
+  [
+   "Energy Efficiency",
+   242
+  ],
+  [
+   "Fertility",
+   244
+  ],
+  [
+   "ISTANBUL STOCK EXCHANGE",
+   247
+  ],
+  [
+   "User Knowledge Modeling",
+   257
+  ],
+  [
+   "EEG Eye State",
+   264
+  ],
+  [
+   "Banknote Authentication",
+   267
+  ],
+  [
+   "Gas Sensor Array Drift at Different Concentrations",
+   270
+  ],
+  [
+   "Bike Sharing",
+   275
+  ],
+  [
+   "Thoracic Surgery Data",
+   277
+  ],
+  [
+   "Airfoil Self-Noise",
+   291
+  ],
+  [
+   "Wholesale customers",
+   292
+  ],
+  [
+   "Combined Cycle Power Plant",
+   294
+  ],
+  [
+   "Diabetes 130-US Hospitals for Years 1999-2008",
+   296
+  ],
+  [
+   "Tennis Major Tournament Match Statistics",
+   300
+  ],
+  [
+   "Dow Jones Index",
+   312
+  ],
+  [
+   "Student Performance",
+   320
+  ],
+  [
+   "Phishing Websites",
+   327
+  ],
+  [
+   "Diabetic Retinopathy Debrecen",
+   329
+  ],
+  [
+   "Online News Popularity",
+   332
+  ],
+  [
+   "Chronic Kidney Disease",
+   336
+  ],
+  [
+   "Mice Protein Expression",
+   342
+  ],
+  [
+   "Default of Credit Card Clients",
+   350
+  ],
+  [
+   "Online Retail",
+   352
+  ],
+  [
+   "Occupancy Detection",
+   357
+  ],
+  [
+   "Air Quality",
+   360
+  ],
+  [
+   "Polish Companies Bankruptcy",
+   365
+  ],
+  [
+   "Dota2 Games Results",
+   367
+  ],
+  [
+   "Facebook Metrics",
+   368
+  ],
+  [
+   "HTRU2",
+   372
+  ],
+  [
+   "Drug Consumption (Quantified)",
+   373
+  ],
+  [
+   "Appliances Energy Prediction",
+   374
+  ],
+  [
+   "Website Phishing",
+   379
+  ],
+  [
+   "YouTube Spam Collection",
+   380
+  ],
+  [
+   "Beijing PM2.5",
+   381
+  ],
+  [
+   "Cervical Cancer (Risk Factors)",
+   383
+  ],
+  [
+   "Stock Portfolio Performance",
+   390
+  ],
+  [
+   "Sales Transactions Weekly",
+   396
+  ],
+  [
+   "Daily Demand Forecasting Orders",
+   409
+  ],
+  [
+   "Autistic Spectrum Disorder Screening Data for Children",
+   419
+  ],
+  [
+   "Autism Screening Adult",
+   426
+  ],
+  [
+   "Absenteeism at work",
+   445
+  ],
+  [
+   "Breast Cancer Coimbra",
+   451
+  ],
+  [
+   "Drug Reviews (Druglib.com)",
+   461
+  ],
+  [
+   "Drug Reviews (Drugs.com)",
+   462
+  ],
+  [
+   "Superconductivty Data",
+   464
+  ],
+  [
+   "Student Academics Performance",
+   467
+  ],
+  [
+   "Online Shoppers Purchasing Intention Dataset",
+   468
+  ],
+  [
+   "Electrical Grid Stability Simulated Data",
+   471
+  ],
+  [
+   "Real Estate Valuation",
+   477
+  ],
+  [
+   "Travel Reviews",
+   484
+  ],
+  [
+   "Travel Review Ratings",
+   485
+  ],
+  [
+   "Facebook Live Sellers in Thailand",
+   488
+  ],
+  [
+   "Metro Interstate Traffic Volume",
+   492
+  ],
+  [
+   "Hepatitis C Virus (HCV) for Egyptian patients",
+   503
+  ],
+  [
+   "Heart Failure Clinical Records",
+   519
+  ],
+  [
+   "Early Stage Diabetes Risk Prediction",
+   529
+  ],
+  [
+   "Pedestrians in Traffic",
+   536
+  ],
+  [
+   "Cervical Cancer Behavior Risk",
+   537
+  ],
+  [
+   "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   544
+  ],
+  [
+   "Rice (Cammeo and Osmancik)",
+   545
+  ],
+  [
+   "Algerian Forest Fires",
+   547
+  ],
+  [
+   "Gas Turbine CO and NOx Emission Data Set",
+   551
+  ],
+  [
+   "Apartment for Rent Classified",
+   555
+  ],
+  [
+   "Seoul Bike Sharing Demand",
+   560
+  ],
+  [
+   "Iranian Churn",
+   563
+  ],
+  [
+   "Bone marrow transplant: children",
+   565
+  ],
+  [
+   "COVID-19 Surveillance",
+   567
+  ],
+  [
+   "HCV data",
+   571
+  ],
+  [
+   "Taiwanese Bankruptcy Prediction",
+   572
+  ],
+  [
+   "Myocardial infarction complications",
+   579
+  ],
+  [
+   "Student Performance on an Entrance Examination",
+   582
+  ],
+  [
+   "Gender by Name",
+   591
+  ],
+  [
+   "Productivity Prediction of Garment Employees",
+   597
+  ],
+  [
+   "AI4I 2020 Predictive Maintenance Dataset",
+   601
+  ],
+  [
+   "Dry Bean",
+   602
+  ],
+  [
+   "In-Vehicle Coupon Recommendation",
+   603
+  ],
+  [
+   "Predict Students' Dropout and Academic Success",
+   697
+  ],
+  [
+   "Auction Verification",
+   713
+  ],
+  [
+   "NATICUSdroid (Android Permissions)",
+   722
+  ],
+  [
+   "Toxicity",
+   728
+  ],
+  [
+   "DARWIN",
+   732
+  ],
+  [
+   "Accelerometer Gyro Mobile Phone",
+   755
+  ],
+  [
+   "Glioma Grading Clinical and Mutation Features",
+   759
+  ],
+  [
+   "Multivariate Gait Data",
+   760
+  ],
+  [
+   "Land Mines",
+   763
+  ],
+  [
+   "Single Elder Home Monitoring: Gas and Position",
+   799
+  ],
+  [
+   "Sepsis Survival Minimal Clinical Records",
+   827
+  ],
+  [
+   "Secondary Mushroom",
+   848
+  ],
+  [
+   "Power Consumption of Tetouan City",
+   849
+  ],
+  [
+   "Raisin",
+   850
+  ],
+  [
+   "Steel Industry Energy Consumption",
+   851
+  ],
+  [
+   "Higher Education Students Performance Evaluation",
+   856
+  ],
+  [
+   "Risk Factor Prediction of Chronic Kidney Disease",
+   857
+  ],
+  [
+   "Maternal Health Risk",
+   863
+  ],
+  [
+   "Room Occupancy Estimation",
+   864
+  ],
+  [
+   "Cirrhosis Patient Survival Prediction",
+   878
+  ],
+  [
+   "SUPPORT2",
+   880
+  ],
+  [
+   "National Health and Nutrition Health Survey 2013-2014 (NHANES) Age Prediction Subset",
+   887
+  ],
+  [
+   "AIDS Clinical Trials Group Study 175",
+   890
+  ],
+  [
+   "CDC Diabetes Health Indicators",
+   891
+  ],
+  [
+   "Recipe Reviews and User Feedback",
+   911
+  ],
+  [
+   "Forty Soybean Cultivars from Subsequent Harvests",
+   913
+  ],
+  [
+   "Differentiated Thyroid Cancer Recurrence",
+   915
+  ],
+  [
+   "Infrared Thermography Temperature",
+   925
+  ],
+  [
+   "National Poll on Healthy Aging (NPHA)",
+   936
+  ],
+  [
+   "Regensburg Pediatric Appendicitis",
+   938
+  ],
+  [
+   "RT-IoT2022",
+   942
+  ],
+  [
+   "PhiUSIIL Phishing URL (Website)",
+   967
+  ]
+ ],
+ "included": [
+  {
+   "data_id": "uci3",
+   "name": "Annealing",
+   "uci_id": 3,
+   "task": "classification",
+   "n_raw": 898,
+   "n_rows": 898,
+   "subsampled": false,
+   "pred_exposure": 0.016217197637270364,
+   "dup_row_frac": 0.024498886414253896,
+   "included": true
+  },
+  {
+   "data_id": "uci43",
+   "name": "Haberman's Survival",
+   "uci_id": 43,
+   "task": "classification",
+   "n_raw": 306,
+   "n_rows": 306,
+   "subsampled": false,
+   "pred_exposure": 0.09107157962407132,
+   "dup_row_frac": 0.14705882352941177,
+   "included": true
+  },
+  {
+   "data_id": "uci60",
+   "name": "Liver Disorders",
+   "uci_id": 60,
+   "task": "regression",
+   "n_raw": 345,
+   "n_rows": 345,
+   "subsampled": false,
+   "pred_exposure": 0.013953488372094817,
+   "dup_row_frac": 0.02318840579710145,
+   "included": true
+  },
+  {
+   "data_id": "uci78",
+   "name": "Page Blocks Classification",
+   "uci_id": 78,
+   "task": "classification",
+   "n_raw": 5473,
+   "n_rows": 5473,
+   "subsampled": false,
+   "pred_exposure": 0.01760326068542712,
+   "dup_row_frac": 0.022839393385711674,
+   "included": true
+  },
+  {
+   "data_id": "uci83",
+   "name": "Primary Tumor",
+   "uci_id": 83,
+   "task": "classification",
+   "n_raw": 339,
+   "n_rows": 339,
+   "subsampled": false,
+   "pred_exposure": 0.2042948584990335,
+   "dup_row_frac": 0.25958702064896755,
+   "included": true
+  },
+  {
+   "data_id": "uci90",
+   "name": "Soybean (Large)",
+   "uci_id": 90,
+   "task": "classification",
+   "n_raw": 307,
+   "n_rows": 307,
+   "subsampled": false,
+   "pred_exposure": 0.01566924272423361,
+   "dup_row_frac": 0.026058631921824105,
+   "included": true
+  },
+  {
+   "data_id": "uci105",
+   "name": "Congressional Voting Records",
+   "uci_id": 105,
+   "task": "classification",
+   "n_raw": 435,
+   "n_rows": 435,
+   "subsampled": false,
+   "pred_exposure": 0.25927242162642283,
+   "dup_row_frac": 0.30114942528735633,
+   "included": true
+  },
+  {
+   "data_id": "uci117",
+   "name": "Census-Income (KDD)",
+   "uci_id": 117,
+   "task": "classification",
+   "n_raw": 199523,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.018317722245942563,
+   "dup_row_frac": 0.028033333333333334,
+   "included": true
+  },
+  {
+   "data_id": "uci148",
+   "name": "Statlog (Shuttle)",
+   "uci_id": 148,
+   "task": "classification",
+   "n_raw": 58000,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.32899159054159155,
+   "dup_row_frac": 0.40413333333333334,
+   "included": true
+  },
+  {
+   "data_id": "uci161",
+   "name": "Mammographic Mass",
+   "uci_id": 161,
+   "task": "classification",
+   "n_raw": 961,
+   "n_rows": 961,
+   "subsampled": false,
+   "pred_exposure": 0.40760148570229626,
+   "dup_row_frac": 0.514047866805411,
+   "included": true
+  },
+  {
+   "data_id": "uci172",
+   "name": "Ozone Level Detection",
+   "uci_id": 172,
+   "task": "classification",
+   "n_raw": 5070,
+   "n_rows": 5070,
+   "subsampled": false,
+   "pred_exposure": 0.6013013309798159,
+   "dup_row_frac": 0.9996055226824457,
+   "included": true
+  },
+  {
+   "data_id": "uci229",
+   "name": "Skin Segmentation",
+   "uci_id": 229,
+   "task": "classification",
+   "n_raw": 245057,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.8300123110800517,
+   "dup_row_frac": 0.8658,
+   "included": true
+  },
+  {
+   "data_id": "uci365",
+   "name": "Polish Companies Bankruptcy",
+   "uci_id": 365,
+   "task": "classification",
+   "n_raw": 43405,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.01096036534586031,
+   "dup_row_frac": 0.018266666666666667,
+   "included": true
+  },
+  {
+   "data_id": "uci379",
+   "name": "Website Phishing",
+   "uci_id": 379,
+   "task": "classification",
+   "n_raw": 1353,
+   "n_rows": 1353,
+   "subsampled": false,
+   "pred_exposure": 0.6024798933788776,
+   "dup_row_frac": 0.7169253510716925,
+   "included": true
+  },
+  {
+   "data_id": "uci468",
+   "name": "Online Shoppers Purchasing Intention Dataset",
+   "uci_id": 468,
+   "task": "classification",
+   "n_raw": 12330,
+   "n_rows": 12330,
+   "subsampled": false,
+   "pred_exposure": 0.012171436042226948,
+   "dup_row_frac": 0.01630170316301703,
+   "included": true
+  },
+  {
+   "data_id": "uci477",
+   "name": "Real Estate Valuation",
+   "uci_id": 477,
+   "task": "regression",
+   "n_raw": 414,
+   "n_rows": 414,
+   "subsampled": false,
+   "pred_exposure": 0.058017803043592164,
+   "dup_row_frac": 0.0966183574879227,
+   "included": true
+  },
+  {
+   "data_id": "uci529",
+   "name": "Early Stage Diabetes Risk Prediction",
+   "uci_id": 529,
+   "task": "classification",
+   "n_raw": 520,
+   "n_rows": 520,
+   "subsampled": false,
+   "pred_exposure": 0.6259107459416503,
+   "dup_row_frac": 0.7230769230769231,
+   "included": true
+  },
+  {
+   "data_id": "uci544",
+   "name": "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   "uci_id": 544,
+   "task": "classification",
+   "n_raw": 2111,
+   "n_rows": 2111,
+   "subsampled": false,
+   "pred_exposure": 0.012862175332864849,
+   "dup_row_frac": 0.015632401705352912,
+   "included": true
+  },
+  {
+   "data_id": "uci563",
+   "name": "Iranian Churn",
+   "uci_id": 563,
+   "task": "classification",
+   "n_raw": 3150,
+   "n_rows": 3150,
+   "subsampled": false,
+   "pred_exposure": 0.12363280422182604,
+   "dup_row_frac": 0.1511111111111111,
+   "included": true
+  },
+  {
+   "data_id": "uci582",
+   "name": "Student Performance on an Entrance Examination",
+   "uci_id": 582,
+   "task": "classification",
+   "n_raw": 666,
+   "n_rows": 666,
+   "subsampled": false,
+   "pred_exposure": 0.16499498095824433,
+   "dup_row_frac": 0.23423423423423423,
+   "included": true
+  },
+  {
+   "data_id": "uci722",
+   "name": "NATICUSdroid (Android Permissions)",
+   "uci_id": 722,
+   "task": "classification",
+   "n_raw": 29332,
+   "n_rows": 29332,
+   "subsampled": false,
+   "pred_exposure": 0.7871626390067428,
+   "dup_row_frac": 0.8177076230737761,
+   "included": true
+  },
+  {
+   "data_id": "uci827",
+   "name": "Sepsis Survival Minimal Clinical Records",
+   "uci_id": 827,
+   "task": "classification",
+   "n_raw": 110341,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.9989387633902767,
+   "dup_row_frac": 0.9996333333333334,
+   "included": true
+  },
+  {
+   "data_id": "uci863",
+   "name": "Maternal Health Risk",
+   "uci_id": 863,
+   "task": "classification",
+   "n_raw": 1014,
+   "n_rows": 1014,
+   "subsampled": false,
+   "pred_exposure": 0.7026434109273272,
+   "dup_row_frac": 0.8717948717948718,
+   "included": true
+  },
+  {
+   "data_id": "uci891",
+   "name": "CDC Diabetes Health Indicators",
+   "uci_id": 891,
+   "task": "classification",
+   "n_raw": 253680,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.12572254083498494,
+   "dup_row_frac": 0.15606666666666666,
+   "included": true
+  },
+  {
+   "data_id": "uci915",
+   "name": "Differentiated Thyroid Cancer Recurrence",
+   "uci_id": 915,
+   "task": "classification",
+   "n_raw": 383,
+   "n_rows": 383,
+   "subsampled": false,
+   "pred_exposure": 0.060408715160795365,
+   "dup_row_frac": 0.09138381201044386,
+   "included": true
+  },
+  {
+   "data_id": "uci936",
+   "name": "National Poll on Healthy Aging (NPHA)",
+   "uci_id": 936,
+   "task": "classification",
+   "n_raw": 714,
+   "n_rows": 714,
+   "subsampled": false,
+   "pred_exposure": 0.13761871372839954,
+   "dup_row_frac": 0.1792717086834734,
+   "included": true
+  },
+  {
+   "data_id": "uci942",
+   "name": "RT-IoT2022",
+   "uci_id": 942,
+   "task": "classification",
+   "n_raw": 123117,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.05064036778003102,
+   "dup_row_frac": 0.08223333333333334,
+   "included": true
+  }
+ ],
+ "excluded": [
+  {
+   "data_id": "uci1",
+   "name": "Abalone",
+   "uci_id": 1,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci2",
+   "name": "Adult",
+   "uci_id": 2,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci8",
+   "name": "Audiology (Standardized)",
+   "uci_id": 8,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci9",
+   "name": "Auto MPG",
+   "uci_id": 9,
+   "task": "regression",
+   "n_raw": 398,
+   "n_rows": 398,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci10",
+   "name": "Automobile",
+   "uci_id": 10,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci12",
+   "name": "Balance Scale",
+   "uci_id": 12,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci13",
+   "name": "Balloons",
+   "uci_id": 13,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci14",
+   "name": "Breast Cancer",
+   "uci_id": 14,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci15",
+   "name": "Breast Cancer Wisconsin (Original)",
+   "uci_id": 15,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci16",
+   "name": "Breast Cancer Wisconsin (Prognostic)",
+   "uci_id": 16,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci17",
+   "name": "Breast Cancer Wisconsin (Diagnostic)",
+   "uci_id": 17,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci18",
+   "name": "Pittsburgh Bridges",
+   "uci_id": 18,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci19",
+   "name": "Car Evaluation",
+   "uci_id": 19,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci20",
+   "name": "Census Income",
+   "uci_id": 20,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci22",
+   "name": "Chess (King-Rook vs. King-Pawn)",
+   "uci_id": 22,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci23",
+   "name": "Chess (King-Rook vs. King)",
+   "uci_id": 23,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci26",
+   "name": "Connect-4",
+   "uci_id": 26,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci27",
+   "name": "Credit Approval",
+   "uci_id": 27,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci28",
+   "name": "Japanese Credit Screening",
+   "uci_id": 28,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci29",
+   "name": "Computer Hardware",
+   "uci_id": 29,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci30",
+   "name": "Contraceptive Method Choice",
+   "uci_id": 30,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci31",
+   "name": "Covertype",
+   "uci_id": 31,
+   "task": "classification",
+   "n_raw": 581012,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci32",
+   "name": "Cylinder Bands",
+   "uci_id": 32,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci33",
+   "name": "Dermatology",
+   "uci_id": 33,
+   "task": "classification",
+   "n_raw": 366,
+   "n_rows": 366,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci38",
+   "name": "Echocardiogram",
+   "uci_id": 38,
+   "excluded": "fetch failed: ParserError('Error tokenizing data. C error: Expected 13 fields in line 51, saw 14\\n')"
+  },
+  {
+   "data_id": "uci39",
+   "name": "Ecoli",
+   "uci_id": 39,
+   "task": "classification",
+   "n_raw": 336,
+   "n_rows": 336,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci40",
+   "name": "Flags",
+   "uci_id": 40,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci42",
+   "name": "Glass Identification",
+   "uci_id": 42,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci44",
+   "name": "Hayes-Roth",
+   "uci_id": 44,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci45",
+   "name": "Heart Disease",
+   "uci_id": 45,
+   "task": "classification",
+   "n_raw": 303,
+   "n_rows": 303,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci46",
+   "name": "Hepatitis",
+   "uci_id": 46,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci47",
+   "name": "Horse Colic",
+   "uci_id": 47,
+   "task": "classification",
+   "n_raw": 368,
+   "n_rows": 368,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci50",
+   "name": "Image Segmentation",
+   "uci_id": 50,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci52",
+   "name": "Ionosphere",
+   "uci_id": 52,
+   "task": "classification",
+   "n_raw": 351,
+   "n_rows": 351,
+   "subsampled": false,
+   "pred_exposure": 0.003435083435083766,
+   "dup_row_frac": 0.005698005698005698,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci53",
+   "name": "Iris",
+   "uci_id": 53,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci54",
+   "name": "ISOLET",
+   "uci_id": 54,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci58",
+   "name": "Lenses",
+   "uci_id": 58,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci59",
+   "name": "Letter Recognition",
+   "uci_id": 59,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci62",
+   "name": "Lung Cancer",
+   "uci_id": 62,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci63",
+   "name": "Lymphography",
+   "uci_id": 63,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci69",
+   "name": "Molecular Biology (Splice-junction Gene Sequences)",
+   "uci_id": 69,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci70",
+   "name": "MONK's Problems",
+   "uci_id": 70,
+   "task": "classification",
+   "n_raw": 432,
+   "n_rows": 432,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci73",
+   "name": "Mushroom",
+   "uci_id": 73,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci74",
+   "name": "Musk (Version 1)",
+   "uci_id": 74,
+   "task": "classification",
+   "n_raw": 476,
+   "n_rows": 476,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci75",
+   "name": "Musk (Version 2)",
+   "uci_id": 75,
+   "task": "classification",
+   "n_raw": 6598,
+   "n_rows": 6598,
+   "subsampled": false,
+   "pred_exposure": 0.0031505960845497954,
+   "dup_row_frac": 0.004546832373446499,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci76",
+   "name": "Nursery",
+   "uci_id": 76,
+   "task": "classification",
+   "n_raw": 12960,
+   "n_rows": 12960,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci80",
+   "name": "Optical Recognition of Handwritten Digits",
+   "uci_id": 80,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci81",
+   "name": "Pen-Based Recognition of Handwritten Digits",
+   "uci_id": 81,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci82",
+   "name": "Post-Operative Patient",
+   "uci_id": 82,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci87",
+   "name": "Servo",
+   "uci_id": 87,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci88",
+   "name": "Shuttle Landing Control",
+   "uci_id": 88,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci89",
+   "name": "Solar Flare",
+   "uci_id": 89,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci91",
+   "name": "Soybean (Small)",
+   "uci_id": 91,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci92",
+   "name": "Challenger USA Space Shuttle O-Ring",
+   "uci_id": 92,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci94",
+   "name": "Spambase",
+   "uci_id": 94,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci95",
+   "name": "SPECT Heart",
+   "uci_id": 95,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci96",
+   "name": "SPECTF Heart",
+   "uci_id": 96,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci101",
+   "name": "Tic-Tac-Toe Endgame",
+   "uci_id": 101,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci107",
+   "name": "Waveform Database Generator (Version 1)",
+   "uci_id": 107,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci109",
+   "name": "Wine",
+   "uci_id": 109,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci110",
+   "name": "Yeast",
+   "uci_id": 110,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci111",
+   "name": "Zoo",
+   "uci_id": 111,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci116",
+   "name": "US Census Data (1990)",
+   "uci_id": 116,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci122",
+   "name": "El Nino",
+   "uci_id": 122,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci143",
+   "name": "Statlog (Australian Credit Approval)",
+   "uci_id": 143,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci144",
+   "name": "Statlog (German Credit Data)",
+   "uci_id": 144,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci145",
+   "name": "Statlog (Heart)",
+   "uci_id": 145,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci146",
+   "name": "Statlog (Landsat Satellite)",
+   "uci_id": 146,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci147",
+   "name": "Statlog (Image Segmentation)",
+   "uci_id": 147,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci149",
+   "name": "Statlog (Vehicle Silhouettes)",
+   "uci_id": 149,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci151",
+   "name": "Connectionist Bench (Sonar, Mines vs. Rocks)",
+   "uci_id": 151,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci155",
+   "name": "Cloud",
+   "uci_id": 155,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci158",
+   "name": "Poker Hand",
+   "uci_id": 158,
+   "task": "classification",
+   "n_raw": 1025010,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0024000800027431336,
+   "dup_row_frac": 0.004,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci159",
+   "name": "MAGIC Gamma Telescope",
+   "uci_id": 159,
+   "task": "classification",
+   "n_raw": 19020,
+   "n_rows": 19020,
+   "subsampled": false,
+   "pred_exposure": 0.007255901992798924,
+   "dup_row_frac": 0.012092534174553101,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci162",
+   "name": "Forest Fires",
+   "uci_id": 162,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci165",
+   "name": "Concrete Compressive Strength",
+   "uci_id": 165,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci174",
+   "name": "Parkinsons",
+   "uci_id": 174,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci176",
+   "name": "Blood Transfusion Service Center",
+   "uci_id": 176,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci183",
+   "name": "Communities and Crime",
+   "uci_id": 183,
+   "task": "regression",
+   "n_raw": 1994,
+   "n_rows": 1994,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci184",
+   "name": "Acute Inflammations",
+   "uci_id": 184,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci186",
+   "name": "Wine Quality",
+   "uci_id": 186,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci189",
+   "name": "Parkinsons Telemonitoring",
+   "uci_id": 189,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci193",
+   "name": "Cardiotocography",
+   "uci_id": 193,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci198",
+   "name": "Steel Plates Faults",
+   "uci_id": 198,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci211",
+   "name": "Communities and Crime Unnormalized",
+   "uci_id": 211,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci212",
+   "name": "Vertebral Column",
+   "uci_id": 212,
+   "task": "classification",
+   "n_raw": 310,
+   "n_rows": 310,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci222",
+   "name": "Bank Marketing",
+   "uci_id": 222,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci225",
+   "name": "ILPD (Indian Liver Patient Dataset)",
+   "uci_id": 225,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci235",
+   "name": "Individual Household Electric Power Consumption",
+   "uci_id": 235,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci242",
+   "name": "Energy Efficiency",
+   "uci_id": 242,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci244",
+   "name": "Fertility",
+   "uci_id": 244,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci247",
+   "name": "ISTANBUL STOCK EXCHANGE",
+   "uci_id": 247,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci257",
+   "name": "User Knowledge Modeling",
+   "uci_id": 257,
+   "task": "classification",
+   "n_raw": 403,
+   "n_rows": 403,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci264",
+   "name": "EEG Eye State",
+   "uci_id": 264,
+   "task": "classification",
+   "n_raw": 14980,
+   "n_rows": 14980,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci267",
+   "name": "Banknote Authentication",
+   "uci_id": 267,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci270",
+   "name": "Gas Sensor Array Drift at Different Concentrations",
+   "uci_id": 270,
+   "task": "classification",
+   "n_raw": 13910,
+   "n_rows": 13910,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci275",
+   "name": "Bike Sharing",
+   "uci_id": 275,
+   "task": "regression",
+   "n_raw": 17379,
+   "n_rows": 17379,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci277",
+   "name": "Thoracic Surgery Data",
+   "uci_id": 277,
+   "task": "classification",
+   "n_raw": 470,
+   "n_rows": 470,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci291",
+   "name": "Airfoil Self-Noise",
+   "uci_id": 291,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci292",
+   "name": "Wholesale customers",
+   "uci_id": 292,
+   "task": "classification",
+   "n_raw": 440,
+   "n_rows": 440,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci294",
+   "name": "Combined Cycle Power Plant",
+   "uci_id": 294,
+   "task": "regression",
+   "n_raw": 9568,
+   "n_rows": 9568,
+   "subsampled": false,
+   "pred_exposure": 0.00514285711784509,
+   "dup_row_frac": 0.008570234113712374,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci296",
+   "name": "Diabetes 130-US Hospitals for Years 1999-2008",
+   "uci_id": 296,
+   "task": "classification",
+   "n_raw": 101766,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci300",
+   "name": "Tennis Major Tournament Match Statistics",
+   "uci_id": 300,
+   "task": "classification",
+   "n_raw": 943,
+   "n_rows": 943,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci312",
+   "name": "Dow Jones Index",
+   "uci_id": 312,
+   "task": "classification",
+   "n_raw": 750,
+   "n_rows": 750,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci320",
+   "name": "Student Performance",
+   "uci_id": 320,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci327",
+   "name": "Phishing Websites",
+   "uci_id": 327,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci329",
+   "name": "Diabetic Retinopathy Debrecen",
+   "uci_id": 329,
+   "task": "classification",
+   "n_raw": 1151,
+   "n_rows": 1151,
+   "subsampled": false,
+   "pred_exposure": 0.005220413251235697,
+   "dup_row_frac": 0.008688097306689836,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci332",
+   "name": "Online News Popularity",
+   "uci_id": 332,
+   "task": "classification",
+   "n_raw": 39644,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci336",
+   "name": "Chronic Kidney Disease",
+   "uci_id": 336,
+   "task": "classification",
+   "n_raw": 400,
+   "n_rows": 400,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci342",
+   "name": "Mice Protein Expression",
+   "uci_id": 342,
+   "task": "classification",
+   "n_raw": 1080,
+   "n_rows": 1080,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci350",
+   "name": "Default of Credit Card Clients",
+   "uci_id": 350,
+   "task": "classification",
+   "n_raw": 30000,
+   "n_rows": 30000,
+   "subsampled": false,
+   "pred_exposure": 0.0022560736024062967,
+   "dup_row_frac": 0.0036,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci352",
+   "name": "Online Retail",
+   "uci_id": 352,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci357",
+   "name": "Occupancy Detection",
+   "uci_id": 357,
+   "task": "classification",
+   "n_raw": 20560,
+   "n_rows": 20560,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci360",
+   "name": "Air Quality",
+   "uci_id": 360,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci367",
+   "name": "Dota2 Games Results",
+   "uci_id": 367,
+   "task": "classification",
+   "n_raw": 102944,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci368",
+   "name": "Facebook Metrics",
+   "uci_id": 368,
+   "task": "regression",
+   "n_raw": 500,
+   "n_rows": 500,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci372",
+   "name": "HTRU2",
+   "uci_id": 372,
+   "task": "classification",
+   "n_raw": 17898,
+   "n_rows": 17898,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci373",
+   "name": "Drug Consumption (Quantified)",
+   "uci_id": 373,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci374",
+   "name": "Appliances Energy Prediction",
+   "uci_id": 374,
+   "task": "regression",
+   "n_raw": 19735,
+   "n_rows": 19735,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci380",
+   "name": "YouTube Spam Collection",
+   "uci_id": 380,
+   "task": "classification",
+   "n_raw": 1956,
+   "n_rows": 1956,
+   "subsampled": false,
+   "pred_exposure": 0.009924705136905444,
+   "dup_row_frac": 0.01278118609406953,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci381",
+   "name": "Beijing PM2.5",
+   "uci_id": 381,
+   "task": "regression",
+   "n_raw": 41757,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci383",
+   "name": "Cervical Cancer (Risk Factors)",
+   "uci_id": 383,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci390",
+   "name": "Stock Portfolio Performance",
+   "uci_id": 390,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci396",
+   "name": "Sales Transactions Weekly",
+   "uci_id": 396,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci409",
+   "name": "Daily Demand Forecasting Orders",
+   "uci_id": 409,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci419",
+   "name": "Autistic Spectrum Disorder Screening Data for Children",
+   "uci_id": 419,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci426",
+   "name": "Autism Screening Adult",
+   "uci_id": 426,
+   "task": "classification",
+   "n_raw": 704,
+   "n_rows": 704,
+   "subsampled": false,
+   "pred_exposure": 0.008526768395189153,
+   "dup_row_frac": 0.014204545454545454,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci445",
+   "name": "Absenteeism at work",
+   "uci_id": 445,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci451",
+   "name": "Breast Cancer Coimbra",
+   "uci_id": 451,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci461",
+   "name": "Drug Reviews (Druglib.com)",
+   "uci_id": 461,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci462",
+   "name": "Drug Reviews (Drugs.com)",
+   "uci_id": 462,
+   "excluded": "fetch failed: DatasetNotFoundError('Dataset with ID 462 not found')"
+  },
+  {
+   "data_id": "uci464",
+   "name": "Superconductivty Data",
+   "uci_id": 464,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci467",
+   "name": "Student Academics Performance",
+   "uci_id": 467,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci471",
+   "name": "Electrical Grid Stability Simulated Data",
+   "uci_id": 471,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci484",
+   "name": "Travel Reviews",
+   "uci_id": 484,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci485",
+   "name": "Travel Review Ratings",
+   "uci_id": 485,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci488",
+   "name": "Facebook Live Sellers in Thailand",
+   "uci_id": 488,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci492",
+   "name": "Metro Interstate Traffic Volume",
+   "uci_id": 492,
+   "task": "regression",
+   "n_raw": 48204,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.00036001200041147006,
+   "dup_row_frac": 0.0006,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci503",
+   "name": "Hepatitis C Virus (HCV) for Egyptian patients",
+   "uci_id": 503,
+   "task": "classification",
+   "n_raw": 1385,
+   "n_rows": 1385,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci519",
+   "name": "Heart Failure Clinical Records",
+   "uci_id": 519,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci536",
+   "name": "Pedestrians in Traffic",
+   "uci_id": 536,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci537",
+   "name": "Cervical Cancer Behavior Risk",
+   "uci_id": 537,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci545",
+   "name": "Rice (Cammeo and Osmancik)",
+   "uci_id": 545,
+   "task": "classification",
+   "n_raw": 3810,
+   "n_rows": 3810,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci547",
+   "name": "Algerian Forest Fires",
+   "uci_id": 547,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci551",
+   "name": "Gas Turbine CO and NOx Emission Data Set",
+   "uci_id": 551,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci555",
+   "name": "Apartment for Rent Classified",
+   "uci_id": 555,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci560",
+   "name": "Seoul Bike Sharing Demand",
+   "uci_id": 560,
+   "excluded": "non-numeric regression target"
+  },
+  {
+   "data_id": "uci565",
+   "name": "Bone marrow transplant: children",
+   "uci_id": 565,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci567",
+   "name": "COVID-19 Surveillance",
+   "uci_id": 567,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci571",
+   "name": "HCV data",
+   "uci_id": 571,
+   "task": "classification",
+   "n_raw": 615,
+   "n_rows": 615,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci572",
+   "name": "Taiwanese Bankruptcy Prediction",
+   "uci_id": 572,
+   "task": "classification",
+   "n_raw": 6819,
+   "n_rows": 6819,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci579",
+   "name": "Myocardial infarction complications",
+   "uci_id": 579,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci591",
+   "name": "Gender by Name",
+   "uci_id": 591,
+   "excluded": "fetch failed: ConnectionError('Error connecting to server')"
+  },
+  {
+   "data_id": "uci597",
+   "name": "Productivity Prediction of Garment Employees",
+   "uci_id": 597,
+   "task": "classification",
+   "n_raw": 1197,
+   "n_rows": 1197,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci601",
+   "name": "AI4I 2020 Predictive Maintenance Dataset",
+   "uci_id": 601,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci602",
+   "name": "Dry Bean",
+   "uci_id": 602,
+   "task": "classification",
+   "n_raw": 13611,
+   "n_rows": 13611,
+   "subsampled": false,
+   "pred_exposure": 0.005995885140900207,
+   "dup_row_frac": 0.009991918301373888,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci603",
+   "name": "In-Vehicle Coupon Recommendation",
+   "uci_id": 603,
+   "task": "classification",
+   "n_raw": 12684,
+   "n_rows": 12684,
+   "subsampled": false,
+   "pred_exposure": 0.00917715698630795,
+   "dup_row_frac": 0.015294859665720592,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci697",
+   "name": "Predict Students' Dropout and Academic Success",
+   "uci_id": 697,
+   "task": "classification",
+   "n_raw": 4424,
+   "n_rows": 4424,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci713",
+   "name": "Auction Verification",
+   "uci_id": 713,
+   "excluded": "name matches v1 or wave 1"
+  },
+  {
+   "data_id": "uci728",
+   "name": "Toxicity",
+   "uci_id": 728,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci732",
+   "name": "DARWIN",
+   "uci_id": 732,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci755",
+   "name": "Accelerometer Gyro Mobile Phone",
+   "uci_id": 755,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci759",
+   "name": "Glioma Grading Clinical and Mutation Features",
+   "uci_id": 759,
+   "task": "classification",
+   "n_raw": 839,
+   "n_rows": 839,
+   "subsampled": false,
+   "pred_exposure": 0.0014308430595578578,
+   "dup_row_frac": 0.0023837902264600714,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci760",
+   "name": "Multivariate Gait Data",
+   "uci_id": 760,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci763",
+   "name": "Land Mines",
+   "uci_id": 763,
+   "task": "classification",
+   "n_raw": 338,
+   "n_rows": 338,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci799",
+   "name": "Single Elder Home Monitoring: Gas and Position",
+   "uci_id": 799,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci848",
+   "name": "Secondary Mushroom",
+   "uci_id": 848,
+   "task": "classification",
+   "n_raw": 61069,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0031768990962265783,
+   "dup_row_frac": 0.0047,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci849",
+   "name": "Power Consumption of Tetouan City",
+   "uci_id": 849,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci850",
+   "name": "Raisin",
+   "uci_id": 850,
+   "excluded": "size signature matches a v1 or wave-1 data set (conservative overlap rule)"
+  },
+  {
+   "data_id": "uci851",
+   "name": "Steel Industry Energy Consumption",
+   "uci_id": 851,
+   "excluded": "non-numeric regression target"
+  },
+  {
+   "data_id": "uci856",
+   "name": "Higher Education Students Performance Evaluation",
+   "uci_id": 856,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci857",
+   "name": "Risk Factor Prediction of Chronic Kidney Disease",
+   "uci_id": 857,
+   "excluded": "size limits"
+  },
+  {
+   "data_id": "uci864",
+   "name": "Room Occupancy Estimation",
+   "uci_id": 864,
+   "task": "classification",
+   "n_raw": 10129,
+   "n_rows": 10129,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci878",
+   "name": "Cirrhosis Patient Survival Prediction",
+   "uci_id": 878,
+   "task": "classification",
+   "n_raw": 418,
+   "n_rows": 418,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci880",
+   "name": "SUPPORT2",
+   "uci_id": 880,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci887",
+   "name": "National Health and Nutrition Health Survey 2013-2014 (NHANES) Age Prediction Subset",
+   "uci_id": 887,
+   "task": "classification",
+   "n_raw": 2278,
+   "n_rows": 2278,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci890",
+   "name": "AIDS Clinical Trials Group Study 175",
+   "uci_id": 890,
+   "task": "classification",
+   "n_raw": 2139,
+   "n_rows": 2139,
+   "subsampled": false,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  },
+  {
+   "data_id": "uci911",
+   "name": "Recipe Reviews and User Feedback",
+   "uci_id": 911,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci913",
+   "name": "Forty Soybean Cultivars from Subsequent Harvests",
+   "uci_id": 913,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci925",
+   "name": "Infrared Thermography Temperature",
+   "uci_id": 925,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci938",
+   "name": "Regensburg Pediatric Appendicitis",
+   "uci_id": 938,
+   "excluded": "not exactly one target"
+  },
+  {
+   "data_id": "uci967",
+   "name": "PhiUSIIL Phishing URL (Website)",
+   "uci_id": 967,
+   "task": "classification",
+   "n_raw": 235795,
+   "n_rows": 30000,
+   "subsampled": true,
+   "pred_exposure": 0.0,
+   "dup_row_frac": 0.0,
+   "excluded": "predicted exposure < 0.01"
+  }
+ ]
+}

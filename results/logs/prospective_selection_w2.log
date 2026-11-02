@@ -1,0 +1,89 @@
+3 Annealing classification 898 0.016
+9 Auto MPG regression 398 0.0
+31 Covertype classification 581012 0.0
+33 Dermatology classification 366 0.0
+39 Ecoli classification 336 0.0
+43 Haberman's Survival classification 306 0.091
+45 Heart Disease classification 303 0.0
+47 Horse Colic classification 368 0.0
+52 Ionosphere classification 351 0.003
+60 Liver Disorders regression 345 0.014
+70 MONK's Problems classification 432 0.0
+74 Musk (Version 1) classification 476 0.0
+75 Musk (Version 2) classification 6598 0.003
+76 Nursery classification 12960 0.0
+78 Page Blocks Classification classification 5473 0.018
+83 Primary Tumor classification 339 0.204
+90 Soybean (Large) classification 307 0.016
+105 Congressional Voting Records classification 435 0.259
+117 Census-Income (KDD) classification 199523 0.018
+148 Statlog (Shuttle) classification 58000 0.329
+158 Poker Hand classification 1025010 0.002
+159 MAGIC Gamma Telescope classification 19020 0.007
+161 Mammographic Mass classification 961 0.408
+172 Ozone Level Detection classification 5070 0.601
+183 Communities and Crime regression 1994 0.0
+212 Vertebral Column classification 310 0.0
+229 Skin Segmentation classification 245057 0.83
+/usr/local/lib/python3.13/dist-packages/ucimlrepo/fetch.py:97: DtypeWarning: Columns (0: Global_active_power, 1: Global_reactive_power, 2: Voltage, 3: Global_intensity, 4: Sub_metering_1, 5: Sub_metering_2) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(data_url)
+257 User Knowledge Modeling classification 403 0.0
+264 EEG Eye State classification 14980 0.0
+270 Gas Sensor Array Drift at Different Concentrations classification 13910 0.0
+275 Bike Sharing regression 17379 0.0
+277 Thoracic Surgery Data classification 470 0.0
+292 Wholesale customers classification 440 0.0
+294 Combined Cycle Power Plant regression 9568 0.005
+/usr/local/lib/python3.13/dist-packages/ucimlrepo/fetch.py:97: DtypeWarning: Columns (0: payer_code) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(data_url)
+296 Diabetes 130-US Hospitals for Years 1999-2008 classification 101766 0.0
+300 Tennis Major Tournament Match Statistics classification 943 0.0
+312 Dow Jones Index classification 750 0.0
+329 Diabetic Retinopathy Debrecen classification 1151 0.005
+332 Online News Popularity classification 39644 0.0
+336 Chronic Kidney Disease classification 400 0.0
+342 Mice Protein Expression classification 1080 0.0
+350 Default of Credit Card Clients classification 30000 0.002
+357 Occupancy Detection classification 20562 0.0
+365 Polish Companies Bankruptcy classification 43405 0.011
+367 Dota2 Games Results classification 102944 0.0
+368 Facebook Metrics regression 500 0.0
+372 HTRU2 classification 17898 0.0
+374 Appliances Energy Prediction regression 19735 0.0
+379 Website Phishing classification 1353 0.602
+380 YouTube Spam Collection classification 1956 0.01
+381 Beijing PM2.5 regression 43824 0.0
+426 Autism Screening Adult classification 704 0.009
+468 Online Shoppers Purchasing Intention Dataset classification 12330 0.012
+477 Real Estate Valuation regression 414 0.058
+492 Metro Interstate Traffic Volume regression 48204 0.0
+503 Hepatitis C Virus (HCV) for Egyptian patients classification 1385 0.0
+529 Early Stage Diabetes Risk Prediction classification 520 0.626
+544 Estimation of Obesity Levels Based On Eating Habits and Physical Condition classification 2111 0.013
+545 Rice (Cammeo and Osmancik) classification 3810 0.0
+/usr/local/lib/python3.13/dist-packages/ucimlrepo/fetch.py:97: DtypeWarning: Columns (0: id, 1: bathrooms, 2: bedrooms, 3: price_display, 4: square_feet, 5: address) have mixed types. Specify dtype option on import or set low_memory=False.
+  df = pd.read_csv(data_url)
+563 Iranian Churn classification 3150 0.124
+571 HCV data classification 615 0.0
+572 Taiwanese Bankruptcy Prediction classification 6819 0.0
+582 Student Performance on an Entrance Examination classification 666 0.165
+597 Productivity Prediction of Garment Employees classification 1197 0.0
+602 Dry Bean classification 13611 0.006
+603 In-Vehicle Coupon Recommendation classification 12684 0.009
+697 Predict Students' Dropout and Academic Success classification 4424 0.0
+722 NATICUSdroid (Android Permissions) classification 29332 0.787
+759 Glioma Grading Clinical and Mutation Features classification 839 0.001
+763 Land Mines classification 338 0.0
+827 Sepsis Survival Minimal Clinical Records classification 110341 0.999
+848 Secondary Mushroom classification 61069 0.003
+863 Maternal Health Risk classification 1014 0.703
+864 Room Occupancy Estimation classification 10129 0.0
+878 Cirrhosis Patient Survival Prediction classification 418 0.0
+887 National Health and Nutrition Health Survey 2013-2014 (NHANES) Age Prediction Subset classification 2278 0.0
+890 AIDS Clinical Trials Group Study 175 classification 2139 0.0
+891 CDC Diabetes Health Indicators classification 253680 0.126
+915 Differentiated Thyroid Cancer Recurrence classification 383 0.06
+936 National Poll on Healthy Aging (NPHA) classification 714 0.138
+942 RT-IoT2022 classification 123117 0.051
+967 PhiUSIIL Phishing URL (Website) classification 235795 0.0
+included 27 of 209
