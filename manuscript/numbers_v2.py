@@ -161,4 +161,105 @@ def compute_numbers_v2(res):
         for task in ("classification", "regression"):
             q = det[(det.task == task) & (det.sigma > 0)]
             n[f"nd_detect_{task[:3]}"] = p1(q.key_detect_rate.max()) if len(q) else "n/a"
+    _amendment2(n, R)
     return n
+
+
+def _amendment2(n, R):
+    """Numbers for the tool, the remedy comparison and validation wave 2 (Amendment 2)."""
+    T = os.path.join(R, "tables")
+    if os.path.exists(os.path.join(T, "tool_mc1.csv")):
+        t = pd.read_csv(os.path.join(T, "tool_mc1.csv"), index_col=0)
+        c = json.load(open(os.path.join(T, "tool_mc1_check.json")))
+        n["tool_check_s"] = f"{c['seconds_check']:.2f}"
+        n["tool_rows"] = f"{c['n_rows']:,}"
+        n["tool_gap"] = signed_pp(c["predicted_gap"])
+        n["tool_pip"] = f"{100 * c['pure_exposure']:.0f}%"
+        for m, k in (("standard", "std"), ("exact", "fix")):
+            n[f"tool_{k}_all"] = p1(t.loc[m, "coverage_all"])
+            n[f"tool_{k}_new"] = p1(t.loc[m, "coverage_new"])
+            n[f"tool_{k}_empty"] = f"{100 * t.loc[m, 'empty_new']:.0f}%"
+    rp = os.path.join(T, "remedies_summary.csv")
+    if os.path.exists(rp):
+        g = pd.read_csv(rp)
+        g = g[g.model == "rf"]
+        full = g[g.method == "SCP"].set_index("name").n_train
+        g["train_share"] = g.n_train / g.name.map(full)
+        names = {"SCP": "Standard (no fix)", "Dedup": "Remove repeats, then calibrate",
+                 "GSCP": "Group split", "MCP": "**Fix: seen/new calibrated separately**",
+                 "PAC_MCP": "Fix + safety margin", "DCP": "Fix by distance"}
+        rows = []
+        for m in ["SCP", "Dedup", "GSCP", "MCP", "PAC_MCP", "DCP"]:
+            q = g[g.method == m]
+            seen = "–" if m == "GSCP" else f"{100 * q.cov_seen.median():.1f} / {q.size_seen.median():.2f}"
+            rows.append(f"| {names[m]} | {len(q)} | {p1(q.cov_new.median())} | {p1(q.cov_new.min())} | "
+                        f"{100 * q.empty_new.median():.1f} | {seen} | {100 * q.train_share.median():.0f}% |")
+            n[f"rem_{m}_new_med"] = p1(q.cov_new.median())
+            n[f"rem_{m}_new_min"] = p1(q.cov_new.min())
+            n[f"rem_{m}_n"] = len(q)
+            n[f"rem_{m}_train"] = f"{100 * q.train_share.median():.0f}%"
+            if m != "GSCP":
+                n[f"rem_{m}_seen_size"] = f"{q.size_seen.median():.2f}"
+                n[f"rem_{m}_seen_cov"] = p1(q.cov_seen.median())
+        n["rem_table_rows"] = "\n".join(rows)
+        kdd = pd.read_csv(os.path.join(R, "remedies", "remedies_classification_1113.csv"))
+        kg = kdd[(kdd.method == "GSCP") & (kdd.model == "rf")]
+        n["rem_gscp_kdd_fail"] = f"{int(kg.error.notna().sum())} of {len(kg)}" if "error" in kg else f"0 of {len(kg)}"
+        mc = g[g.name == "mc1"].set_index("method")
+        n["rem_mc1_train_full"] = f"{int(mc.loc['SCP', 'n_train']):,}"
+        n["rem_mc1_train_dedup"] = f"{int(round(mc.loc['Dedup', 'n_train'])):,}"
+    sp = os.path.join(R, "statistics_amendment2.json")
+    if os.path.exists(sp):
+        S = json.load(open(sp))
+        ci = lambda c: f"{100 * c[0]:.0f}–{100 * c[1]:.0f}%"
+        for key, tag in (("W1_wave2", "sc2"), ("W1_pooled", "scp"), ("W1_wave1", "sc1")):
+            if key in S:
+                w = S[key]
+                n[f"{tag}_n"] = w["n_datasets"]
+                n[f"{tag}_pos"] = w["n_positive"]
+                n[f"{tag}_hit"] = w["n_positive"] - len(w["misses"])
+                n[f"{tag}_flag"] = w["n_flag"]
+                n[f"{tag}_sens"] = f"{100 * w['sensitivity']:.0f}%" if w["sensitivity"] == w["sensitivity"] else "n/a"
+                n[f"{tag}_sens_ci"] = ci(w["sensitivity_ci"]) if w["n_positive"] else "n/a"
+                n[f"{tag}_spec"] = f"{100 * w['specificity']:.0f}%"
+                n[f"{tag}_neg"] = w["n_negative"]
+                n[f"{tag}_unfl"] = w["n_unflagged"]
+                n[f"{tag}_unfl_worst"] = signed_pp(w["worst_gap_unflagged"])
+                n[f"{tag}_misses"] = ", ".join(w["misses"]) if w["misses"] else "none"
+                n[f"{tag}_p"] = pval(w["p_sens_gt_half"]) if w["p_sens_gt_half"] == w["p_sens_gt_half"] else "n/a"
+        if "wave2_n" in S:
+            n["w2_n"] = S["wave2_n"]
+            n["w2_n_cls"] = S["wave2_tasks"].get("classification", 0)
+            n["w2_n_reg"] = S["wave2_tasks"].get("regression", 0)
+            for x in S["W2"]:
+                m = x["learner"]
+                n[f"w2_fix_{m}_med"] = signed_pp(x["median_gap"])
+                n[f"w2_fix_{m}_lo"] = signed_pp(x["ci"][0])
+                n[f"w2_fix_{m}_worst"] = signed_pp(x["worst"])
+                n[f"w2_fix_{m}_ni"] = "yes" if x["noninferior"] else "no"
+                n[f"w2_fix_{m}_bad"] = p1(x["bad_mean"])
+            for x in S["W2_other"]:
+                k = f"w2_{x['method']}_{x['learner']}"
+                n[k + "_med"] = signed_pp(x["median_gap"])
+                n[k + "_worst"] = signed_pp(x["worst"])
+                n[k + "_bad"] = p1(x["bad_mean"])
+            for x in S["W3_W4"]:
+                m = x["learner"]
+                n[f"w2_{m}_above"] = p1(x["share_above"])
+                n[f"w2_{m}_above_ci"] = ci(x["share_ci"])
+                n[f"w2_{m}_rho"] = f"{x['rho']:.2f}"
+                n[f"w2_{m}_rho_p"] = pval(x["p_one_sided"])
+            n["w2_holm_W1"], n["w2_holm_W2"] = (pval(v) for v in S["holm_W1_W2rf"])
+        if "W5" in S:
+            w = S["W5"]
+            n["tb_n"] = w["n"]
+            n["tb_over_scp"] = f"{100 * w['mean_over_scp']:.1f}"
+            n["tb_over_rand"] = f"{100 * w['mean_over_rand']:.1f}"
+            n["tb_p"] = pval(w["p_wilcoxon"])
+            n["tb_rho_rand"] = f"{w['rho_gstar_rand']:.2f}"
+            n["tb_rho_scp"] = f"{w['rho_gstar_scp']:.2f}"
+            n["tb_rho_p"] = pval(w["p_rand"])
+            n["tb_n_rho"] = w["n_rho"]
+            for r in w["per_dataset"]:
+                if r["name"] == "airlines":
+                    n["tb_air_scp"], n["tb_air_rand"] = signed_pp(r["gap"]), signed_pp(r["gap_rand"])

@@ -31,7 +31,7 @@ JOURNALS = {
     "v2": {"suffix": "_v2", "numbered": False, "css": "print.css", "dir": "sections_v2", "numbers": "v2",
            "out": "Revised_Manuscript",
            "sections": ["00_front.md", "01_intro.md", "02_related.md", "03_problem.md", "04_design.md", "05_cases.md",
-                        "06_benchmarks.md", "07_validation.md", "08_discussion.md", "09_conclusion.md",
+                        "06_benchmarks.md", "07_validation.md", "075_practice.md", "08_discussion.md", "09_conclusion.md",
                         "10_appendix.md", "11_declarations.md", "90_references.md"]},
 }
 
