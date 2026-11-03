@@ -168,3 +168,39 @@ def run(res):
 if __name__ == "__main__":
     import sys
     print(json.dumps(run(sys.argv[1] if len(sys.argv) > 1 else "results"), indent=1, default=float)[:3000])
+
+
+def fig_screen(res):
+    """All fresh data sets (waves 1 and 2): predicted worst-case gap vs observed random-forest gap."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from .analysis import C, GRID, INK, INK2
+    from .figures import MM, _save
+    R = os.path.join(res, "reinforcement")
+    sc = pd.read_csv(os.path.join(R, "tables", "screening.csv"))
+    sc["obs"] = sc[["gap_rf", "gap_lgbm"]].min(axis=1)
+    fig, ax = plt.subplots(figsize=(84 * MM, 78 * MM))
+    lo = 100 * min(sc.g_star.min(), sc.obs.min()) - 4
+    ax.axhspan(lo, -2, color="#fbe3dc", lw=0, zorder=0)
+    ax.plot([lo, 2], [lo, 2], color=INK2, ls="--", lw=0.8, zorder=1, label="Observed = predicted")
+    ax.axhline(0, color=INK, lw=0.8, zorder=1)
+    for wave, mk, col in ((1, "o", C[0]), (2, "D", C[1])):
+        q = sc[sc.wave == wave]
+        for flag in (True, False):
+            qq = q[q.flag == flag]
+            ax.scatter(100 * qq.g_star, 100 * qq.obs, s=18, marker=mk, linewidth=0.9, zorder=3,
+                       facecolor=col if flag else "white", edgecolor=col,
+                       label=f"Wave {wave}, {'flagged' if flag else 'not flagged'}")
+    for _, r in sc[sc.obs < -0.05].iterrows():
+        nm = r["name"].replace("analcatdata_", "").replace(" (Android Permissions)", "").replace(
+            "Early Stage Diabetes Risk Prediction", "early diabetes").replace("Congressional Voting Records", "voting")
+        ax.annotate(nm, (100 * r.g_star, 100 * r.obs), xytext=(4, -2), textcoords="offset points", fontsize=5.8,
+                    color=INK2)
+    ax.set_xlim(lo, 3)
+    ax.set_ylim(lo, 12)
+    ax.set_xlabel("Predicted worst-case gap from the check (pp)")
+    ax.set_ylabel("Observed gap on new cases (pp)\n(worse of random forest and LightGBM)")
+    ax.grid(True, color=GRID)
+    ax.legend(loc="lower right", fontsize=5.8, frameon=False)
+    _save(fig, os.path.join(R, "figures"), "Fig_screen")

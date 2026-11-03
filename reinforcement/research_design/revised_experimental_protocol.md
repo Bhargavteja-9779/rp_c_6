@@ -220,3 +220,9 @@ practitioner actually makes: fix or not. The tests below are fixed now, before a
 2. **Interrupted runs.** A restart of the compute environment stopped the wave-1 SCP-rand re-run after
    18 of 20 data sets. It was resumed; completed data sets were kept, because results are cached per
    data set and are deterministic given the seed.
+3. **Pipeline fix for one data set.** In wave 2, all fits on Annealing (UCI 3) failed. A text column that
+   was entirely missing in a training subset was re-typed as numeric and then met strings at prediction
+   time. A fallback was added to `fit_predict`: it keeps such columns as text, with missing values as a
+   category. The fallback is used only when the standard path raises an error, so no earlier result
+   changes, and Annealing was re-run with it. The fix was made without looking at Annealing's outcome
+   (Annealing had no results at all before it).

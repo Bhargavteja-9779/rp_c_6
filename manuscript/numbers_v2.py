@@ -250,6 +250,32 @@ def _amendment2(n, R):
                 n[f"w2_{m}_rho"] = f"{x['rho']:.2f}"
                 n[f"w2_{m}_rho_p"] = pval(x["p_one_sided"])
             n["w2_holm_W1"], n["w2_holm_W2"] = (pval(v) for v in S["holm_W1_W2rf"])
+        scp = os.path.join(T, "screening.csv")
+        if os.path.exists(scp):
+            sc = pd.read_csv(scp)
+            short = {"Skin Segmentation": "skin", "NATICUSdroid (Android Permissions)": "droid",
+                     "Early Stage Diabetes Risk Prediction": "diab", "Congressional Voting Records": "vote",
+                     "Maternal Health Risk": "mat", "Sepsis Survival Minimal Clinical Records": "sepsis",
+                     "Website Phishing": "wphish", "Ozone Level Detection": "ozone"}
+            for nm, k in short.items():
+                r = sc[sc.name == nm]
+                if len(r):
+                    r = r.iloc[0]
+                    n[f"w2ds_{k}_rf"] = signed_pp(r.gap_rf)
+                    n[f"w2ds_{k}_lgbm"] = signed_pp(r.gap_lgbm)
+                    n[f"w2ds_{k}_gs"] = signed_pp(r.g_star)
+                    n[f"w2ds_{k}_pi"] = f"{100 * r.pred_exposure:.0f}%"
+            w2 = sc[sc.wave == 2]
+            viol = w2[w2.gap_rf < w2.g_star - 0.02]
+            n["w2_viol_names"] = ", ".join(viol.name) if len(viol) else "none"
+            n["w2_npos_rf"] = int((w2.gap_rf < -0.02).sum())
+            n["w2_worst_rf"] = signed_pp(w2.gap_rf.min())
+        # airlines and Diabetes130US: seen rows under-covered (mirror image of memorization)
+        P1 = pd.concat([pd.read_csv(f) for f in __import__("glob").glob(os.path.join(R, "prospective", "prosp_*.csv"))])
+        for nm, k in (("airlines", "air"), ("Diabetes130US", "dia")):
+            q = P1[(P1.name == nm) & (P1.model == "rf") & (P1.method == "SCP") & P1.score.isin(["lac", "absres"])]
+            n[f"mir_{k}_seen"] = p1(q.cov_seen.mean())
+            n[f"mir_{k}_new"] = p1(q.cov_novel.mean())
         if "W5" in S:
             w = S["W5"]
             n["tb_n"] = w["n"]

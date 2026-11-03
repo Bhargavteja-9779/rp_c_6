@@ -100,8 +100,20 @@ def make_model(name: str, task: str, X: pd.DataFrame, seed: int, **kw):
 
 def fit_predict(name, task, X_tr, y_tr, X_eval_list, seed, n_classes=None, **kw):
     """Fit on training rows; return class-probability matrices (K columns) or point predictions."""
-    X_tr = _prep_cat_strings(X_tr)
-    X_eval_list = [_prep_cat_strings(X) for X in X_eval_list]
+    try:
+        return _fit_predict(name, task, _prep_cat_strings(X_tr), y_tr,
+                            [_prep_cat_strings(X) for X in X_eval_list], seed, n_classes, **kw)
+    except (TypeError, ValueError):
+        # Fallback (added for UCI wave 2): a text column that is entirely missing in a subset is re-typed
+        # as numeric by pandas and then meets strings at prediction time. Keep such columns as text, with
+        # missing values as their own category. Only used when the standard path fails, so all earlier
+        # results are unchanged.
+        cat = [c for c in X_tr.columns if not pd.api.types.is_numeric_dtype(X_tr[c])]
+        fix = lambda X: X.assign(**{c: X[c].astype("object").where(X[c].notna(), "<NA>").astype(str) for c in cat})
+        return _fit_predict(name, task, fix(X_tr), y_tr, [fix(X) for X in X_eval_list], seed, n_classes, **kw)
+
+
+def _fit_predict(name, task, X_tr, y_tr, X_eval_list, seed, n_classes=None, **kw):
     m = make_model(name, task, X_tr, seed, **kw)
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
