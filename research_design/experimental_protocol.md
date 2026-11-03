@@ -138,3 +138,28 @@ random subset** of all test rows (20 draws).
 
 All datasets, seeds and learners are reported, including failures (errors are written to the raw
 files). No seed or dataset selection by outcome. Negative findings are reported.
+
+---
+
+## Appendix (added 2026-11-03): consolidated hypothesis register for the final paper
+
+This appendix only **indexes** hypotheses that were fixed earlier. Nothing above is changed. Each
+row gives the commit in which the hypothesis was frozen, *before* its data were analysed. The paper
+numbers the hypotheses H1–H9 as below. "Post hoc" marks analyses added after results were seen.
+
+| Paper | Original | Frozen in | Metric | Test | Pass criterion | Outcome |
+|---|---|---|---|---|---|---|
+| H1 | v1 H1 | `0e58bdd` (2026-10-20) | Per-data-set new-case gap g = cov_new − 0.9, SCP, 103-set benchmark, duplicated sets | One-sided Wilcoxon per family, Holm over 16 families | Holm p < 0.05 | **Not supported** |
+| H2 | v1 H1a + H5 (injection) | `0e58bdd` | Spearman ρ (exposure, g); within-data-set ρ (copy rate, g) | Spearman; Wilcoxon of ρ against 0 | ρ < 0, p < 0.05 | Supported (flexible learners) |
+| H3 | v1 H2; reinforcement P3; Amendment 2 W2 | `0e58bdd`, `91ac5f6`, `b5bbd25` | Median new-case gap of separate calibration (MCP) | Bootstrap 95% CI of the median | Lower bound > −1 pp | Supported (benchmarks, wave 1, wave 2) |
+| H4 | v1 H3 | `0e58bdd` | Ratio of set size / width, MCP vs SCP | Two-sided Wilcoxon, median ratio | Descriptive | Small cost (median ratio ≈ 1.0–1.04) |
+| H5 | P2; W3 | `91ac5f6`, `b5bbd25` | Share of data sets with RF gap ≥ g* − 2 pp | Exact binomial CI | ≥ 80% | Supported (wave 1: 20/20; wave 2: 26/27) |
+| H6 | P1; W4 | `91ac5f6`, `b5bbd25` | Spearman ρ(g*, RF gap) | One-sided | p < 0.05 (P1 primary, Holm) | Wave 1: **not supported**; wave 2: supported (secondary) |
+| H7 | W1 | `b5bbd25` (2026-11-02) | Screening sensitivity of the flag (g* < −2 pp or π̄ ≥ 0.10) for data sets with an RF/LightGBM gap < −2 pp | Exact binomial, H0: sensitivity ≤ 0.5; Holm with W2 | Sensitivity ≥ 0.8 | Supported (9/9 wave 2; 13/13 pooled) |
+| H8 | P4 | `91ac5f6` | Share of splits with new-case coverage < 0.87, MCP vs PAC-MCP | One-sided paired Wilcoxon, Holm | Holm p < 0.05 | Direction as predicted; **not significant** after Holm (0.062) |
+| H9 | P5 | `91ac5f6` | ρ(g*) − ρ(g_π) with the RF gap | Bootstrap 95% CI | CI above 0 | **Not established** |
+| — | W5 | `b5bbd25` | Over-coverage under SCP vs SCP with random tie-breaking | One-sided Wilcoxon | p < 0.05 | Small effect only; does not explain airlines (secondary, explanatory) |
+| — | Remedy comparison | `b5bbd25` | New-case coverage, seen-case set size, training rows used | Descriptive | — | Reported (exploratory) |
+| — | Exposure strata, Prop. 1 decomposition, solar_flare verification | after v1 results | — | Descriptive | — | **Post hoc**, labelled as such |
+| — | Retrospective test of Eq. (3) | after v1 results | ρ(g*, gap) on v1 data | Spearman | — | **Post hoc (non-blind)**, labelled as such |
+| — | Sampling-noise check, qualitative examples, planted-leak test, cost/memory, tool validation on raw files | 2026-11-03, before running them | see `research_design/deviations.md` D15–D17 | Descriptive | — | **Post hoc** additions requested at the final stage |

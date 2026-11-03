@@ -24,3 +24,27 @@ leakage path. Each check names the code location that enforces it.
   conservative; Exp. E addresses near-duplicates descriptively.
 * OpenML's default feature set is used as given. If a dataset contains an undocumented ID-like
   column, true record duplication is hidden, and the measured exposure is a lower bound.
+
+## Planted-leak test (E10, added 2026-11-03, post hoc; deviations D15c)
+
+`code/experiments/e10_planted_leak.py` → `results/e10_planted_leak/planted_leak.json`.
+
+* **Data.** The first five duplicate-free benchmark data sets with ≥ 1,000 rows, in OpenML-id order:
+  kr-vs-kp, optdigits, credit-g, pendigits and electricity. One random 60/20/20 split each.
+* **Plant.** A known share (5% and 20%) of the test rows was copied into the training part, so these
+  test rows are leaked by construction.
+* **Result.**
+  * Exact copies: the audit flagged **all 2,541 planted rows (recall 100%) and nothing else (0 false
+    positives)**.
+  * Clean splits (negative control): no row was flagged.
+  * Copies jittered by 0.1% of each numeric feature's SD: **none was flagged (recall 0%)** in the four
+    data sets with numeric features. This is the known blind spot of exact matching, which the
+    distance-based variant and the near-copy experiment address. kr-vs-kp has only categorical
+    features, so its "jittered" copies remain exact and were flagged.
+
+## Further checks for the final paper
+* Test-set tuning: none. Hyperparameters are fixed in `code/configs/default.json`. Thresholds use
+  calibration rows only. The `covercheck` tool's defaults were fixed before its validation on raw
+  files.
+* Wave-1/wave-2 selection: label-free (feature keys only); the selection files are committed before
+  any outcome.

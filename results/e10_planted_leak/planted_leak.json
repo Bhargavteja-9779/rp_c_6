@@ -1,0 +1,288 @@
+{
+ "summary": {
+  "n_datasets": 5,
+  "clean_false_pos": 0,
+  "exact_recall_min": 1.0,
+  "exact_false_pos": 0,
+  "jitter_recall_max": 0.0,
+  "jitter_note": "kr-vs-kp has no numeric features, so its jittered copies are exact copies",
+  "planted_total": 2541
+ },
+ "rows": [
+  {
+   "data_id": 3,
+   "name": "kr-vs-kp",
+   "plant": "none",
+   "f": 0.0,
+   "planted": 0,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": NaN
+  },
+  {
+   "data_id": 3,
+   "name": "kr-vs-kp",
+   "plant": "exact",
+   "f": 0.05,
+   "planted": 32,
+   "flagged": 32,
+   "true_pos": 32,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 3,
+   "name": "kr-vs-kp",
+   "plant": "jitter_0.001sd",
+   "f": 0.05,
+   "planted": 32,
+   "flagged": 32,
+   "true_pos": 32,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 3,
+   "name": "kr-vs-kp",
+   "plant": "exact",
+   "f": 0.2,
+   "planted": 128,
+   "flagged": 128,
+   "true_pos": 128,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 3,
+   "name": "kr-vs-kp",
+   "plant": "jitter_0.001sd",
+   "f": 0.2,
+   "planted": 128,
+   "flagged": 128,
+   "true_pos": 128,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 28,
+   "name": "optdigits",
+   "plant": "none",
+   "f": 0.0,
+   "planted": 0,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": NaN
+  },
+  {
+   "data_id": 28,
+   "name": "optdigits",
+   "plant": "exact",
+   "f": 0.05,
+   "planted": 56,
+   "flagged": 56,
+   "true_pos": 56,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 28,
+   "name": "optdigits",
+   "plant": "jitter_0.001sd",
+   "f": 0.05,
+   "planted": 56,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": 0.0
+  },
+  {
+   "data_id": 28,
+   "name": "optdigits",
+   "plant": "exact",
+   "f": 0.2,
+   "planted": 225,
+   "flagged": 225,
+   "true_pos": 225,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 28,
+   "name": "optdigits",
+   "plant": "jitter_0.001sd",
+   "f": 0.2,
+   "planted": 225,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": 0.0
+  },
+  {
+   "data_id": 31,
+   "name": "credit-g",
+   "plant": "none",
+   "f": 0.0,
+   "planted": 0,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": NaN
+  },
+  {
+   "data_id": 31,
+   "name": "credit-g",
+   "plant": "exact",
+   "f": 0.05,
+   "planted": 10,
+   "flagged": 10,
+   "true_pos": 10,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 31,
+   "name": "credit-g",
+   "plant": "jitter_0.001sd",
+   "f": 0.05,
+   "planted": 10,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": 0.0
+  },
+  {
+   "data_id": 31,
+   "name": "credit-g",
+   "plant": "exact",
+   "f": 0.2,
+   "planted": 40,
+   "flagged": 40,
+   "true_pos": 40,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 31,
+   "name": "credit-g",
+   "plant": "jitter_0.001sd",
+   "f": 0.2,
+   "planted": 40,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": 0.0
+  },
+  {
+   "data_id": 32,
+   "name": "pendigits",
+   "plant": "none",
+   "f": 0.0,
+   "planted": 0,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": NaN
+  },
+  {
+   "data_id": 32,
+   "name": "pendigits",
+   "plant": "exact",
+   "f": 0.05,
+   "planted": 110,
+   "flagged": 110,
+   "true_pos": 110,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 32,
+   "name": "pendigits",
+   "plant": "jitter_0.001sd",
+   "f": 0.05,
+   "planted": 110,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": 0.0
+  },
+  {
+   "data_id": 32,
+   "name": "pendigits",
+   "plant": "exact",
+   "f": 0.2,
+   "planted": 440,
+   "flagged": 440,
+   "true_pos": 440,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 32,
+   "name": "pendigits",
+   "plant": "jitter_0.001sd",
+   "f": 0.2,
+   "planted": 440,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": 0.0
+  },
+  {
+   "data_id": 151,
+   "name": "electricity",
+   "plant": "none",
+   "f": 0.0,
+   "planted": 0,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": NaN
+  },
+  {
+   "data_id": 151,
+   "name": "electricity",
+   "plant": "exact",
+   "f": 0.05,
+   "planted": 300,
+   "flagged": 300,
+   "true_pos": 300,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 151,
+   "name": "electricity",
+   "plant": "jitter_0.001sd",
+   "f": 0.05,
+   "planted": 300,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": 0.0
+  },
+  {
+   "data_id": 151,
+   "name": "electricity",
+   "plant": "exact",
+   "f": 0.2,
+   "planted": 1200,
+   "flagged": 1200,
+   "true_pos": 1200,
+   "false_pos": 0,
+   "recall": 1.0
+  },
+  {
+   "data_id": 151,
+   "name": "electricity",
+   "plant": "jitter_0.001sd",
+   "f": 0.2,
+   "planted": 1200,
+   "flagged": 0,
+   "true_pos": 0,
+   "false_pos": 0,
+   "recall": 0.0
+  }
+ ]
+}
