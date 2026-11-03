@@ -90,7 +90,10 @@ def test_cli_and_report(tmp_path):
     p = tmp_path / "d.csv"
     df.to_csv(p, index=False)
     out = tmp_path / "r.html"
-    assert cli_main([str(p), "--target", "label", "--splits", "2", "--html", str(out)]) == 0
+    js = tmp_path / "r.json"
+    assert cli_main([str(p), "--target", "label", "--splits", "2", "--html", str(out), "--json", str(js)]) == 0
+    import json
+    assert json.loads(js.read_text())["summary"][0]["mode"] == "standard"
     txt = out.read_text()
     assert "CoverCheck report" in txt and "<svg" in txt
 

@@ -1,0 +1,44 @@
+[
+ {
+  "method": "fix (seen/new)",
+  "label": "defect",
+  "n_total": 83.0,
+  "coverage": 0.0,
+  "size": 0.4578313253012048
+ },
+ {
+  "method": "fix (seen/new)",
+  "label": "no defect",
+  "n_total": 3346.0,
+  "coverage": 0.9261805140466228,
+  "size": 0.9261805140466228
+ },
+ {
+  "method": "fix by class (seen/new x label)",
+  "label": "defect",
+  "n_total": 83.0,
+  "coverage": 1.0,
+  "size": 1.4096385542168675
+ },
+ {
+  "method": "fix by class (seen/new x label)",
+  "label": "no defect",
+  "n_total": 3346.0,
+  "coverage": 0.9040645546921697,
+  "size": 1.9040645546921697
+ },
+ {
+  "method": "standard",
+  "label": "defect",
+  "n_total": 83.0,
+  "coverage": 0.0,
+  "size": 0.13253012048192772
+ },
+ {
+  "method": "standard",
+  "label": "no defect",
+  "n_total": 3346.0,
+  "coverage": 0.6428571428571429,
+  "size": 0.6428571428571429
+ }
+]

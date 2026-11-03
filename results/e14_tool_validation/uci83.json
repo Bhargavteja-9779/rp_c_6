@@ -1,0 +1,39 @@
+{
+ "data": "/home/user/rp_c_6/data_raw/uci83.csv",
+ "task": "classification",
+ "check": {
+  "n_rows": 339,
+  "repeated_row_share": 0.25958702064896755,
+  "exposure": 0.20429485849894854,
+  "pure_exposure": 0.07163808695147594,
+  "predicted_gap": -0.007716612017853379,
+  "exposure_only_gap": -0.025674693783372848,
+  "alpha": 0.1,
+  "verdict": "FIX ADVISED: many repeats; the risk is lower because repeats disagree on the label, but the fix costs little.",
+  "reasons": [
+   "20% of test rows will be seen in training; report coverage on new cases separately."
+  ]
+ },
+ "summary": [
+  {
+   "mode": "standard",
+   "coverage_all": 0.9294117647058824,
+   "coverage_seen": 0.8869483457718752,
+   "coverage_new": 0.9391072750205878,
+   "size_new": 12.909593145073021,
+   "size_seen": 10.656825527413762,
+   "seen_share": 0.19705882352941176,
+   "empty_new": 0.0
+  },
+  {
+   "mode": "exact",
+   "coverage_all": 0.9294117647058823,
+   "coverage_seen": 0.9626373626373625,
+   "coverage_new": 0.9211202620335748,
+   "size_new": 11.764542640022515,
+   "size_seen": 15.894505494505495,
+   "seen_share": 0.19705882352941176,
+   "empty_new": 0.0
+  }
+ ]
+}

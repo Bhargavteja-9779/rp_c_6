@@ -1,0 +1,3480 @@
+{
+ "summary": [
+  {
+   "method": "MCP",
+   "model": "lgbm",
+   "n_splits": 939,
+   "observed": 93,
+   "expected": 79.243,
+   "ratio": 1.1736052395795213,
+   "p_excess": 0.047,
+   "p_deficit": 0.9585
+  },
+  {
+   "method": "MCP",
+   "model": "logreg",
+   "n_splits": 939,
+   "observed": 83,
+   "expected": 79.402,
+   "ratio": 1.0453137200574292,
+   "p_excess": 0.3355,
+   "p_deficit": 0.7105
+  },
+  {
+   "method": "MCP",
+   "model": "rf",
+   "n_splits": 939,
+   "observed": 84,
+   "expected": 79.19425,
+   "ratio": 1.0606830672681413,
+   "p_excess": 0.2895,
+   "p_deficit": 0.759
+  },
+  {
+   "method": "PAC_MCP",
+   "model": "lgbm",
+   "n_splits": 939,
+   "observed": 25,
+   "expected": 14.94275,
+   "ratio": 1.6730521490354855,
+   "p_excess": 0.0065,
+   "p_deficit": 0.9975
+  },
+  {
+   "method": "PAC_MCP",
+   "model": "logreg",
+   "n_splits": 939,
+   "observed": 16,
+   "expected": 15.173499999999999,
+   "ratio": 1.054469964082117,
+   "p_excess": 0.471,
+   "p_deficit": 0.624
+  },
+  {
+   "method": "PAC_MCP",
+   "model": "rf",
+   "n_splits": 939,
+   "observed": 16,
+   "expected": 15.141000000000002,
+   "ratio": 1.0567333729608348,
+   "p_excess": 0.446,
+   "p_deficit": 0.647
+  },
+  {
+   "method": "SCP",
+   "model": "lgbm",
+   "n_splits": 939,
+   "observed": 212,
+   "expected": 86.90299999999999,
+   "ratio": 2.4395015131813635,
+   "p_excess": 0.0,
+   "p_deficit": 1.0
+  },
+  {
+   "method": "SCP",
+   "model": "logreg",
+   "n_splits": 939,
+   "observed": 164,
+   "expected": 87.09899999999999,
+   "ratio": 1.8829148440280603,
+   "p_excess": 0.0,
+   "p_deficit": 1.0
+  },
+  {
+   "method": "SCP",
+   "model": "rf",
+   "n_splits": 939,
+   "observed": 184,
+   "expected": 87.3145,
+   "ratio": 2.107324671160002,
+   "p_excess": 0.0,
+   "p_deficit": 1.0
+  }
+ ],
+ "by_dataset": [
+  {
+   "wave": 1,
+   "name": "Bike_Sharing_Demand",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Bike_Sharing_Demand",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Bike_Sharing_Demand",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Bike_Sharing_Demand",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Bike_Sharing_Demand",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Bike_Sharing_Demand",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Bike_Sharing_Demand",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Bike_Sharing_Demand",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Bike_Sharing_Demand",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Buzzinsocialmedia_Twitter",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Buzzinsocialmedia_Twitter",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Buzzinsocialmedia_Twitter",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Buzzinsocialmedia_Twitter",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Buzzinsocialmedia_Twitter",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Buzzinsocialmedia_Twitter",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Buzzinsocialmedia_Twitter",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Buzzinsocialmedia_Twitter",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Buzzinsocialmedia_Twitter",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Diabetes130US",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Diabetes130US",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Diabetes130US",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Diabetes130US",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Diabetes130US",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Diabetes130US",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Diabetes130US",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Diabetes130US",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Diabetes130US",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "MagicTelescope",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0002,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "MagicTelescope",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "MagicTelescope",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0003,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "MagicTelescope",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0002,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "MagicTelescope",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "MagicTelescope",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0002,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "MagicTelescope",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0003,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "MagicTelescope",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "MagicTelescope",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0002,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0272,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0027,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0253,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0274,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0021,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0251,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.029,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0025,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Mercedes_Benz_Greener_Manufacturing",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0263,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "airlines",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0025,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "airlines",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "airlines",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0002,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "airlines",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0024,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "airlines",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "airlines",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0002,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "airlines",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0024,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "airlines",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "airlines",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0002,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "analcatdata_supreme",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.2294,
+   "observed_bad": 0.35
+  },
+  {
+   "wave": 1,
+   "name": "analcatdata_supreme",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0481,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 1,
+   "name": "analcatdata_supreme",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.2402,
+   "observed_bad": 1.0
+  },
+  {
+   "wave": 1,
+   "name": "analcatdata_supreme",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2325,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 1,
+   "name": "analcatdata_supreme",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0488,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 1,
+   "name": "analcatdata_supreme",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.2366,
+   "observed_bad": 0.5
+  },
+  {
+   "wave": 1,
+   "name": "analcatdata_supreme",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.2352,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 1,
+   "name": "analcatdata_supreme",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0487,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 1,
+   "name": "analcatdata_supreme",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.2405,
+   "observed_bad": 1.0
+  },
+  {
+   "wave": 1,
+   "name": "black_friday",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0006,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "black_friday",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "black_friday",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "black_friday",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0007,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "black_friday",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "black_friday",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.65
+  },
+  {
+   "wave": 1,
+   "name": "black_friday",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0007,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "black_friday",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "black_friday",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "compas-two-years",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0889,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 1,
+   "name": "compas-two-years",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0122,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 1,
+   "name": "compas-two-years",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.056,
+   "observed_bad": 0.45
+  },
+  {
+   "wave": 1,
+   "name": "compas-two-years",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0892,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 1,
+   "name": "compas-two-years",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0118,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "compas-two-years",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0552,
+   "observed_bad": 0.7
+  },
+  {
+   "wave": 1,
+   "name": "compas-two-years",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0878,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 1,
+   "name": "compas-two-years",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0118,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "compas-two-years",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0553,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "heloc",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0017,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "heloc",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "heloc",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0014,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "heloc",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0017,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "heloc",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "heloc",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0016,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "heloc",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0017,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "heloc",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "heloc",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0016,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "nyc-taxi-green-dec-2016",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "nyc-taxi-green-dec-2016",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "nyc-taxi-green-dec-2016",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "nyc-taxi-green-dec-2016",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "nyc-taxi-green-dec-2016",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "nyc-taxi-green-dec-2016",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "nyc-taxi-green-dec-2016",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "nyc-taxi-green-dec-2016",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "nyc-taxi-green-dec-2016",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "particulate-matter-ukair-2017",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "particulate-matter-ukair-2017",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "particulate-matter-ukair-2017",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "particulate-matter-ukair-2017",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "particulate-matter-ukair-2017",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "particulate-matter-ukair-2017",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "particulate-matter-ukair-2017",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "particulate-matter-ukair-2017",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "particulate-matter-ukair-2017",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "seattlecrime6",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0645,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 1,
+   "name": "seattlecrime6",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "seattlecrime6",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.3307,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 1,
+   "name": "seattlecrime6",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0638,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 1,
+   "name": "seattlecrime6",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "seattlecrime6",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.3342,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "seattlecrime6",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0645,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "seattlecrime6",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "seattlecrime6",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.3284,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 1,
+   "name": "sf-police-incidents",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "sf-police-incidents",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "sf-police-incidents",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "sf-police-incidents",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "sf-police-incidents",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "sf-police-incidents",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "sf-police-incidents",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "sf-police-incidents",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "sf-police-incidents",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "superconduct",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0002,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "superconduct",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "superconduct",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "superconduct",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0002,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "superconduct",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "superconduct",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "superconduct",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "superconduct",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "superconduct",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "tecator",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.2336,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 1,
+   "name": "tecator",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0511,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 1,
+   "name": "tecator",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.1834,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 1,
+   "name": "tecator",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2343,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 1,
+   "name": "tecator",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0525,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "tecator",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.1829,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 1,
+   "name": "tecator",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.2316,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 1,
+   "name": "tecator",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.052,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "tecator",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.1859,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 1,
+   "name": "wine-quality-white",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.029,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 1,
+   "name": "wine-quality-white",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0024,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine-quality-white",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0233,
+   "observed_bad": 0.4
+  },
+  {
+   "wave": 1,
+   "name": "wine-quality-white",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.029,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine-quality-white",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0027,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine-quality-white",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0222,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine-quality-white",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0288,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 1,
+   "name": "wine-quality-white",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0028,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine-quality-white",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0241,
+   "observed_bad": 0.4
+  },
+  {
+   "wave": 1,
+   "name": "wine_quality",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0147,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine_quality",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0011,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine_quality",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0106,
+   "observed_bad": 0.35
+  },
+  {
+   "wave": 1,
+   "name": "wine_quality",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0144,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine_quality",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0011,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine_quality",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0114,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine_quality",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0146,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine_quality",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "wine_quality",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0116,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 1,
+   "name": "yeast",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.1075,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 1,
+   "name": "yeast",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0162,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "yeast",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0956,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 1,
+   "name": "yeast",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.1071,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 1,
+   "name": "yeast",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0174,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "yeast",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0957,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 1,
+   "name": "yeast",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.1058,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 1,
+   "name": "yeast",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.017,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 1,
+   "name": "yeast",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0977,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 1,
+   "name": "yprop_4_1",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0024,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "yprop_4_1",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "yprop_4_1",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.002,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "yprop_4_1",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0022,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "yprop_4_1",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "yprop_4_1",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0022,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "yprop_4_1",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0023,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "yprop_4_1",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "yprop_4_1",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0021,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Annealing",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.1412,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Annealing",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0284,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Annealing",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.1643,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Annealing",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.1425,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Annealing",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0296,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Annealing",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.1611,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Annealing",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.1399,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Annealing",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0288,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Annealing",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.1622,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "CDC Diabetes Health Indicators",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "CDC Diabetes Health Indicators",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "CDC Diabetes Health Indicators",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "CDC Diabetes Health Indicators",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "CDC Diabetes Health Indicators",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "CDC Diabetes Health Indicators",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "CDC Diabetes Health Indicators",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "CDC Diabetes Health Indicators",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "CDC Diabetes Health Indicators",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Census-Income (KDD)",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Census-Income (KDD)",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Census-Income (KDD)",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Census-Income (KDD)",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Census-Income (KDD)",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Census-Income (KDD)",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Census-Income (KDD)",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Census-Income (KDD)",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Census-Income (KDD)",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Congressional Voting Records",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.2203,
+   "observed_bad": 0.4
+  },
+  {
+   "wave": 2,
+   "name": "Congressional Voting Records",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0453,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 2,
+   "name": "Congressional Voting Records",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.1968,
+   "observed_bad": 0.5
+  },
+  {
+   "wave": 2,
+   "name": "Congressional Voting Records",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2222,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Congressional Voting Records",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0449,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Congressional Voting Records",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.1966,
+   "observed_bad": 0.45
+  },
+  {
+   "wave": 2,
+   "name": "Congressional Voting Records",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.224,
+   "observed_bad": 0.45
+  },
+  {
+   "wave": 2,
+   "name": "Congressional Voting Records",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0467,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Congressional Voting Records",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.1985,
+   "observed_bad": 0.55
+  },
+  {
+   "wave": 2,
+   "name": "Differentiated Thyroid Cancer Recurrence",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.2115,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Differentiated Thyroid Cancer Recurrence",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0408,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Differentiated Thyroid Cancer Recurrence",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.1808,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Differentiated Thyroid Cancer Recurrence",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2139,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 2,
+   "name": "Differentiated Thyroid Cancer Recurrence",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0407,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Differentiated Thyroid Cancer Recurrence",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.1803,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Differentiated Thyroid Cancer Recurrence",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.215,
+   "observed_bad": 0.4
+  },
+  {
+   "wave": 2,
+   "name": "Differentiated Thyroid Cancer Recurrence",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0404,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Differentiated Thyroid Cancer Recurrence",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.1829,
+   "observed_bad": 0.4
+  },
+  {
+   "wave": 2,
+   "name": "Early Stage Diabetes Risk Prediction",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.2312,
+   "observed_bad": 0.35
+  },
+  {
+   "wave": 2,
+   "name": "Early Stage Diabetes Risk Prediction",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0414,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Early Stage Diabetes Risk Prediction",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.2417,
+   "observed_bad": 0.9
+  },
+  {
+   "wave": 2,
+   "name": "Early Stage Diabetes Risk Prediction",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2313,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Early Stage Diabetes Risk Prediction",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0441,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Early Stage Diabetes Risk Prediction",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.2398,
+   "observed_bad": 0.45
+  },
+  {
+   "wave": 2,
+   "name": "Early Stage Diabetes Risk Prediction",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.2306,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Early Stage Diabetes Risk Prediction",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.043,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Early Stage Diabetes Risk Prediction",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.2416,
+   "observed_bad": 0.8
+  },
+  {
+   "wave": 2,
+   "name": "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0684,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0089,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0736,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0685,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0097,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0746,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0682,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.009,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Estimation of Obesity Levels Based On Eating Habits and Physical Condition",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0733,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Haberman's Survival",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.1985,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Haberman's Survival",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.053,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Haberman's Survival",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.239,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Haberman's Survival",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2002,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Haberman's Survival",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0541,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Haberman's Survival",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.2372,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Haberman's Survival",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.199,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 2,
+   "name": "Haberman's Survival",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0532,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Haberman's Survival",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.24,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Iranian Churn",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0482,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Iranian Churn",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0057,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Iranian Churn",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0474,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Iranian Churn",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0476,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Iranian Churn",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0059,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Iranian Churn",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0481,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Iranian Churn",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0502,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Iranian Churn",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0056,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Iranian Churn",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0477,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Liver Disorders",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.2278,
+   "observed_bad": 0.4
+  },
+  {
+   "wave": 2,
+   "name": "Liver Disorders",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0628,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Liver Disorders",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.2785,
+   "observed_bad": 0.55
+  },
+  {
+   "wave": 2,
+   "name": "Liver Disorders",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2285,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 2,
+   "name": "Liver Disorders",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0613,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Liver Disorders",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.2786,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Liver Disorders",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.2275,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Liver Disorders",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0633,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Liver Disorders",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.28,
+   "observed_bad": 0.45
+  },
+  {
+   "wave": 2,
+   "name": "Mammographic Mass",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.1891,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 2,
+   "name": "Mammographic Mass",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0349,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Mammographic Mass",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.1852,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Mammographic Mass",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.1878,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Mammographic Mass",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0353,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Mammographic Mass",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.1841,
+   "observed_bad": 0.4
+  },
+  {
+   "wave": 2,
+   "name": "Mammographic Mass",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.1879,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Mammographic Mass",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0359,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Mammographic Mass",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.182,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Maternal Health Risk",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.2366,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Maternal Health Risk",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0458,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Maternal Health Risk",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.2298,
+   "observed_bad": 0.9
+  },
+  {
+   "wave": 2,
+   "name": "Maternal Health Risk",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2342,
+   "observed_bad": 0.35
+  },
+  {
+   "wave": 2,
+   "name": "Maternal Health Risk",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0444,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Maternal Health Risk",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.229,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Maternal Health Risk",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.2318,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Maternal Health Risk",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0463,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Maternal Health Risk",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.23,
+   "observed_bad": 0.55
+  },
+  {
+   "wave": 2,
+   "name": "NATICUSdroid (Android Permissions)",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0082,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "NATICUSdroid (Android Permissions)",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0004,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "NATICUSdroid (Android Permissions)",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0011,
+   "observed_bad": 0.85
+  },
+  {
+   "wave": 2,
+   "name": "NATICUSdroid (Android Permissions)",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0082,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "NATICUSdroid (Android Permissions)",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0004,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "NATICUSdroid (Android Permissions)",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.001,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "NATICUSdroid (Android Permissions)",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0078,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "NATICUSdroid (Android Permissions)",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0004,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "NATICUSdroid (Android Permissions)",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.001,
+   "observed_bad": 1.0
+  },
+  {
+   "wave": 2,
+   "name": "National Poll on Healthy Aging (NPHA)",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.1772,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "National Poll on Healthy Aging (NPHA)",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0312,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "National Poll on Healthy Aging (NPHA)",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.1692,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "National Poll on Healthy Aging (NPHA)",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.1759,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 2,
+   "name": "National Poll on Healthy Aging (NPHA)",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0324,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "National Poll on Healthy Aging (NPHA)",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.1711,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "National Poll on Healthy Aging (NPHA)",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.1786,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "National Poll on Healthy Aging (NPHA)",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0317,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "National Poll on Healthy Aging (NPHA)",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.1724,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Online Shoppers Purchasing Intention Dataset",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0003,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Online Shoppers Purchasing Intention Dataset",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Online Shoppers Purchasing Intention Dataset",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0004,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Online Shoppers Purchasing Intention Dataset",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0005,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Online Shoppers Purchasing Intention Dataset",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Online Shoppers Purchasing Intention Dataset",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0005,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Online Shoppers Purchasing Intention Dataset",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0005,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Online Shoppers Purchasing Intention Dataset",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Online Shoppers Purchasing Intention Dataset",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0004,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Ozone Level Detection",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0759,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Ozone Level Detection",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0093,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Ozone Level Detection",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0469,
+   "observed_bad": 0.5
+  },
+  {
+   "wave": 2,
+   "name": "Ozone Level Detection",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.074,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Ozone Level Detection",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0099,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Ozone Level Detection",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0465,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Ozone Level Detection",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0751,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Ozone Level Detection",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0101,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Ozone Level Detection",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0484,
+   "observed_bad": 0.5
+  },
+  {
+   "wave": 2,
+   "name": "Page Blocks Classification",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0132,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Page Blocks Classification",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0008,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Page Blocks Classification",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0124,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Page Blocks Classification",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0129,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Page Blocks Classification",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0009,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Page Blocks Classification",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0128,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Page Blocks Classification",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0125,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Page Blocks Classification",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0009,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Page Blocks Classification",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0122,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Polish Companies Bankruptcy",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Polish Companies Bankruptcy",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Polish Companies Bankruptcy",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Polish Companies Bankruptcy",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Polish Companies Bankruptcy",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Polish Companies Bankruptcy",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Polish Companies Bankruptcy",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Polish Companies Bankruptcy",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Polish Companies Bankruptcy",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Primary Tumor",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.2116,
+   "observed_bad": 0.35
+  },
+  {
+   "wave": 2,
+   "name": "Primary Tumor",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0446,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Primary Tumor",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.1712,
+   "observed_bad": 0.35
+  },
+  {
+   "wave": 2,
+   "name": "Primary Tumor",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2118,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Primary Tumor",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0471,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Primary Tumor",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.1706,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Primary Tumor",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.2111,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Primary Tumor",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0461,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Primary Tumor",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.1709,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "RT-IoT2022",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "RT-IoT2022",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "RT-IoT2022",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "RT-IoT2022",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "RT-IoT2022",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "RT-IoT2022",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "RT-IoT2022",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "RT-IoT2022",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "RT-IoT2022",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Real Estate Valuation",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.2062,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Real Estate Valuation",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0456,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Real Estate Valuation",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.1994,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Real Estate Valuation",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2062,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 2,
+   "name": "Real Estate Valuation",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0465,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Real Estate Valuation",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.2046,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Real Estate Valuation",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.2015,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Real Estate Valuation",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0455,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Real Estate Valuation",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.2019,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Sepsis Survival Minimal Clinical Records",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0562,
+   "observed_bad": 0.0526
+  },
+  {
+   "wave": 2,
+   "name": "Sepsis Survival Minimal Clinical Records",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Sepsis Survival Minimal Clinical Records",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.3448,
+   "observed_bad": 0.2632
+  },
+  {
+   "wave": 2,
+   "name": "Sepsis Survival Minimal Clinical Records",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0571,
+   "observed_bad": 0.0526
+  },
+  {
+   "wave": 2,
+   "name": "Sepsis Survival Minimal Clinical Records",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Sepsis Survival Minimal Clinical Records",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.3475,
+   "observed_bad": 0.3684
+  },
+  {
+   "wave": 2,
+   "name": "Sepsis Survival Minimal Clinical Records",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0561,
+   "observed_bad": 0.0526
+  },
+  {
+   "wave": 2,
+   "name": "Sepsis Survival Minimal Clinical Records",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Sepsis Survival Minimal Clinical Records",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.3479,
+   "observed_bad": 0.2632
+  },
+  {
+   "wave": 2,
+   "name": "Skin Segmentation",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0147,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Skin Segmentation",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Skin Segmentation",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0022,
+   "observed_bad": 1.0
+  },
+  {
+   "wave": 2,
+   "name": "Skin Segmentation",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.015,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Skin Segmentation",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.001,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Skin Segmentation",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0023,
+   "observed_bad": 1.0
+  },
+  {
+   "wave": 2,
+   "name": "Skin Segmentation",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.014,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Skin Segmentation",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0011,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Skin Segmentation",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0025,
+   "observed_bad": 1.0
+  },
+  {
+   "wave": 2,
+   "name": "Soybean (Large)",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.2495,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Soybean (Large)",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0412,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Soybean (Large)",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.2446,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Soybean (Large)",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.2518,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Soybean (Large)",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0421,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Soybean (Large)",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.2489,
+   "observed_bad": 0.3
+  },
+  {
+   "wave": 2,
+   "name": "Soybean (Large)",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.2483,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Soybean (Large)",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0407,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Soybean (Large)",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.2466,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Statlog (Shuttle)",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Statlog (Shuttle)",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Statlog (Shuttle)",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Statlog (Shuttle)",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Statlog (Shuttle)",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Statlog (Shuttle)",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Statlog (Shuttle)",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Statlog (Shuttle)",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Statlog (Shuttle)",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.0,
+   "observed_bad": 0.0
+  },
+  {
+   "wave": 2,
+   "name": "Student Performance on an Entrance Examination",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.1878,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Student Performance on an Entrance Examination",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0346,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Student Performance on an Entrance Examination",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.1831,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Student Performance on an Entrance Examination",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.1877,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Student Performance on an Entrance Examination",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0345,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Student Performance on an Entrance Examination",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.1878,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Student Performance on an Entrance Examination",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.1873,
+   "observed_bad": 0.2
+  },
+  {
+   "wave": 2,
+   "name": "Student Performance on an Entrance Examination",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0354,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Student Performance on an Entrance Examination",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.187,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Website Phishing",
+   "model": "lgbm",
+   "method": "MCP",
+   "expected_bad": 0.1894,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Website Phishing",
+   "model": "lgbm",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0373,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Website Phishing",
+   "model": "lgbm",
+   "method": "SCP",
+   "expected_bad": 0.1806,
+   "observed_bad": 0.45
+  },
+  {
+   "wave": 2,
+   "name": "Website Phishing",
+   "model": "logreg",
+   "method": "MCP",
+   "expected_bad": 0.1903,
+   "observed_bad": 0.15
+  },
+  {
+   "wave": 2,
+   "name": "Website Phishing",
+   "model": "logreg",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0374,
+   "observed_bad": 0.1
+  },
+  {
+   "wave": 2,
+   "name": "Website Phishing",
+   "model": "logreg",
+   "method": "SCP",
+   "expected_bad": 0.1815,
+   "observed_bad": 0.45
+  },
+  {
+   "wave": 2,
+   "name": "Website Phishing",
+   "model": "rf",
+   "method": "MCP",
+   "expected_bad": 0.1907,
+   "observed_bad": 0.25
+  },
+  {
+   "wave": 2,
+   "name": "Website Phishing",
+   "model": "rf",
+   "method": "PAC_MCP",
+   "expected_bad": 0.0372,
+   "observed_bad": 0.05
+  },
+  {
+   "wave": 2,
+   "name": "Website Phishing",
+   "model": "rf",
+   "method": "SCP",
+   "expected_bad": 0.1797,
+   "observed_bad": 0.4
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "hardware": {
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "logical_cpus": 4,
+  "ram_gb": 15.7,
+  "python": "3.13.16",
+  "os": "Linux-6.18.44-fc-v230-x86_64-with-glibc2.39"
+ },
+ "rows": [
+  {
+   "data": "KDD Cup'99",
+   "rows": 30000,
+   "features": 41,
+   "check_s": 0.4236712130000342,
+   "check_peak_mb": 20.136507034301758,
+   "fit_s": 0.7430999409999686,
+   "standard_calibrate_s": 0.3131154960000231,
+   "standard_calibrate_peak_mb": 8.470573425292969,
+   "standard_predict_s": 0.3108158069999263,
+   "standard_predict_peak_mb": 8.529248237609863,
+   "exact_calibrate_s": 0.30411135099996045,
+   "exact_calibrate_peak_mb": 8.469486236572266,
+   "exact_predict_s": 0.29705981099994005,
+   "exact_predict_peak_mb": 8.494647026062012,
+   "distance_calibrate_s": 0.6695282640000642,
+   "distance_calibrate_peak_mb": 8.46867561340332,
+   "distance_predict_s": 0.4382992559999366,
+   "distance_predict_peak_mb": 8.493674278259277
+  },
+  {
+   "data": "mc1",
+   "rows": 9466,
+   "features": 38,
+   "check_s": 0.0877181070000006,
+   "check_peak_mb": 7.529985427856445,
+   "fit_s": 0.5466488970000682,
+   "standard_calibrate_s": 0.20087683500003095,
+   "standard_calibrate_peak_mb": 2.178537368774414,
+   "standard_predict_s": 0.2103655980000667,
+   "standard_predict_peak_mb": 2.1006011962890625,
+   "exact_calibrate_s": 0.18198744900007569,
+   "exact_calibrate_peak_mb": 2.1780662536621094,
+   "exact_predict_s": 0.18455348800000593,
+   "exact_predict_peak_mb": 2.1007022857666016,
+   "distance_calibrate_s": 0.26681771199992,
+   "distance_calibrate_peak_mb": 2.237942695617676,
+   "distance_predict_s": 0.19350317099997483,
+   "distance_predict_peak_mb": 2.1011180877685547
+  },
+  {
+   "data": "Skin Segmentation",
+   "rows": 30000,
+   "features": 3,
+   "check_s": 0.15139412099995297,
+   "check_peak_mb": 3.695542335510254,
+   "fit_s": 0.5808900829999857,
+   "standard_calibrate_s": 0.1578764969999611,
+   "standard_calibrate_peak_mb": 1.1701269149780273,
+   "standard_predict_s": 0.1746687589999283,
+   "standard_predict_peak_mb": 1.1354131698608398,
+   "exact_calibrate_s": 0.17712267799993242,
+   "exact_calibrate_peak_mb": 1.1273012161254883,
+   "exact_predict_s": 0.18192927500001588,
+   "exact_predict_peak_mb": 1.1320667266845703,
+   "distance_calibrate_s": 0.21986629900004573,
+   "distance_calibrate_peak_mb": 1.170598030090332,
+   "distance_predict_s": 0.18780373000004147,
+   "distance_predict_peak_mb": 1.139404296875
+  }
+ ]
+}

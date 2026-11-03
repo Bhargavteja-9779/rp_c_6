@@ -1,0 +1,40 @@
+{
+ "data": "/home/user/rp_c_6/data_raw/uci722.csv",
+ "task": "classification",
+ "check": {
+  "n_rows": 29332,
+  "repeated_row_share": 0.8177076230737761,
+  "exposure": 0.7871626390070984,
+  "pure_exposure": 0.6085249479305236,
+  "predicted_gap": -0.15544411954571413,
+  "exposure_only_gap": -0.3698423224827296,
+  "alpha": 0.1,
+  "verdict": "FIX RECOMMENDED: calibrate seen and new cases separately (SeenNewConformal).",
+  "reasons": [
+   "61% of test rows will have a training copy with the same label; a model that memorizes them can miss new cases 26% of the time instead of 10%.",
+   "79% of test rows will be seen in training; report coverage on new cases separately."
+  ]
+ },
+ "summary": [
+  {
+   "mode": "standard",
+   "coverage_all": 0.899795466166695,
+   "coverage_seen": 0.9370936103804481,
+   "coverage_new": 0.7615492110161478,
+   "size_new": 0.7688577618378758,
+   "size_seen": 0.9482641799017685,
+   "seen_share": 0.7870973240156809,
+   "empty_new": 0.2311422381621242
+  },
+  {
+   "mode": "exact",
+   "coverage_all": 0.905982614624169,
+   "coverage_seen": 0.9080450501024566,
+   "coverage_new": 0.8984158569284804,
+   "size_new": 0.9251519659362044,
+   "size_seen": 0.9078853966524981,
+   "seen_share": 0.7870973240156809,
+   "empty_new": 0.07484803406379556
+  }
+ ]
+}

@@ -60,6 +60,8 @@ def main(argv=None):
     ap.add_argument("--splits", type=int, default=5, help="random splits for the report (0 = check only)")
     ap.add_argument("--distance", action="store_true", help="also evaluate the distance-based fix (near-copies)")
     ap.add_argument("--html", help="write a self-contained HTML report to this path")
+    ap.add_argument("--json", help="write the check and the coverage summary as JSON to this path")
+    ap.add_argument("--seed", type=int, default=0, help="first random seed of the splits and the model")
     a = ap.parse_args(argv)
     df = pd.read_parquet(a.data) if a.data.endswith(".parquet") else pd.read_csv(a.data)
     df = df[df[a.target].notna()].reset_index(drop=True)
@@ -71,10 +73,16 @@ def main(argv=None):
     if a.splits > 0:
         y = y_raw.astype(str).to_numpy() if task == "classification" else y_raw.astype(float).to_numpy()
         modes = ("standard", "exact") + (("distance",) if a.distance else ())
-        res = evaluate(default_model(task, df, a.model), df, y, task, a.alpha, a.splits, modes=modes)
+        res = evaluate(default_model(task, df, a.model, a.seed), df, y, task, a.alpha, a.splits, modes=modes,
+                       random_state=a.seed)
         summ = summarize(res)
         with pd.option_context("display.float_format", "{:.3f}".format):
             print(summ[["coverage_all", "coverage_seen", "coverage_new", "size_new", "seen_share"]].to_string())
+    if a.json:
+        import json
+        out = dict(data=a.data, task=task, check={k: v for k, v in chk.__dict__.items()},
+                   summary=None if summ is None else summ.reset_index().to_dict("records"))
+        json.dump(out, open(a.json, "w"), indent=1, default=float)
     if a.html:
         open(a.html, "w", encoding="utf8").write(html_report(a.data, chk, summ, task))
         print(f"report written to {a.html}")

@@ -1,0 +1,39 @@
+{
+ "data": "/home/user/rp_c_6/data_raw/uci43.csv",
+ "task": "classification",
+ "check": {
+  "n_rows": 306,
+  "repeated_row_share": 0.14705882352941177,
+  "exposure": 0.09107157962407131,
+  "pure_exposure": 0.067413591838797,
+  "predicted_gap": -0.007228669777819041,
+  "exposure_only_gap": -0.010019664649324588,
+  "alpha": 0.1,
+  "verdict": "NO ACTION NEEDED: standard split conformal prediction is adequate for new cases.",
+  "reasons": [
+   "Few repeated rows; seen test rows cannot distort the coverage estimate much."
+  ]
+ },
+ "summary": [
+  {
+   "mode": "standard",
+   "coverage_all": 0.8967213114754099,
+   "coverage_seen": 0.8464285714285713,
+   "coverage_new": 0.9013457690362964,
+   "size_new": 1.515217555284853,
+   "size_seen": 1.200952380952381,
+   "seen_share": 0.09836065573770492,
+   "empty_new": 0.0
+  },
+  {
+   "mode": "exact",
+   "coverage_all": 0.9114754098360656,
+   "coverage_seen": 0.9666666666666666,
+   "coverage_new": 0.9034371228257634,
+   "size_new": 1.526657822883392,
+   "size_seen": 1.9,
+   "seen_share": 0.09836065573770492,
+   "empty_new": 0.0
+  }
+ ]
+}
