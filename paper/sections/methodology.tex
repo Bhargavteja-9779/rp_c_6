@@ -12,7 +12,8 @@ The routine has three steps (Fig.~\ref{fig:schematic}, Algorithm~\ref{alg:routin
 \begin{algorithm}[t]
 \caption{Check, fix and report conformal coverage for new cases}\label{alg:routine}
 \begin{algorithmic}[1]
-\Require data $D$, target miscoverage $\alpha$, training share $f$, tolerances $\tau_g=0.02$, $\tau_\pi=0.10$
+\Require data $D$, target miscoverage $\alpha$, training share $f$
+\Statex \hspace{\algorithmicindent}tolerances $\tau_g=0.02$ and $\tau_\pi=0.10$
 \State \textbf{Check} (no model): hash every feature vector; for each row $j$ count its copies $m_j-1$ and the copies with a different label $d_j$
 \State compute $\bar\pi$ (Eq.~\ref{eq:exposure}), $\bar\pi_P$ (Eq.~\ref{eq:pure}) and $g^*=-\alpha\bar\pi_P/(1-\bar\pi_P)$ (Eq.~\ref{eq:gstar})
 \State \textbf{if} $g^*<-\tau_g$ \textbf{or} $\bar\pi\ge\tau_\pi$ \textbf{then} flag the data set

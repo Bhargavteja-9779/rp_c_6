@@ -15,9 +15,9 @@ The check is a warning, not a certainty, and it can miss. It flagged kc3 (predic
 \caption{Applications at a 90\% target (random forest, RF, and LightGBM, LGBM; means over 10 random splits). Seen: share of test rows with an exact training copy. $g^*$: predicted gap from the check (no model). Overall: coverage reported by the usual check. New, std / New, fix: coverage of new cases without and with separate calibration. Size: mean set size for new cases, standard and fixed}\label{tab:cases}
 \centering\scriptsize
 \setlength{\tabcolsep}{2.5pt}
-\begin{tabular}{@{}llcrrrrrrr@{}}
+\begin{tabular}{@{}lcrrrrrr@{}}
 \toprule
-Application & Data & Model & Seen (\%) & $g^*$ (pp) & Overall & New, std & New, fix & Size std & Size fix\\
+Data & Model & Seen (\%) & $g^*$ (pp) & Overall & New, std & New, fix & Size std\,/\,fix\\
 \midrule
 \tabinput{tables/tab_cases.tex}
 \botrule
@@ -72,6 +72,7 @@ Label purity mattered in both directions. In black\_friday (\NPrBfPi{} of test r
 \begin{table}[t]
 \caption{mc1 test modules chosen by a fixed rule (random forest, first random split, 90\% target). LOC: lines of code; CC: cyclomatic complexity; $\hat p$: predicted defect probability; sets: N, no defect; D, defect; $\emptyset$, empty. \cmark/\xmark: set contains / misses the true label}\label{tab:examples}
 \centering\scriptsize
+\setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}lrlrrlrll@{}}
 \toprule
 Rule & Row & Type & LOC & CC & True & $\hat p$ & Standard & Fixed\\

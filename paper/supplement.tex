@@ -8,6 +8,8 @@
 \usepackage{pifont}
 \usepackage{xcolor}
 \usepackage{url}
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{2.6em}
 \usepackage{xr-hyper}
 \usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
 \externaldocument[M-]{main}
@@ -149,7 +151,7 @@ Data set & Plant & Share (\%) & Planted & Flagged & True pos. & False pos. & Rec
 
 \section{Validation of the tool on fresh files}\label{sec:toolval}
 {\small
-\begin{longtable}{@{}lrrlll@{}}
+\setlength{\tabcolsep}{4pt}\begin{longtable}{@{}p{5.0cm}rrlll@{}}
 \caption{Post hoc. The installed \emph{covercheck} command (defaults: random forest, 10 splits) on every wave-2 data set with at most 30,000 rows, downloaded afresh from UCI. New-case coverage (\%) as tool / pipeline (pipeline: 20 splits, different preprocessing and seeds)}\label{tab:toolval}\\
 \toprule
 Data set & Rows & $\bar\pi$ (\%) & Verdict & Std, tool/pipeline & Fix, tool/pipeline\\

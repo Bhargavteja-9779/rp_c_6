@@ -139,15 +139,14 @@ def table_cases():
     cs = pd.read_csv(os.path.join(R, "tables", "case_studies.csv"))
     cs = cs[cs.model.isin(["rf", "lgbm"])].sort_values(["application", "pi", "model"], ascending=[True, False, False])
     lines = []
-    prev = None
-    for _, r in cs.iterrows():
-        app = r.application if r.application != prev else ""
-        if prev is not None and app:
+    for app, g in cs.groupby("application", sort=False):
+        if lines:
             lines.append(r"\addlinespace")
-        prev = r.application
-        lines.append(f"{app} & {tex(r['name'])} & {'RF' if r.model == 'rf' else 'LGBM'} & {pct(r.pi, 0)} & "
-                     f"{tex(signed_pp(r.predicted_gap))} & {pct(r.reported_cov)} & {pct(r.new_cov_standard)} & "
-                     f"{pct(r.new_cov_fixed)} & {r.size_new_standard:.2f} & {r.size_new_fixed:.2f} \\\\")
+        lines.append(f"\\multicolumn{{8}}{{@{{}}l}}{{\\emph{{{tex(app)}}}}} \\\\")
+        for _, r in g.iterrows():
+            lines.append(f"{tex(r['name'])} & {'RF' if r.model == 'rf' else 'LGBM'} & {pct(r.pi, 0)} & "
+                         f"{tex(signed_pp(r.predicted_gap))} & {pct(r.reported_cov)} & {pct(r.new_cov_standard)} & "
+                         f"{pct(r.new_cov_fixed)} & {r.size_new_standard:.2f}\\,/\\,{r.size_new_fixed:.2f} \\\\")
     write("cases", "\n".join(lines) + "\n")
 
 
@@ -214,7 +213,7 @@ def table_wave(wave):
     for _, r in sc.iterrows():
         q = g.loc[str(r.data_id)] if str(r.data_id) in g.index else {}
         cell = lambda m: pct(q[m]) if m in q and q[m] == q[m] else "--"
-        name = tex(r["name"]) if len(r["name"]) <= 34 else tex(r["name"][:32]) + r"\ldots{}"
+        name = tex(r["name"]).replace(r"\_", r"\_\allowbreak{}")
         lines.append(f"{name} & {r.task[:5]}. & {pct(r.pred_exposure, 0)} & {tex(signed_pp(r.g_star))} & "
                      f"{r'\cmark' if r.flag else ''} & {cell('SCP')} & {cell('MCP')} & {cell('PAC_MCP')} & {cell('DCP')} \\\\")
     write(f"wave{wave}", "\n".join(lines) + "\n")
@@ -224,7 +223,7 @@ def table_toolval():
     T = json.load(open(os.path.join(RES, "e14_tool_validation", "tool_validation.json")))["rows"]
     lines = []
     for r in T:
-        name = tex(r["name"]) if len(r["name"]) <= 34 else tex(r["name"][:32]) + r"\ldots{}"
+        name = tex(r["name"]).replace(r"\_", r"\_\allowbreak{}")
         lines.append(f"{name} & {r['rows']:,} & {pct(r['exposure_tool'], 1)} & {tex(r['verdict_tool'].title())} & "
                      f"{pct(r['new_std_tool'])} / {pct(r['new_std_pipeline'])} & {pct(r['new_fix_tool'])} / {pct(r['new_fix_pipeline'])} \\\\")
     write("toolval", "\n".join(lines) + "\n")
