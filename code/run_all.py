@@ -74,7 +74,8 @@ def _run_pool(fn, jobs, cfg, out_dir, workers, log):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", choices=["quick", "full"], default="quick")
-    ap.add_argument("--stage", choices=["all", "main", "inject", "capacity", "external", "normalized", "neardup", "prospective", "analyze"], default="all")
+    ap.add_argument("--stage", choices=["all", "main", "inject", "capacity", "external", "normalized", "neardup", "prospective", "analyze",
+                                            "amendment2", "posthoc", "paper"], default="all")
     ap.add_argument("--config", default=os.path.join(HERE, "configs", "default.json"))
     ap.add_argument("--workers", type=int, default=None)
     args = ap.parse_args()
@@ -166,6 +167,33 @@ def main():
     if args.stage in ("all", "analyze"):
         from dupcp import analysis
         analysis.run(res, cfg, quick=quick)
+
+    import subprocess
+    here = os.path.dirname(os.path.abspath(__file__))
+    py = lambda script, *a: subprocess.run([sys.executable, os.path.join(here, script), *a], check=True)
+    if args.stage in ("all", "amendment2") and not quick:
+        # validation wave 2 (UCI), tie-breaking re-run of wave 1, remedy comparison; then their analyses
+        for st in ("remedies", "tiebreak_w1", "wave2"):
+            py("experiments/run_amendment2.py", st)
+        from dupcp import reinforce_analysis, amendment2_analysis
+        reinforce_analysis.run(res)
+        amendment2_analysis.run(res)
+        amendment2_analysis.fig_screen(res)
+    if args.stage in ("all", "posthoc") and not quick:
+        # post hoc analyses for the final paper (deviation D15) and the case-study and tool-demo inputs
+        for script in ("case_studies.py", "tool_demo.py", "e10_planted_leak.py", "e11_sampling_noise.py",
+                       "e12_qualitative.py", "e13_cost.py", "e14_tool_validation.py"):
+            py(os.path.join("experiments", script))
+    if args.stage in ("all", "paper") and not quick:
+        # numbers -> macros and tables, one script per figure, then the LaTeX/Word/cover-letter build
+        py("experiments/aggregate.py")
+        for f in sorted(os.listdir(os.path.join(here, "visualization"))):
+            if f.startswith("fig_") and f.endswith(".py"):
+                subprocess.run([sys.executable, f], check=True, cwd=os.path.join(here, "visualization"))
+        paper = os.path.join(os.path.dirname(here), "paper")
+        subprocess.run(["bash", "build.sh"], check=True, cwd=paper)
+        subprocess.run([sys.executable, "make_docx.py"], check=True, cwd=paper)
+        subprocess.run([sys.executable, "make_cover_letter.py"], check=True, cwd=paper)
     log.close()
 
 
