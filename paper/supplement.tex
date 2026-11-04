@@ -40,7 +40,7 @@ Exact duplicates in the calibration set create tied scores; ties keep the lower 
 
 \paragraph{Equation~(\ref{M-eq:exposure}) (standard combinatorics).} Given that row $j$ is a test row, the training set is a uniformly random $n_T$-subset of the other $N-1$ rows. Row $j$ is new exactly when none of its $m_j-1$ copies is chosen, which has probability $\binom{N-m_j}{n_T}/\binom{N-1}{n_T}$. Averaging over rows gives Eq.~(\ref{M-eq:exposure}).
 
-\paragraph{Proposition~\ref{M-prop:pure} (closed-form label-pure exposure).} Let row $j$ have $m_j-1$ copies, $d_j$ of which carry a different label. Row $j$ is label-pure seen if no differently labelled copy is chosen for training but at least one copy is. The event ``no differently labelled copy chosen'' has probability $\binom{N-1-d_j}{n_T}/\binom{N-1}{n_T}$ and contains the event ``no copy chosen'', of probability $\binom{N-m_j}{n_T}/\binom{N-1}{n_T}$. The difference is the probability of the event of interest; averaging over rows gives Eq.~(\ref{M-eq:pure}). \emph{Check:} the closed form agreed with an average over 30 random splits to within 0.005 on five data sets (kc1, pc1, analcatdata\_supreme, black\_friday, wine\_quality), and the tool's unit test confirms it by simulation. \qed
+\paragraph{Proposition~\ref{M-prop:pure} (closed-form label-pure exposure).} Let row $j$ have $m_j-1$ copies, $d_j$ of which carry a different label. Row $j$ is label-pure seen if no differently labelled copy is chosen for training but at least one copy is. The event ``no differently labelled copy chosen'' has probability $\binom{N-1-d_j}{n_T}/\binom{N-1}{n_T}$ and contains the event ``no copy chosen'', of probability $\binom{N-m_j}{n_T}/\binom{N-1}{n_T}$. The difference is the probability of the event of interest; averaging over rows gives Eq.~(\ref{M-eq:pure}). \emph{Check:} the closed form agreed with an average over 30 random splits to within \NPureCfMaxdiff{} on five data sets (kc1, pc1, analcatdata\_supreme, black\_friday, wine\_quality), and the tool's unit test confirms it by simulation. \qed
 
 \paragraph{Proposition~\ref{M-prop:gstar} (memorization limit).} Call a row memorizable if its training copies all carry exactly its label, and let $\pi_P$ be the probability that a calibration or test row is memorizable. Under Assumptions~\ref{M-as:mem} and~\ref{M-as:equal}, calibration scores are draws from the mixture $\pi_P\delta_0+(1-\pi_P)F$ with $F$ continuous. The conformal threshold is an empirical quantile at level $\lceil(n_C+1)(1-\alpha)\rceil/n_C\to1-\alpha$; by the law of large numbers for empirical quantiles it converges to the $(1-\alpha)$-quantile of the mixture. If $\pi_P<1-\alpha$, this is the point $t$ with $\pi_P+(1-\pi_P)F(t)=1-\alpha$, so a non-memorizable row (in particular a new row) is covered with probability $F(t)=1-\alpha/(1-\pi_P)$, a gap of $-\alpha\pi_P/(1-\pi_P)$. If $\pi_P\ge1-\alpha$ the threshold is $0$ and non-memorizable rows are covered with probability $F(0)=0$. In a simulation with $\pi_P=0.4$ and 1,000 calibration rows (800 repetitions), the coverage of non-memorizable rows was within 0.01 of $1-0.1/0.6$ (unit test \texttt{test\_purity\_limit\_simulation}). \qed
 
@@ -160,6 +160,19 @@ Data set & Rows & $\bar\pi$ (\%) & Verdict & Std, tool/pipeline & Fix, tool/pipe
 \bottomrule
 \end{longtable}
 }
+
+\section{Sensitivity of the screen to the shortfall threshold}\label{sec:threshold}
+\begin{table}[h]
+\caption{Added after simulated review. The flag rule is unchanged ($g^*<-2$\,pp or $\bar\pi\ge0.10$); the threshold that defines a real shortfall (worse of random forest and LightGBM) is varied over the 47 fresh data sets. CI: lower end of the exact 95\% interval for sensitivity}\label{tab:threshold}
+\centering\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Threshold & Shortfalls & Caught & Sensitivity (\%) & CI low (\%) & Correct no-flags\\
+\midrule
+\tabinput{tables/tab_threshold.tex}
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Software environment}\label{sec:env}
 Hardware: \NHwNcpu{} logical CPUs (\NHwCpu{}), \NHwRam{}\,GB memory. Software: Python \NHwPython{}; package versions are pinned in \path{code/requirements.txt} and recorded in \path{results/logs/environment.json}. One command, \texttt{python code/run\_all.py}, reruns all experiments, the aggregation and the figures; \texttt{paper/build.sh} builds both documents.

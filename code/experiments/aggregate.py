@@ -117,10 +117,39 @@ def extra_numbers(n):
             n[f"abl_{k}_spec"] = f"{int((~f & ~pos).sum())}/{int((~pos).sum())}"
             n[f"abl_{k}_fa"] = int((f & ~pos).sum())
         n["abl_npos"] = int(pos.sum())
+        # sensitivity of the screen to the threshold that defines a real shortfall (flag rule kept fixed)
+        worst = sc[["gap_rf", "gap_lgbm"]].min(axis=1)
+        rows = []
+        for t in (0.01, 0.02, 0.03, 0.05):
+            p_ = worst < -t
+            k, m = int((sc.flag & p_).sum()), int(p_.sum())
+            lo = __import__("scipy").stats.beta.ppf(0.025, k, m - k + 1) if 0 < k else 0.0
+            n[f"thr_{int(100 * t)}_hit"] = f"{k}/{m}"
+            rows.append(f"$-{int(100 * t)}$\\,pp & {m} & {k} & {100 * k / m:.0f} & {100 * lo:.0f} & "
+                        f"{int((~sc.flag & ~p_).sum())}/{int((~p_).sum())} \\\\")
+        write("threshold", "\n".join(rows) + "\n")
         n["abl_nds"] = len(sc)
+    # check of the closed-form label-pure exposure (Eq. 4) against 30 random splits on five data sets
+    sys.path.insert(0, os.path.join(ROOT, "tool", "src"))
+    sys.path.insert(0, os.path.join(ROOT, "code", "src"))
+    from covercheck.check import exposures
+    from dupcp.audit import purity_exposure
+    from dupcp.data import load_dataset
+    from dupcp.splits import random_split
+    diffs = []
+    for did, task, rule in ((1067, "classification", "v1"), (1068, "classification", "v1"), (44055, "regression", "v2"),
+                            (41540, "regression", "v2"), (287, "regression", "v2")):
+        d = load_dataset(did, task, os.path.join(ROOT, "data_cache"), rule=rule)
+        _, pip = exposures(d["keys"], d["y"])
+        sims = [purity_exposure(d["keys"], d["y"], *[random_split(len(d["y"]), s_)[i] for i in (0, 2)], task)[1]
+                for s_ in range(30)]
+        diffs.append(abs(pip - np.mean(sims)))
+    n["pure_cf_maxdiff"] = f"{max(diffs):.3f}"
     # counts and extremes used in the abstract and text
     cs = pd.read_csv(os.path.join(R, "tables", "case_studies.csv"))
     n["cs_n_flag_total"] = int(cs[cs.model == "rf"].shape[0])
+    k = cs[(cs.name == "KDDCup99") & (cs.model == "lgbm")].iloc[0]
+    n["cs_kdd_lgbm_size"] = f"{k.size_new_standard:.1f}"
     S2 = json.load(open(os.path.join(R, "statistics_amendment2.json")))
     S1 = json.load(open(os.path.join(R, "statistics_reinforcement.json")))
     worst = [x["worst"] for x in S2["W2"]] + [x["worst"] for x in S1["P3"] if x["method"] == "MCP"]

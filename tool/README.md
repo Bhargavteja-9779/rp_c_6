@@ -67,6 +67,10 @@ print(summarize(evaluate(RandomForestClassifier(), X, y, n_splits=10)))   # 3. r
 
 For regression use `task="regression"` and `predict_interval`.
 
+For a rare class that must be covered among new cases (for example defective modules), use
+`SeenNewConformal(model, classwise=True)`. This sets one threshold per seen/new group *and* per class.
+Expect larger sets: the model then admits when it cannot tell.
+
 ## What the verdict means
 
 | Verdict | Rule | What to do |

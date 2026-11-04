@@ -37,13 +37,16 @@ class SeenNewConformal:
     """
 
     def __init__(self, estimator, task: str = "classification", alpha: float = 0.1, mode: str = "exact",
-                 delta: float | None = None, n_neighbors: int = 10):
+                 delta: float | None = None, n_neighbors: int = 10, classwise: bool = False):
         if task not in ("classification", "regression"):
             raise ValueError("task must be 'classification' or 'regression'")
         if mode not in ("exact", "distance", "standard"):
             raise ValueError("mode must be 'exact', 'distance' or 'standard'")
         self.estimator, self.task, self.alpha, self.mode = estimator, task, alpha, mode
         self.delta, self.n_neighbors = delta, n_neighbors
+        # classwise=True (classification only): one threshold per group *and* class (label-conditional
+        # Mondrian CP), so that a rare class is covered among new cases too, at the cost of larger sets
+        self.classwise = classwise and task == "classification"
 
     # ---------------------------------------------------------------- fitting
     def fit(self, X, y):
@@ -113,8 +116,13 @@ class SeenNewConformal:
         else:
             g = self.groups(X_cal)
             labels = (0, 1) if self.mode == "exact" else (0,)
-        self.thresholds_ = {k: _rank_threshold(s[g == k], self.alpha, self.delta) for k in labels}
-        self.n_cal_ = {k: int((g == k).sum()) for k in labels}
+        if self.classwise:
+            self.thresholds_ = {(k, c): _rank_threshold(s[(g == k) & (idx == c)], self.alpha, self.delta)
+                                for k in labels for c in range(len(self.classes_))}
+            self.n_cal_ = {(k, c): int(((g == k) & (idx == c)).sum()) for k in labels for c in range(len(self.classes_))}
+        else:
+            self.thresholds_ = {k: _rank_threshold(s[g == k], self.alpha, self.delta) for k in labels}
+            self.n_cal_ = {k: int((g == k).sum()) for k in labels}
         return self
 
     # ---------------------------------------------------------------- prediction
@@ -124,6 +132,10 @@ class SeenNewConformal:
 
     def predict_set(self, X) -> np.ndarray:
         """Boolean matrix (n_samples, n_classes): label j is in the set of case i."""
+        if self.classwise:
+            g = self.groups(X)
+            Q = np.array([[self.thresholds_[(k, c)] for c in range(len(self.classes_))] for k in g])
+            return self._scores_all(X) <= Q
         q, _ = self._q(X)
         return self._scores_all(X) <= q[:, None]
 

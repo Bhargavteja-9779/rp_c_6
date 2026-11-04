@@ -1,6 +1,6 @@
 # Duplicate Data Rows Make Prediction Uncertainty Look Better Than It Is: A Simple Check and Fix for New Cases
 
-Research project and submission package. **Current version: v2 (revised, application-framed).**
+Research project and submission package. **Current version: final LaTeX manuscript in `paper/` (Springer Nature template); submission package in `submission/`.**
 **Target journal: *Journal of King Saud University – Computer and Information Sciences*** (median
 67 days from submission to acceptance; 57% of its papers are accepted within 72 days).
 
@@ -37,12 +37,20 @@ data contain repeated rows, many test rows have a copy in the training data, so 
 
 | Folder | Content |
 |---|---|
+| `submission/` | **`DuplicateRowsCoverage_Submission.zip`**: manuscript PDF, supplement PDF, cover letter (DOCX/PDF), Word version, tested LaTeX source zip, title page, README with author actions |
+| `paper/` | LaTeX sources (`main.tex`, `supplement.tex`, `sections/`), generated `tables/macros.tex` (every number) and `tab_*.tex`, `figures/`, `build.sh` (build + layout checks), `make_docx.py`, `make_cover_letter.py` |
+| `tool/` | **covercheck**: installable check-fix-report tool (CLI + Python API + HTML report, 11 tests) |
+| `code/visualization/` | One script per figure (PDF + PNG, 8 pt, journal widths, 95% intervals) |
+| `review/` | Simulated review rounds 12-14 (final), `claim_evidence_matrix.md`, `final_audit.md` |
+| `research_design/` | Hypothesis register (H1-H9) appended to `experimental_protocol.md`, `deviations.md` (D1-D17), `data_leakage_audit.md` with planted-leak test |
 | `manuscript/` | **v2:** `Revised_Manuscript.docx/.pdf`, `Revised_Cover_Letter.docx`, `Revised_Title_Page.docx`, sources in `sections_v2/`, build with `python build_manuscript.py v2`. **v1 (preserved, unchanged):** `Final_Manuscript*.docx/.pdf`, `sections/`, `sections_pr/` |
 | `supplementary/` | v2: `Supplementary_Material_v2.docx/.pdf`; v1: `Online_Resource_1.*` |
 | `reinforcement/` | Reinforcement cycle: integrity audit, risk register (R01–R18, with resolutions), journal-fit assessment, revised protocol and deviations, second adversarial review, consistency audit, **`submission_readiness_report.md`** |
 | `code/` | Pipeline (`run_all.py`, stages main/inject/capacity/external/normalized/neardup/prospective/analyze), tests (15), experiment scripts |
 | `results/` | Raw per-split results, tables, statistics, figures; `results/reinforcement/` holds the v2 analyses |
 | `research_design/`, `literature_review/`, `journal_selection/`, `review/` | v1 design, literature, journal analysis and review trail |
+
+Rebuild everything: `python code/run_all.py --mode full` (stages main ... analyze, amendment2, posthoc, paper).
 
 The v1 state is commit `bb7afa9` (local tag `v1-original-submission`).
 

@@ -114,3 +114,25 @@ def test_distance_bands_do_not_depend_on_calibration_data():
     e1 = cp._edges.copy()
     cp.calibrate(X[1200:], y[1200:])
     assert np.allclose(e0, e1) and np.allclose(e1, cp._edges)
+
+
+def test_classwise_covers_rare_class_among_new_cases():
+    rng = np.random.default_rng(11)
+    n0 = 1500
+    X0 = rng.normal(size=(n0, 4))
+    y0 = (X0[:, 0] + 0.6 * rng.normal(size=n0) > 1.9).astype(int)       # rare positive class (~4%)
+    idx = rng.integers(0, n0, 2000)
+    X = pd.DataFrame(np.vstack([X0, X0[idx]]), columns=list("abcd"))
+    y = np.concatenate([y0, y0[idx]])
+    cov = {}
+    for cw in (False, True):
+        hits = []
+        for s in range(4):
+            perm = np.random.default_rng(s).permutation(len(y))
+            tr, ca, te = perm[:2100], perm[2100:2800], perm[2800:]
+            cp = SeenNewConformal(RandomForestClassifier(100, random_state=s), classwise=cw).fit(X.iloc[tr], y[tr])
+            cp.calibrate(X.iloc[ca], y[ca])
+            m = (~cp.is_seen(X.iloc[te])) & (y[te] == 1)
+            hits.append(cp.covered(X.iloc[te][m], y[te][m]).mean() if m.any() else np.nan)
+        cov[cw] = np.nanmean(hits)
+    assert cov[True] >= 0.85 and cov[True] > cov[False]
