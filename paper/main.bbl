@@ -1,0 +1,284 @@
+\begin{thebibliography}{51}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{\url{https://doi.org/#1}}
+\providecommand{\eprint}[2][]{\url{#2}}
+ \bibcommenthead
+
+\bibitem[{Allamanis(2019)}]{allamanis2019}
+Allamanis M (2019) The adverse effects of code duplication in machine learning
+  models of code. In: Proceedings of the 2019 ACM SIGPLAN International
+  Symposium on New Ideas, New Paradigms, and Reflections on Programming and
+  Software (Onward! 2019), pp 143--153, \doi{10.1145/3359591.3359735}
+
+\bibitem[{Angelopoulos and Bates(2023)}]{angelopoulos2023}
+Angelopoulos AN, Bates S (2023) Conformal prediction: a gentle introduction.
+  Found Trends Mach Learn 16(4):494--591. \doi{10.1561/2200000101}
+
+\bibitem[{Barber et~al.(2023)Barber, Cand{\`e}s, Ramdas, and
+  Tibshirani}]{barber2023}
+Barber RF, Cand{\`e}s EJ, Ramdas A, et~al (2023) Conformal prediction beyond
+  exchangeability. Ann Stat 51(2):816--845. \doi{10.1214/23-AOS2276}
+
+\bibitem[{Barz and Denzler(2020)}]{barz2020}
+Barz B, Denzler J (2020) Do we train on test data? {P}urging {CIFAR} of
+  near-duplicates. J Imaging 6(6):41. \doi{10.3390/jimaging6060041}
+
+\bibitem[{Bastani et~al.(2022)Bastani, Gupta, Jung, Noarov, Ramalingam, and
+  Roth}]{bastani2022}
+Bastani O, Gupta V, Jung C, et~al (2022) Practical adversarial multivalid
+  conformal prediction. In: Advances in Neural Information Processing Systems
+  35, pp 29362--29373, \doi{10.52202/068431-2129}
+
+\bibitem[{Bischl et~al.(2021)Bischl, Casalicchio, Feurer, Gijsbers, Hutter,
+  Lang, Mantovani, van Rijn, and Vanschoren}]{bischl2021}
+Bischl B, Casalicchio G, Feurer M, et~al (2021) {OpenML} benchmarking suites.
+  In: Proceedings of the Neural Information Processing Systems Track on
+  Datasets and Benchmarks 1, arXiv:1708.03731
+
+\bibitem[{Bostr{\"o}m and Johansson(2020)}]{bostrom2020}
+Bostr{\"o}m H, Johansson U (2020) Mondrian conformal regressors. In:
+  Proceedings of the Ninth Symposium on Conformal and Probabilistic Prediction
+  and Applications, pp 114--133
+
+\bibitem[{Breiman(2001)}]{breiman2001}
+Breiman L (2001) Random forests. Mach Learn 45(1):5--32.
+  \doi{10.1023/A:1010933404324}
+
+\bibitem[{Deng(2026)}]{deng2026}
+Deng J (2026) When identical rows disagree: from benchmark identifiability to
+  replication-robust anomaly detection. ArXiv:2609.29580 (preprint, not peer
+  reviewed)
+
+\bibitem[{Ding et~al.(2023)Ding, Angelopoulos, Bates, Jordan, and
+  Tibshirani}]{ding2023}
+Ding T, Angelopoulos AN, Bates S, et~al (2023) Class-conditional conformal
+  prediction with many classes. In: Advances in Neural Information Processing
+  Systems 36, arXiv:2306.09335
+
+\bibitem[{Dunn et~al.(2023)Dunn, Wasserman, and Ramdas}]{dunn2023}
+Dunn R, Wasserman L, Ramdas A (2023) Distribution-free prediction sets for
+  two-layer hierarchical models. J Am Stat Assoc 118(544):2491--2502.
+  \doi{10.1080/01621459.2022.2060112}
+
+\bibitem[{Elangovan et~al.(2021)Elangovan, He, and Verspoor}]{elangovan2021}
+Elangovan A, He J, Verspoor K (2021) Memorization vs. generalization:
+  quantifying data leakage in {NLP} performance evaluation. In: Proceedings of
+  the 16th Conference of the European Chapter of the Association for
+  Computational Linguistics, pp 1325--1335,
+  \doi{10.18653/v1/2021.eacl-main.113}
+
+\bibitem[{Fischer et~al.(2023)Fischer, Feurer, and Bischl}]{fischer2023}
+Fischer SF, Feurer M, Bischl B (2023) {OpenML-CTR23} -- a curated tabular
+  regression benchmarking suite. In: AutoML Conference 2023 (Workshop Track),
+  openML study 353
+
+\bibitem[{Foygel~Barber et~al.(2021)Foygel~Barber, Cand{\`e}s, Ramdas, and
+  Tibshirani}]{foygelbarber2021}
+Foygel~Barber R, Cand{\`e}s EJ, Ramdas A, et~al (2021) The limits of
+  distribution-free conditional predictive inference. Inf Inference
+  10(2):455--482. \doi{10.1093/imaiai/iaaa017}
+
+\bibitem[{Gibbs et~al.(2025)Gibbs, Cherian, and Cand{\`e}s}]{gibbs2025}
+Gibbs I, Cherian JJ, Cand{\`e}s EJ (2025) Conformal prediction with conditional
+  guarantees. J R Stat Soc Ser B Stat Methodol 87(4):1100--1126.
+  \doi{10.1093/jrsssb/qkaf008}
+
+\bibitem[{Gijsbers et~al.(2024)Gijsbers, Bueno, Coors, LeDell, Poirier, Thomas,
+  Bischl, and Vanschoren}]{gijsbers2024}
+Gijsbers P, Bueno MLP, Coors S, et~al (2024) {AMLB}: an {AutoML} benchmark. J
+  Mach Learn Res 25(101):1--65
+
+\bibitem[{Gray et~al.(2011)Gray, Bowes, Davey, Sun, and
+  Christianson}]{gray2011}
+Gray D, Bowes D, Davey N, et~al (2011) The misuse of the {NASA} metrics data
+  program data sets for automated software defect prediction. In: 15th Annual
+  Conference on Evaluation \& Assessment in Software Engineering (EASE 2011),
+  pp 96--103, \doi{10.1049/ic.2011.0012}
+
+\bibitem[{Grinsztajn et~al.(2022)Grinsztajn, Oyallon, and
+  Varoquaux}]{grinsztajn2022}
+Grinsztajn L, Oyallon E, Varoquaux G (2022) Why do tree-based models still
+  outperform deep learning on typical tabular data? In: Advances in Neural
+  Information Processing Systems 35 (Datasets and Benchmarks Track),
+  \doi{10.52202/068431-0037}
+
+\bibitem[{Guan(2023)}]{guan2023}
+Guan L (2023) Localized conformal prediction: a generalized inference framework
+  for conformal prediction. Biometrika 110(1):33--50.
+  \doi{10.1093/biomet/asac040}
+
+\bibitem[{Hernandez-Hernandez et~al.(2026)Hernandez-Hernandez, Guo, and
+  Ballester}]{hernandez2026}
+Hernandez-Hernandez S, Guo Q, Ballester PJ (2026) Conformal prediction of
+  molecule-induced cancer cell growth inhibition challenged by strong
+  distribution shifts. Pattern Recognit 172:112501.
+  \doi{10.1016/j.patcog.2025.112501}
+
+\bibitem[{Holm(1979)}]{holm1979}
+Holm S (1979) A simple sequentially rejective multiple test procedure. Scand J
+  Stat 6(2):65--70
+
+\bibitem[{Kapoor and Narayanan(2023)}]{kapoor2023}
+Kapoor S, Narayanan A (2023) Leakage and the reproducibility crisis in
+  machine-learning-based science. Patterns 4(9):100804.
+  \doi{10.1016/j.patter.2023.100804}
+
+\bibitem[{Kaufman et~al.(2012)Kaufman, Rosset, Perlich, and
+  Stitelman}]{kaufman2012}
+Kaufman S, Rosset S, Perlich C, et~al (2012) Leakage in data mining:
+  formulation, detection, and avoidance. ACM Trans Knowl Discov Data
+  6(4):1--21. \doi{10.1145/2382577.2382579}
+
+\bibitem[{Ke et~al.(2017)Ke, Meng, Finley, Wang, Chen, Ma, Ye, and
+  Liu}]{ke2017}
+Ke G, Meng Q, Finley T, et~al (2017) {LightGBM}: a highly efficient gradient
+  boosting decision tree. In: Advances in Neural Information Processing Systems
+  30, pp 3146--3154
+
+\bibitem[{Kelly et~al.(2026)Kelly, Longjohn, and Nottingham}]{kelly_uci}
+Kelly M, Longjohn R, Nottingham K (2026) The {UCI} machine learning repository.
+  \url{https://archive.ics.uci.edu}, accessed 2 November 2026
+
+\bibitem[{Lee et~al.(2022)Lee, Ippolito, Nystrom, Zhang, Eck, Callison-Burch,
+  and Carlini}]{lee2022}
+Lee K, Ippolito D, Nystrom A, et~al (2022) Deduplicating training data makes
+  language models better. In: Proceedings of the 60th Annual Meeting of the
+  Association for Computational Linguistics, pp 8424--8445,
+  \doi{10.18653/v1/2022.acl-long.577}
+
+\bibitem[{Lei et~al.(2018)Lei, G'Sell, Rinaldo, Tibshirani, and
+  Wasserman}]{lei2018}
+Lei J, G'Sell M, Rinaldo A, et~al (2018) Distribution-free predictive inference
+  for regression. J Am Stat Assoc 113(523):1094--1111.
+  \doi{10.1080/01621459.2017.1307116}
+
+\bibitem[{Lewis et~al.(2021)Lewis, Stenetorp, and Riedel}]{lewis2021}
+Lewis P, Stenetorp P, Riedel S (2021) Question and answer test-train overlap in
+  open-domain question answering datasets. In: Proceedings of the 16th
+  Conference of the European Chapter of the Association for Computational
+  Linguistics, pp 1000--1008, \doi{10.18653/v1/2021.eacl-main.86}
+
+\bibitem[{Li(2026)}]{li2026}
+Li H (2026) Rows are not samples: duplicate records, evaluation bias, and
+  ranking distortion in standard tabular benchmarks. Zenodo (preprint, not peer
+  reviewed), \doi{10.5281/zenodo.23119065}
+
+\bibitem[{L{\"o}fstr{\"o}m et~al.(2015)L{\"o}fstr{\"o}m, Bostr{\"o}m, Linusson,
+  and Johansson}]{lofstrom2015}
+L{\"o}fstr{\"o}m T, Bostr{\"o}m H, Linusson H, et~al (2015) Bias reduction
+  through conditional conformal prediction. Intell Data Anal 19(6):1355--1375.
+  \doi{10.3233/IDA-150786}
+
+\bibitem[{Morger et~al.(2021)Morger, Svensson, Arvidsson~McShane, Gauraha,
+  Norinder, Spjuth, and Volkamer}]{morger2021}
+Morger A, Svensson F, Arvidsson~McShane S, et~al (2021) Assessing the
+  calibration in toxicological in vitro models with conformal prediction. J
+  Cheminform 13:35. \doi{10.1186/s13321-021-00511-5}
+
+\bibitem[{Norinder et~al.(2014)Norinder, Carlsson, Boyer, and
+  Eklund}]{norinder2014}
+Norinder U, Carlsson L, Boyer S, et~al (2014) Introducing conformal prediction
+  in predictive modeling. {A} transparent and flexible alternative to
+  applicability domain determination. J Chem Inf Model 54(6):1596--1603.
+  \doi{10.1021/ci5001168}
+
+\bibitem[{Papadopoulos et~al.(2002)Papadopoulos, Proedrou, Vovk, and
+  Gammerman}]{papadopoulos2002}
+Papadopoulos H, Proedrou K, Vovk V, et~al (2002) Inductive confidence machines
+  for regression. In: Machine Learning: ECML 2002, pp 345--356,
+  \doi{10.1007/3-540-36755-1_29}
+
+\bibitem[{Papadopoulos et~al.(2011)Papadopoulos, Vovk, and
+  Gammerman}]{papadopoulos2011}
+Papadopoulos H, Vovk V, Gammerman A (2011) Regression conformal prediction with
+  nearest neighbours. J Artif Intell Res 40:815--840. \doi{10.1613/jair.3198}
+
+\bibitem[{Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort
+  et~al.}]{pedregosa2011}
+Pedregosa F, Varoquaux G, Gramfort A, et~al (2011) Scikit-learn: machine
+  learning in {P}ython. J Mach Learn Res 12:2825--2830
+
+\bibitem[{Romano et~al.(2019)Romano, Patterson, and Cand{\`e}s}]{romano2019}
+Romano Y, Patterson E, Cand{\`e}s EJ (2019) Conformalized quantile regression.
+  In: Advances in Neural Information Processing Systems 32, arXiv:1905.03222
+
+\bibitem[{Romano et~al.(2020{\natexlab{a}})Romano, Barber, Sabatti, and
+  Cand{\`e}s}]{romano2020b}
+Romano Y, Barber RF, Sabatti C, et~al (2020{\natexlab{a}}) With malice toward
+  none: assessing uncertainty via equalized coverage. Harv Data Sci Rev
+  \doi{10.1162/99608f92.03f00592}
+
+\bibitem[{Romano et~al.(2020{\natexlab{b}})Romano, Sesia, and
+  Cand{\`e}s}]{romano2020a}
+Romano Y, Sesia M, Cand{\`e}s EJ (2020{\natexlab{b}}) Classification with valid
+  and adaptive coverage. In: Advances in Neural Information Processing Systems
+  33, arXiv:2006.02544
+
+\bibitem[{Roth(2026)}]{roth2026}
+Roth S (2026) Which leakage types matter? {A} quantitative landscape across
+  2,047 benchmark datasets. ArXiv:2604.04199 (preprint, not peer reviewed)
+
+\bibitem[{Sadinle et~al.(2019)Sadinle, Lei, and Wasserman}]{sadinle2019}
+Sadinle M, Lei J, Wasserman L (2019) Least ambiguous set-valued classifiers
+  with bounded error levels. J Am Stat Assoc 114(525):223--234.
+  \doi{10.1080/01621459.2017.1395341}
+
+\bibitem[{Seo et~al.(2026)Seo, Jeon, and Kim}]{seo2026}
+Seo JI, Jeon YE, Kim Y (2026) Calibrated {M}ondrian conformal prediction for
+  uncertainty quantification in spatial modeling. Pattern Recognit 180:114113.
+  \doi{10.1016/j.patcog.2026.114113}
+
+\bibitem[{Shepperd et~al.(2013)Shepperd, Song, Sun, and Mair}]{shepperd2013}
+Shepperd M, Song Q, Sun Z, et~al (2013) Data quality: some comments on the
+  {NASA} software defect datasets. IEEE Trans Softw Eng 39(9):1208--1215.
+  \doi{10.1109/TSE.2013.11}
+
+\bibitem[{Sheridan(2013)}]{sheridan2013}
+Sheridan RP (2013) Time-split cross-validation as a method for estimating the
+  goodness of prospective prediction. J Chem Inf Model 53(4):783--790.
+  \doi{10.1021/ci400084k}
+
+\bibitem[{Tareaf et~al.(2026)Tareaf, Al-Rajab, Loucif, Ellaham, and
+  Schmitz}]{tareaf2026}
+Tareaf RB, Al-Rajab M, Loucif S, et~al (2026) Target leakage, not model class,
+  explains reported accuracy in survey-based cardiovascular screening.
+  ArXiv:2609.11838 (preprint, not peer reviewed)
+
+\bibitem[{Tavallaee et~al.(2009)Tavallaee, Bagheri, Lu, and
+  Ghorbani}]{tavallaee2009}
+Tavallaee M, Bagheri E, Lu W, et~al (2009) A detailed analysis of the {KDD CUP}
+  99 data set. In: 2009 IEEE Symposium on Computational Intelligence for
+  Security and Defense Applications, pp 1--6, \doi{10.1109/CISDA.2009.5356528}
+
+\bibitem[{Tibshirani et~al.(2019)Tibshirani, Barber, Cand{\`e}s, and
+  Ramdas}]{tibshirani2019}
+Tibshirani RJ, Barber RF, Cand{\`e}s EJ, et~al (2019) Conformal prediction
+  under covariate shift. In: Advances in Neural Information Processing Systems
+  32, arXiv:1904.06019
+
+\bibitem[{Vanschoren et~al.(2014)Vanschoren, van Rijn, Bischl, and
+  Torgo}]{vanschoren2014}
+Vanschoren J, van Rijn JN, Bischl B, et~al (2014) {OpenML}: networked science
+  in machine learning. SIGKDD Explor 15(2):49--60.
+  \doi{10.1145/2641190.2641198}
+
+\bibitem[{Vovk(2012)}]{vovk2012}
+Vovk V (2012) Conditional validity of inductive conformal predictors. In:
+  Proceedings of the Asian Conference on Machine Learning, pp 475--490
+
+\bibitem[{Vovk et~al.(2022)Vovk, Gammerman, and Shafer}]{vovk2022}
+Vovk V, Gammerman A, Shafer G (2022) Algorithmic Learning in a Random World,
+  2nd edn. Springer, Cham, \doi{10.1007/978-3-031-06649-8}
+
+\bibitem[{Wilcoxon(1945)}]{wilcoxon1945}
+Wilcoxon F (1945) Individual comparisons by ranking methods. Biometrics Bull
+  1(6):80--83. \doi{10.2307/3001968}
+
+\bibitem[{Zhang and Zhou(2026)}]{zhang2026}
+Zhang R, Zhou P (2026) A {M}ondrian conformal predictive system with improved
+  decision trees for uncertainty quantification under heteroscedasticity.
+  Pattern Recognit 172:112338. \doi{10.1016/j.patcog.2025.112338}
+
+\end{thebibliography}

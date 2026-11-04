@@ -1,0 +1,81 @@
+\section{Experimental framework}\label{sec:framework}
+
+\subsection{Setup}
+All experiments use random 60/20/20 splits into training, calibration and test parts, and a 90\% target ($\alpha=0.1$). The benchmarks also use 80\% and 95\%. We used random forests (200 trees; \citealp{breiman2001}), LightGBM (300 trees; \citealp{ke2017}) and logistic or ridge regression with fixed default settings, plus 5-nearest neighbours and a small neural network on the benchmarks. No hyperparameter was tuned. Preprocessing was fitted on training rows only. Each configuration was repeated over 10 random splits (20 for the fresh collections). Data sets, not splits, are the unit of analysis. All runs used one machine with \NHwNcpu{} logical CPUs (\NHwCpu{}) and \NHwRam{}\,GB of memory, under Python \NHwPython{}. The code, every per-split result file and one command that rebuilds every number, table and figure are in the repository.
+
+\paragraph{Plans fixed in advance.} The benchmark study followed a protocol committed before the full runs. Each fresh collection was selected and analysed under an amendment committed before its data were downloaded. The selection used no labels and no models: it kept data sets in which at least 1\% of test rows are expected to be seen (Eq.~\ref{eq:exposure}) and dropped data sets already used. Every change to these plans is logged as D1--D17 (Supplementary Sect.~\ref{S-sec:deviations}). Analyses added after results were seen are labelled \emph{post hoc}.
+
+\paragraph{Use of AI tools.} The study design, code, experiments, statistical analysis and drafting of this manuscript were carried out with substantial assistance from an AI system (a large language model with code-execution tools), under the direction of the authors. All numbers were produced by executed code whose outputs are archived with the repository. The authors checked the work and take full responsibility for it.
+
+\subsection{Data}
+Table~\ref{tab:data} lists the data. The \emph{applications} are all ten NASA Metrics Data Program defect sets on OpenML with at least 300 modules, the 10\% KDD Cup'99 intrusion data (reduced at random to 30,000 connections; \citealp{tavallaee2009}) and the PhishingWebsites data. The \emph{benchmarks} are the \NNTotal{} tabular data sets of OpenML-CC18 \citep{bischl2021} and OpenML-CTR23 \citep{fischer2023}. The \emph{fresh collections} come from sources the study had not used: the AutoML Benchmark \citep{gijsbers2024} and the benchmark of \citet{grinsztajn2022} (wave~1), and the UCI repository \citep{kelly_uci} (wave~2). Data sets larger than 30,000 rows were reduced by sampling whole groups of identical rows, or uniformly when one group exceeded 6,000 rows.
+
+\begin{table}[t]
+\caption{Data used in the study. The fresh collections were selected by a label-free rule under plans committed before their data were downloaded. Cls/reg: classification/regression data sets; learners: RF random forest, LGBM LightGBM, LR logistic or ridge regression, kNN, MLP neural network}\label{tab:data}
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}lXrlll@{}}
+\toprule
+Role & Source & Sets & Cls/reg & Learners & Splits\\
+\midrule
+Applications & NASA MDP, KDD Cup'99, PhishingWebsites (OpenML) & \NCsNFlagTotal{} & \NCsNFlagTotal{}/0 & RF, LGBM, LR & 10\\
+Benchmarks & OpenML-CC18 and CTR23 & \NNTotal{} & \NNCls{}/\NNReg{} & all five & 10\\
+Copies added & duplicate-free benchmarks, $\ge$1,000 rows & \NInjNDs{} & \NInjNDsCla{}/\NInjNDsReg{} & all five & 10\\
+Noisy copies & same data sets & \NNdN{} & \NInjNDsCla{}/\NInjNDsReg{} & RF, LGBM & 3\\
+Fresh, wave 1 & AutoML Benchmark, Grinsztajn et al. & \NPrN{} & \NPrNCls{}/\NPrNReg{} & RF, LGBM, LR & 20\\
+Fresh, wave 2 & UCI repository & \NWTwoN{} & \NWTwoNCls{}/\NWTwoNReg{} & RF, LGBM, LR & 20\\
+Tool validation & UCI files downloaded afresh & \NTvN{} & -- & RF (tool default) & 10\\
+\botrule
+\end{tabularx}
+\end{table}
+
+\subsection{Metrics}
+For a split, let $E_{\mathrm N}$ be the new test rows. The main metric is the coverage of new cases and its gap from the target:
+\begin{equation}
+c_{\mathrm N}=\frac{1}{|E_{\mathrm N}|}\sum_{(x,y)\in E_{\mathrm N}}\mathbb 1\{y\in\mathcal C(x)\},\qquad g=c_{\mathrm N}-(1-\alpha).\label{eq:gap}
+\end{equation}
+Gaps are reported in percentage points (pp) and averaged over splits within a data set. We also report:
+\begin{itemize}
+\item the mean set size $\frac{1}{|E_{\mathrm N}|}\sum|\mathcal C(x)|$ (or interval width);
+\item the empty-set rate for new cases;
+\item the \emph{bad-split rate}, the share of splits with $c_{\mathrm N}<0.87$.
+\end{itemize}
+For the check, a data set is \emph{positive} if its new-case gap is below $-2$\,pp for random forest or LightGBM, and we report
+\begin{equation}
+\text{sensitivity}=\frac{\#\{\text{flagged}\cap\text{positive}\}}{\#\{\text{positive}\}},\qquad \text{specificity}=\frac{\#\{\text{not flagged}\cap\text{not positive}\}}{\#\{\text{not positive}\}}.\label{eq:sens}
+\end{equation}
+
+\subsection{Baselines}
+We compare the fix against the strongest simple alternatives, all on the same splits and models:
+\begin{itemize}
+\item \emph{standard} split conformal prediction;
+\item \emph{remove repeats, then calibrate}: duplicate rows are dropped from training and calibration;
+\item \emph{group split}: identical rows always fall in the same part;
+\item a \emph{normalized residual} score for regression \citep{papadopoulos2011};
+\item calibration by \emph{distance}.
+\end{itemize}
+In the noisy-copy experiment, an \emph{oracle} that knows which records were copied serves as an upper reference.
+
+\subsection{Hypotheses and tests}
+Table~\ref{tab:hyp} lists the hypotheses with their tests and pass criteria, each fixed before the corresponding data were analysed. We use one-sided Wilcoxon signed-rank tests \citep{wilcoxon1945} with Holm correction \citep{holm1979}, Spearman correlations, exact binomial intervals and percentile bootstrap intervals (1,000--10,000 resamples of data sets).
+
+\begin{table}[t]
+\caption{Hypotheses, tests and outcomes. Each hypothesis was fixed in a commit before its data were analysed (Supplementary Sect.~\ref{S-sec:register}). $g$: new-case gap (Eq.~\ref{eq:gap}); $g^*$: predicted gap (Eq.~\ref{eq:gstar})}\label{tab:hyp}
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}lXXp{2.3cm}@{}}
+\toprule
+ & Hypothesis & Test and criterion & Outcome\\
+\midrule
+H1 & The typical benchmark data set with repeats under-covers new cases & Wilcoxon of $g<0$ per family, Holm, $p<0.05$ & Not supported\\
+H2 & The gap grows with the share of seen rows (copies added on purpose) & Spearman $\rho<0$, $p<0.05$ & Supported (RF, LGBM)\\
+H3 & The fix keeps new-case coverage at the target & Bootstrap CI of median $g$ above $-1$\,pp & Supported (3 settings)\\
+H4 & The fix costs little in set size & Median size ratio & Supported\\
+H5 & $g^*$ is a lower limit: $g\ge g^*-2$\,pp & Share $\ge$80\%, exact CI & Supported (both waves)\\
+H6 & $g^*$ ranks data sets by their gap & Spearman $\rho>0$, one-sided & Wave 1 no; wave 2 yes\\
+H7 & The check flags every real shortfall & Sensitivity $\ge$0.8; binomial test, Holm & Supported\\
+H8 & The safety margin reduces bad splits & Paired Wilcoxon, Holm & Not significant\\
+H9 & Purity beats exposure alone for ranking & Bootstrap CI of $\Delta\rho$ above 0 & Not established\\
+\botrule
+\end{tabularx}
+\end{table}

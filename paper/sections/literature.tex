@@ -1,0 +1,49 @@
+\section{Literature review}\label{sec:literature}
+
+\subsection{Conformal prediction and what it guarantees}
+Split (inductive) conformal prediction turns any fitted model into prediction sets or intervals with a finite-sample coverage guarantee, provided calibration and test data are exchangeable \citep{papadopoulos2002,lei2018,vovk2022}. Standard nonconformity scores include $1-\hat p_y$ for classification \citep{sadinle2019}, adaptive scores \citep{romano2020a}, absolute residuals and conformalized quantile regression \citep{romano2019}. The guarantee is \emph{marginal}: it holds on average over test cases. Coverage for every input cannot be guaranteed without further assumptions \citep{vovk2012,foygelbarber2021}. When test data differ from calibration data, weighted or shift-aware methods are needed \citep{tibshirani2019,barber2023}. Conformal prediction is increasingly used in applied work, for example in drug discovery and toxicology \citep{norinder2014,morger2021,hernandez2026}. Introductions are given by \citet{angelopoulos2023} and \citet{vovk2022}.
+
+\subsection{Group-wise and conditional calibration}
+Coverage within a fixed set of groups can be obtained by calibrating each group separately (Mondrian conformal prediction; \citealp{vovk2022}) or by more general and localized conditional calibration \citep{guan2023,gibbs2025,bastani2022}. Group-wise calibration has been used for protected groups \citep{romano2020b}, for classes \citep{lofstrom2015,ding2023}, for difficulty bins \citep{bostrom2020}, for two-level group structures \citep{dunn2023}, for conformal predictive systems \citep{zhang2026}, for spatial regions \citep{seo2026} and for demographic strata in clinical screening \citep{tareaf2026}. Training-conditional guarantees, which hold with high probability over the calibration draw, go back to \citet{vovk2012}. Locally adaptive scores, such as residuals normalized by a nearest-neighbour difficulty estimate \citep{papadopoulos2011}, give tighter intervals in easy regions. All of these are tools that we use. None of these works asks which groups are needed when a data set contains repeated rows, or how to tell in advance whether it matters.
+
+\subsection{Repeated rows, leakage and evaluation}
+Information that leaks from evaluation data into training is a well-known source of over-optimism \citep{kaufman2012,kapoor2023}. Overlap between training and test data has been documented for images \citep{barz2020}, text \citep{lee2022,lewis2021,elangovan2021} and source code \citep{allamanis2019}, and for tabular software-defect and intrusion-detection data \citep{gray2011,shepperd2013,tavallaee2009}. Time-based splits are one remedy when records arrive over time \citep{sheridan2013}. Three recent preprints study repeated rows across many tabular data sets. \citet{li2026} shows that random splits inflate accuracy and can change which model looks best. \citet{roth2026} finds that this kind of leakage grows with model flexibility. \citet{deng2026} audits anomaly-detection benchmarks and builds a detector whose false-alarm rate, calibrated with split conformal prediction, does not change when rows are replicated. These studies concern accuracy, ranking or unsupervised false-alarm control.
+
+\subsection{Benchmarks and tools}
+Our evaluation uses the OpenML platform \citep{vanschoren2014} and its curated suites \citep{bischl2021,fischer2023}, two further benchmark collections \citep{gijsbers2024,grinsztajn2022} and the UCI repository \citep{kelly_uci}. Models are fitted with scikit-learn \citep{pedregosa2011}, random forests \citep{breiman2001} and LightGBM \citep{ke2017}.
+
+\subsection{Motivations}
+Table~\ref{tab:related} compares the closest work with ours. The comparison leads to five motivations.
+\begin{enumerate}[(i)]
+\item Conformal coverage is checked on random splits, but no work examines what that check means when test rows have training copies.
+\item The groups that need separate calibration are usually chosen by the analyst, such as classes, protected groups or regions. Here they are implied by the data, through the seen/new split.
+\item Practitioners need to know \emph{before} training whether a problem exists. No existing tool predicts the size of the shortfall from the data alone.
+\item Studies of duplicates measure accuracy or ranking. They do not propose a repair that keeps the data and gives a guarantee for new cases.
+\item Claims about evaluation practice should be tested on data that were not used to develop them, under a plan fixed in advance.
+\end{enumerate}
+
+\begin{table}[t]
+\caption{The closest prior work compared with this paper. \cmark: the property is a main subject of the work; --: not addressed. Properties: \emph{Rep.}, studies repeated rows; \emph{Cov.}, gives a conformal coverage guarantee; \emph{New}, examines coverage for new (unseen) records; \emph{Pre.}, predicts the risk before training; \emph{Fix}, proposes a repair; \emph{Tab.}, tabular data; \emph{Tool}, released as a usable tool}\label{tab:related}
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}Xccccccc@{}}
+\toprule
+Work & Rep. & Cov. & New & Pre. & Fix & Tab. & Tool\\
+\midrule
+Split conformal prediction \citep{lei2018,vovk2022} & -- & \cmark & -- & -- & -- & \cmark & -- \\
+Class-conditional CP \citep{lofstrom2015,ding2023} & -- & \cmark & -- & -- & -- & \cmark & -- \\
+Conditional guarantees \citep{gibbs2025,bastani2022} & -- & \cmark & -- & -- & -- & \cmark & -- \\
+Difficulty Mondrian CP \citep{bostrom2020} & -- & \cmark & -- & -- & -- & \cmark & -- \\
+Normalized nearest-neighbour scores \citep{papadopoulos2011} & -- & \cmark & -- & -- & -- & \cmark & -- \\
+Spatial Mondrian CP \citep{seo2026} & -- & \cmark & -- & -- & -- & \cmark & -- \\
+Leakage in ML science \citep{kaufman2012,kapoor2023} & \cmark & -- & -- & -- & \cmark & \cmark & -- \\
+Duplicates in code and text \citep{allamanis2019,lee2022} & \cmark & -- & \cmark & -- & \cmark & -- & -- \\
+Defect and intrusion data quality \citep{shepperd2013,tavallaee2009} & \cmark & -- & -- & -- & \cmark & \cmark & -- \\
+Duplicates in tabular benchmarks \citep{li2026,roth2026} & \cmark & -- & -- & -- & -- & \cmark & -- \\
+Replication-robust anomaly detection \citep{deng2026} & \cmark & \cmark & -- & -- & \cmark & \cmark & -- \\
+Leakage and Mondrian CP in screening \citep{tareaf2026} & -- & \cmark & -- & -- & \cmark & \cmark & -- \\
+\midrule
+This paper & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark \\
+\botrule
+\end{tabularx}
+\end{table}

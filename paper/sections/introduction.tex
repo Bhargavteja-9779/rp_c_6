@@ -1,0 +1,22 @@
+\section{Introduction}\label{sec:intro}
+
+Suppose a software quality team uses a classifier to flag modules that are likely to contain defects. A yes/no answer is not enough to plan code reviews, so the team wraps the classifier in conformal prediction. For each module it then gets a small set of labels that is promised to contain the true label 90\% of the time \citep{vovk2022,angelopoulos2023}. Before trusting the promise, the team checks it in the usual way: it splits its historical data at random into training, calibration and test parts and counts how often the sets were right. The answer is close to 90\%, and the system goes into use.
+
+The team may not have noticed that its data contain many repeated rows. In the public NASA defect data, large shares of modules have exactly the same metric values as other modules \citep{gray2011,shepperd2013}. Repeats like these are common in tabular data: the same network connection logged thousands of times, the same customer profile entered twice, identical laboratory readings. A random split then places copies of many test rows in the training part. The model has, in effect, seen those answers, so its sets are almost always right for them. The 90\% the team measured is an average over these easy repeats and the cases that are really new. New modules, which are what the team will face after deployment, may be covered much less often.
+
+This is not a hypothetical concern. On the NASA mc1 data, a random forest's 90\% sets were right for \NCsMcOneReported{}\% of test modules but only for \NCsMcOneNew{}\% of new ones, and \NToolStdEmpty{} of the new modules received an empty set (Sect.~\ref{sec:case}). Repeated rows are known to inflate accuracy \citep{kaufman2012,kapoor2023,li2026,roth2026}. Their effect on uncertainty estimates has received little attention, although here a stated guarantee, not only an estimate, is what fails without warning.
+
+\subsection*{Motivation and contributions}
+
+We want a procedure that a practitioner can apply before training anything, that repairs the problem when it exists, and that costs nothing when it does not. This paper makes four contributions.
+
+\begin{enumerate}
+\item \textbf{A label-aware check that needs no model} (Sect.~\ref{sec:check}). Two closed-form quantities, the expected share of seen test rows and the share whose training copies carry the same label, give a predicted worst-case shortfall for new cases. The first quantity is elementary. The closed form of the second and the resulting shortfall formula are, to our knowledge, new.
+\item \textbf{A fix and a reporting rule} (Sect.~\ref{sec:fix}). Calibrating seen and new cases separately is standard Mondrian conformal prediction \citep{vovk2022}. We show that it is the right choice of groups here, and we add a safety margin for small calibration sets and a distance-based variant for near-copies.
+\item \textbf{An evaluation under plans fixed in advance} (Sects.~\ref{sec:framework}--\ref{sec:results}). The evaluation covers \NCsNFlagTotal{} application data sets in three domains, \NNTotal{} benchmark data sets, controlled experiments with exact and noisy copies, and two fresh collections of \NPrN{} and \NWTwoN{} data sets analysed under time-stamped plans. Negative results are reported with the positive ones.
+\item \textbf{An open-source tool}, \emph{covercheck} (Sect.~\ref{sec:tool}). It runs the routine from the command line or from Python and writes a one-page report. It reproduced the pipeline's results on \NTvN{} data files downloaded fresh from their source.
+\end{enumerate}
+
+\subsection*{Organization}
+
+Section~\ref{sec:literature} reviews related work. Section~\ref{sec:prelim} introduces notation and assumptions. Section~\ref{sec:method} presents the routine and its theory. Section~\ref{sec:framework} describes the data, metrics, baselines and hypotheses. Section~\ref{sec:results} reports the results, including ablations, cost, a case study and a discussion with limitations. Section~\ref{sec:conclusion} concludes. Proofs, per-data-set tables and the full deviation log are in the Supplementary Material.

@@ -1,0 +1,171 @@
+%% Supplementary Material. Cross-referenced with main.tex through xr-hyper (prefix M- for the main text).
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,longtable,tabularx}
+\usepackage{pifont}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{xr-hyper}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\externaldocument[M-]{main}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\input{tables/macros.tex}
+\makeatletter\newcommand\tabinput[1]{\@@input #1 }\makeatother
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\newtheorem*{prop}{Proposition}
+\title{Supplementary Material\\[4pt]\large Duplicate Data Rows Make Prediction Uncertainty Look Better Than It Is: A Simple Check and Fix for New Cases}
+\date{}
+\begin{document}
+\maketitle
+\noindent References to equations, sections, figures and tables without the prefix ``S'' point to the main text.
+\tableofcontents
+
+\section{Proofs}\label{sec:proofs}
+Throughout, Assumption~\ref{M-as:split} holds: the rows are split uniformly at random, so given the set of training rows the other rows are assigned to calibration and test at random, and the seen/new label $\kappa_T$ is a fixed function of the training features.
+
+\paragraph{Equation~(\ref{M-eq:decomp}).} By the law of total probability, $c=\pi c_{\mathrm S}+(1-\pi)c_{\mathrm N}$; solving for $c_{\mathrm N}$ gives the result. Split conformal prediction gives $1-\alpha\le c\le 1-\alpha+1/(n_C+1)$ when scores have no ties (as in \cite{M-lei2018}). Hence, with $m_{\mathrm S}=1-c_{\mathrm S}$, the miss rate on new cases $m_{\mathrm N}=1-c_{\mathrm N}$ satisfies
+\begin{equation}
+\frac{\alpha-1/(n_C+1)-\pi m_{\mathrm S}}{1-\pi}\le m_{\mathrm N}\le \frac{\alpha-\pi m_{\mathrm S}}{1-\pi}.
+\end{equation}
+Exact duplicates in the calibration set create tied scores; ties keep the lower bound on coverage but can break the upper one.
+
+\paragraph{Equation~(\ref{M-eq:exposure}) (standard combinatorics).} Given that row $j$ is a test row, the training set is a uniformly random $n_T$-subset of the other $N-1$ rows. Row $j$ is new exactly when none of its $m_j-1$ copies is chosen, which has probability $\binom{N-m_j}{n_T}/\binom{N-1}{n_T}$. Averaging over rows gives Eq.~(\ref{M-eq:exposure}).
+
+\paragraph{Proposition~\ref{M-prop:pure} (closed-form label-pure exposure).} Let row $j$ have $m_j-1$ copies, $d_j$ of which carry a different label. Row $j$ is label-pure seen if no differently labelled copy is chosen for training but at least one copy is. The event ``no differently labelled copy chosen'' has probability $\binom{N-1-d_j}{n_T}/\binom{N-1}{n_T}$ and contains the event ``no copy chosen'', of probability $\binom{N-m_j}{n_T}/\binom{N-1}{n_T}$. The difference is the probability of the event of interest; averaging over rows gives Eq.~(\ref{M-eq:pure}). \emph{Check:} the closed form agreed with an average over 30 random splits to within 0.005 on five data sets (kc1, pc1, analcatdata\_supreme, black\_friday, wine\_quality), and the tool's unit test confirms it by simulation. \qed
+
+\paragraph{Proposition~\ref{M-prop:gstar} (memorization limit).} Call a row memorizable if its training copies all carry exactly its label, and let $\pi_P$ be the probability that a calibration or test row is memorizable. Under Assumptions~\ref{M-as:mem} and~\ref{M-as:equal}, calibration scores are draws from the mixture $\pi_P\delta_0+(1-\pi_P)F$ with $F$ continuous. The conformal threshold is an empirical quantile at level $\lceil(n_C+1)(1-\alpha)\rceil/n_C\to1-\alpha$; by the law of large numbers for empirical quantiles it converges to the $(1-\alpha)$-quantile of the mixture. If $\pi_P<1-\alpha$, this is the point $t$ with $\pi_P+(1-\pi_P)F(t)=1-\alpha$, so a non-memorizable row (in particular a new row) is covered with probability $F(t)=1-\alpha/(1-\pi_P)$, a gap of $-\alpha\pi_P/(1-\pi_P)$. If $\pi_P\ge1-\alpha$ the threshold is $0$ and non-memorizable rows are covered with probability $F(0)=0$. In a simulation with $\pi_P=0.4$ and 1,000 calibration rows (800 repetitions), the coverage of non-memorizable rows was within 0.01 of $1-0.1/0.6$ (unit test \texttt{test\_purity\_limit\_simulation}). \qed
+
+\paragraph{Proposition~\ref{M-prop:mondrian} (validity of separate calibration; standard).} Let $\hat q_k$ be the $\lceil(n_k+1)(1-\alpha)\rceil$-th smallest score among the $n_k$ calibration rows of group $k$ ($+\infty$ if that rank exceeds $n_k$). Condition on $T$, on the group of test row $j$ and on the multiset of group-$k$ rows in $C\cup\{j\}$. Because $\kappa_T$ is fixed given $T$ and the remaining rows are exchangeable, each of these $n_k+1$ rows is equally likely to be the test row, so the rank of the test score among them is uniform and $\Pr\{Y_j\in\mathcal C(X_j)\mid\kappa_T(X_j)=k\}\ge1-\alpha$ (the Mondrian argument of \cite{M-vovk2022}). Any deployment mix of seen and new cases is a weighted average of two quantities that are each at least $1-\alpha$. \qed
+
+\paragraph{Safety margin (standard).} With continuous scores, the coverage of the threshold at rank $r$ among $n$ calibration scores has the Beta$(r,n-r+1)$ distribution over calibration draws. Choosing the smallest $r$ with $\Pr\{\mathrm{Beta}(r,n-r+1)<1-\alpha\}\le\delta$ gives coverage at least $1-\alpha$ with probability at least $1-\delta$ \cite{M-vovk2012}.
+
+\section{Hypothesis register}\label{sec:register}
+Every hypothesis of Table~\ref{M-tab:hyp} was fixed in a version-control commit before its data were analysed: H1--H4 in the benchmark protocol (commit \texttt{0e58bdd}, 2026-10-20), H5, H6, H8 and H9 in the revised protocol (\texttt{91ac5f6}, 2026-10-21), and the wave-2 tests including H7 in Amendment~2 (\texttt{b5bbd25}, 2026-11-02, before any wave-2 data were downloaded). The register, with metrics, tests and outcomes, is in \texttt{research\_design/experimental\_protocol.md}. Analyses added after results were seen are labelled \emph{post hoc} in the main text: the exposure strata and decomposition of the benchmark results, the retrospective test of Eq.~(\ref{M-eq:gstar}) on the benchmark data, the sampling-noise check, the rule-based examples and class-conditional analysis, the planted-leak test, the cost measurement and the tool validation.
+
+\section{Deviations from the plans}\label{sec:deviations}
+\begin{longtable}{@{}p{0.7cm}p{15.2cm}@{}}
+\toprule
+ID & Deviation (reason; effect)\\
+\midrule\endhead
+D1 & Output directories created by two experiment functions (bug found in a quick run; no effect).\\
+D2 & Exploratory analyses added after the benchmark results: exposure strata, decomposition by Eq.~(\ref{M-eq:decomp}), counts of gaps below $-2$ and $-5$\,pp (to explain where the gap arises; labelled post hoc).\\
+D3 & Verification run on solar\_flare with 200 extra splits (an apparent violation of Proposition~\ref{M-prop:mondrian} with 10 splits; confirmed as sampling noise: 90.9\%, CI 89.9--91.8\%).\\
+D4 & External application data sets (NASA mc1, pc2, kc3, mw1; KDD Cup'99) specified before their outcomes; KDD uniformly subsampled to 30,000 rows.\\
+D5 & A pre-registered cost experiment was run late (omission; no effect).\\
+D6 & Normalized-residual baseline added before its outcomes (anticipated reviewer request).\\
+D7 & KDD Cup'99 group split: infeasible splits (one group larger than a partition) had not been reported; now logged, and group-split results there use feasible splits only.\\
+D8 & Contingency amendment for an OpenML outage (not triggered).\\
+D9 & Wave 1: parser fix for list-valued OpenML metadata, before any data set was evaluated.\\
+D10 & Wave 1: four data sets listed twice in the pool; one copy kept (lowest id), before outcomes (24 to 20 data sets).\\
+D11 & Wave 1: five downloads failed for server-side reasons; retried for 60 minutes (cut-off fixed in advance); three stayed excluded.\\
+D12 & Wave 1 runs started early for the data sets fixed by the label-free rule (same code and configuration).\\
+D13 & Amendment~2: wave 2 (UCI), tie-breaking test and remedy comparison, pre-specified.\\
+D14 & Wave 2: unique column names for one file; resumed interrupted run; a fallback for one data set whose text column is entirely missing in a subset (used only where the standard path fails), all before wave-2 outcomes.\\
+D15 & Post hoc additions for the final paper: sampling-noise check, rule-based examples, planted-leak test, cost and memory, tool validation on fresh files.\\
+D16 & An earlier explanation of over-coverage by tied scores was refuted by the pre-specified tie-breaking test and replaced (no numbers changed).\\
+D17 & Manuscript moved to the journal's LaTeX template with all numbers generated from result files.\\
+\bottomrule
+\end{longtable}
+No data set, seed or learner was excluded after its outcome was seen, and no hyperparameter was tuned on test data.
+
+\section{Selection of the fresh collections}\label{sec:selection}
+\begin{table}[h]
+\caption{Selection of the two fresh collections: pool sizes, exclusions in the order applied, and the included data sets. ``v1'' denotes the benchmark and application data sets used earlier in the study. The full logs, with the reason for every data set, are in \texttt{results/\allowbreak reinforcement/\allowbreak prospective\_selection*.json}}\label{tab:selection}
+\centering\small
+\begin{tabular}{@{}p{12cm}r@{}}
+\toprule
+Step & Data sets\\
+\midrule
+\tabinput{tables/tab_selection.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Per-data-set results on the fresh collections}\label{sec:fresh}
+{\small
+\setlength{\tabcolsep}{4pt}\begin{longtable}{@{}p{5.2cm}lrrcrrrr@{}}
+\caption{Wave 1 (AutoML Benchmark and Grinsztajn et al.), random forest, 20 splits. $\bar\pi$: expected share of seen test rows (\%); $g^*$: predicted gap (pp); flag: combined rule. New-case coverage (\%) for standard calibration (Std), separate calibration (Fix), with safety margin (Margin) and by distance (Dist.); -- where the method could not be applied}\label{tab:wave1}\\
+\toprule
+Data set & Task & $\bar\pi$ & $g^*$ & Flag & Std & Fix & Margin & Dist.\\
+\midrule\endhead
+\tabinput{tables/tab_wave1.tex}
+\bottomrule
+\end{longtable}
+
+\setlength{\tabcolsep}{4pt}\begin{longtable}{@{}p{5.2cm}lrrcrrrr@{}}
+\caption{Wave 2 (UCI repository), random forest, 20 splits. Columns as in Table~\ref{tab:wave1}}\label{tab:wave2}\\
+\toprule
+Data set & Task & $\bar\pi$ & $g^*$ & Flag & Std & Fix & Margin & Dist.\\
+\midrule\endhead
+\tabinput{tables/tab_wave2.tex}
+\bottomrule
+\end{longtable}
+}
+
+\section{Benchmark results by family (H1)}\label{sec:h1}
+{\small
+\begin{longtable}{@{}lllrrrrrrrr@{}}
+\caption{Benchmark data sets with repeats, 90\% target. Gap: median new-case gap of standard calibration (pp) and worst data set; $p$: Holm-adjusted one-sided Wilcoxon $p$ for H1; $\rho$: Spearman correlation of exposure and gap; Fix: median gap of separate calibration and lower bound of its 95\% CI (pp); Size: median ratio of new-case set size, fix over standard}\label{tab:h1}\\
+\toprule
+Task & Learner & Score & $n$ & Gap & Worst & $p$ & $\rho$ & Fix & CI low & Size\\
+\midrule\endhead
+\tabinput{tables/tab_h1.tex}
+\bottomrule
+\end{longtable}
+}
+
+\section{Sampling-noise check}\label{sec:noise}
+\begin{table}[h]
+\caption{Post hoc. Observed number of splits with new-case coverage below 87\% against the number expected from pure sampling noise (Beta--binomial simulation given each split's numbers of calibration and new test rows), over all fresh data sets. $p$: probability under the noise model of at least the observed count}\label{tab:noise}
+\centering\small
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Method & Learner & Splits & Observed & Expected & Ratio & $p$\\
+\midrule
+\tabinput{tables/tab_noise.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Planted-leak test of the audit}\label{sec:planted}
+\begin{table}[h]
+\caption{Post hoc. A known share of test rows was copied into the training part of one random split of each of the first five duplicate-free benchmark data sets with at least 1,000 rows. Exact copies are all detected with no false positives; copies jittered by 0.1\% of a feature's standard deviation are missed (kr-vs-kp has no numeric features, so its jittered copies remain exact)}\label{tab:planted}
+\centering\small
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+Data set & Plant & Share (\%) & Planted & Flagged & True pos. & False pos. & Recall (\%)\\
+\midrule
+\tabinput{tables/tab_planted.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Validation of the tool on fresh files}\label{sec:toolval}
+{\small
+\begin{longtable}{@{}lrrlll@{}}
+\caption{Post hoc. The installed \emph{covercheck} command (defaults: random forest, 10 splits) on every wave-2 data set with at most 30,000 rows, downloaded afresh from UCI. New-case coverage (\%) as tool / pipeline (pipeline: 20 splits, different preprocessing and seeds)}\label{tab:toolval}\\
+\toprule
+Data set & Rows & $\bar\pi$ (\%) & Verdict & Std, tool/pipeline & Fix, tool/pipeline\\
+\midrule\endhead
+\tabinput{tables/tab_toolval.tex}
+\bottomrule
+\end{longtable}
+}
+
+\section{Software environment}\label{sec:env}
+Hardware: \NHwNcpu{} logical CPUs (\NHwCpu{}), \NHwRam{}\,GB memory. Software: Python \NHwPython{}; package versions are pinned in \path{code/requirements.txt} and recorded in \path{results/logs/environment.json}. One command, \texttt{python code/run\_all.py}, reruns all experiments, the aggregation and the figures; \texttt{paper/build.sh} builds both documents.
+
+\bibliographystyle{plain}
+\begin{thebibliography}{9}
+\bibitem{M-lei2018} J.~Lei, M.~G'Sell, A.~Rinaldo, R.~J. Tibshirani, L.~Wasserman. Distribution-free predictive inference for regression. J Am Stat Assoc 113(523):1094--1111, 2018.
+\bibitem{M-vovk2012} V.~Vovk. Conditional validity of inductive conformal predictors. Proc. Asian Conference on Machine Learning, PMLR 25:475--490, 2012.
+\bibitem{M-vovk2022} V.~Vovk, A.~Gammerman, G.~Shafer. Algorithmic Learning in a Random World, 2nd edn. Springer, 2022.
+\end{thebibliography}
+\end{document}

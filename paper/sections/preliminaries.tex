@@ -1,0 +1,26 @@
+\section{Preliminary concepts}\label{sec:prelim}
+
+\paragraph{Data and splits.} A data set $D=\{(x_i,y_i)\}_{i=1}^{N}$ is split uniformly at random into a training part $T$ with $n_T$ rows, a calibration part $C$ with $n_C$ rows and a test part $E$ (60/20/20 in all our experiments). Rows with exactly the same feature vector form a \emph{record group}; $m_j$ is the size of the group of row $j$. A calibration or test row is \emph{seen} if some training row has the same feature vector, and \emph{new} otherwise. We write $\kappa_T(x)\in\{\mathrm S,\mathrm N\}$ for this label. It depends only on the training features.
+
+\paragraph{Split conformal prediction.} A model fitted on $T$ yields a nonconformity score $s(x,y)$. We use $s=1-\hat p_y(x)$ for classification and $s=|y-\hat y(x)|$ for regression. With target miscoverage $\alpha$ (we use $\alpha=0.1$, a 90\% target), the prediction set is
+\begin{equation}
+\mathcal C(x)=\{y:\ s(x,y)\le \hat q\},\qquad \hat q=\text{the }\lceil (n_C+1)(1-\alpha)\rceil\text{-th smallest calibration score.}\label{eq:scp}
+\end{equation}
+
+\paragraph{Coverage of seen and new cases.} Write $\pi$ for the share of test rows that are seen, $c$ for overall coverage, and $c_{\mathrm S}$ and $c_{\mathrm N}$ for the coverage of seen and new rows. Because a test row is either seen or new,
+\begin{equation}
+c=\pi c_{\mathrm S}+(1-\pi)c_{\mathrm N},\qquad\text{so}\qquad c_{\mathrm N}=\frac{c-\pi c_{\mathrm S}}{1-\pi}.\label{eq:decomp}
+\end{equation}
+Split conformal prediction keeps $c$ near $1-\alpha$. New cases are therefore under-covered exactly when seen cases are over-covered. If every seen row is covered ($c_{\mathrm S}=1$), the miss rate on new cases is $\alpha/(1-\pi)$ instead of $\alpha$. With half of the test rows seen, one new case in five is missed while the usual check still reports 90\%.
+
+\paragraph{Assumptions.} The guarantees and predictions below rest on three assumptions, which we test.
+\begin{assumption}[Random split]\label{as:split}
+$T$, $C$ and $E$ are a uniformly random partition of $D$. Given $T$, the remaining rows are therefore still assigned to $C$ and $E$ at random, and $\kappa_T$ is a fixed function.
+\end{assumption}
+\begin{assumption}[Memorization]\label{as:mem}
+A row whose training copies all carry exactly its label (or target value) receives the lowest possible score.
+\end{assumption}
+\begin{assumption}[Equal difficulty]\label{as:equal}
+All other rows, both new rows and seen rows whose copies disagree on the label, have scores from one common continuous distribution $F$.
+\end{assumption}
+Assumption~\ref{as:split} is the standard condition for split conformal prediction and holds by construction in our experiments. Assumptions~\ref{as:mem} and~\ref{as:equal} are idealizations used only for the predicted shortfall. Flexible models approach \ref{as:mem}, and regularized models do not. Assumption~\ref{as:equal} fails when repeated rows disagree slightly but are still easy, and when seen rows with conflicting labels are \emph{harder} than new ones. We report both failure modes (Sect.~\ref{sec:res-fresh}).

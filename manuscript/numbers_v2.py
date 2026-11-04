@@ -134,7 +134,8 @@ def compute_numbers_v2(res):
         get = lambda name, m, col: sp[(sp.name == name) & (sp.model == m)][col].iloc[0]
         for key, name in [("sup", "analcatdata_supreme"), ("bf", "black_friday"), ("sc", "seattlecrime6"),
                           ("air", "airlines"), ("cond", "superconduct"), ("wine", "wine_quality")]:
-            n[f"pr_{key}_pi"] = f"{100 * get(name, 'rf', 'pi'):.0f}%"
+            v = 100 * get(name, 'rf', 'pi')
+            n[f"pr_{key}_pi"] = f"{v:.1f}%" if v > 99 else f"{v:.0f}%"
             n[f"pr_{key}_pip"] = f"{100 * get(name, 'rf', 'pi_p'):.0f}%"
             n[f"pr_{key}_gs"] = signed_pp(get(name, "rf", "g_star"))
             n[f"pr_{key}_gp"] = signed_pp(get(name, "rf", "g_pi"))
