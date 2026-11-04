@@ -1,6 +1,6 @@
 \section{Conclusion and future scope}\label{sec:conclusion}
 
-\paragraph{What was shown.} When tabular data contain repeated rows, the usual random-split check of conformal prediction can report 90\% coverage while new cases are covered much less often: \NCsMcOneNew{}\% on NASA mc1. A check that needs no model flagged every fresh data set with a real shortfall (\NScpHit{} of \NScpPos{}). Calibrating seen and new cases separately kept new-case coverage near the target on all \NScpN{} fresh data sets, at almost no cost. Most standard benchmarks are not affected, and the check says so.
+\paragraph{What was shown.} When tabular data contain repeated rows, the usual random-split check of conformal prediction can report 90\% coverage while new cases are covered much less often: \NCsMcOneNew{}\% on NASA mc1. A check that needs no model flagged every fresh data set with a real shortfall (\NScpHit{} of \NScpPos{}). With seen and new cases calibrated separately, new-case coverage never fell more than \NWTwoWorstFixAbs{} points below the target on any of the \NScpN{} fresh data sets, at almost no cost. Most standard benchmarks are not affected, and the check says so.
 
 \paragraph{What was not shown.} The predicted gap is a limit and a screen, not a forecast of the exact shortfall. The fix promises coverage over all new cases, not over each class. Exact matching misses near-copies. All evidence comes from random splits of public data sets, not from a deployed system.
 

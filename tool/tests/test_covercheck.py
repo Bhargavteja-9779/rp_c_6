@@ -104,3 +104,13 @@ def test_infer_task():
     assert infer_task(pd.Series(["a", "b"])) == "classification"
     assert infer_task(pd.Series([0, 1, 2, 1])) == "classification"
     assert infer_task(pd.Series(np.linspace(0, 1, 50))) == "regression"
+
+
+def test_distance_bands_do_not_depend_on_calibration_data():
+    X, y = make_dup_data(1500, 0.5, seed=7)
+    cp = SeenNewConformal(RandomForestClassifier(30, random_state=0), mode="distance").fit(X[:900], y[:900])
+    e0 = cp._edges.copy()
+    cp.calibrate(X[900:1200], y[900:1200])
+    e1 = cp._edges.copy()
+    cp.calibrate(X[1200:], y[1200:])
+    assert np.allclose(e0, e1) and np.allclose(e1, cp._edges)

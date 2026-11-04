@@ -63,9 +63,9 @@ def main():
     tab.append((f"{100 * tc['repeated_row_share']:.0f}% of rows have a copy.", {}))
     box(ax, xs[0], Y, W, H, "Data (NASA mc1)", tab, INK2)
     box(ax, xs[1], Y, W, H, "1  Check (no model)", [
-        ("Test rows seen in training:", {}), (f"{100 * tc['exposure']:.0f}%   (Eq. 2)", {"weight": "bold"}),
-        ("...with the same label:", {}), (f"{100 * tc['pure_exposure']:.0f}%   (Eq. 2b)", {"weight": "bold"}),
-        ("Worst-case gap, new cases:", {}), (f"{100 * tc['predicted_gap']:+.0f} pp   (Eq. 3)", {"weight": "bold"}),
+        ("Test rows seen in training:", {}), (f"{100 * tc['exposure']:.0f}%   (Eq. 3)", {"weight": "bold"}),
+        ("...with the same label:", {}), (f"{100 * tc['pure_exposure']:.0f}%   (Eq. 4)", {"weight": "bold"}),
+        ("Worst-case gap, new cases:", {}), (f"{100 * tc['predicted_gap']:+.0f} pp   (Eq. 5)", {"weight": "bold"}),
         ("", {}), ("FIX RECOMMENDED", {"color": COL["fix"], "weight": "bold"})], COL["standard"])
     box(ax, xs[2], Y, W, H, "2  Fix", [
         ("Train any model as usual.", {}), ("Calibrate seen and new", {}),

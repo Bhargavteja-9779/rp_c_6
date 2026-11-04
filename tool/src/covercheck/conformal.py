@@ -61,7 +61,13 @@ class SeenNewConformal:
         self._num = X_train.select_dtypes("number").columns
         Z = X_train[self._num].to_numpy(dtype=float)
         self._mu, self._sd = np.nanmean(Z, 0), np.nanstd(Z, 0) + 1e-12
-        self._nn = NearestNeighbors(n_neighbors=1).fit(np.nan_to_num((Z - self._mu) / self._sd))
+        Zs = np.nan_to_num((Z - self._mu) / self._sd)
+        self._nn = NearestNeighbors(n_neighbors=1).fit(Zs)
+        # Band edges from the training rows only (leave-one-out nearest-neighbour distances), so that the
+        # grouping does not depend on calibration or test data and Mondrian validity is exact.
+        loo = NearestNeighbors(n_neighbors=2).fit(Zs).kneighbors(Zs)[0][:, 1]
+        loo = loo[loo > 0]
+        self._edges = np.quantile(loo, [0.2, 0.4, 0.6, 0.8]) if len(loo) else np.zeros(4)
         return self
 
     def _scores_all(self, X):
@@ -102,9 +108,6 @@ class SeenNewConformal:
         else:
             s = np.abs(y_cal - self._scores_all(X_cal))
         if self.mode == "distance":
-            seen, dist = self._seen_dist(X_cal)
-            new_d = dist[seen == 0]
-            self._edges = np.quantile(new_d, [0.2, 0.4, 0.6, 0.8]) if len(new_d) else np.zeros(4)
             g = self.groups(X_cal)
             labels = range(6)
         else:
