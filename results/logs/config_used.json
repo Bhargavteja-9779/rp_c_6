@@ -113,5 +113,71 @@
   "logreg"
  ],
  "pac_delta": 0.1,
+ "remedy_seeds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9
+ ],
+ "remedy_models": [
+  "rf",
+  "lgbm"
+ ],
+ "remedy_ids": [
+  [
+   1067,
+   "classification"
+  ],
+  [
+   1063,
+   "classification"
+  ],
+  [
+   1068,
+   "classification"
+  ],
+  [
+   1050,
+   "classification"
+  ],
+  [
+   1049,
+   "classification"
+  ],
+  [
+   1053,
+   "classification"
+  ],
+  [
+   1056,
+   "classification"
+  ],
+  [
+   1069,
+   "classification"
+  ],
+  [
+   1065,
+   "classification"
+  ],
+  [
+   1071,
+   "classification"
+  ],
+  [
+   1113,
+   "classification"
+  ],
+  [
+   4534,
+   "classification"
+  ]
+ ],
  "cache_dir": "/home/user/rp_c_6/data_cache"
 }

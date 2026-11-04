@@ -56,8 +56,8 @@ The v1 state is commit `bb7afa9` (local tag `v1-original-submission`).
 
 ## Status
 
-**Decision A: scientifically reinforced, ready for submission**
-(`reinforcement/submission_readiness_report.md`). What remains is author-only:
+**Ready for submission after author actions** (`review/final_audit.md`; earlier decision A in
+`reinforcement/submission_readiness_report.md`). What remains is author-only:
 * names and affiliations;
 * competing interests and funding;
 * a Zenodo DOI for the code;
