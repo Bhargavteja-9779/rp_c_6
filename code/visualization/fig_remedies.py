@@ -4,7 +4,7 @@ removing repeats. Random forest, 10 splits; dots are data sets; bars are medians
 import os
 import numpy as np
 import pandas as pd
-from style import COL, INK, RES, TWO, boot_ci, plt, save
+from style import COL, INK, NARROW, RES, TWO, boot_ci, plt, save
 
 M = [("SCP", "standard", "Standard"), ("Dedup", "dedup", "Remove\nrepeats"), ("GSCP", "group", "Group\nsplit"),
      ("MCP", "fix", "Seen/new\nseparately"), ("PAC_MCP", "margin", "+ safety\nmargin"), ("DCP", "distance", "By\ndistance")]
@@ -13,7 +13,10 @@ M = [("SCP", "standard", "Standard"), ("Dedup", "dedup", "Remove\nrepeats"), ("G
 def main():
     g = pd.read_csv(os.path.join(RES, "reinforcement", "tables", "remedies_summary.csv"))
     g = g[g.model == "rf"]
-    fig, (a, b) = plt.subplots(1, 2, figsize=(TWO, 58 / 25.4), gridspec_kw=dict(width_ratios=[1.25, 1]))
+    if NARROW:
+        fig, (a, b) = plt.subplots(2, 1, figsize=(TWO, 112 / 25.4))
+    else:
+        fig, (a, b) = plt.subplots(1, 2, figsize=(TWO, 58 / 25.4), gridspec_kw=dict(width_ratios=[1.25, 1]))
     rng = np.random.default_rng(1)
     a.axhline(90, color=INK, lw=0.8)
     for i, (m, key, lab) in enumerate(M):

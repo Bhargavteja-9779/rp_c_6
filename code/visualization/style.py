@@ -10,9 +10,11 @@ import numpy as np  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 RES = os.path.join(ROOT, "results")
-OUT = os.path.join(ROOT, "paper", "figures")
+# FIG_OUT / FIG_TWO_MM let the same scripts render for another template (e.g. Pattern Recognition: 12 cm text)
+OUT = os.environ.get("FIG_OUT", os.path.join(ROOT, "paper", "figures"))
 MM = 1 / 25.4
-ONE, TWO = 84 * MM, 174 * MM
+ONE, TWO = 84 * MM, float(os.environ.get("FIG_TWO_MM", 174)) * MM
+NARROW = TWO < 150 * MM
 INK, INK2, GRID = "#1b1b1a", "#52514e", "#e4e3df"
 # colour-blind-safe categorical palette (validated in v1 with the dataviz validator); fixed per method
 COL = {"standard": "#2a78d6", "fix": "#eb6834", "margin": "#eda100", "distance": "#1baf7a",

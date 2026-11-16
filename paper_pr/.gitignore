@@ -1,0 +1,8 @@
+*.aux
+*.log
+*.out
+*.blg
+*.spl
+*.toc
+# copied from ../paper/tables by build_pr.sh
+tables/

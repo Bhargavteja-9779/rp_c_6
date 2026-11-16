@@ -1,0 +1,494 @@
+\begin{thebibliography}{54}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Book
+\bibitem[{Vovk et~al.(2022)Vovk, Gammerman, and Shafer}]{vovk2022}
+\bibinfo{author}{V.~Vovk}, \bibinfo{author}{A.~Gammerman},
+  \bibinfo{author}{G.~Shafer}, \bibinfo{title}{Algorithmic Learning in a Random
+  World}, \bibinfo{edition}{2nd} ed., \bibinfo{publisher}{Springer},
+  \bibinfo{address}{Cham}, \bibinfo{year}{2022}.
+  \DOIprefix\doi{10.1007/978-3-031-06649-8}.
+%Type = Inproceedings
+\bibitem[{Gray et~al.(2011)Gray, Bowes, Davey, Sun, and
+  Christianson}]{gray2011}
+\bibinfo{author}{D.~Gray}, \bibinfo{author}{D.~Bowes},
+  \bibinfo{author}{N.~Davey}, \bibinfo{author}{Y.~Sun},
+  \bibinfo{author}{B.~Christianson},
+\newblock \bibinfo{title}{The misuse of the {NASA} metrics data program data
+  sets for automated software defect prediction},
+\newblock in: \bibinfo{booktitle}{15th Annual Conference on Evaluation \&
+  Assessment in Software Engineering (EASE 2011)}, \bibinfo{year}{2011}, pp.
+  \bibinfo{pages}{96--103}. \DOIprefix\doi{10.1049/ic.2011.0012}.
+%Type = Article
+\bibitem[{Shepperd et~al.(2013)Shepperd, Song, Sun, and Mair}]{shepperd2013}
+\bibinfo{author}{M.~Shepperd}, \bibinfo{author}{Q.~Song},
+  \bibinfo{author}{Z.~Sun}, \bibinfo{author}{C.~Mair},
+\newblock \bibinfo{title}{Data quality: some comments on the {NASA} software
+  defect datasets},
+\newblock \bibinfo{journal}{IEEE Trans Softw Eng} \bibinfo{volume}{39}
+  (\bibinfo{year}{2013}) \bibinfo{pages}{1208--1215}.
+  \DOIprefix\doi{10.1109/TSE.2013.11}.
+%Type = Article
+\bibitem[{Kaufman et~al.(2012)Kaufman, Rosset, Perlich, and
+  Stitelman}]{kaufman2012}
+\bibinfo{author}{S.~Kaufman}, \bibinfo{author}{S.~Rosset},
+  \bibinfo{author}{C.~Perlich}, \bibinfo{author}{O.~Stitelman},
+\newblock \bibinfo{title}{Leakage in data mining: formulation, detection, and
+  avoidance},
+\newblock \bibinfo{journal}{ACM Trans Knowl Discov Data} \bibinfo{volume}{6}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{1--21}.
+  \DOIprefix\doi{10.1145/2382577.2382579}.
+%Type = Article
+\bibitem[{Kapoor and Narayanan(2023)}]{kapoor2023}
+\bibinfo{author}{S.~Kapoor}, \bibinfo{author}{A.~Narayanan},
+\newblock \bibinfo{title}{Leakage and the reproducibility crisis in
+  machine-learning-based science},
+\newblock \bibinfo{journal}{Patterns} \bibinfo{volume}{4}
+  (\bibinfo{year}{2023}) \bibinfo{pages}{100804}.
+  \DOIprefix\doi{10.1016/j.patter.2023.100804}.
+%Type = Misc
+\bibitem[{Li(2026)}]{li2026}
+\bibinfo{author}{H.~Li}, \bibinfo{title}{Rows are not samples: duplicate
+  records, evaluation bias, and ranking distortion in standard tabular
+  benchmarks}, \bibinfo{howpublished}{Zenodo (preprint, not peer reviewed)},
+  \bibinfo{year}{2026}. \DOIprefix\doi{10.5281/zenodo.23119065}.
+%Type = Misc
+\bibitem[{Roth(2026)}]{roth2026}
+\bibinfo{author}{S.~Roth}, \bibinfo{title}{Which leakage types matter? {A}
+  quantitative landscape across 2,047 benchmark datasets},
+  \bibinfo{year}{2026}. \bibinfo{note}{ArXiv:2604.04199 (preprint, not peer
+  reviewed)}.
+%Type = Inproceedings
+\bibitem[{Papadopoulos et~al.(2002)Papadopoulos, Proedrou, Vovk, and
+  Gammerman}]{papadopoulos2002}
+\bibinfo{author}{H.~Papadopoulos}, \bibinfo{author}{K.~Proedrou},
+  \bibinfo{author}{V.~Vovk}, \bibinfo{author}{A.~Gammerman},
+\newblock \bibinfo{title}{Inductive confidence machines for regression},
+\newblock in: \bibinfo{booktitle}{Machine Learning: ECML 2002}, volume
+  \bibinfo{volume}{2430} of \textit{\bibinfo{series}{Lecture Notes in Computer
+  Science}}, \bibinfo{year}{2002}, pp. \bibinfo{pages}{345--356}.
+  \DOIprefix\doi{10.1007/3-540-36755-1_29}.
+%Type = Article
+\bibitem[{Lei et~al.(2018)Lei, G'Sell, Rinaldo, Tibshirani, and
+  Wasserman}]{lei2018}
+\bibinfo{author}{J.~Lei}, \bibinfo{author}{M.~G'Sell},
+  \bibinfo{author}{A.~Rinaldo}, \bibinfo{author}{R.~J. Tibshirani},
+  \bibinfo{author}{L.~Wasserman},
+\newblock \bibinfo{title}{Distribution-free predictive inference for
+  regression},
+\newblock \bibinfo{journal}{J Am Stat Assoc} \bibinfo{volume}{113}
+  (\bibinfo{year}{2018}) \bibinfo{pages}{1094--1111}.
+  \DOIprefix\doi{10.1080/01621459.2017.1307116}.
+%Type = Article
+\bibitem[{Angelopoulos and Bates(2023)}]{angelopoulos2023}
+\bibinfo{author}{A.~N. Angelopoulos}, \bibinfo{author}{S.~Bates},
+\newblock \bibinfo{title}{Conformal prediction: a gentle introduction},
+\newblock \bibinfo{journal}{Found Trends Mach Learn} \bibinfo{volume}{16}
+  (\bibinfo{year}{2023}) \bibinfo{pages}{494--591}.
+  \DOIprefix\doi{10.1561/2200000101}.
+%Type = Article
+\bibitem[{Sadinle et~al.(2019)Sadinle, Lei, and Wasserman}]{sadinle2019}
+\bibinfo{author}{M.~Sadinle}, \bibinfo{author}{J.~Lei},
+  \bibinfo{author}{L.~Wasserman},
+\newblock \bibinfo{title}{Least ambiguous set-valued classifiers with bounded
+  error levels},
+\newblock \bibinfo{journal}{J Am Stat Assoc} \bibinfo{volume}{114}
+  (\bibinfo{year}{2019}) \bibinfo{pages}{223--234}.
+  \DOIprefix\doi{10.1080/01621459.2017.1395341}.
+%Type = Inproceedings
+\bibitem[{Romano et~al.(2020)Romano, Sesia, and Cand{\`e}s}]{romano2020a}
+\bibinfo{author}{Y.~Romano}, \bibinfo{author}{M.~Sesia}, \bibinfo{author}{E.~J.
+  Cand{\`e}s},
+\newblock \bibinfo{title}{Classification with valid and adaptive coverage},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems 33}, \bibinfo{year}{2020}.
+%Type = Inproceedings
+\bibitem[{Romano et~al.(2019)Romano, Patterson, and Cand{\`e}s}]{romano2019}
+\bibinfo{author}{Y.~Romano}, \bibinfo{author}{E.~Patterson},
+  \bibinfo{author}{E.~J. Cand{\`e}s},
+\newblock \bibinfo{title}{Conformalized quantile regression},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems 32}, \bibinfo{year}{2019}.
+%Type = Article
+\bibitem[{Luo and Zhou(2026)}]{luo2026rank}
+\bibinfo{author}{R.~Luo}, \bibinfo{author}{Z.~Zhou},
+\newblock \bibinfo{title}{Reliable classification through rank-based conformal
+  prediction sets},
+\newblock \bibinfo{journal}{Pattern Recognit} \bibinfo{volume}{172}
+  (\bibinfo{year}{2026}) \bibinfo{pages}{112330}.
+  \DOIprefix\doi{10.1016/j.patcog.2025.112330}.
+%Type = Article
+\bibitem[{Narteni et~al.(2026)Narteni, Carlevaro, Dabbene, Muselli, and
+  Mongelli}]{narteni2026}
+\bibinfo{author}{S.~Narteni}, \bibinfo{author}{A.~Carlevaro},
+  \bibinfo{author}{F.~Dabbene}, \bibinfo{author}{M.~Muselli},
+  \bibinfo{author}{M.~Mongelli},
+\newblock \bibinfo{title}{A novel score function for conformal prediction in
+  rule-based binary classification},
+\newblock \bibinfo{journal}{Pattern Recognit} \bibinfo{volume}{171}
+  (\bibinfo{year}{2026}) \bibinfo{pages}{112219}.
+  \DOIprefix\doi{10.1016/j.patcog.2025.112219}.
+%Type = Article
+\bibitem[{Vovk(2025)}]{vovk2025e}
+\bibinfo{author}{V.~Vovk},
+\newblock \bibinfo{title}{Conformal e-prediction},
+\newblock \bibinfo{journal}{Pattern Recognit} \bibinfo{volume}{166}
+  (\bibinfo{year}{2025}) \bibinfo{pages}{111674}.
+  \DOIprefix\doi{10.1016/j.patcog.2025.111674}.
+%Type = Inproceedings
+\bibitem[{Vovk(2012)}]{vovk2012}
+\bibinfo{author}{V.~Vovk},
+\newblock \bibinfo{title}{Conditional validity of inductive conformal
+  predictors},
+\newblock in: \bibinfo{booktitle}{Proceedings of the Asian Conference on
+  Machine Learning}, volume~\bibinfo{volume}{25} of
+  \textit{\bibinfo{series}{PMLR}}, \bibinfo{year}{2012}, pp.
+  \bibinfo{pages}{475--490}.
+%Type = Article
+\bibitem[{Foygel~Barber et~al.(2021)Foygel~Barber, Cand{\`e}s, Ramdas, and
+  Tibshirani}]{foygelbarber2021}
+\bibinfo{author}{R.~Foygel~Barber}, \bibinfo{author}{E.~J. Cand{\`e}s},
+  \bibinfo{author}{A.~Ramdas}, \bibinfo{author}{R.~J. Tibshirani},
+\newblock \bibinfo{title}{The limits of distribution-free conditional
+  predictive inference},
+\newblock \bibinfo{journal}{Inf Inference} \bibinfo{volume}{10}
+  (\bibinfo{year}{2021}) \bibinfo{pages}{455--482}.
+  \DOIprefix\doi{10.1093/imaiai/iaaa017}.
+%Type = Inproceedings
+\bibitem[{Tibshirani et~al.(2019)Tibshirani, Barber, Cand{\`e}s, and
+  Ramdas}]{tibshirani2019}
+\bibinfo{author}{R.~J. Tibshirani}, \bibinfo{author}{R.~F. Barber},
+  \bibinfo{author}{E.~J. Cand{\`e}s}, \bibinfo{author}{A.~Ramdas},
+\newblock \bibinfo{title}{Conformal prediction under covariate shift},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems 32}, \bibinfo{year}{2019}.
+%Type = Article
+\bibitem[{Barber et~al.(2023)Barber, Cand{\`e}s, Ramdas, and
+  Tibshirani}]{barber2023}
+\bibinfo{author}{R.~F. Barber}, \bibinfo{author}{E.~J. Cand{\`e}s},
+  \bibinfo{author}{A.~Ramdas}, \bibinfo{author}{R.~J. Tibshirani},
+\newblock \bibinfo{title}{Conformal prediction beyond exchangeability},
+\newblock \bibinfo{journal}{Ann Stat} \bibinfo{volume}{51}
+  (\bibinfo{year}{2023}) \bibinfo{pages}{816--845}.
+  \DOIprefix\doi{10.1214/23-AOS2276}.
+%Type = Article
+\bibitem[{Hallberg~Szabadv{\'a}ry and L{\"o}fstr{\"o}m(2026)}]{hallberg2026}
+\bibinfo{author}{J.~Hallberg~Szabadv{\'a}ry},
+  \bibinfo{author}{T.~L{\"o}fstr{\"o}m},
+\newblock \bibinfo{title}{Beyond conformal predictors: Adaptive conformal
+  inference with confidence predictors},
+\newblock \bibinfo{journal}{Pattern Recognit} \bibinfo{volume}{170}
+  (\bibinfo{year}{2026}) \bibinfo{pages}{111999}.
+  \DOIprefix\doi{10.1016/j.patcog.2025.111999}.
+%Type = Article
+\bibitem[{Norinder et~al.(2014)Norinder, Carlsson, Boyer, and
+  Eklund}]{norinder2014}
+\bibinfo{author}{U.~Norinder}, \bibinfo{author}{L.~Carlsson},
+  \bibinfo{author}{S.~Boyer}, \bibinfo{author}{M.~Eklund},
+\newblock \bibinfo{title}{Introducing conformal prediction in predictive
+  modeling. {A} transparent and flexible alternative to applicability domain
+  determination},
+\newblock \bibinfo{journal}{J Chem Inf Model} \bibinfo{volume}{54}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{1596--1603}.
+  \DOIprefix\doi{10.1021/ci5001168}.
+%Type = Article
+\bibitem[{Morger et~al.(2021)Morger, Svensson, Arvidsson~McShane, Gauraha,
+  Norinder, Spjuth, and Volkamer}]{morger2021}
+\bibinfo{author}{A.~Morger}, \bibinfo{author}{F.~Svensson},
+  \bibinfo{author}{S.~Arvidsson~McShane}, \bibinfo{author}{N.~Gauraha},
+  \bibinfo{author}{U.~Norinder}, \bibinfo{author}{O.~Spjuth},
+  \bibinfo{author}{A.~Volkamer},
+\newblock \bibinfo{title}{Assessing the calibration in toxicological in vitro
+  models with conformal prediction},
+\newblock \bibinfo{journal}{J Cheminform} \bibinfo{volume}{13}
+  (\bibinfo{year}{2021}) \bibinfo{pages}{35}.
+  \DOIprefix\doi{10.1186/s13321-021-00511-5}.
+%Type = Article
+\bibitem[{Hernandez-Hernandez et~al.(2026)Hernandez-Hernandez, Guo, and
+  Ballester}]{hernandez2026}
+\bibinfo{author}{S.~Hernandez-Hernandez}, \bibinfo{author}{Q.~Guo},
+  \bibinfo{author}{P.~J. Ballester},
+\newblock \bibinfo{title}{Conformal prediction of molecule-induced cancer cell
+  growth inhibition challenged by strong distribution shifts},
+\newblock \bibinfo{journal}{Pattern Recognit} \bibinfo{volume}{172}
+  (\bibinfo{year}{2026}) \bibinfo{pages}{112501}.
+  \DOIprefix\doi{10.1016/j.patcog.2025.112501}.
+%Type = Article
+\bibitem[{Guan(2023)}]{guan2023}
+\bibinfo{author}{L.~Guan},
+\newblock \bibinfo{title}{Localized conformal prediction: a generalized
+  inference framework for conformal prediction},
+\newblock \bibinfo{journal}{Biometrika} \bibinfo{volume}{110}
+  (\bibinfo{year}{2023}) \bibinfo{pages}{33--50}.
+  \DOIprefix\doi{10.1093/biomet/asac040}.
+%Type = Article
+\bibitem[{Gibbs et~al.(2025)Gibbs, Cherian, and Cand{\`e}s}]{gibbs2025}
+\bibinfo{author}{I.~Gibbs}, \bibinfo{author}{J.~J. Cherian},
+  \bibinfo{author}{E.~J. Cand{\`e}s},
+\newblock \bibinfo{title}{Conformal prediction with conditional guarantees},
+\newblock \bibinfo{journal}{J R Stat Soc Ser B Stat Methodol}
+  \bibinfo{volume}{87} (\bibinfo{year}{2025}) \bibinfo{pages}{1100--1126}.
+  \DOIprefix\doi{10.1093/jrsssb/qkaf008}.
+%Type = Inproceedings
+\bibitem[{Bastani et~al.(2022)Bastani, Gupta, Jung, Noarov, Ramalingam, and
+  Roth}]{bastani2022}
+\bibinfo{author}{O.~Bastani}, \bibinfo{author}{V.~Gupta},
+  \bibinfo{author}{C.~Jung}, \bibinfo{author}{G.~Noarov},
+  \bibinfo{author}{R.~Ramalingam}, \bibinfo{author}{A.~Roth},
+\newblock \bibinfo{title}{Practical adversarial multivalid conformal
+  prediction},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems 35}, \bibinfo{year}{2022}, pp. \bibinfo{pages}{29362--29373}.
+  \DOIprefix\doi{10.52202/068431-2129}.
+%Type = Article
+\bibitem[{Romano et~al.(2020)Romano, Barber, Sabatti, and
+  Cand{\`e}s}]{romano2020b}
+\bibinfo{author}{Y.~Romano}, \bibinfo{author}{R.~F. Barber},
+  \bibinfo{author}{C.~Sabatti}, \bibinfo{author}{E.~J. Cand{\`e}s},
+\newblock \bibinfo{title}{With malice toward none: assessing uncertainty via
+  equalized coverage},
+\newblock \bibinfo{journal}{Harv Data Sci Rev}  (\bibinfo{year}{2020}).
+  \DOIprefix\doi{10.1162/99608f92.03f00592}.
+%Type = Article
+\bibitem[{L{\"o}fstr{\"o}m et~al.(2015)L{\"o}fstr{\"o}m, Bostr{\"o}m, Linusson,
+  and Johansson}]{lofstrom2015}
+\bibinfo{author}{T.~L{\"o}fstr{\"o}m}, \bibinfo{author}{H.~Bostr{\"o}m},
+  \bibinfo{author}{H.~Linusson}, \bibinfo{author}{U.~Johansson},
+\newblock \bibinfo{title}{Bias reduction through conditional conformal
+  prediction},
+\newblock \bibinfo{journal}{Intell Data Anal} \bibinfo{volume}{19}
+  (\bibinfo{year}{2015}) \bibinfo{pages}{1355--1375}.
+  \DOIprefix\doi{10.3233/IDA-150786}.
+%Type = Inproceedings
+\bibitem[{Ding et~al.(2023)Ding, Angelopoulos, Bates, Jordan, and
+  Tibshirani}]{ding2023}
+\bibinfo{author}{T.~Ding}, \bibinfo{author}{A.~N. Angelopoulos},
+  \bibinfo{author}{S.~Bates}, \bibinfo{author}{M.~I. Jordan},
+  \bibinfo{author}{R.~J. Tibshirani},
+\newblock \bibinfo{title}{Class-conditional conformal prediction with many
+  classes},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems 36}, \bibinfo{year}{2023}.
+%Type = Inproceedings
+\bibitem[{Bostr{\"o}m and Johansson(2020)}]{bostrom2020}
+\bibinfo{author}{H.~Bostr{\"o}m}, \bibinfo{author}{U.~Johansson},
+\newblock \bibinfo{title}{Mondrian conformal regressors},
+\newblock in: \bibinfo{booktitle}{Proceedings of the Ninth Symposium on
+  Conformal and Probabilistic Prediction and Applications}, volume
+  \bibinfo{volume}{128} of \textit{\bibinfo{series}{PMLR}},
+  \bibinfo{year}{2020}, pp. \bibinfo{pages}{114--133}.
+%Type = Article
+\bibitem[{Dunn et~al.(2023)Dunn, Wasserman, and Ramdas}]{dunn2023}
+\bibinfo{author}{R.~Dunn}, \bibinfo{author}{L.~Wasserman},
+  \bibinfo{author}{A.~Ramdas},
+\newblock \bibinfo{title}{Distribution-free prediction sets for two-layer
+  hierarchical models},
+\newblock \bibinfo{journal}{J Am Stat Assoc} \bibinfo{volume}{118}
+  (\bibinfo{year}{2023}) \bibinfo{pages}{2491--2502}.
+  \DOIprefix\doi{10.1080/01621459.2022.2060112}.
+%Type = Article
+\bibitem[{Zhang and Zhou(2026)}]{zhang2026}
+\bibinfo{author}{R.~Zhang}, \bibinfo{author}{P.~Zhou},
+\newblock \bibinfo{title}{A {M}ondrian conformal predictive system with
+  improved decision trees for uncertainty quantification under
+  heteroscedasticity},
+\newblock \bibinfo{journal}{Pattern Recognit} \bibinfo{volume}{172}
+  (\bibinfo{year}{2026}) \bibinfo{pages}{112338}.
+  \DOIprefix\doi{10.1016/j.patcog.2025.112338}.
+%Type = Article
+\bibitem[{Seo et~al.(2026)Seo, Jeon, and Kim}]{seo2026}
+\bibinfo{author}{J.-I. Seo}, \bibinfo{author}{Y.~E. Jeon},
+  \bibinfo{author}{Y.~Kim},
+\newblock \bibinfo{title}{Calibrated {M}ondrian conformal prediction for
+  uncertainty quantification in spatial modeling},
+\newblock \bibinfo{journal}{Pattern Recognit} \bibinfo{volume}{180}
+  (\bibinfo{year}{2026}) \bibinfo{pages}{114113}.
+  \DOIprefix\doi{10.1016/j.patcog.2026.114113}.
+%Type = Article
+\bibitem[{Papadopoulos et~al.(2011)Papadopoulos, Vovk, and
+  Gammerman}]{papadopoulos2011}
+\bibinfo{author}{H.~Papadopoulos}, \bibinfo{author}{V.~Vovk},
+  \bibinfo{author}{A.~Gammerman},
+\newblock \bibinfo{title}{Regression conformal prediction with nearest
+  neighbours},
+\newblock \bibinfo{journal}{J Artif Intell Res} \bibinfo{volume}{40}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{815--840}.
+  \DOIprefix\doi{10.1613/jair.3198}.
+%Type = Article
+\bibitem[{Barz and Denzler(2020)}]{barz2020}
+\bibinfo{author}{B.~Barz}, \bibinfo{author}{J.~Denzler},
+\newblock \bibinfo{title}{Do we train on test data? {P}urging {CIFAR} of
+  near-duplicates},
+\newblock \bibinfo{journal}{J Imaging} \bibinfo{volume}{6}
+  (\bibinfo{year}{2020}) \bibinfo{pages}{41}.
+  \DOIprefix\doi{10.3390/jimaging6060041}.
+%Type = Inproceedings
+\bibitem[{Lee et~al.(2022)Lee, Ippolito, Nystrom, Zhang, Eck, Callison-Burch,
+  and Carlini}]{lee2022}
+\bibinfo{author}{K.~Lee}, \bibinfo{author}{D.~Ippolito},
+  \bibinfo{author}{A.~Nystrom}, \bibinfo{author}{C.~Zhang},
+  \bibinfo{author}{D.~Eck}, \bibinfo{author}{C.~Callison-Burch},
+  \bibinfo{author}{N.~Carlini},
+\newblock \bibinfo{title}{Deduplicating training data makes language models
+  better},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 60th Annual Meeting of the
+  Association for Computational Linguistics}, \bibinfo{year}{2022}, pp.
+  \bibinfo{pages}{8424--8445}. \DOIprefix\doi{10.18653/v1/2022.acl-long.577}.
+%Type = Inproceedings
+\bibitem[{Lewis et~al.(2021)Lewis, Stenetorp, and Riedel}]{lewis2021}
+\bibinfo{author}{P.~Lewis}, \bibinfo{author}{P.~Stenetorp},
+  \bibinfo{author}{S.~Riedel},
+\newblock \bibinfo{title}{Question and answer test-train overlap in open-domain
+  question answering datasets},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 16th Conference of the
+  European Chapter of the Association for Computational Linguistics},
+  \bibinfo{year}{2021}, pp. \bibinfo{pages}{1000--1008}.
+  \DOIprefix\doi{10.18653/v1/2021.eacl-main.86}.
+%Type = Inproceedings
+\bibitem[{Elangovan et~al.(2021)Elangovan, He, and Verspoor}]{elangovan2021}
+\bibinfo{author}{A.~Elangovan}, \bibinfo{author}{J.~He},
+  \bibinfo{author}{K.~Verspoor},
+\newblock \bibinfo{title}{Memorization vs. generalization: quantifying data
+  leakage in {NLP} performance evaluation},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 16th Conference of the
+  European Chapter of the Association for Computational Linguistics},
+  \bibinfo{year}{2021}, pp. \bibinfo{pages}{1325--1335}.
+  \DOIprefix\doi{10.18653/v1/2021.eacl-main.113}.
+%Type = Inproceedings
+\bibitem[{Allamanis(2019)}]{allamanis2019}
+\bibinfo{author}{M.~Allamanis},
+\newblock \bibinfo{title}{The adverse effects of code duplication in machine
+  learning models of code},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 2019 ACM SIGPLAN
+  International Symposium on New Ideas, New Paradigms, and Reflections on
+  Programming and Software (Onward! 2019)}, \bibinfo{year}{2019}, pp.
+  \bibinfo{pages}{143--153}. \DOIprefix\doi{10.1145/3359591.3359735}.
+%Type = Inproceedings
+\bibitem[{Tavallaee et~al.(2009)Tavallaee, Bagheri, Lu, and
+  Ghorbani}]{tavallaee2009}
+\bibinfo{author}{M.~Tavallaee}, \bibinfo{author}{E.~Bagheri},
+  \bibinfo{author}{W.~Lu}, \bibinfo{author}{A.~A. Ghorbani},
+\newblock \bibinfo{title}{A detailed analysis of the {KDD CUP} 99 data set},
+\newblock in: \bibinfo{booktitle}{2009 IEEE Symposium on Computational
+  Intelligence for Security and Defense Applications}, \bibinfo{year}{2009},
+  pp. \bibinfo{pages}{1--6}. \DOIprefix\doi{10.1109/CISDA.2009.5356528}.
+%Type = Article
+\bibitem[{Sheridan(2013)}]{sheridan2013}
+\bibinfo{author}{R.~P. Sheridan},
+\newblock \bibinfo{title}{Time-split cross-validation as a method for
+  estimating the goodness of prospective prediction},
+\newblock \bibinfo{journal}{J Chem Inf Model} \bibinfo{volume}{53}
+  (\bibinfo{year}{2013}) \bibinfo{pages}{783--790}.
+  \DOIprefix\doi{10.1021/ci400084k}.
+%Type = Misc
+\bibitem[{Deng(2026)}]{deng2026}
+\bibinfo{author}{J.~Deng}, \bibinfo{title}{When identical rows disagree: from
+  benchmark identifiability to replication-robust anomaly detection},
+  \bibinfo{year}{2026}. \bibinfo{note}{ArXiv:2609.29580 (preprint, not peer
+  reviewed)}.
+%Type = Article
+\bibitem[{Vanschoren et~al.(2014)Vanschoren, van Rijn, Bischl, and
+  Torgo}]{vanschoren2014}
+\bibinfo{author}{J.~Vanschoren}, \bibinfo{author}{J.~N. van Rijn},
+  \bibinfo{author}{B.~Bischl}, \bibinfo{author}{L.~Torgo},
+\newblock \bibinfo{title}{{OpenML}: networked science in machine learning},
+\newblock \bibinfo{journal}{SIGKDD Explor} \bibinfo{volume}{15}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{49--60}.
+  \DOIprefix\doi{10.1145/2641190.2641198}.
+%Type = Inproceedings
+\bibitem[{Bischl et~al.(2021)Bischl, Casalicchio, Feurer, Gijsbers, Hutter,
+  Lang, Mantovani, van Rijn, and Vanschoren}]{bischl2021}
+\bibinfo{author}{B.~Bischl}, \bibinfo{author}{G.~Casalicchio},
+  \bibinfo{author}{M.~Feurer}, \bibinfo{author}{P.~Gijsbers},
+  \bibinfo{author}{F.~Hutter}, \bibinfo{author}{M.~Lang},
+  \bibinfo{author}{R.~G. Mantovani}, \bibinfo{author}{J.~N. van Rijn},
+  \bibinfo{author}{J.~Vanschoren},
+\newblock \bibinfo{title}{{OpenML} benchmarking suites},
+\newblock in: \bibinfo{booktitle}{Proceedings of the Neural Information
+  Processing Systems Track on Datasets and Benchmarks 1}, \bibinfo{year}{2021}.
+%Type = Inproceedings
+\bibitem[{Fischer et~al.(2023)Fischer, Feurer, and Bischl}]{fischer2023}
+\bibinfo{author}{S.~F. Fischer}, \bibinfo{author}{M.~Feurer},
+  \bibinfo{author}{B.~Bischl},
+\newblock \bibinfo{title}{{OpenML-CTR23} -- a curated tabular regression
+  benchmarking suite},
+\newblock in: \bibinfo{booktitle}{AutoML Conference 2023 (Workshop Track)},
+  \bibinfo{year}{2023}. \bibinfo{note}{OpenML study 353}.
+%Type = Article
+\bibitem[{Gijsbers et~al.(2024)Gijsbers, Bueno, Coors, LeDell, Poirier, Thomas,
+  Bischl, and Vanschoren}]{gijsbers2024}
+\bibinfo{author}{P.~Gijsbers}, \bibinfo{author}{M.~L.~P. Bueno},
+  \bibinfo{author}{S.~Coors}, \bibinfo{author}{E.~LeDell},
+  \bibinfo{author}{S.~Poirier}, \bibinfo{author}{J.~Thomas},
+  \bibinfo{author}{B.~Bischl}, \bibinfo{author}{J.~Vanschoren},
+\newblock \bibinfo{title}{{AMLB}: an {AutoML} benchmark},
+\newblock \bibinfo{journal}{J Mach Learn Res} \bibinfo{volume}{25}
+  (\bibinfo{year}{2024}) \bibinfo{pages}{1--65}.
+%Type = Inproceedings
+\bibitem[{Grinsztajn et~al.(2022)Grinsztajn, Oyallon, and
+  Varoquaux}]{grinsztajn2022}
+\bibinfo{author}{L.~Grinsztajn}, \bibinfo{author}{E.~Oyallon},
+  \bibinfo{author}{G.~Varoquaux},
+\newblock \bibinfo{title}{Why do tree-based models still outperform deep
+  learning on typical tabular data?},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems 35 (Datasets and Benchmarks Track)}, \bibinfo{year}{2022}.
+  \DOIprefix\doi{10.52202/068431-0037}.
+%Type = Misc
+\bibitem[{Kelly et~al.(2026)Kelly, Longjohn, and Nottingham}]{kelly_uci}
+\bibinfo{author}{M.~Kelly}, \bibinfo{author}{R.~Longjohn},
+  \bibinfo{author}{K.~Nottingham}, \bibinfo{title}{The {UCI} machine learning
+  repository}, \bibinfo{howpublished}{\url{https://archive.ics.uci.edu}},
+  \bibinfo{year}{2026}. \bibinfo{note}{Accessed 2 November 2026}.
+%Type = Article
+\bibitem[{Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort
+  et~al.}]{pedregosa2011}
+\bibinfo{author}{F.~Pedregosa}, \bibinfo{author}{G.~Varoquaux},
+  \bibinfo{author}{A.~Gramfort}, et~al.,
+\newblock \bibinfo{title}{Scikit-learn: machine learning in {P}ython},
+\newblock \bibinfo{journal}{J Mach Learn Res} \bibinfo{volume}{12}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{2825--2830}.
+%Type = Article
+\bibitem[{Breiman(2001)}]{breiman2001}
+\bibinfo{author}{L.~Breiman},
+\newblock \bibinfo{title}{Random forests},
+\newblock \bibinfo{journal}{Mach Learn} \bibinfo{volume}{45}
+  (\bibinfo{year}{2001}) \bibinfo{pages}{5--32}.
+  \DOIprefix\doi{10.1023/A:1010933404324}.
+%Type = Inproceedings
+\bibitem[{Ke et~al.(2017)Ke, Meng, Finley, Wang, Chen, Ma, Ye, and
+  Liu}]{ke2017}
+\bibinfo{author}{G.~Ke}, \bibinfo{author}{Q.~Meng},
+  \bibinfo{author}{T.~Finley}, \bibinfo{author}{T.~Wang},
+  \bibinfo{author}{W.~Chen}, \bibinfo{author}{W.~Ma}, \bibinfo{author}{Q.~Ye},
+  \bibinfo{author}{T.~Y. Liu},
+\newblock \bibinfo{title}{{LightGBM}: a highly efficient gradient boosting
+  decision tree},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems 30}, \bibinfo{year}{2017}, pp. \bibinfo{pages}{3146--3154}.
+%Type = Article
+\bibitem[{Wilcoxon(1945)}]{wilcoxon1945}
+\bibinfo{author}{F.~Wilcoxon},
+\newblock \bibinfo{title}{Individual comparisons by ranking methods},
+\newblock \bibinfo{journal}{Biometrics Bull} \bibinfo{volume}{1}
+  (\bibinfo{year}{1945}) \bibinfo{pages}{80--83}.
+  \DOIprefix\doi{10.2307/3001968}.
+%Type = Article
+\bibitem[{Holm(1979)}]{holm1979}
+\bibinfo{author}{S.~Holm},
+\newblock \bibinfo{title}{A simple sequentially rejective multiple test
+  procedure},
+\newblock \bibinfo{journal}{Scand J Stat} \bibinfo{volume}{6}
+  (\bibinfo{year}{1979}) \bibinfo{pages}{65--70}.
+
+\end{thebibliography}

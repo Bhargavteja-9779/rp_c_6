@@ -1,0 +1,17 @@
+\section{Conclusions}\label{sec:conclusion}
+
+This paper set out to answer a practical question: can a team trust the coverage of conformal prediction sets when it checks them on a random split of tabular data that contains repeated rows? The answer is that it often can, but not always, and that the cases where it cannot are predictable and repairable.
+
+\paragraph{Strengths.} The study has four main strengths. First, the failure it describes is concrete and sometimes large. On NASA mc1 the usual check reported \NCsMcOneReported{}\% coverage while new modules were covered \NCsMcOneNew{}\% of the time, and \NToolStdEmpty{} of them received an empty set. Second, the check needs no model and runs in a fraction of a second. Its two quantities, the expected share of seen test rows and the share whose copies carry the same label, have exact closed forms. Third, the evidence was gathered under plans fixed in advance, on two fresh collections that played no part in developing the method. There the check flagged all \NScpPos{} data sets with a real shortfall, and with separate calibration new-case coverage never fell more than \NWTwoWorstFixAbs{} points below the target. Fourth, the routine is packaged as a tested open-source tool. It reproduced the research pipeline on \NTvN{} data files that we downloaded afresh.
+
+\paragraph{Weaknesses.} The study also has clear limits. The predicted gap is a warning level and a limit, not a forecast: on the first fresh collection it did not rank data sets by the size of their shortfall. Its assumptions fail in both directions, giving larger shortfalls than predicted when slightly different repeats are still easy, and over-coverage when repeated rows with conflicting labels are hard. Exact matching misses near-copies, so calibration by distance is needed for them. A promise over all new cases does not protect a rare class, as the defective mc1 modules showed, and class-wise calibration is needed there at the cost of larger sets. All evidence comes from random splits of public data, not from a deployed system with records that arrive over time. Finally, several analyses were added after results were seen, and they are labelled as such.
+
+\paragraph{Benefits to the field.} For practitioners in pattern recognition and machine learning, the routine turns a hidden failure into a visible and repairable one at almost no cost. It also gives authors of benchmark studies a simple reporting rule: state coverage on new cases next to the overall figure, and the share of seen test rows. Most standard benchmarks pass this check, which is reassuring. The data sets that fail it, in software defects, intrusion detection, phishing and several medical and security collections, are exactly those in which reported uncertainty may drive real decisions.
+
+\paragraph{Future work.} Four directions follow directly.
+\begin{enumerate}
+\item Extend the check from exact to near-identical records, with a principled choice of matching resolution.
+\item Combine the seen/new split with class-wise calibration for rare classes, and study the trade-off between coverage per class and set size.
+\item Test the routine on time-ordered deployments, where future records are new by construction.
+\item Build the check into common conformal-prediction libraries, so that new-case coverage is reported by default.
+\end{enumerate}

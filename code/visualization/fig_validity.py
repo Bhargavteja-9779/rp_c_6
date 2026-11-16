@@ -5,11 +5,14 @@ falls below it, and separate calibration matches it. Medians over data sets with
 import glob, os
 import numpy as np
 import pandas as pd
-from style import COL, GRID, INK, INK2, RES, TWO, boot_ci, plt, save
+from style import COL, GRID, INK, INK2, NARROW, RES, TWO, boot_ci, plt, save
 
 
 def main():
-    fig, (a, b) = plt.subplots(1, 2, figsize=(TWO, 66 / 25.4), gridspec_kw=dict(width_ratios=[1, 1.35]))
+    if NARROW:
+        fig, (a, b) = plt.subplots(2, 1, figsize=(TWO, 104 / 25.4))
+    else:
+        fig, (a, b) = plt.subplots(1, 2, figsize=(TWO, 66 / 25.4), gridspec_kw=dict(width_ratios=[1, 1.35]))
     d = pd.read_csv(os.path.join(RES, "tables", "per_dataset_results.csv"))
     d = d[(d.protocol == "R") & (d.set == "DUP") & d.score.isin(["lac", "absres"]) & (d.model == "rf")]
     a.plot([77, 97], [77, 97], color=INK2, ls=":", lw=0.8)
