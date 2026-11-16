@@ -14,7 +14,7 @@ We want a procedure that a practitioner can apply before training anything, that
 \item \textbf{A label-aware check that needs no model} (Sect.~\ref{sec:check}). Two closed-form quantities, the expected share of seen test rows and the share whose training copies carry the same label, give a predicted worst-case shortfall for new cases. The first quantity is elementary. The closed form of the second and the resulting shortfall formula are, to our knowledge, new.
 \item \textbf{A fix and a reporting rule} (Sect.~\ref{sec:fix}). Calibrating seen and new cases separately is standard Mondrian conformal prediction \citep{vovk2022}. We show that it is the right choice of groups here, and we add a safety margin for small calibration sets and a distance-based variant for near-copies.
 \item \textbf{An evaluation under plans fixed in advance} (Sects.~\ref{sec:framework}--\ref{sec:results}). The evaluation covers \NCsNFlagTotal{} application data sets in three domains, \NNTotal{} benchmark data sets, controlled experiments with exact and noisy copies, and two fresh collections of \NPrN{} and \NWTwoN{} data sets analysed under time-stamped plans. Negative results are reported with the positive ones.
-\item \textbf{An open-source tool}, \emph{covercheck} (Sect.~\ref{sec:tool}). It runs the routine from the command line or from Python and writes a one-page report. It reproduced the pipeline's results on \NTvN{} data files downloaded fresh from their source.
+\item \textbf{A software tool}, \emph{covercheck} (Sect.~\ref{sec:tool}). It runs the routine from the command line or from Python and writes a one-page report. It reproduced the pipeline's results on \NTvN{} data files downloaded fresh from their source.
 \end{enumerate}
 
 \subsection*{Organization}

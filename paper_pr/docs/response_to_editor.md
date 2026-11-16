@@ -26,7 +26,7 @@ Thank you for returning our manuscript with clear formatting instructions. We ha
 
 **5. Tables and figures within the margins.** All figures were redrawn at the text width of 118 mm, and none is rotated. The LaTeX log reports no overfull boxes, so no table, figure or line extends into the margins.
 
-**6. Authors, float placement, page numbers.** Both authors and their affiliation are listed. Each table and figure appears near its first mention, and floats are kept within their own section. Every page is numbered.
+**6. Authors, float placement, page numbers.** Both authors are listed with their full affiliation: School of Computer Science and Engineering (SCOPE), Vellore Institute of Technology, Vellore, India. P. N. Bhargav Teja is the first author and Rajay Vedaraj I. S. the corresponding author. Each table and figure appears near its first mention, and floats are kept within their own section. Every page is numbered.
 
 **7. Abstract.** The abstract is one paragraph of 233 words.
 
@@ -42,9 +42,9 @@ Thank you for returning our manuscript with clear formatting instructions. We ha
 - **Diversity of sources.** Only three references are preprints, and they are cited because they are the most recent work on duplicated rows in tabular benchmarks. Published conference papers are cited in their published versions. The most frequent venues are *Pattern Recognition* and NeurIPS, with seven references each (13% of the list), so no single venue dominates.
 - **No group citations.** In the running text, every reference now has its own comment; a citation such as "[3–7]" no longer appears. Only the comparison table (Table 1) cites two works per row. Each of those works is discussed individually in Section 2.
 
-**11. Relevance to Pattern Recognition.** The paper concerns the reliability of uncertainty estimates from classifiers and regressors on tabular data. This is a pattern recognition problem with direct consequences for software defect prediction, network intrusion detection and phishing detection. It builds on recent conformal prediction work published in this journal, which is cited and discussed in Section 2. It contributes a model-free check, a calibration fix and a reporting rule, with an open-source tool.
+**11. Relevance to Pattern Recognition.** The paper concerns the reliability of uncertainty estimates from classifiers and regressors on tabular data. This is a pattern recognition problem with direct consequences for software defect prediction, network intrusion detection and phishing detection. It builds on recent conformal prediction work published in this journal, which is cited and discussed in Section 2. It contributes a model-free check, a calibration fix and a reporting rule, implemented as a Python tool.
 
-**12. CRediT.** A CRediT authorship contribution statement is included after the Conclusions. It is followed by the declaration of competing interest, the funding statement, the data-availability statement and the declaration on the use of generative AI.
+**12. CRediT.** A CRediT authorship contribution statement is included after the Conclusions, with the roles of both authors. It is followed by the declaration of competing interest, the funding statement, the data-availability statement and the declaration on the use of generative AI. The data-availability statement gives the source of every data set, and the Supplementary Material lists a link to each of them. The code is available from the corresponding author on request.
 
 **Corresponding author.** The manuscript names a single corresponding author, Rajay Vedaraj I. S. (rajay@vit.ac.in), as recorded in Editorial Manager.
 

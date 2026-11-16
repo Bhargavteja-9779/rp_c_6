@@ -4,6 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 rm -rf tables && cp -r ../paper/tables tables          # single source of all numbers
 python3 expand_placeholders.py >/dev/null
+python3 tools/make_data_links.py >/dev/null          # supplementary link list, from the study records
 grep -v "& LGBM &" tables/tab_cases.tex > tables/tab_cases_rf.tex   # main text: random forest rows
 TEX="pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error"
 $TEX supplement_pr.tex >/dev/null; $TEX main_pr.tex >/dev/null; bibtex main_pr >/dev/null

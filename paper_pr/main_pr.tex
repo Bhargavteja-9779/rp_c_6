@@ -18,7 +18,8 @@
 \usepackage{pifont}
 \usepackage{xcolor}
 \usepackage[font=footnotesize,labelfont=bf,labelsep=period]{caption}
-\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{hyperref}
+% elsarticle resets link colours to blue at \begin{document}; they are set to black again just after it
 \usepackage[section]{placeins}  % floats stay within their section, near their first mention
 \usepackage{xr-hyper}
 \externaldocument[S-]{supplement_pr}
@@ -46,6 +47,7 @@
 \setcounter{totalnumber}{4}
 
 \begin{document}
+\hypersetup{colorlinks=true,allcolors=black}  % no coloured text (editorial requirement 9)
 
 \begin{frontmatter}
 
@@ -55,7 +57,10 @@
 \author[vit]{{\footnotesize Rajay Vedaraj I. S.}\corref{cor1}}
 \ead{rajay@vit.ac.in}
 \cortext[cor1]{Corresponding author.}
-\affiliation[vit]{organization={Vellore Institute of Technology},
+\affiliation[vit]{organization={School of Computer Science and Engineering (SCOPE), Vellore Institute of Technology},
+            city={Vellore},
+            postcode={632014},
+            state={Tamil Nadu},
             country={India}}
 
 \begin{abstract}

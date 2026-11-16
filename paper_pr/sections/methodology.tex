@@ -74,7 +74,7 @@ Report coverage on new cases, the share of seen test rows, and the set size for 
 
 \subsection{The \emph{covercheck} tool}\label{sec:tool}
 \begin{sloppypar}
-We packaged the routine as an open-source Python library and command-line tool. \texttt{check(X, y)} computes Eqs.~(\ref{eq:exposure})--(\ref{eq:gstar}) and returns a verdict with reasons. \texttt{SeenNewConformal} wraps any scikit-learn estimator and implements the fix, the safety margin and the distance variant. \texttt{evaluate} reports coverage on all, seen and new cases over repeated random splits. The command
+We packaged the routine as a Python library and command-line tool. \texttt{check(X, y)} computes Eqs.~(\ref{eq:exposure})--(\ref{eq:gstar}) and returns a verdict with reasons. \texttt{SeenNewConformal} wraps any scikit-learn estimator and implements the fix, the safety margin and the distance variant. \texttt{evaluate} reports coverage on all, seen and new cases over repeated random splits. The command
 \begin{center}\small\texttt{covercheck data.csv --target label --html report.html}\end{center}
 runs all three steps. The tool has its own test suite, which includes a simulation check of Eq.~(\ref{eq:pure}) and of the fix.
 

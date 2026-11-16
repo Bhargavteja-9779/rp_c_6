@@ -81,7 +81,7 @@ No data set, seed or learner was excluded after its outcome was seen, and no hyp
 
 \section{Selection of the fresh collections}\label{sec:selection}
 \begin{table}[h]
-\caption{Selection of the two fresh collections: pool sizes, exclusions in the order applied, and the included data sets. ``v1'' denotes the benchmark and application data sets used earlier in the study. The full logs, with the reason for every data set, are in \texttt{results/\allowbreak reinforcement/\allowbreak prospective\_selection*.json}}\label{tab:selection}
+\caption{Selection of the two fresh collections: pool sizes, exclusions in the order applied, and the included data sets. ``v1'' denotes the benchmark and application data sets used earlier in the study. The full logs, with the reason for every data set, are available with the code on request (\texttt{results/\allowbreak reinforcement/\allowbreak prospective\_selection*.json})}\label{tab:selection}
 \centering\small
 \begin{tabular}{@{}p{12cm}r@{}}
 \toprule
@@ -236,6 +236,10 @@ Data & Rows & Feat. & s & MB & fit (s) & std & seen/new & distance & (s)\\
 \includegraphics[width=0.78\textwidth]{figures/fig_tool.png}
 \caption{The one-page report written by \emph{covercheck} for the NASA mc1 defect data: the check before training, its verdict, and measured coverage on all, seen and new cases with and without the fix. Random forest, 10 random splits}\label{fig:tool}
 \end{figure}
+
+\clearpage
+\section{Data sources and links}\label{sec:datalinks}
+\input{data_links}
 
 \section{Software environment}\label{sec:env}
 Hardware: \NHwNcpu{} logical CPUs (\NHwCpu{}), \NHwRam{}\,GB memory. Software: Python \NHwPython{}; package versions are pinned in \path{code/requirements.txt} and recorded in \path{results/logs/environment.json}. One command, \texttt{python code/run\_all.py}, reruns all experiments, the aggregation and the figures; \texttt{paper/build.sh} builds both documents.
